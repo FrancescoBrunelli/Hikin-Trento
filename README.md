@@ -11,7 +11,7 @@
 **Group Composition** (name, surname, student ID)
 - **Francesco Brunelli:** 245252
 - **Giulia Cristofolini:** 24...
-- **Daniel Fernando Lori:** 24...
+- **Daniel Fernando Lori:** 244525
 
 ## Reference Links
 - [Ideas Outline](https://docs.google.com/document/d/1pR55h1A6zfJAbake4K2ZHaqpwG2bQNt4wKsKpEssKWY/edit?usp=sharing)
