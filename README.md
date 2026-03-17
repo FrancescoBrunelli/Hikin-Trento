@@ -10,7 +10,7 @@
 
 **Group Composition** (name, surname, student ID)
 - **Francesco Brunelli:** 245252
-- **Giulia Cristofolini:** 24...
+- **Giulia Cristofolini:** 243802
 - **Daniel Fernando Lori:** 244525
 
 ## Reference Links
