@@ -16,4 +16,5 @@
 ## Reference Links
 - [Ideas Outline](https://docs.google.com/document/d/1pR55h1A6zfJAbake4K2ZHaqpwG2bQNt4wKsKpEssKWY/edit?usp=sharing)
 - [Use Cases and Requirements Table](https://docs.google.com/spreadsheets/d/1EOZokqOF3uZDWsRBuIOuxlk5aPPEI_y58W0bVAwkY5A/edit?usp=sharing)
+- [Additional Resources](https://drive.google.com/drive/folders/143t-pZczXBgHy-kvooubAprPLgCbkiGh?usp=drive_link)
 
