@@ -2,7 +2,7 @@
 
 This is the backend of the application, built with **Node.js**, **Express**, and **MongoDB Atlas** via Mongoose.
 
-The entry point is `app.js`, located at the root of this folder.
+The entry point is `app.js`, located inside this folder.
 
 ---
 
@@ -10,8 +10,8 @@ The entry point is `app.js`, located at the root of this folder.
 
 ```
 server/
-├── app.js
 └── src/
+    ├── app.js
     ├── config/
     ├── controllers/
     ├── middleware/
