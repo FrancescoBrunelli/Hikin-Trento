@@ -291,3 +291,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# other files
+.DS_Store
+.obsidian/
