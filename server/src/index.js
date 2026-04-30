@@ -1,0 +1,64 @@
+
+require('dotenv').config();
+const express = require('express');
+const { MongoClient } = require('mongodb');
+const app = express();
+
+app.use(express.json()); // Allows the server to accept data from frontend
+
+const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri);
+let db;
+
+async function runServer() {
+  try {
+    await client.connect();
+    db = client.db(); // Uses the DB name from .env string
+    console.log("Connected to HikinTrento Cluster!");
+
+    // START THE SERVER
+    const PORT = 5000;
+    app.listen(PORT, () => {
+      console.log(`Server listening on http://localhost:${PORT}`);
+    });
+
+  } catch (err) {
+    console.error("Failed to connect:", err);
+  }
+}
+
+// ROUTE: Get all trails
+app.get('/api/trails', async (req, res) => {
+  const trails = await db.collection('trails').find().toArray();
+  res.json(trails);
+});
+
+// ROUTE: Add a new trail (This replaces the need for your "first" script)
+app.post('/api/trails', async (req, res) => {
+  try {
+    const result = await db.collection('trails').insertOne(req.body);
+    res.status(201).json(result);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to add trail" });
+  }
+});
+
+runServer();
+
+
+/*
+const mongoose = require("mongoose")
+
+async function connectoToDatabase() {
+  const uri = process.env.MONGODB_URI;
+
+  if(!uri) {
+    throw new Error("MongoDB URI not defined")
+  }
+
+  await mongoose.connect(uri);
+  console.log("MongoDB connection established")
+}
+
+module.exports = connectoToDatabase;
+*/
