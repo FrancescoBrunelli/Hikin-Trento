@@ -1,15 +1,17 @@
 
 require('dotenv').config();
 const express = require('express');
-const { MongoClient } = require('mongodb');
+//const { MongoClient } = require('mongodb');
+const mongoose = require ('mongoose');
 const app = express();
 
 app.use(express.json()); // Allows the server to accept data from frontend
 
-const uri = process.env.MONGODB_URI;
-const client = new MongoClient(uri);
+//const uri = process.env.MONGODB_URI;
+//const client = new MongoClient(uri);
 let db;
 
+/*
 async function runServer() {
   try {
     await client.connect();
@@ -26,6 +28,9 @@ async function runServer() {
     console.error("Failed to connect:", err);
   }
 }
+  */
+
+app.use('/api/auth', require('./routes/authRoutes'));
 
 // ROUTE: Get all trails
 app.get('/api/trails', async (req, res) => {
@@ -43,11 +48,11 @@ app.post('/api/trails', async (req, res) => {
   }
 });
 
-runServer();
+//runServer();
 
 
-/*
-const mongoose = require("mongoose")
+
+//const mongoose = require("mongoose")
 
 async function connectoToDatabase() {
   const uri = process.env.MONGODB_URI;
@@ -58,7 +63,16 @@ async function connectoToDatabase() {
 
   await mongoose.connect(uri);
   console.log("MongoDB connection established")
+
+  // START THE SERVER
+  const PORT = 5000;
+  app.listen(PORT, () => {
+    console.log(`Server listening on http://localhost:${PORT}`);
+  });
+
+  
 }
 
+connectoToDatabase();
+
 module.exports = connectoToDatabase;
-*/
