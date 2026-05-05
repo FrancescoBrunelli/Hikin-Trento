@@ -15,11 +15,9 @@ const userSchema = new mongoose.Schema({
  * if the password was changed, it hashes the new passwsord
  * if the password was not changed, it returns to save()
  */
-userSchema.pre('save', async function(next) {
-    if (!this.isModified('password')) return next();
+userSchema.pre('save', async function() {
+    if (!this.isModified('password')) return;
     this.password = await bcrypt.hash(this.password, 10);
-    next();
-
 })
 
 module.exports = mongoose.model('User', userSchema);

@@ -11,7 +11,7 @@ const register = async(req, res) => {
                 name: user.name,
                 surname: user.surname,
                 username: user.username,
-                dateOfBirth: user.dateOfBirth
+                date_of_birth: user.date_of_birth
             }
         });
     }catch(err){

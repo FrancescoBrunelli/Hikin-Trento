@@ -1,1 +1,1 @@
-app.use('/api/auth', require('./routes/authRoutes'));
+//app.use('/api/auth', require('./routes/authRoutes'));
