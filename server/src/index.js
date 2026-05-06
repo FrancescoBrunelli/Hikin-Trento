@@ -26,6 +26,7 @@ async function connectoToDatabase() {
   const PORT = 5000;
   app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
+    console.log(`View swagger interface at http://localhost:${PORT}/api-docs`);
   });
 
   
