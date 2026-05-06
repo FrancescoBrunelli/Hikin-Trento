@@ -1,5 +1,5 @@
 //src/pages/SignIn.jsx
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FaEye, FaEyeSlash, FaSun, FaMoon} from 'react-icons/fa';
 import Button from "../components/Button.tsx";
@@ -17,7 +17,7 @@ function SignIn() {
                 {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
             </button>
             <div className="signin-card">
-                <h1>Sign Up</h1>
+                <h1>Sign In</h1>
                 <form action="/api/signin" method="POST" className="signin-form">
                     {/*
                     <label htmlFor="email-input">Email</label>
@@ -39,7 +39,7 @@ function SignIn() {
                     </div>
                     <div className="input-group">
                         <label htmlFor="password-input">Password</label>
-                        <div className={`password-wrapper`}>
+                        <div className="password-wrapper">
                             <input
                                 id="password-input"
                                 type={showPassword ? "text" : "password"}
@@ -51,6 +51,7 @@ function SignIn() {
                         </div>
                     </div>
                     <Button type="submit">Sign In</Button>
+                    <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
                 </form>
             </div>
         </div>
