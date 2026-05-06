@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json()); // Allows the server to accept data from frontend
 
 
-let db;
+
 
 async function connectoToDatabase() {
   const uri = process.env.MONGODB_URI;
@@ -38,25 +38,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/auth', require('./routes/authRoutes'));
 
-// ROUTE: Get all trails
-app.get('/api/trails', async (req, res) => {
-  const trails = await db.collection('trails').find().toArray();
-  res.json(trails);
-});
-
-// ROUTE: Add a new trail (This replaces the need for your "first" script)
-app.post('/api/trails', async (req, res) => {
-  try {
-    const result = await db.collection('trails').insertOne(req.body);
-    res.status(201).json(result);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to add trail" });
-  }
-});
-
-
-
-
 
 
 module.exports = connectoToDatabase;
@@ -68,6 +49,7 @@ module.exports = connectoToDatabase;
 //const client = new MongoClient(uri);
 
 /*
+let db;
 async function runServer() {
   try {
     await client.connect();
@@ -87,4 +69,24 @@ async function runServer() {
 
 runServer();
 
+*/
+
+// ROUTE: Get all trails
+/*
+app.get('/api/trails', async (req, res) => {
+  const trails = await db.collection('trails').find().toArray();
+  res.json(trails);
+});
+*/
+
+// ROUTE: Add a new trail (This replaces the need for your "first" script)
+/*
+app.post('/api/trails', async (req, res) => {
+  try {
+    const result = await db.collection('trails').insertOne(req.body);
+    res.status(201).json(result);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to add trail" });
+  }
+});
 */
