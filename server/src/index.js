@@ -48,6 +48,8 @@ app.post('/api/trails', async (req, res) => {
   }
 });
 
+const loginRoutes = require('./routes/loginRoutes');
+app.use('/api/auth', loginRoutes);
 //runServer();
 
 
