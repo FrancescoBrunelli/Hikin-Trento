@@ -17,7 +17,7 @@ const user = require('../models/User');
 const register = async({name, surname, username, date_of_birth, password}) =>{
 
     //console.log("registering");
-    //const existing = await User.exists({username});
+    const existing = await User.exists({username});
     //console.log(existing);
     //if (existing) throw new Error ('username already taken');
 
