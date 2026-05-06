@@ -1,8 +1,10 @@
 
 require('dotenv').config();
 const express = require('express');
-
 const mongoose = require ('mongoose');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./config/swagger');
+
 const app = express();
 
 app.use(express.json()); // Allows the server to accept data from frontend
@@ -31,6 +33,7 @@ async function connectoToDatabase() {
 
 connectoToDatabase();
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/auth', require('./routes/authRoutes'));
 
