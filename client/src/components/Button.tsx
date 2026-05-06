@@ -1,10 +1,11 @@
 import {useNavigate} from 'react-router-dom'
 
 export default function Button({ children, variant = "primary", to, ...props }: {
-    children: string,
+    children: React.ReactNode,
     variant?: string,
     to?: string,
     onClick?: () => void
+    type?: "button" | "submit" | "reset"
 }) {
     const navigate = useNavigate()
     return (
@@ -12,7 +13,10 @@ export default function Button({ children, variant = "primary", to, ...props }: 
             className={`btn btn-${variant}`}
             style={{color: "rgb(254, 116, 25)"}}
             {...props}
-            onClick={() => to && navigate(to)}
+            onClick={() => {
+                if (to) navigate(to)
+                if (props.onClick) props.onClick()
+            }}
         >
             {children}
         </button>
