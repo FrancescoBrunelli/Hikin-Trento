@@ -1,0 +1,40 @@
+:root {
+  --primary: rgb(254, 116, 25);
+  --primary-hover: rgb(230, 100, 10);
+  --bg: #f2f2f2;
+  --card-bg: #ffffff;
+  --text: #111111;
+  --label: #333333;
+  --input-bg: #f7f7f7;
+  --input-border: #e0e0e0;
+  --input-focus: rgb(254, 116, 25);
+  --card-border: rgba(254, 116, 25, 0.4);
+  --hint: #888888;
+  --toggle-bg: #e0e0e0;
+  --toggle-color: #333;
+  --valid: #2e7d32;
+  --invalid: #c62828;
+}
+
+:root.dark-mode {
+  --bg: #111111;
+  --card-bg: #1e1e1e;
+  --text: #f0f0f0;
+  --label: #cccccc;
+  --input-bg: #2a2a2a;
+  --input-border: #3a3a3a;
+  --card-border: transparent;
+  --hint: #777777;
+  --toggle-bg: #2a2a2a;
+  --toggle-color: #f0f0f0;
+  --valid: #66bb6a;
+  --invalid: #ef5350;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}

@@ -1,0 +1,212 @@
+/* Page Layout */
+.page {
+    min-height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    background: var(--toggle-bg);
+    color: var(--toggle-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Card */
+.signin-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--card-border);
+    border-radius: 20px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.signin-card h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 32px;
+}
+
+/* Form */
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--label);
+}
+
+.input-group input {
+    background: var(--input-bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s, background 0.3s;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.input-group input:focus {
+    border-color: var(--input-focus);
+}
+
+/* Password Wrapper */
+.password-wrapper {
+    display: flex;
+    align-items: stretch;
+    background: var(--input-bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s, background 0.3s;
+}
+
+.password-wrapper:focus-within {
+    border-color: var(--input-focus);
+}
+
+.password-wrapper input {
+    flex: 1;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    padding: 14px 16px;
+    font-size: 1rem;
+    color: var(--text);
+    outline: none;
+}
+
+.password-wrapper .btn {
+    background: transparent !important;
+    border: none;
+    padding: 0 14px;
+    color: var(--hint);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: auto !important;
+    border-radius: 0 !important;
+}
+
+.password-wrapper .btn:hover {
+    background: transparent !important;
+    color: var(--primary);
+}
+
+.password-wrapper.valid {
+    border-color: var(--valid);
+}
+
+.password-wrapper.invalid {
+    border-color: var(--invalid);
+}
+
+/* Password Hint */
+#password-hint {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: -8px;
+}
+
+#password-hint p {
+    font-size: 0.78rem;
+    margin: 0;
+    color: var(--hint);
+}
+
+#password-hint p.hint-valid {
+    color: var(--valid);
+}
+
+#password-hint p.hint-invalid {
+    color: var(--invalid);
+}
+
+/* Submit Button */
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+.btn-primary:disabled {
+    background: var(--toggle-bg);
+    cursor: not-allowed;
+}
+
+.btn-primary:disabled:hover {
+    background: var(--toggle-bg);
+    filter: brightness(0.85);
+    cursor: not-allowed;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+/* Sign In Link */
+.signin-form > p {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--hint);
+}
+
+.signin-form > p a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signin-form > p a:hover {
+    text-decoration: underline;
+}
