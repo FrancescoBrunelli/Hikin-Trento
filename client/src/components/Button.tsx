@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom'
+import React from 'react'
 
 export default function Button({ children, variant = "primary", to, ...props }: {
     children: React.ReactNode,
@@ -6,12 +7,12 @@ export default function Button({ children, variant = "primary", to, ...props }: 
     to?: string,
     onClick?: () => void
     type?: "button" | "submit" | "reset"
+    disabled?: boolean
 }) {
     const navigate = useNavigate()
     return (
         <button
             className={`btn btn-${variant}`}
-            style={{color: "rgb(254, 116, 25)"}}
             {...props}
             onClick={() => {
                 if (to) navigate(to)
