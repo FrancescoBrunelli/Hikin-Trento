@@ -6,4 +6,4 @@ const coordinatesSchema = new mongoose.Schema({
   altitude:  {type: Number, required: true }
 });
 
-module.exports = coordinateSchema; 
+module.exports = coordinatesSchema; 

@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const user = require('../models/User');
+const Structure = require('../models/Structure');
 
 
 /**
@@ -16,10 +16,8 @@ const user = require('../models/User');
  */
 const register = async({name, surname, username, date_of_birth, password}) =>{
 
-    //console.log("registering");
     const existing = await User.exists({username});
-    //console.log(existing);
-    //if (existing) throw new Error ('username already taken');
+    if (existing) throw new Error ('username already taken');
 
     const user = new User ({name, surname, username, date_of_birth, password});
     await user.save();
@@ -27,4 +25,39 @@ const register = async({name, surname, username, date_of_birth, password}) =>{
 };
 
 
-module.exports = { register };
+
+/**
+ * Registers a new structure in the database.
+ * Checks for duplicates based on name and coordinates before saving.
+ * 
+ * @param {Object} structureData - The structure's registration data
+ * @param {string} structureData.name - The name of the place
+ * @param {string} structureData.name_owner - The first name of the owner
+ * @param {string} structureData.surname_owner - The last name of the owner
+ * @param {Object} structureData.coordinates - The GPS coordinates of the structure
+ * @param {number} structureData.coordinates.latitude - The latitude of the structure
+ * @param {number} structureData.coordinates.longitude - The longitude of the structure
+ * @param {number} structureData.coordinates.altitude - The altitude of the structure
+ * @param {string} structureData.telephone - The contact phone number
+ * @param {string} structureData.password - The password for the structure's account
+ * @returns {Promise<Structure>} The newly created structure document
+ * @throws {Error} If a structure with the same name and coordinates already exists
+ */
+const register_structure = async({name, name_owner, surname_owner, coordinates, telephone, password}) => {
+    const existing = await Structure.exists({
+        name, 
+        'coordinates.latitude': coordinates.latitude,
+        'coordinates.longitude': coordinates.longitude,
+        'coordinates.altitude': coordinates.altitude
+    });
+
+    if (existing) throw new Error ('the structure already exists');
+
+    const structure = new Structure ({name, name_owner, surname_owner, coordinates, telephone, password});
+    await structure.save();
+    return structure;
+
+};
+
+
+module.exports = { register, register_structure };
