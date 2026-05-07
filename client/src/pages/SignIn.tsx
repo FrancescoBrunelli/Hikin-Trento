@@ -1,21 +1,15 @@
 //src/pages/SignIn.jsx
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { FaEye, FaEyeSlash, FaSun, FaMoon} from 'react-icons/fa';
+import { useState } from "react";
+import { FaEye, FaEyeSlash} from 'react-icons/fa';
 import Button from "../components/Button.tsx";
 import "../styles/Auth.css";
+import Layout from "../components/Layout.tsx";
 
 function SignIn() {
     const [showPassword, setShowPassword] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
-    useEffect(()=> {
-        document.documentElement.classList.toggle("dark-mode", darkMode);
-    }, [darkMode])
     return (
-        <div className="page">
-            <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
-                {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-            </button>
+        <Layout>
             <div className="signin-card">
                 <h1>Sign In</h1>
                 <form action="/api/signin" method="POST" className="signin-form">
@@ -54,7 +48,7 @@ function SignIn() {
                     <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
                 </form>
             </div>
-        </div>
+        </Layout>
     )
 }
 

@@ -1,25 +1,19 @@
 //src/pages/UserSignUp.jsx
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { FaEye, FaEyeSlash, FaSun, FaMoon} from 'react-icons/fa';
+import { useState } from "react";
+import { FaEye, FaEyeSlash} from 'react-icons/fa';
 import Button from "../components/Button.tsx";
 import "../styles/Auth.css";
+import Layout from "../components/Layout.tsx";
 
 function UserSignUp() {
     const [showPassword, setShowPassword] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
     const hasMinLength = (value: string) => value.length >= 8;
     const hasSpecialChar = (value: string) => /[!@#$%^&*(),.?":{}|<>]/.test(value);
     const isValid = (value: string) => hasMinLength(value) && hasSpecialChar(value);
     const [password, setPassword] = useState("");
-    useEffect(()=> {
-        document.documentElement.classList.toggle("dark-mode", darkMode);
-    }, [darkMode])
     return (
-        <div className="page">
-            <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
-                {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-            </button>
+        <Layout>
             <div className="signup-card">
                 <h1>Sign Up</h1>
                 <form action="/api/signup" method="POST" className="signup-form">
@@ -100,7 +94,7 @@ function UserSignUp() {
                     */}
                 </form>
             </div>
-        </div>
+        </Layout>
     )
 }
 
