@@ -8,6 +8,7 @@ export default function Button({ children, variant = "primary", to, ...props }: 
     onClick?: () => void
     type?: "button" | "submit" | "reset"
     disabled?: boolean
+    className?: string
 }) {
     const navigate = useNavigate()
     return (

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FaEye, FaEyeSlash, FaSun, FaMoon} from 'react-icons/fa';
 import Button from "../components/Button.tsx";
-import "../styles/SignIn.css";
+import "../styles/Auth.css";
 
 function SignIn() {
     const [showPassword, setShowPassword] = useState(false);

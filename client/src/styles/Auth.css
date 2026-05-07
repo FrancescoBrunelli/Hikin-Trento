@@ -194,6 +194,25 @@
     background: var(--primary-hover);
 }
 
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    /*border-radius: 999px;*/
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
 /* Sign In Link */
 .signup-form > p {
     text-align: center;
@@ -209,4 +228,51 @@
 
 .signup-form > p a:hover {
     text-decoration: underline;
+}
+
+/* Sign Up Link */
+.signin-form > p {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--hint);
+}
+
+.signin-form > p a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signin-form > p a:hover {
+    text-decoration: underline;
+}
+
+/* Spinner arrows in input location */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Coordinate Input Wrapper */
+.coord-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.coord-input-wrapper input {
+    width: 100%;
+    padding-right: 3rem; /* make room for the unit */
+}
+
+.coord-unit {
+    position: absolute;
+    right: 1rem;
+    color: gray;
+    font-size: 0.85rem;
+    pointer-events: none;
 }

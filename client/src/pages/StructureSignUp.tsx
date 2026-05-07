@@ -2,26 +2,39 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FaEye, FaEyeSlash, FaSun, FaMoon} from 'react-icons/fa';
+import PhoneInput from 'react-phone-number-input'
 import Button from "../components/Button.tsx";
 import "../styles/Auth.css";
+import 'react-phone-number-input/style.css'
 
-function UserSignUp() {
+function StructureUserSignUp() {
     const [showPassword, setShowPassword] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
     const hasMinLength = (value: string) => value.length >= 8;
     const hasSpecialChar = (value: string) => /[!@#$%^&*(),.?":{}|<>]/.test(value);
     const isValid = (value: string) => hasMinLength(value) && hasSpecialChar(value);
     const [password, setPassword] = useState("");
+    const [value, setValue] = useState<string | undefined>(undefined);
     useEffect(()=> {
         document.documentElement.classList.toggle("dark-mode", darkMode);
     }, [darkMode])
+    const [coordinates, setCoordinates] = useState<{ lat: number | string, lng: number | string, alt: number | string }>({ lat: "", lng: "", alt: "" });
+    const getLocation = () => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            setCoordinates({
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+                alt: position.coords.altitude ?? ""
+            });
+        });
+    };
     return (
         <div className="page">
             <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
                 {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
             </button>
             <div className="signup-card">
-                <h1>Sign Up</h1>
+                <h1>Structure Sign Up</h1>
                 <form action="/api/signup" method="POST" className="signup-form">
                     {/*
                     <label htmlFor="email-input">Email</label>
@@ -33,39 +46,69 @@ function UserSignUp() {
                     />
                     */}
                     <div className="input-group">
-                        <label htmlFor="name-input">First name</label>
+                        <label htmlFor="structure-name-input">Structure name</label>
+                        <input
+                            autoComplete="structure-name"
+                            id="structure-name-input"
+                            type="text"
+                            name="structureName"
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="owner-name-input">Owner first name</label>
                         <input
                             autoComplete="name"
-                            id="name-input"
+                            id="owner-name-input"
                             type="text"
-                            name="userName"
+                            name="ownerName"
                         />
                     </div>
                     <div className="input-group">
-                        <label htmlFor="surname-input">Last name</label>
+                        <label htmlFor="owner-surname-input">Owner last name</label>
                         <input
                             autoComplete="surname"
-                            id="surname-input"
+                            id="owner-surname-input"
                             type="text"
-                            name="userSurname"
+                            name="ownerSurname"
                         />
                     </div>
                     <div className="input-group">
-                        <label htmlFor="username-input">Username</label>
-                        <input
-                            autoComplete="username"
-                            id="username-input"
-                            type="text"
-                            name="userUsername"
-                        />
+                        <label htmlFor="structure-position-input">Structure location</label>
+                        {/*<input
+                            autoComplete="position"
+                            id="structure-position-input"
+                            type="coordinates"
+                            name="structurePosition"
+                        />*/}
+                        <Button type="button" onClick={getLocation} className="btn-secondary">Use my location</Button>
+                        <div className="coord-input-wrapper">
+                            <input type="number" value={coordinates.lat} onChange={(e) => setCoordinates({...coordinates, lat: e.target.value})} name="latitude" placeholder="Latitude" />
+                            <span className="coord-unit">°</span>
+                        </div>
+                        <div className="coord-input-wrapper">
+                            <input type="number" value={coordinates.lng} onChange={(e) => setCoordinates({...coordinates, lng: e.target.value})} name="longitude" placeholder="Longitude" />
+                            <span className="coord-unit">°</span>
+                        </div>
+                        <div className="coord-input-wrapper">
+                            <input type="number" value={coordinates.alt} onChange={(e) => setCoordinates({...coordinates, alt: e.target.value})} name="altitude" placeholder="Altitude" />
+                            <span className="coord-unit">m</span>
+                        </div>
                     </div>
                     <div className="input-group">
-                        <label htmlFor="date-of-birth-input">Date of birth</label>
+                        <label htmlFor="phone-input">Phone number</label>
+                        {/*
                         <input
-                            autoComplete="date-of-birth"
-                            id="date-of-birth-input"
-                            type="date"
-                            name="userDOB"
+                            autoComplete="phone"
+                            id="phone-input"
+                            type="phone"
+                            name="structure-phone"
+                        />
+                        */}
+                        <PhoneInput
+                            defaultCountry="IT"
+                            id="phone-input"
+                            value={value}
+                            onChange={setValue}
                         />
                     </div>
                     <div className="input-group">
@@ -94,7 +137,6 @@ function UserSignUp() {
                     )}
                     <Button type="submit" disabled={!(isValid(password))}>Sign Up</Button>
                     <p>Already have an account? <Link to="/signin">Sign In</Link></p>
-                    <p>Are you a structure owner? <Link to="/structuresignup">Structures Sign Up</Link></p>
                     {/*
                     <p>By signing up, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
                     */}
@@ -104,4 +146,4 @@ function UserSignUp() {
     )
 }
 
-export default UserSignUp;
+export default StructureUserSignUp;
