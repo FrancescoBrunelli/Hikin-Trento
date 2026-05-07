@@ -50,7 +50,7 @@ function SignIn() {
                     </div>
                     <div className="input-group">
                         <label htmlFor="password-input">Password</label>
-                        <div className={`password-wrapper" $(error ? "invalid" : "valid") : ""}`}>
+                        <div className={`password-wrapper ${error ? "invalid" : ""}`}>
                             <input
                                 id="password-input"
                                 type={showPassword ? "text" : "password"}
@@ -59,8 +59,8 @@ function SignIn() {
                             <Button onClick={() => setShowPassword(!showPassword)} type="button">
                                 {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
                             </Button>
-                            {error && <p className="error-message">Invalid username or password</p>}
                         </div>
+                        {error && <p className="error-message">Invalid username or password</p>}
                     </div>
                     <Button type="submit">Sign In</Button>
                     <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
