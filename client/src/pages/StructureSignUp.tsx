@@ -25,11 +25,17 @@ function StructureUserSignUp() {
             });
         });
     };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        {/* To implement... */}
+    }
+
     return (
         <Layout>
             <div className="signup-card">
                 <h1>Structure Sign Up</h1>
-                <form action="/api/signup" method="POST" className="signup-form">
+                <form action="/api/signup" method="POST" className="signup-form" onSubmit={handleSubmit}>
                     {/*
                     <label htmlFor="email-input">Email</label>
                     <input

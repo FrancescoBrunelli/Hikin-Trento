@@ -1,5 +1,5 @@
 //src/pages/SignIn.jsx
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { useState } from "react";
 import { FaEye, FaEyeSlash} from 'react-icons/fa';
 import Button from "../components/Button.tsx";
@@ -8,11 +8,28 @@ import Layout from "../components/Layout.tsx";
 
 function SignIn() {
     const [showPassword, setShowPassword] = useState(false);
+    const [error, setError] = useState(false);
+    const navigate = useNavigate();
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        const response = await fetch("/api/signin", {
+            method: "POST",
+            body: new FormData(e.target as HTMLFormElement),
+        })
+
+        if (!response.ok) {
+            setError(true)
+        } else {
+            setError(false)
+            navigate("/home")
+        }
+    }
+
     return (
         <Layout>
             <div className="signin-card">
                 <h1>Sign In</h1>
-                <form action="/api/signin" method="POST" className="signin-form">
+                <form action="/api/signin" method="POST" className="signin-form" onSubmit={handleSubmit}>
                     {/*
                     <label htmlFor="email-input">Email</label>
                     <input
@@ -33,7 +50,7 @@ function SignIn() {
                     </div>
                     <div className="input-group">
                         <label htmlFor="password-input">Password</label>
-                        <div className="password-wrapper">
+                        <div className={`password-wrapper" $(error ? "invalid" : "valid") : ""}`}>
                             <input
                                 id="password-input"
                                 type={showPassword ? "text" : "password"}
@@ -42,6 +59,7 @@ function SignIn() {
                             <Button onClick={() => setShowPassword(!showPassword)} type="button">
                                 {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
                             </Button>
+                            {error && <p className="error-message">Invalid username or password</p>}
                         </div>
                     </div>
                     <Button type="submit">Sign In</Button>

@@ -164,6 +164,14 @@
     color: var(--invalid);
 }
 
+/* Incorrect Password Message */
+.error-message {
+    color: var(--invalid);
+    font-size: 0.875rem;
+    text-align: center;
+    margin: 0;
+}
+
 /* Submit Button */
 .btn-primary {
     background: var(--primary);
