@@ -1,0 +1,1272 @@
+[
+  {
+    "odh_id": "D08EF2E6-92B1-4E23-96FD-65988699C5AD",
+    "name": "Alperlebnis Bächialp",
+    "coordinates": {
+      "latitude": 46.970414,
+      "longitude": 9.00351048,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "7FBFB376-604E-44FB-B552-389F556D9E2A",
+    "name": "Alphütten Berglialp",
+    "coordinates": {
+      "latitude": 46.9531,
+      "longitude": 9.15179,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "E85030EB1FFE11D38EBA00104B36EC8A_REDUCED",
+    "name": "Rifugio Oberettes",
+    "coordinates": {
+      "latitude": 46.764907,
+      "longitude": 10.711138,
+      "altitude": 2660.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "EFEA846C69D7D49545E261C10E5D6175_REDUCED",
+    "name": "Rifugio Sesvenna",
+    "coordinates": {
+      "latitude": 46.734508,
+      "longitude": 10.435467,
+      "altitude": 2261.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "2F10EF801D6B9113D35E424086221C00_REDUCED",
+    "name": "BADL by Såndgøld",
+    "coordinates": {
+      "latitude": 46.857172,
+      "longitude": 12.014002,
+      "altitude": 1692.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "C579131163B611D4AAEE00105A4AB73F_REDUCED",
+    "name": "Becherhaus/Rifugio Gino Biasi al Bicchiere",
+    "coordinates": {
+      "latitude": 46.9607,
+      "longitude": 11.1924,
+      "altitude": 3195.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "FA5C85E7-2DF0-4F61-B78F-22B74BF870D4",
+    "name": "Berggasthaus Äugstenhütte",
+    "coordinates": {
+      "latitude": 47.02721720165855,
+      "longitude": 9.1067111492157,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "F4E3EB45-A715-4CC6-B5E2-454F535D223E",
+    "name": "Berggasthaus Edelwyss",
+    "coordinates": {
+      "latitude": 46.96420864100602,
+      "longitude": 9.186007976531984,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "5FF7EE86BDCD24FA4CF946410ACC52C4",
+    "name": "Malga Eishof",
+    "coordinates": {
+      "latitude": 46.75254821777344,
+      "longitude": 10.969999313354492,
+      "altitude": 2076.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "EBB2FC1E6D8311D296A900A0244EAF51",
+    "name": "Albergo rifugio Hochmuth",
+    "coordinates": {
+      "latitude": 46.70195770263672,
+      "longitude": 11.131488800048828,
+      "altitude": 1400.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "0AB82177-383E-4BB9-BD83-1A6288066919",
+    "name": "Berggasthaus Naturfreundehaus Fronalp",
+    "coordinates": {
+      "latitude": 47.07125073039818,
+      "longitude": 9.090757369995119,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "49EA4625-AB3E-42E5-8BCA-C19CD9C926A1",
+    "name": "Berggasthaus Ortstockhaus, Braunwald",
+    "coordinates": {
+      "latitude": 46.948124,
+      "longitude": 8.97660255,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "CA6B58443D1F11D4B99700E07D035C68",
+    "name": "Albergo Rifugio Pederü",
+    "coordinates": {
+      "latitude": 46.638301849365234,
+      "longitude": 12.041399955749512,
+      "altitude": 1545.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "1938193D4E2C11D289320060979ACE62",
+    "name": "Rifugio Prato Piazza",
+    "coordinates": {
+      "latitude": 46.65315628051758,
+      "longitude": 12.17966365814209,
+      "altitude": 2000.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "E9222ED54A5BA9391341C2E64E9D89E0",
+    "name": "Rifugio Sarentino",
+    "coordinates": {
+      "latitude": 46.65129852294922,
+      "longitude": 11.320799827575684,
+      "altitude": 1614.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "B1467764-881D-4123-A2E0-572A31A8297F",
+    "name": "Berghaus Alpenrösli",
+    "coordinates": {
+      "latitude": 46.878949,
+      "longitude": 9.894669,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "9FE60281-5AC5-4C14-9877-38A479ACE741",
+    "name": "Bifertenhütte SAC",
+    "coordinates": {
+      "latitude": 46.814538466366386,
+      "longitude": 9.026412416378095,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "EEB2280172F74F809AFBB50B3596380E",
+    "name": "Rifugio Tridentina",
+    "coordinates": {
+      "latitude": 47.07991027832031,
+      "longitude": 12.206363677978516,
+      "altitude": 2424.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "EBB2F8C06D8311D296A900A0244EAF51",
+    "name": "Baita Bocker",
+    "coordinates": {
+      "latitude": 46.7265739440918,
+      "longitude": 11.119569778442383,
+      "altitude": 1697.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "F648617BD8458914B9ABC28ED804A4FC",
+    "name": "Rifugio Alpino Bonner",
+    "coordinates": {
+      "latitude": 46.77843475341797,
+      "longitude": 12.274855613708496,
+      "altitude": 2340.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "1D3BFEF93CCDCF87C0F518BC8CD8D6DE_REDUCED",
+    "name": "Einäugl - Albergo per l'inverno",
+    "coordinates": {
+      "latitude": 46.614354,
+      "longitude": 11.5081,
+      "altitude": 1310.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "CFD116A6AE0BBDB92F4E3527C01D104E",
+    "name": "Rifugio Bressanone",
+    "coordinates": {
+      "latitude": 46.91291427612305,
+      "longitude": 11.620367050170898,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "9DAC2C98DF2E49C1975778C91F9819CF_REDUCED",
+    "name": "Rifugio Pian di Cengia",
+    "coordinates": {
+      "latitude": 46.631713,
+      "longitude": 12.341552,
+      "altitude": 2528.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "9947DA6D131D11D5971D006097DCCB90",
+    "name": "Rifugio Plan de Corones CAI",
+    "coordinates": {
+      "latitude": 46.74065017700195,
+      "longitude": 11.957300186157227,
+      "altitude": 2230.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "49B918C1A03F163FFEE26FF634D60E90_REDUCED",
+    "name": "Chalet Zuegg",
+    "coordinates": {
+      "latitude": 46.676179,
+      "longitude": 11.249635,
+      "altitude": 1767.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "2F071DEEC725A5A67C3A4E935D486417_REDUCED",
+    "name": "Rifugio Giovanni Porro",
+    "coordinates": {
+      "latitude": 46.957088,
+      "longitude": 11.808608,
+      "altitude": 2416.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "A85068994EAD44C0AEBBF7D8ACF5302F_REDUCED",
+    "name": "Rifugio Cherz",
+    "coordinates": {
+      "latitude": 46.5168,
+      "longitude": 11.8848,
+      "altitude": 2100.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "783CAC86-CDE0-4FA2-B7FA-80EF4BD968B2",
+    "name": "Claridenhütte SAC",
+    "coordinates": {
+      "latitude": 46.859501,
+      "longitude": 8.93572569,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "5D46E9EA76F611D1957100805A150B0B",
+    "name": "Dreischusterhütte",
+    "coordinates": {
+      "latitude": 46.67449951171875,
+      "longitude": 12.297113418579102,
+      "altitude": 1626.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "5044DF84F6664AF0B26D00AB1A0D6181_REDUCED",
+    "name": "Rifugio Tre Cime - Locatelli",
+    "coordinates": {
+      "latitude": 46.636929,
+      "longitude": 12.310567,
+      "altitude": 2405.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "193819374E2C11D289320060979ACE62",
+    "name": "Rifugio Vallandro",
+    "coordinates": {
+      "latitude": 46.642005920410156,
+      "longitude": 12.19593620300293,
+      "altitude": 2035.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "3A968C0BBDA411D7B2C800300500D882_REDUCED",
+    "name": "Rifugio Serristori",
+    "coordinates": {
+      "latitude": 46.5473,
+      "longitude": 10.6175,
+      "altitude": 2721.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "8CCF8CBF2A0A82EE69B52DE620005353",
+    "name": "Rigugio Ponte di Ghiaccio",
+    "coordinates": {
+      "latitude": 46.9471435546875,
+      "longitude": 11.739030838012695,
+      "altitude": 2543.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "B12CA2AC5784F739B88AE340B13F5A65",
+    "name": "Rifugio Genziana",
+    "coordinates": {
+      "latitude": 46.970882415771484,
+      "longitude": 11.49843692779541,
+      "altitude": 1899.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "3CE92B86E6BD739358CED3C0691C1070",
+    "name": "Rifugio Fonda Savio",
+    "coordinates": {
+      "latitude": 46.585411071777344,
+      "longitude": 12.287564277648926,
+      "altitude": 2367.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "2A6D35C2315C11D486470050044B7053_REDUCED",
+    "name": "Rifugio Franco Cavazza al Pisciadú",
+    "coordinates": {
+      "latitude": 46.5362,
+      "longitude": 11.8221,
+      "altitude": 2586.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "C8D3908898A844378D590E1823996397_REDUCED",
+    "name": "Rifugio Franz Kostner",
+    "coordinates": {
+      "latitude": 46.51806,
+      "longitude": 11.847699,
+      "altitude": 2550.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "8EBF7095-8456-4FA1-8EB7-CC7182FFD9CC",
+    "name": "Fridolinshütte SAC",
+    "coordinates": {
+      "latitude": 46.82132,
+      "longitude": 8.95002,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "1A06B0A985E511D2956400805A10578D",
+    "name": "Malga Gampen",
+    "coordinates": {
+      "latitude": 46.63351058959961,
+      "longitude": 11.795926094055176,
+      "altitude": 2062.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "70043B17DAE33F1EFCDA24D4BB4C1F72",
+    "name": "Rifugio Gardenacia",
+    "coordinates": {
+      "latitude": 46.58461380004883,
+      "longitude": 11.873774528503418,
+      "altitude": 2000.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "EEBE1F756F9111D580B20050DA3A0062",
+    "name": "Gasser Hütte",
+    "coordinates": {
+      "latitude": 46.641727447509766,
+      "longitude": 11.490531921386719,
+      "altitude": 1759.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "06536624DFDE4450897DE56A5D081E62_REDUCED",
+    "name": "Albergo/Malga Gurndin",
+    "coordinates": {
+      "latitude": 46.3472,
+      "longitude": 11.4311,
+      "altitude": 1956.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "988DC991-2816-420F-B898-A8AEA7C71C1F",
+    "name": "Glärnischhütte SAC",
+    "coordinates": {
+      "latitude": 47.001625,
+      "longitude": 8.963549840498654,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "E114CBA1-96D4-4ED3-B932-53664EE21992",
+    "name": "Glattalphütte SAC",
+    "coordinates": {
+      "latitude": 46.916997989652685,
+      "longitude": 8.875048800314227,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "2BCEC10E942011D28361444553540000_REDUCED",
+    "name": "Rifugio Bergamo",
+    "coordinates": {
+      "latitude": 46.489293,
+      "longitude": 11.605511,
+      "altitude": 2165.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "C579130B63B611D4AAEE00105A4AB73F_REDUCED",
+    "name": "Rifugio Vedretta Piana",
+    "coordinates": {
+      "latitude": 46.9514,
+      "longitude": 11.2355,
+      "altitude": 2254.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "001ED3BA-DD2D-41DD-BFD1-B9D74C32978B",
+    "name": "Grünhornhütte",
+    "coordinates": {
+      "latitude": 46.810467349999996,
+      "longitude": 8.941338563597562,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "5EEAD034CF8211D183CB0020AFF9F8D5",
+    "name": "Rifugio Gallo Cedrone",
+    "coordinates": {
+      "latitude": 46.714298248291016,
+      "longitude": 12.375300407409668,
+      "altitude": 2200.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "32E7C5848E7B11D181AB006097B896BA_REDUCED",
+    "name": "Hintereggalm - rifugio",
+    "coordinates": {
+      "latitude": 46.749624,
+      "longitude": 11.263604,
+      "altitude": 1973.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "30255695D92911D7B2F800300500D882_REDUCED",
+    "name": "Rifugio del Coston",
+    "coordinates": {
+      "latitude": 46.500844,
+      "longitude": 10.582495,
+      "altitude": 2661.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "4EED15D2C4DC7A6FEC4E986E5A58423F_REDUCED",
+    "name": "Rifugio Canziani al Lago Verde",
+    "coordinates": {
+      "latitude": 46.483642,
+      "longitude": 10.799624,
+      "altitude": 2613.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "20133546-D166-4369-AD77-24CE2548EB05",
+    "name": "Hüfihütte SAC",
+    "coordinates": {
+      "latitude": 46.80184042021103,
+      "longitude": 8.819001317024233,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "CD991049C25311D28DC70060080BA703",
+    "name": "Rifugio Roma",
+    "coordinates": {
+      "latitude": 46.92890167236328,
+      "longitude": 12.103500366210938,
+      "altitude": 2276.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "D1BBF354-AC35-46C4-A726-B83D73EF3069",
+    "name": "Kistenpasshütte SAC",
+    "coordinates": {
+      "latitude": 46.840394,
+      "longitude": 9.0293026,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "3AC68C7970B95A9C79DB15B8D06B6061",
+    "name": "Rifugio Pratocroce - Kreuzwiese",
+    "coordinates": {
+      "latitude": 46.7528076171875,
+      "longitude": 11.804450035095215,
+      "altitude": 1924.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "7C2E79AAD07DB55089566F21D48E8C9D_REDUCED",
+    "name": "Rifugio La Crusc - Santa Croce",
+    "coordinates": {
+      "latitude": 46.614515,
+      "longitude": 11.938534,
+      "altitude": 2045.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "991BA8CFFF89471AA09F8897D7D0EEAD_REDUCED",
+    "name": "Rifugio Vicenza",
+    "coordinates": {
+      "latitude": 46.520205,
+      "longitude": 11.722863,
+      "altitude": 2256.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "3B27D26B-4C42-439A-8BF1-F3A1068466C7",
+    "name": "Leglerhütte SAC",
+    "coordinates": {
+      "latitude": 46.92741052914109,
+      "longitude": 9.080087542533876,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "9B92D9DAFEC24ED0B7D87501AC2A16B5",
+    "name": "Rifugio Giogo Lungo",
+    "coordinates": {
+      "latitude": 47.0390510559082,
+      "longitude": 12.190812110900879,
+      "altitude": 2581.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "247AD4A74351BAD7BEE36639D1734BE2",
+    "name": "Rifugio Cremona alla Stua",
+    "coordinates": {
+      "latitude": 46.973548889160156,
+      "longitude": 11.284181594848633,
+      "altitude": 2425.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "7E66AC901B0274882F9A4D0C5552735B_REDUCED",
+    "name": "Rifugio Marchhütte",
+    "coordinates": {
+      "latitude": 46.783333,
+      "longitude": 12.333333,
+      "altitude": 2383.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "24B99DC8-FF47-47B7-A951-C06FACC3DEF4",
+    "name": "Martinsmadhütte SAC",
+    "coordinates": {
+      "latitude": 46.8925555,
+      "longitude": 9.1883141,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "6FD452E72A7DBC8C4E46F3A7C153717C",
+    "name": "Rifugio Meraner Hütte",
+    "coordinates": {
+      "latitude": 46.68315887451172,
+      "longitude": 11.28197193145752,
+      "altitude": 1941.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "C9C59684C98A41DEA4D0401115D23A1F",
+    "name": "Rifugio Molignon",
+    "coordinates": {
+      "latitude": 46.509300231933594,
+      "longitude": 11.652835845947266,
+      "altitude": 2063.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "C579131463B611D4AAEE00105A4AB73F_REDUCED",
+    "name": "Rifugio Cima Libera",
+    "coordinates": {
+      "latitude": 46.9536,
+      "longitude": 11.1906,
+      "altitude": 3145.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "D74A0F1E-0D60-4326-AE53-6B632804F044",
+    "name": "Muttseehütte SAC",
+    "coordinates": {
+      "latitude": 46.857462,
+      "longitude": 9.01870251,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "8C9B7888-A2DF-4791-884F-602AE49128F5",
+    "name": "Naturfründehuus Mettmen",
+    "coordinates": {
+      "latitude": 46.960527,
+      "longitude": 9.09918219,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "EBB2FEF16D8311D296A900A0244EAF51_REDUCED",
+    "name": "Malga Oberkaser",
+    "coordinates": {
+      "latitude": 46.733243,
+      "longitude": 11.100054,
+      "altitude": 2149.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "A7D57427766311D3A84700104BE4ECF9",
+    "name": "Ristorante Panorama Sterzingerhaus",
+    "coordinates": {
+      "latitude": 46.916812896728516,
+      "longitude": 11.396871566772461,
+      "altitude": 1920.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "3025568FD92911D7B2F800300500D882_REDUCED",
+    "name": "Rifugio Payer",
+    "coordinates": {
+      "latitude": 46.5288,
+      "longitude": 10.5356,
+      "altitude": 3020.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "A7D574FF766311D3A84700104BE4ECF9_REDUCED",
+    "name": "Rifugio Passo Vizze",
+    "coordinates": {
+      "latitude": 46.992429,
+      "longitude": 11.657325,
+      "altitude": 2253.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "6CC58E0A-FE16-4B1A-90FB-29BD3EDADEAB",
+    "name": "Planurahütte SAC",
+    "coordinates": {
+      "latitude": 46.82004,
+      "longitude": 8.88037562,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "BEFEF80D6945406DA39704DBCDDA4201_REDUCED",
+    "name": "Rifugio Sasso Piatto",
+    "coordinates": {
+      "latitude": 46.504403,
+      "longitude": 11.70087,
+      "altitude": 2303.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "C7518260544F11D2968200A0244EAF51",
+    "name": "Rifugio Città di Bressanone alla Plose CAI",
+    "coordinates": {
+      "latitude": 46.6954345703125,
+      "longitude": 11.733635902404785,
+      "altitude": 2448.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "199D600C71A311D4AB220050DA6D1102",
+    "name": "Rifugio Alpino Pralongiá",
+    "coordinates": {
+      "latitude": 46.53369903564453,
+      "longitude": 11.916646957397461,
+      "altitude": 2158.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "2A6D35C5315C11D486470050044B7053",
+    "name": "Puez - CAI Bolzano (2475 m)",
+    "coordinates": {
+      "latitude": 46.59008026123047,
+      "longitude": 11.829358100891113,
+      "altitude": 2475.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "210258211F2C11D3829D00105A6F93E1",
+    "name": "Malga Rableid",
+    "coordinates": {
+      "latitude": 46.753700256347656,
+      "longitude": 10.952899932861328,
+      "altitude": 2004.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "6D97EAFF1A3F11D28DDE00104B4932AD",
+    "name": "Rastnerhütte",
+    "coordinates": {
+      "latitude": 46.776607513427734,
+      "longitude": 11.78219985961914,
+      "altitude": 1930.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "CD991024C25311D28DC70060080BA703_REDUCED",
+    "name": "Rifugio Rieserferner",
+    "coordinates": {
+      "latitude": 46.890026,
+      "longitude": 12.079425,
+      "altitude": 2798.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "DE39DD50811E6CE67F6F2B87CC51FC85",
+    "name": "Rifugio Bolzano",
+    "coordinates": {
+      "latitude": 46.50737380981445,
+      "longitude": 11.574706077575684,
+      "altitude": 2457.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "306735082BC62EABBD9EB001D721A19D",
+    "name": "Rotwand",
+    "coordinates": {
+      "latitude": 46.674434661865234,
+      "longitude": 11.25718879699707,
+      "altitude": 1822.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "B869DD4132237F7FB5DC350B34524B6C",
+    "name": "Rifugio Salei",
+    "coordinates": {
+      "latitude": 46.503700256347656,
+      "longitude": 11.752087593078613,
+      "altitude": 2225.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "C751825B544F11D2968200A0244EAF51_REDUCED",
+    "name": "Rifugio Malga Schatzer",
+    "coordinates": {
+      "latitude": 46.6739,
+      "longitude": 11.7533,
+      "altitude": 2000.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "12607ECEA1B14399AB6483960E9D30E1_REDUCED",
+    "name": "Schlernbodenhütte",
+    "coordinates": {
+      "latitude": 46.5296,
+      "longitude": 11.5932,
+      "altitude": 1726.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "EEFE4E05EB5711D6927C0050BF12988B",
+    "name": "Rifugio Bolzano",
+    "coordinates": {
+      "latitude": 46.507301330566406,
+      "longitude": 11.57480239868164,
+      "altitude": 2457.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "98F691DE0C90402EB3504CA4F2CA01F8",
+    "name": "Malga Bel Riposo",
+    "coordinates": {
+      "latitude": 46.38086700439453,
+      "longitude": 11.40329360961914,
+      "altitude": 1696.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "740E9723402393E56F369032479BA9EA",
+    "name": "Rifugio Malga Brogles",
+    "coordinates": {
+      "latitude": 46.610198974609375,
+      "longitude": 11.727299690246582,
+      "altitude": 2045.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "C62BB04C009B119771E19D3F15BB188C_REDUCED",
+    "name": "Rifugio Hochganghaus",
+    "coordinates": {
+      "latitude": 46.712943,
+      "longitude": 11.085634,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "BA1AF399A1A311D3A0B800105A6F94EC_REDUCED",
+    "name": "Rifugio Santa Croce",
+    "coordinates": {
+      "latitude": 46.7017,
+      "longitude": 11.4997,
+      "altitude": 2304.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "5A812D23171611D2BA1300A024493247",
+    "name": "Rifugio Rodella",
+    "coordinates": {
+      "latitude": 46.70800018310547,
+      "longitude": 11.5802001953125,
+      "altitude": 2284.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "53F87CA8BBCA4E89A6FAA42622854CD8_REDUCED",
+    "name": "Rifugio Corno del Renon",
+    "coordinates": {
+      "latitude": 46.615,
+      "longitude": 11.460833,
+      "altitude": 2260.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "B603C6F84B3F11D3B47F00105A6F95A1",
+    "name": "Rifugio Bella Vista",
+    "coordinates": {
+      "latitude": 46.78340148925781,
+      "longitude": 10.792099952697754,
+      "altitude": 2842.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "DAB731B3FD0147D3ABB83F35E00CA682_REDUCED",
+    "name": "Rifugio Alpe di Tires",
+    "coordinates": {
+      "latitude": 46.497175,
+      "longitude": 11.632782,
+      "altitude": 2447.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "7E0255F865A7F7333F2272A7517E24A2",
+    "name": "Rifugio Wieserhütte",
+    "coordinates": {
+      "latitude": 46.86613845825195,
+      "longitude": 11.66353702545166,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "F7AED6DB62274ED5AFA4AE9BDD92B29B",
+    "name": "Rifugio Plan",
+    "coordinates": {
+      "latitude": 46.80180358886719,
+      "longitude": 11.05499267578125,
+      "altitude": 2989.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "BB6994C8386811D4B99700E07D035C68",
+    "name": "Rifugio Fanes",
+    "coordinates": {
+      "latitude": 46.611900329589844,
+      "longitude": 12.014200210571289,
+      "altitude": 2060.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "069BE98A3AC011D4B99700E07D035C68_REDUCED",
+    "name": "Rifugio Fodara Vedla",
+    "coordinates": {
+      "latitude": 46.6356,
+      "longitude": 12.0608,
+      "altitude": 1980.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "60090D89F7524C839969EF36450E5332_REDUCED",
+    "name": "Rifugio Hochalm",
+    "coordinates": {
+      "latitude": 46.845773,
+      "longitude": 11.190165,
+      "altitude": 2174.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "BA1AF396A1A311D3A0B800105A6F94EC",
+    "name": "Rifugio Chiusa al Campaccio",
+    "coordinates": {
+      "latitude": 46.699832916259766,
+      "longitude": 11.52131462097168,
+      "altitude": 1920.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "2D3610154A4D11D3904000105A6F9319",
+    "name": "Rifugio Kreuzwiesen Alm",
+    "coordinates": {
+      "latitude": 46.75271224975586,
+      "longitude": 11.804434776306152,
+      "altitude": 1917.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "56946118315611D4ADB500E07D7BF1D1",
+    "name": "Rifugio Lavarella",
+    "coordinates": {
+      "latitude": 46.61109924316406,
+      "longitude": 12.0068998336792,
+      "altitude": 2050.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "80BD231237C211D493DE005004D80FAF_REDUCED",
+    "name": "Rifugio Monte Muro",
+    "coordinates": {
+      "latitude": 46.692313,
+      "longitude": 11.826747,
+      "altitude": 2157.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "6B05F7492D827F1221938E6191F46232_REDUCED",
+    "name": "Rifugio Nasereit",
+    "coordinates": {
+      "latitude": 46.702585,
+      "longitude": 11.038384,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "58567676-8639-4766-B8FE-4FCF7BEFC2B6",
+    "name": "Schutzhütte Panixerpass",
+    "coordinates": {
+      "latitude": 46.856008,
+      "longitude": 9.1039753,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "010B1226AC8711D2957400805A10578D",
+    "name": "Rifugio Genova",
+    "coordinates": {
+      "latitude": 46.63529968261719,
+      "longitude": 11.804400444030762,
+      "altitude": 2306.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "BD8FF07E2595FF152D6CA31CDD33B485",
+    "name": "Rifugio Monteneve",
+    "coordinates": {
+      "latitude": 46.89900207519531,
+      "longitude": 11.181619644165039,
+      "altitude": 2355.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "B4CDA32F71EF412CB0CDAC217E52C858_REDUCED",
+    "name": "Rifugio Petrarca",
+    "coordinates": {
+      "latitude": 46.757129,
+      "longitude": 11.028951,
+      "altitude": 2875.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "C583918D97C111D1924D00805A150B0B",
+    "name": "Rifugio al Sasso Nero",
+    "coordinates": {
+      "latitude": 47.01057052612305,
+      "longitude": 11.888521194458008,
+      "altitude": 2901.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "8F9F4A091347D76EB96813FD4D01083D_REDUCED",
+    "name": "Rifugio Scotoni",
+    "coordinates": {
+      "latitude": 46.553013,
+      "longitude": 11.998459,
+      "altitude": 1998.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "5DF401D5-6EF6-4CC9-95DD-AB1C477AA9B8",
+    "name": "Segnespass Mountain Lodge",
+    "coordinates": {
+      "latitude": 46.902215,
+      "longitude": 9.2246464,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "A49E1FBC564311D3B47F00105A6F95A1",
+    "name": "Rifugio Similaun",
+    "coordinates": {
+      "latitude": 46.77235794067383,
+      "longitude": 10.85456657409668,
+      "altitude": 3019.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "A7D57511766311D3A84700104BE4ECF9_REDUCED",
+    "name": "Simile Mahd Alm",
+    "coordinates": {
+      "latitude": 46.898971,
+      "longitude": 11.551287,
+      "altitude": 2013.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "802200BF-D4CE-4974-BF1C-7ADCDDB01299",
+    "name": "Skihütte Obererbs",
+    "coordinates": {
+      "latitude": 46.899743,
+      "longitude": 9.1128821,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "68B0EE2A-04E5-4027-AA7A-684A312AEE9E",
+    "name": "Spitzmeilenhütte SAC",
+    "coordinates": {
+      "latitude": 47.034245,
+      "longitude": 9.2505312,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "62E885145F87AEC8A3ED266108C977AE",
+    "name": "Starkenfeldhütte",
+    "coordinates": {
+      "latitude": 46.771583557128906,
+      "longitude": 11.788029670715332,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "BA1AF39CA1A311D3A0B800105A6F94EC",
+    "name": "Malga Stöffele",
+    "coordinates": {
+      "latitude": 46.669498443603516,
+      "longitude": 11.474900245666504,
+      "altitude": 2057.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "A258DE2DC19D11D79AD3006097BEA972_REDUCED",
+    "name": "Rifugio Tabaretta",
+    "coordinates": {
+      "latitude": 46.5301,
+      "longitude": 10.5508,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "A2312FF601E011D283CB0020AFF9F8D5",
+    "name": "Rifuigio Fondo Valle",
+    "coordinates": {
+      "latitude": 46.65128707885742,
+      "longitude": 12.353911399841309,
+      "altitude": 1548.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "C579130E63B611D4AAEE00105A4AB73F_REDUCED",
+    "name": "Rifugio Vedretta Pendente",
+    "coordinates": {
+      "latitude": 46.9555,
+      "longitude": 11.2273,
+      "altitude": 2586.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "724FDC9ECFC811D1BA6B444553540000_REDUCED",
+    "name": "Rifugio Tibet",
+    "coordinates": {
+      "latitude": 46.527421,
+      "longitude": 10.455986,
+      "altitude": 2800.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "ACEB3FE376F011D1957100805A150B0B",
+    "name": "Rifugio Lago di Pausa",
+    "coordinates": {
+      "latitude": 46.8760986328125,
+      "longitude": 11.781399726867676,
+      "altitude": 2312.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "A675036BB6556153B22AE04C2277305D",
+    "name": "Rifugio Tribulaun",
+    "coordinates": {
+      "latitude": 46.985565185546875,
+      "longitude": 11.325510025024414,
+      "altitude": 2368.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "75ABB255-07F4-4CED-B3FA-FE659F428D7C",
+    "name": "Tschinglen-Wirtschaft",
+    "coordinates": {
+      "latitude": 46.90532594093265,
+      "longitude": 9.19159233570099,
+      "altitude": 0.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "28388D6D45F3A86395538FC3338AFE95_REDUCED",
+    "name": "Rifugio Oltradige",
+    "coordinates": {
+      "latitude": 46.364104,
+      "longitude": 11.197098,
+      "altitude": 1762.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "941E9BC82A2511D7BECF0050DA8F8FF9",
+    "name": "Ütia Crëp de Munt",
+    "coordinates": {
+      "latitude": 46.53030014038086,
+      "longitude": 11.875399589538574,
+      "altitude": 1959.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "A9E90C6F779111D1957700805A150B0B",
+    "name": "Rifugio Pio XI",
+    "coordinates": {
+      "latitude": 46.8255615234375,
+      "longitude": 10.704889297485352,
+      "altitude": 2542.0
+    },
+    "managed": false
+  },
+  {
+    "odh_id": "B3CECCB3B49D49C085F86A0B846A16A9_REDUCED",
+    "name": "Rifugio Comici",
+    "coordinates": {
+      "latitude": 46.6347,
+      "longitude": 12.3497,
+      "altitude": 2320.0
+    },
+    "managed": false
+  }
+]

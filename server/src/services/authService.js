@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const Structure = require('../models/Structure');
+const ManagedStructure = require('../models/ManagedStructure');
 
 
 /**
@@ -43,19 +44,14 @@ const register = async({name, surname, username, date_of_birth, password}) =>{
  * @returns {Promise<Structure>} The newly created structure document
  * @throws {Error} If a structure with the same name and coordinates already exists
  */
-const register_structure = async({name, name_owner, surname_owner, coordinates, telephone, password}) => {
-    const existing = await Structure.exists({
-        name, 
-        'coordinates.latitude': coordinates.latitude,
-        'coordinates.longitude': coordinates.longitude,
-        'coordinates.altitude': coordinates.altitude
-    });
+const register_structure = async({name, name_owner, surname_owner, telephone, password, Structure_id}) => {
 
-    if (existing) throw new Error ('the structure already exists');
-
-    const structure = new Structure ({name, name_owner, surname_owner, coordinates, telephone, password});
+    const structure = Structure.findById(Structure_id);
+    structure.managed = true;
     await structure.save();
-    return structure;
+    const managed_structure = new ManagedStructure ({name, name_owner, surname_owner, telephone, password, structure});
+    await managed_structure.save();
+    return managed_structure;
 
 };
 
