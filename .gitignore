@@ -311,3 +311,6 @@ dist-ssr
 pnpm-debug.log*
 lerna-debug.log*
 .venv
+server/scripts/accommodations_raw.json
+server/scripts/accommodations_raw_cai.json
+server/scripts/structures_cai.json
