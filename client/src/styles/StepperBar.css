@@ -1,0 +1,49 @@
+.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.stepper-step {
+    display: flex;
+    align-items: center;
+}
+
+.stepper-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--hint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.stepper-step.completed .stepper-circle {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.stepper-line {
+    width: 60px;
+    height: 2px;
+    background: var(--input-border);
+    transition: background 0.3s;
+}
+
+.stepper-line.completed {
+    background: var(--primary);
+}
+
+.stepper-label {
+    display: none;
+}
