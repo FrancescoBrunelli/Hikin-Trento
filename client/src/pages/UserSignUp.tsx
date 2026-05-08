@@ -1,28 +1,28 @@
-//src/pages/SignUp.jsx
+//src/pages/UserSignUp.jsx
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { FaEye, FaEyeSlash, FaSun, FaMoon} from 'react-icons/fa';
+import { useState } from "react";
+import { FaEye, FaEyeSlash} from 'react-icons/fa';
 import Button from "../components/Button.tsx";
-import "../styles/SignUp.css";
+import "../styles/Auth.css";
+import Layout from "../components/Layout.tsx";
 
-function SignUp() {
+function UserSignUp() {
     const [showPassword, setShowPassword] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
     const hasMinLength = (value: string) => value.length >= 8;
     const hasSpecialChar = (value: string) => /[!@#$%^&*(),.?":{}|<>]/.test(value);
     const isValid = (value: string) => hasMinLength(value) && hasSpecialChar(value);
     const [password, setPassword] = useState("");
-    useEffect(()=> {
-        document.documentElement.classList.toggle("dark-mode", darkMode);
-    }, [darkMode])
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        {/* To implement... */}
+    }
+
     return (
-        <div className="page">
-            <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
-                {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-            </button>
+        <Layout>
             <div className="signup-card">
                 <h1>Sign Up</h1>
-                <form action="/api/signup" method="POST" className="signup-form">
+                <form action="/api/signup" method="POST" className="signup-form" onSubmit={handleSubmit} >
                     {/*
                     <label htmlFor="email-input">Email</label>
                     <input
@@ -94,13 +94,14 @@ function SignUp() {
                     )}
                     <Button type="submit" disabled={!(isValid(password))}>Sign Up</Button>
                     <p>Already have an account? <Link to="/signin">Sign In</Link></p>
+                    <p>Are you a structure owner? <Link to="/structuresignup">Structure Sign Up</Link></p>
                     {/*
                     <p>By signing up, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
                     */}
                 </form>
             </div>
-        </div>
+        </Layout>
     )
 }
 
-export default SignUp;
+export default UserSignUp;
