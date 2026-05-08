@@ -1,0 +1,43 @@
+const Structure = require("../models/Structure");
+
+const basic_info = async ({
+  coordinates,
+  radius,
+  show_managed,
+  show_unmanaged,
+}) => {
+  console.log("finding");
+  const found = await Structure.find({});
+
+  const result = found.filter(function (f) {
+    let in_range = true;
+    if (radius != 0) {
+      const deg = radius / 111195;
+      const dist =
+        (f.coordinates.longitude - coordinates.longitude) ** 2 +
+        (f.coordinates.latitude - coordinates.latitude) ** 2;
+      console.log("deg: ", deg);
+      console.log("dist: ", dist);
+      in_range = dist < deg ** 2;
+    }
+
+    if (in_range) {
+      if (show_managed && show_unmanaged) {
+        return true;
+      }
+
+      if (show_managed == false && show_unmanaged == true) {
+        return f.managed == false;
+      }
+
+      if (show_managed == true && show_unmanaged == false) {
+        return f.managed == true;
+      }
+    }
+    return false;
+  });
+
+  return result;
+};
+
+module.exports = { basic_info: basic_info };
