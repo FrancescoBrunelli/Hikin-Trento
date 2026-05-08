@@ -18,6 +18,7 @@ function StructureUserSignUp() {
     const [value, setValue] = useState<string | undefined>(undefined);
     const [coordinates, setCoordinates] = useState<{ lat: number | string, lng: number | string, alt: number | string }>({ lat: "", lng: "", alt: "" });
     const [currentStep, setCurrentStep] = useState(0);
+    const steps = ["Structure Info", "Confirm Location", "Contact Info", "Password"];
     const getLocation = () => {
         navigator.geolocation.getCurrentPosition((position) => {
             setCoordinates({
@@ -37,6 +38,7 @@ function StructureUserSignUp() {
         <Layout>
             <div className="signup-card">
                 <h1>Structure Sign Up</h1>
+                <h2>{steps[currentStep]}</h2>
                 <StepperBar steps={["Structure Info", "Confirm Location", "Contact Info", "Password"]} currentStep={currentStep} />
                 <form action="/api/signup" method="POST" className="signup-form" onSubmit={handleSubmit}>
                     {currentStep === 0 && (

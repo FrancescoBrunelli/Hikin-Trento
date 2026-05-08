@@ -54,6 +54,16 @@
     margin: 0 0 32px;
 }
 
+.signup-card h2 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: -20px 0 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 /* Form */
 .signup-form {
     display: flex;
