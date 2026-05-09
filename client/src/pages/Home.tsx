@@ -2,6 +2,7 @@
 
 import Button from "../components/Button.tsx";
 import Layout from "../components/Layout.tsx";
+import MapView from "../components/Map/MapView.tsx";
 
 function Home() {
     return (
@@ -12,7 +13,9 @@ function Home() {
           <Button to="/signin" onClick={() => console.log("Clicked SingIn")}>Sign In</Button>
         </>
       }>
-        { }  
+        <div style={{ height: '600px', width:'50%'  }}>
+                <MapView />
+        </div>  
       </Layout>
     );
 }
