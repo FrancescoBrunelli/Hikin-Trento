@@ -30,21 +30,20 @@ const register = async ({
 };
 
 /**
- * Registers a new structure in the database.
- * Checks for duplicates based on name and coordinates before saving.
+ * Registers a structure as managed by creating a ManagedStructure account
+ * and linking it to an existing structure in the database.
+ * Updates the structure's managed status to true.
  *
- * @param {Object} structureData - The structure's registration data
- * @param {string} structureData.name - The name of the place
- * @param {string} structureData.name_owner - The first name of the owner
- * @param {string} structureData.surname_owner - The last name of the owner
- * @param {Object} structureData.coordinates - The GPS coordinates of the structure
- * @param {number} structureData.coordinates.latitude - The latitude of the structure
- * @param {number} structureData.coordinates.longitude - The longitude of the structure
- * @param {number} structureData.coordinates.altitude - The altitude of the structure
- * @param {string} structureData.telephone - The contact phone number
- * @param {string} structureData.password - The password for the structure's account
- * @returns {Promise<Structure>} The newly created structure document
- * @throws {Error} If a structure with the same name and coordinates already exists
+ * @param {Object} params - The registration data
+ * @param {string} params.name - The name of the structure
+ * @param {string} params.name_owner - The first name of the owner
+ * @param {string} params.surname_owner - The last name of the owner
+ * @param {string} params.telephone - The contact phone number of the owner
+ * @param {string} params.password - The password for the managed structure account (will be hashed automatically)
+ * @param {string} params.Structure_id - The MongoDB ObjectId of the existing structure to link
+ * @returns {Promise<ManagedStructure>} The newly created managed structure document
+ * @throws {Error} If no structure is found with the given Structure_id
+ * @throws {Error} If the structure is already managed
  */
 const register_structure = async ({
   name,
@@ -54,7 +53,9 @@ const register_structure = async ({
   password,
   Structure_id,
 }) => {
-  const structure = Structure.findById(Structure_id);
+  const structure = await Structure.findById(Structure_id);
+  if (!structure) throw new Error('Structure not found');           
+  if (structure.managed) throw new Error('Structure already managed');
   structure.managed = true;
   await structure.save();
   const managed_structure = new ManagedStructure({

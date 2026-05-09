@@ -1,5 +1,18 @@
 const Structure = require("../models/Structure");
 
+/**
+ * Retrieves structures filtered by location radius and management status.
+ * Uses Euclidean distance approximation to filter structures within a given radius.
+ *
+ * @param {Object} params - The filter parameters
+ * @param {Object} params.coordinates - The center point for the radius search
+ * @param {number} params.coordinates.latitude - The latitude of the center point
+ * @param {number} params.coordinates.longitude - The longitude of the center point
+ * @param {number} params.radius - The search radius in meters (0 means no radius filter)
+ * @param {boolean} params.show_managed - Whether to include managed structures
+ * @param {boolean} params.show_unmanaged - Whether to include unmanaged structures
+ * @returns {Promise<Structure[]>} A list of structures matching the filters
+ */
 const basic_info = async ({
   coordinates,
   radius,
