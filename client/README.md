@@ -68,11 +68,11 @@ Contains small, **reusable UI pieces** that can be used across multiple pages.
 Each component should do one thing and do it well. Components here are not tied to any specific page.
 
 Examples:
-- `Button.jsx`
-- `Navbar.jsx`
-- `Card.jsx`
-- `Modal.jsx`
-- `InputField.jsx`
+- `Button.tsx`
+- `Navbar.tsx`
+- `Card.tsx`
+- `Modal.tsx`
+- `InputField.tsx`
 
 > 💡 If a UI element appears in more than one page, it belongs here.
 
