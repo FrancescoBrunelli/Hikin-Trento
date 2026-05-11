@@ -74,7 +74,7 @@ def seed():
         print(f"  Got {len(elements)} trails, total unique: {len(all_trails)}")
         time.sleep(2)
 
-    with open("trails_raw.json", "w", encoding="utf-8") as f:
+    with open("trails.json", "w", encoding="utf-8") as f:
         json.dump(all_trails, f, ensure_ascii=False, indent=2)
 
     print(f"\nDone! Fetched {len(all_trails)} unique trails")
@@ -82,7 +82,7 @@ def seed():
 if __name__ == "__main__":
     #seed()
 
-    with open("trails_raw.json") as f:
+    with open("trails.json") as f:
         trails = json.load(f)
 
     sat_trails = [t for t in trails if "Società degli Alpinisti Tridentini" in t.get("tags", {}).get("operator", "")]
