@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { searchStructures } from '../services/structureService';
+import { searchStructures } from '../services/structureService.tsx';
 
 export function useSearch() {
   const [query, setQuery] = useState('');

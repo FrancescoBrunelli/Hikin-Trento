@@ -6,12 +6,31 @@ import MapView from "../components/Map/MapView.tsx";
 import SearchPanel from '../components/SearchPanel';
 import DetailPanel from '../components/DetailPanel';
 import { useSearch } from '../hooks/useSearch';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/HomePage.css';
+import { getBasicInfo } from '../services/structureService';
+
+
 
 function Home() {
   const { query, setQuery, results, handleSearch } = useSearch();
-  const [selected, setSelected] = useState<any>(null);
+  const [selected, setSelected] = useState(null);
+  const [structures, setStructures] = useState([]);
+
+  useEffect(() => {
+    getBasicInfo({
+      radius: 0,           // 0 = all structures
+      show_managed: true,
+      show_unmanaged: true
+    })
+      .then(data => {
+        console.log('structures:', data);
+        setStructures(data)
+      })
+      
+      .catch(err => console.error(err));
+  }, []);
+  
     return (
       <Layout navChildren={
         <>
@@ -30,7 +49,7 @@ function Home() {
             selected={selected}
           />
           <div className="home-map">
-            <MapView />
+            <MapView structures={structures} onSelect={setSelected}/>
           </div>
           <DetailPanel
             selected={selected}

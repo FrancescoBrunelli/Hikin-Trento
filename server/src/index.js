@@ -40,7 +40,6 @@ app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/structures', require('./routes/structuresRoutes'));
 
 
-
 module.exports = connectoToDatabase;
 
 
