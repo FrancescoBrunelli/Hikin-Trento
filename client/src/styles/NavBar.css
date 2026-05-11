@@ -9,7 +9,7 @@
   transition: background 0.3s;
   position: sticky;  /* ← add this */
   top: 0;            /* ← stick to the top */
-  z-index: 100;      /* ← stay above other content */
+  z-index: 1000;      /* ← stay above other content */
 }
 .navbar .logo img {
   height: 64px;
