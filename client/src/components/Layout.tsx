@@ -1,15 +1,16 @@
-import ThemeToggle from "./ThemeToggle.tsx";
 import NavBar from "./NavBar.tsx";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children, navChildren }: {
+  children?: React.ReactNode,
+  navChildren?: React.ReactNode
+}) {
 
-    return (
-        <>
-            <NavBar />
-            <div className="page">
-                <ThemeToggle />
-                {children}
-            </div>
-        </>
-    )
+  return (
+    <>
+      <NavBar>{navChildren}</NavBar>
+      <div className="page">
+        {children}
+      </div>
+    </>
+  );
 }
