@@ -4,10 +4,14 @@ const express = require('express');
 const mongoose = require ('mongoose');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger');
-
+const { authMiddleware } = require('./middleware/authMiddleware');
 const app = express();
+const cors = require('cors');
 
 app.use(express.json()); // Allows the server to accept data from frontend
+app.use(cors({
+    origin: 'http://localhost:5173' // or whatever port your frontend runs on
+}));
 
 
 
@@ -38,6 +42,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/structures', require('./routes/structuresRoutes'));
+
 
 
 
@@ -90,11 +95,11 @@ app.post('/api/trails', async (req, res) => {
     res.status(500).json({ error: "Failed to add trail" });
   }
 });
-
+*/
 const loginRoutes = require('./routes/loginRoutes');
 app.use('/api/auth', loginRoutes);
 //runServer();
-
+/*
 
 
 //const mongoose = require("mongoose")

@@ -7,10 +7,40 @@ import "../styles/Auth.css";
 import Layout from "../components/Layout.tsx";
 
 function SignIn() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState(false);
     const navigate = useNavigate();
-    const handleSubmit = async (e: React.FormEvent) => {
+
+    if (localStorage.getItem('token')) {
+        window.location.href = '/';
+        //navigate('/');
+        //return null;
+    }
+
+    const handleLogin = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('http://localhost:5000/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                setError(data.error);
+                return;
+            }
+            localStorage.setItem('token', data.token);
+            //navigate('/');
+            window.location.href = '/';
+        } catch (err) {
+            setError(true);
+        }
+    };
+
+    /*const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const response = await fetch("/api/signin", {
             method: "POST",
@@ -23,13 +53,13 @@ function SignIn() {
             setError(false)
             navigate("/home")
         }
-    }
+    }*/
 
     return (
         <Layout>
             <div className="signin-card">
                 <h1>Sign In</h1>
-                <form action="/api/signin" method="POST" className="signin-form" onSubmit={handleSubmit}>
+                <form /*action="/api/signin" method="POST"*/ className="signin-form" onSubmit={handleLogin}>
                     {/*
                     <label htmlFor="email-input">Email</label>
                     <input
@@ -46,6 +76,8 @@ function SignIn() {
                             id="username-input"
                             type="text"
                             name="userUsername"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                         />
                     </div>
                     <div className="input-group">
@@ -55,6 +87,8 @@ function SignIn() {
                                 id="password-input"
                                 type={showPassword ? "text" : "password"}
                                 name="userPassword"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                             <Button onClick={() => setShowPassword(!showPassword)} type="button">
                                 {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
