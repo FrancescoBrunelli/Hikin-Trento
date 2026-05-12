@@ -60,7 +60,7 @@ def fetch_chunk_with_retry(bbox, retries=3):
             return left + right
     return []
 
-def seed():
+def fetchTrails():
     print("Fetching trails from OpenStreetMap...")
     all_trails = []
     seen_ids = set()
@@ -82,21 +82,54 @@ def seed():
 
     print(f"\nDone! Fetched {len(all_trails)} unique trails")
 
-if __name__ == "__main__":
-    seed()
 
-    with open("trails.json") as f:
+def cleanData():
+    data = []
+    with open("trails.json", "r") as f:
         trails = json.load(f)
 
-    sat_trails = [t for t in trails if "Società degli Alpinisti Tridentini" in t.get("tags", {}).get("operator", "")]
+    for trail in trails:
+        tags = trail.get("tags", {})
 
-    has_name = sum(1 for t in sat_trails if "name" in t.get("tags", {}))
-    has_cai = sum(1 for t in sat_trails if "cai_scale" in t.get("tags", {}))
-    has_distance = sum(1 for t in sat_trails if "distance" in t.get("tags", {}))
-    has_from_to = sum(1 for t in sat_trails if "from" in t.get("tags", {}) and "to" in t.get("tags", {}))
+        from_place = tags.get("from")
+        to_place = tags.get("to")
+        name = tags.get("name") or (f"{from_place} → {to_place}" if from_place and to_place else None)
 
-    print(f"SAT trails: {len(sat_trails)}")
-    print(f"Has name: {has_name}/{len(sat_trails)}")
-    print(f"Has cai_scale: {has_cai}/{len(sat_trails)}")
-    print(f"Has distance: {has_distance}/{len(sat_trails)}")
-    print(f"Has from/to: {has_from_to}/{len(sat_trails)}")
+        tmp = {
+            "osm_id": trail.get("id"),
+            "name": name,
+            "ref": tags.get("ref"),
+            "reg_ref": tags.get("reg_ref"),
+            "difficulty": tags.get("cai_scale"),
+            "distance_km": float(tags["distance"]) if tags.get("distance") else None,
+            "ascent_m": round(float(tags["ascent"])) if tags.get("ascent") else None,
+            "descent_m": round(float(tags["descent"])) if tags.get("descent") else None,
+            "duration_forward": tags.get("duration:forward"),
+            "duration_backward": tags.get("duration:backward"),
+            "from": from_place,
+            "to": to_place,
+            "roundtrip": tags.get("roundtrip") == "yes",
+            "operator": tags.get("operator"),
+            "website": tags.get("website"),
+            "bounds": trail.get("bounds"),
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [point["lon"], point["lat"]]
+                    for member in trail.get("members", [])
+                    if member.get("type") == "way"
+                    for point in member.get("geometry", [])
+                ]
+            }
+        }
+
+        data.append(tmp)
+
+    with open("trails_mapped.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    return data
+
+if __name__ == "__main__":
+    #fetchTrails()
+    cleanData()
