@@ -42,6 +42,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/structures', require('./routes/structuresRoutes'));
+app.use('/api/user', require('./routes/usersRoutes'));
 
 
 module.exports = connectoToDatabase;
