@@ -3,6 +3,8 @@ import requests
 import time
 
 BASE_URL = "https://overpass.private.coffee/api/interpreter"
+#BASE_URL = "https://overpass.openstreetmap.ru/api/interpreter"
+#BASE_URL = "https://overpass-api.de/api/interpreter"
 
 BBOXES = [
     (45.67, 10.47, 46.0,  11.2),
@@ -26,8 +28,9 @@ def fetch_chunk(bbox):
     query = f"""
     [out:json][timeout:90];
     relation["route"="hiking"]({south},{west},{north},{east});
-    out tags;
+    out geom;
     """
+    #out tags;
     response = requests.get(
         BASE_URL,
         params={"data": query},
@@ -67,7 +70,7 @@ def seed():
         elements = fetch_chunk_with_retry(bbox)
 
         for element in elements:
-            if element["id"] not in seen_ids:
+            if element["id"] not in seen_ids and "Società degli Alpinisti Tridentini" in element.get("tags", {}).get("operator", ""):
                 seen_ids.add(element["id"])
                 all_trails.append(element)
 
@@ -80,7 +83,7 @@ def seed():
     print(f"\nDone! Fetched {len(all_trails)} unique trails")
 
 if __name__ == "__main__":
-    #seed()
+    seed()
 
     with open("trails.json") as f:
         trails = json.load(f)
