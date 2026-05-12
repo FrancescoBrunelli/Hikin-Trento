@@ -1,5 +1,5 @@
 //src/pages/UserSignUp.jsx
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaEye, FaEyeSlash} from 'react-icons/fa';
 import Button from "../components/Button.tsx";
@@ -12,10 +12,36 @@ function UserSignUp() {
     const hasSpecialChar = (value: string) => /[!@#$%^&*(),.?":{}|<>]/.test(value);
     const isValid = (value: string) => hasMinLength(value) && hasSpecialChar(value);
     const [password, setPassword] = useState("");
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [username, setUsername] = useState('');
+    const [dateOfBirth, setDateOfBirth] = useState('');
+    const [registerError, setRegisterError] = useState('');
+    const navigate = useNavigate();
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        {/* To implement... */}
+        try {
+            const response = await fetch('http://localhost:5000/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name,
+                    surname,
+                    username,
+                    password,
+                    date_of_birth: dateOfBirth
+                })
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                setRegisterError(data.error); 
+                return;
+            }
+                //navigate('/');
+                window.location.href = '/';
+            } catch (err) {
+            console.error('Registration failed');
+        }
     }
 
     return (
@@ -39,6 +65,8 @@ function UserSignUp() {
                             id="name-input"
                             type="text"
                             name="userName"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                         />
                     </div>
                     <div className="input-group">
@@ -48,6 +76,8 @@ function UserSignUp() {
                             id="surname-input"
                             type="text"
                             name="userSurname"
+                            value={surname}
+                            onChange={(e) => setSurname(e.target.value)}
                         />
                     </div>
                     <div className="input-group">
@@ -57,6 +87,8 @@ function UserSignUp() {
                             id="username-input"
                             type="text"
                             name="userUsername"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                         />
                     </div>
                     <div className="input-group">
@@ -66,6 +98,8 @@ function UserSignUp() {
                             id="date-of-birth-input"
                             type="date"
                             name="userDOB"
+                            value={dateOfBirth}
+                            onChange={(e) => setDateOfBirth(e.target.value)}
                         />
                     </div>
                     <div className="input-group">
@@ -98,6 +132,7 @@ function UserSignUp() {
                     {/*
                     <p>By signing up, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
                     */}
+                    {registerError && <p style={{ color: 'red' }}>{registerError}</p>}
                 </form>
             </div>
         </Layout>
