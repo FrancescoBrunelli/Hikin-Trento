@@ -6,84 +6,74 @@ const structuresController = require("../controllers/structuresController");
  * @swagger
  * /api/structures/basicInfo:
  *   get:
- *     summary: Get basic info of all structures with optional filters
- *     description: >
- *       Returns a list of structures filtered by geographic radius and management status.
- *       If radius is 0, no location filter is applied.
- *       At least one of show_managed or show_unmanaged must be true to get results.
- *     tags: [Structures]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             required:
- *               - coordinates
- *               - radius
- *               - show_managed
- *               - show_unmanaged
- *             properties:
- *               coordinates:
- *                 type: object
- *                 required:
- *                   - latitude
- *                   - longitude
- *                 properties:
- *                   latitude:
- *                     type: number
- *                     example: 46.0748
- *                   longitude:
- *                     type: number
- *                     example: 11.1217
- *               radius:
- *                 type: number
- *                 description: Search radius in meters. Use 0 for no radius filter.
- *                 example: 5000
- *               show_managed:
- *                 type: boolean
- *                 description: Whether to include managed structures
- *                 example: true
- *               show_unmanaged:
- *                 type: boolean
- *                 description: Whether to include unmanaged structures
- *                 example: true
+ *     summary: Get nearby structures basic information
+ *     tags:
+ *       - Structures
+ *     parameters:
+ *       - in: query
+ *         name: latitude
+ *         required: true
+ *         schema:
+ *           type: number
+ *           format: float
+ *           example: 46.0703
+ *         description: User latitude
+ *
+ *       - in: query
+ *         name: longitude
+ *         required: true
+ *         schema:
+ *           type: number
+ *           format: float
+ *           example: 11.1217
+ *         description: User longitude
+ *
+ *       - in: query
+ *         name: radius
+ *         required: true
+ *         schema:
+ *           type: number
+ *           format: float
+ *           example: 10
+ *         description: Search radius in meters
+ *
+ *       - in: query
+ *         name: show_managed
+ *         required: true
+ *         schema:
+ *           type: boolean
+ *           example: true
+ *         description: Include managed structures
+ *
+ *       - in: query
+ *         name: show_unmanaged
+ *         required: true
+ *         schema:
+ *           type: boolean
+ *           example: true
+ *         description: Include unmanaged structures
+ *
  *     responses:
- *       201:
- *         description: List of structures matching the filters
+ *       200:
+ *         description: Structures retrieved successfully
  *         content:
  *           application/json:
  *             schema:
  *               type: object
  *               properties:
- *                 message:
- *                   type: string
- *                   example: get all structures
  *                 structures:
  *                   type: array
  *                   items:
  *                     type: object
- *                     properties:
- *                       name:
- *                         type: string
- *                         example: Rifugio Dolomiti
- *                       coordinates:
- *                         type: object
- *                         properties:
- *                           latitude:
- *                             type: number
- *                             example: 46.4102
- *                           longitude:
- *                             type: number
- *                             example: 11.3428
- *                           altitude:
- *                             type: number
- *                             example: 2150
- *                       managed:
- *                         type: boolean
- *                         example: false
+ *                   example:
+ *                     - id: 1
+ *                       name: Rifugio Alpino
+ *                       latitude: 46.0703
+ *                       longitude: 11.1217
+ *                       managed: true
+ *
  *       400:
- *         description: Error retrieving structures
+ *         description: Bad request
  *         content:
  *           application/json:
  *             schema:
@@ -91,8 +81,7 @@ const structuresController = require("../controllers/structuresController");
  *               properties:
  *                 error:
  *                   type: string
- *                   example: "Something went wrong"
+ *                   example: Invalid coordinates
  */
 router.get("/basicInfo", structuresController.basic_info);
-
 module.exports = router;

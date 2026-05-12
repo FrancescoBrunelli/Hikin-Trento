@@ -2,21 +2,10 @@ const usersService = require("../services/usersService");
 
 const user_basic_info = async (req, res) => {
   try {
-    const info = await usersService.user_basic_info(req.body);
-    /*
-    if (info.err.name == false) {
-      res.status(401).json({
-        message: "Invalid token",
-      });
-      return;
-    }
-    if (info.expired == true) {
-      res.status(401).json({
-        message: "token expired",
-      });
-      return;
-    }
-*/
+    console.log(req.headers);
+    const info = await usersService.user_basic_info(
+      req.headers.authorization.split(" ")[1],
+    );
 
     if (info.existing_id == false) {
       res.status(410).json({

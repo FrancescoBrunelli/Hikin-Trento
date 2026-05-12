@@ -29,8 +29,6 @@ const basic_info = async ({
       const dist =
         (f.coordinates.longitude - coordinates.longitude) ** 2 +
         (f.coordinates.latitude - coordinates.latitude) ** 2;
-      console.log("deg: ", deg);
-      console.log("dist: ", dist);
       in_range = dist < deg ** 2;
     }
 

@@ -4,6 +4,31 @@ const User = require("../models/User");
 
 console.log("bcrypt loaded:", bcrypt);
 
+
+/**
+ * Authenticates a user using username and password credentials.
+ *
+ * This function:
+ * 1. Checks whether the user exists in the database.
+ * 2. Verifies the provided password using bcrypt.
+ * 3. Generates a JWT authentication token valid for 24 hours.
+ * 4. Returns the authenticated user's basic information.
+ *
+ * @async
+ * @function login
+ * @param {Object} req - Express request object.
+ * @param {Object} req.body - Request body containing login credentials.
+ * @param {string} req.body.username - User username.
+ * @param {string} req.body.password - User password.
+ * @param {Object} res - Express response object.
+ *
+ * @returns {Promise<void>} Sends a JSON response containing:
+ * - success message
+ * - JWT token
+ * - authenticated user information
+ *
+ * @throws {Error} Returns HTTP 500 if an unexpected server error occurs.
+ */
 const login = async (req, res) => {
   try {
     const { username, password } = req.body;
