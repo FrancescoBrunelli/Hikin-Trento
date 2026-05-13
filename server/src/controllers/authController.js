@@ -22,21 +22,21 @@ const register = async(req, res) => {
 
 const register_structure = async(req, res) => {
     try{
-        const structure = await authService.register_structure(req.body);
+        const managed_structure = await authService.register_structure(req.body);
 
         res.status(201).json({
             message: 'Structure registered successfully',
             structure: {
-                id: structure._id,
-                name: structure.name,
-                name_owner: structure.name_owner,
-                surname_owner: structure.surname_owner,
+                id: managed_structure._id,
+                name: managed_structure.structure.name,
+                name_owner: managed_structure.name_owner,
+                surname_owner: managed_structure.surname_owner,
                 coordinates: {
-                    latitude: structure.coordinates.latitude,
-                    longitude: structure.coordinates.longitude,
-                    altitude: structure.coordinates.altitude 
+                    latitude: managed_structure.structure.coordinates.latitude,
+                    longitude: managed_structure.structure.coordinates.longitude,
+                    altitude: managed_structure.structure.coordinates.altitude 
                 },
-                telephone: structure.telephone
+                telephone: managed_structure.telephone
             }
         });
     }catch(err){

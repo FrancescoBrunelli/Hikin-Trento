@@ -8,7 +8,7 @@ import "../styles/Auth.css";
 import "react-phone-number-input/style.css";
 import Layout from "../components/Layout.tsx";
 import StepperBar from "../components/StepperBar.tsx";
-import { getBasicInfo } from "../services/structureService";
+import { getBasicInfo, signUpStructure } from "../services/structureService";
 
 function StructureUserSignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -69,20 +69,31 @@ function StructureUserSignUp() {
     }
   }, [currentStep, coordinates]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // later: send selectedStructure._id to your register_structure API
-      const payload = {
-        structureName: selectedStructure.name,
-        ownerName,
-        ownerSurname,
-        coordinates,
-        selectedStructureId: selectedStructure._id,
-        phone: value,
-        password,
-      };
-    
-      console.log(payload);
+
+    const payload = {
+      name: selectedStructure.name,
+      name_owner: ownerName,
+      surname_owner: ownerSurname,
+
+      Structure_id: selectedStructure._id,
+
+      telephone: value,
+
+      password,
+    };
+    console.log(payload);
+    try {
+      const data = await signUpStructure(payload);
+
+      console.log("signup success:", data);
+
+      // optional:
+      window.location.href = '/';
+    } catch (err) {
+      console.error("signup failed:", err.message);
+    }
   };
 
   return (
