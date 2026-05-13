@@ -3,7 +3,7 @@ const structuresService = require("../services/structuresService");
 const basic_info = async (req, res) => {
   try {
     const structures = await structuresService.basic_info(req.body);
-    res.status(201).json({
+    res.status(200).json({
       message: "get all structures ",
       structures: structures,
     });
