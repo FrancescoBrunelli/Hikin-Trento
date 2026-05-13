@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-          url: 'http://localhost:5000',   // port 5000 creates some problems with macOS's Control Center
+          url: 'http://localhost:3000',   // port 5000 creates some problems with macOS's Control Center
         description: "Development server",
       },
     ],
