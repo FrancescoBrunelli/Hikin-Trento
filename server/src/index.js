@@ -23,7 +23,7 @@ async function connectoToDatabase() {
   console.log("MongoDB connection established")
 
   // START THE SERVER
-  const PORT = 3000;    // port 5000 creates some problems with macOS's Control Center
+  const PORT = 5000;    // port 5000 creates some problems with macOS's Control Center
   app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
     console.log(`View swagger interface at http://localhost:${PORT}/api-docs`);
