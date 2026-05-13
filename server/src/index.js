@@ -4,14 +4,10 @@ const express = require('express');
 const mongoose = require ('mongoose');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger');
-const { authMiddleware } = require('./middleware/authMiddleware');
+
 const app = express();
-const cors = require('cors');
 
 app.use(express.json()); // Allows the server to accept data from frontend
-app.use(cors({
-    origin: 'http://localhost:5173' // or whatever port your frontend runs on
-}));
 
 
 
@@ -27,7 +23,7 @@ async function connectoToDatabase() {
   console.log("MongoDB connection established")
 
   // START THE SERVER
-  const PORT = 5000;
+  const PORT = 3000;    // port 5000 creates some problems with macOS's Control Center
   app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
     console.log(`View swagger interface at http://localhost:${PORT}/api-docs`);
@@ -43,6 +39,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/structures', require('./routes/structuresRoutes'));
 app.use('/api/user', require('./routes/usersRoutes'));
+app.use('/api/trails', require('./routes/trailsRoutes'));
+
 
 
 module.exports = connectoToDatabase;
@@ -94,35 +92,4 @@ app.post('/api/trails', async (req, res) => {
     res.status(500).json({ error: "Failed to add trail" });
   }
 });
-*/
-const loginRoutes = require('./routes/loginRoutes');
-app.use('/api/auth', loginRoutes);
-//runServer();
-/*
-
-
-//const mongoose = require("mongoose")
-
-async function connectoToDatabase() {
-  const uri = process.env.MONGODB_URI;
-
-  if(!uri) {
-    throw new Error("MongoDB URI not defined")
-  }
-
-  await mongoose.connect(uri);
-  console.log("MongoDB connection established")
-
-  // START THE SERVER
-  const PORT = 5000;
-  app.listen(PORT, () => {
-    console.log(`Server listening on http://localhost:${PORT}`);
-  });
-
-  
-}
-
-connectoToDatabase();
-
-module.exports = connectoToDatabase;
 */
