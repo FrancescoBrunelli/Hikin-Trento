@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const structureSchema = require("./schemas/structureSchema");
+const bcrypt = require("bcrypt");
 
 const managedStructureSchema = new mongoose.Schema(
   {
@@ -11,7 +12,7 @@ const managedStructureSchema = new mongoose.Schema(
       match: [/^\+?[\d\s\-]{7,15}$/, "Invalid phone number format"],
     },
     password: { type: String, required: true },
-    structureSchema: { type: structureSchema, required: true },
+    structure: { type: structureSchema, required: true },
   },
   { timestamps: true },
 );
