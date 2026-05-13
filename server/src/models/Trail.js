@@ -1,5 +1,4 @@
 const mongoose = require("mongoose")
-const coordinatesSchema = require("./coordinatesSchema.js");
 
 const trailSchema = new mongoose.Schema(
     {
