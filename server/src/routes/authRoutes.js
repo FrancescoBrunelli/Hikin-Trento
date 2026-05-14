@@ -129,5 +129,6 @@ router.post("/register", authController.register);
  *                   example: "Structure already managed"
  */
 router.post("/register_structure", authController.register_structure);
-
+const { login } = require('../controllers/loginController');
+router.post('/login', login);
 module.exports = router;

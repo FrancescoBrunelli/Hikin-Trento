@@ -1,6 +1,6 @@
 export const userBasicInfo = async (token) => {
   const response = await fetch(
-    "http://localhost:5000/api/user/basicInfo",
+    "http://localhost:3000/api/user/basicInfo",
     {
       method: "GET",
       headers: {

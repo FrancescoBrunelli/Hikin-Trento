@@ -25,7 +25,7 @@ export const searchStructures = async (query: string) => {
 
 export const signUpStructure = async (payload) => {
   const response = await fetch(
-    "http://localhost:5000/api/auth/register_structure",
+    "http://localhost:3000/api/auth/register_structure",
     {
       method: "POST",
 
