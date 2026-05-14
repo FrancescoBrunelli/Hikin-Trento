@@ -7,6 +7,10 @@ const swaggerSpec = require('./config/swagger');
 const cors = require('cors');
 const app = express();
 
+app.use(express.json());
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
 
 async function connectoToDatabase() {
   const uri = process.env.MONGODB_URI;
