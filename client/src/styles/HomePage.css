@@ -135,6 +135,8 @@
     justify-content: space-between;
     padding: 6px 0;
     border-bottom: 1px solid var(--input-border); /* ← variable */
+    flex-wrap: wrap;
+    gap: 4px;
 }
 
 .detail-label {
@@ -146,6 +148,9 @@
     font-size: 13px;
     font-weight: 600;
     color: var(--text); /* ← variable */
+    text-align: right;
+    word-break: break-word;
+    max-width: 60%;
 }
 
 .close-btn {
