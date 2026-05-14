@@ -54,9 +54,10 @@ const register_structure = async ({
   Structure_id,
 }) => {
   const structure = await Structure.findById(Structure_id);
-  if (!structure) throw new Error('Structure not found');           
-  if (structure.managed) throw new Error('Structure already managed');
+  if (structure == null) throw new Error("Structure not found");
+  if (structure.managed) throw new Error("Structure already managed");
   structure.managed = true;
+  console.log(structure);
   await structure.save();
   const managed_structure = new ManagedStructure({
     name,
@@ -66,6 +67,8 @@ const register_structure = async ({
     password,
     structure,
   });
+  console.log(managed_structure);
+
   await managed_structure.save();
   return managed_structure;
 };

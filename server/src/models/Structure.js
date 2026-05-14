@@ -3,7 +3,7 @@ const coordinatesSchema = require("./schemas/coordinatesSchema");
 
 const structureSchema = new mongoose.Schema(
   {
-    oth_id: { type: String, required: true },
+    odh_id: { type: String, required: true },
     name: { type: String, required: true },
     coordinates: { type: coordinatesSchema, required: true },
     managed: { type: Boolean, required: true },
@@ -11,6 +11,4 @@ const structureSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-
 module.exports = mongoose.model("Structure", structureSchema);
-

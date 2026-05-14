@@ -294,3 +294,44 @@ input[type="number"] {
     font-size: 0.85rem;
     pointer-events: none;
 }
+
+.structure-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 8px 0;
+}
+
+.structure-item {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.structure-item:hover {
+  border-color: var(--primary);
+}
+
+.structure-item--selected {
+  border-color: var(--primary);
+  background: var(--card-bg);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.structure-item-name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.structure-item-coords {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--hint);
+}
