@@ -65,7 +65,7 @@ function Home() {
             <>
               <Button to="/signup">Sign Up</Button>
 
-              <Button to="/signin">Sign In</Button>
+              <Button to="/chooselogin">Sign In</Button>
             </>
           ) : (
             <>
