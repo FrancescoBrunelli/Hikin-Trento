@@ -180,3 +180,7 @@
     font-weight: 700;
     font-size: 12px;
 }
+
+.leaflet-top.leaflet-left {
+    top: 10px;
+}

@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Polyline, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Polyline, useMapEvents, useMap } from 'react-leaflet';
 import {useEffect, useRef, useState} from 'react';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -37,8 +37,23 @@ function TrailsLayer({ onSelectTrail, selectedTrail } : {
 }) {
   const [trails, setTrails] = useState<Trail[]>([]);
   const [zoom, setZoom] = useState(10);
+  const [hoveredTrailId, setHoveredTrailId] = useState<string | null>(null);
   const selectedTrailRef = useRef(selectedTrail);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const map = useMap();
+
+  useEffect(() => {
+    const currentZoom = map.getZoom();
+    setZoom(currentZoom);
+
+    if (currentZoom < 10) return
+
+    const center = map.getCenter();
+    const radius = map.getCenter().distanceTo(map.getBounds().getNorthEast()) / 1000;
+    fetch(`/api/trails?lat=${center.lat}&lng=${center.lng}&radius=${radius}`)
+      .then((res) => res.json())
+      .then((data) => setTrails(data.trails));
+  }, []);   // Trail visual initialization when page is loaded
 
   useEffect(() => {
     selectedTrailRef.current = selectedTrail;
@@ -108,8 +123,16 @@ function TrailsLayer({ onSelectTrail, selectedTrail } : {
                     <Polyline
                         key={trail._id}
                         positions={positions}
-                        pathOptions={{ color: '#22c55e', weight: 3 }}
-                        eventHandlers={{ click: () => onSelectTrail(trail) }}
+                        pathOptions={{
+                          color: '#22c55e',
+                          weight: hoveredTrailId === trail._id ? 6 : 3,
+                          opacity: hoveredTrailId && hoveredTrailId !== trail._id ? 0.4 : 1,
+                        }}
+                        eventHandlers={{
+                          click: () => onSelectTrail(trail),
+                          mouseover: () => setHoveredTrailId(trail._id),
+                          mouseout: () => setHoveredTrailId(null),
+                        }}
                     />
                 );
               })}
