@@ -1,7 +1,8 @@
 import { MapContainer, TileLayer, Marker, Polyline, useMapEvents } from 'react-leaflet';
-import { useState } from 'react';
+import {useEffect, useRef, useState} from 'react';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import MarkerClusterGroup from 'react-leaflet-cluster'
 
 type Coordinates = {
   latitude: number;
@@ -36,10 +37,16 @@ function TrailsLayer({ onSelectTrail, selectedTrail } : {
 }) {
   const [trails, setTrails] = useState<Trail[]>([]);
   const [zoom, setZoom] = useState(10);
+  const selectedTrailRef = useRef(selectedTrail);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    selectedTrailRef.current = selectedTrail;
+  }, [selectedTrail])
 
   useMapEvents({
     moveend: async(e) => {
-      if (selectedTrail) return;
+      if (selectedTrailRef.current) return;
       const map = e.target;
       const currentZoom = map.getZoom();
       setZoom(currentZoom);
@@ -49,12 +56,14 @@ function TrailsLayer({ onSelectTrail, selectedTrail } : {
         return;
       }
 
-      const center = map.getCenter();
-      const radius = map.getCenter().distanceTo(map.getBounds().getNorthEast()) / 1000;
-
-      const res = await fetch(`/api/trails?lat=${center.lat}&lng=${center.lng}&radius=${radius}`);
-      const data = await res.json();
-      setTrails(data.trails);
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+      debounceRef.current = setTimeout(async () => {
+        const center = map.getCenter();
+        const radius = map.getCenter().distanceTo(map.getBounds().getNorthEast()) / 1000;
+        const res = await fetch(`/api/trails?lat=${center.lat}&lng=${center.lng}&radius=${radius}`);
+        const data = await res.json();
+        setTrails(data.trails);
+      }, 300)   // Waits 300ms after user's map last movement before fetching trails
     }
   });
 
@@ -62,35 +71,50 @@ function TrailsLayer({ onSelectTrail, selectedTrail } : {
 
   return (
       <>
-      {visibleTrails.map((trail) => {
-        if (zoom < 13) {    // Below this: dots, above this: lines
-          // Show dot at trail midpoint
-          const midIndex = Math.floor(trail.geometry.coordinates.length / 2);
-          const [lng, lat] = trail.geometry.coordinates[midIndex];
-          return (
-              <Marker
-                  key={trail._id}
-                  position={[lat, lng]}
-                  icon={icons['trail']}
-                  eventHandlers={{
-                    click: () => onSelectTrail(trail)
-                  }}
-              />
-          );
-        }
-
-        const positions = trail.geometry.coordinates.map(
-            ([lng, lat]) => [lat, lng] as [number, number]
-        );
-        return (
-            <Polyline
-                key={trail._id}
-                positions={positions}
-                pathOptions={{ color: '#22c55e', weight: 3 }}
-                eventHandlers={{ click: () => onSelectTrail(trail) }}
-            />
-        );
-      })}
+        {zoom < 13 ? (
+            <MarkerClusterGroup
+                iconCreateFunction={(cluster: { getChildCount: () => any; }) => {
+                  const count = cluster.getChildCount();
+                  return L.divIcon({
+                    className: '',
+                    html: `<div class="trail-cluster-icon">${count}</div>`,
+                    iconSize: [28, 28],
+                    iconAnchor: [14, 14],
+                  });
+                }}>
+              {visibleTrails.map((trail) => {
+                // Show dot at trail midpoint
+                const midIndex = Math.floor(trail.geometry.coordinates.length / 2);
+                const [lng, lat] = trail.geometry.coordinates[midIndex];
+                return (
+                    <Marker
+                        key={trail._id}
+                        position={[lat, lng]}
+                        icon={icons['trail']}
+                        eventHandlers={{
+                          click: () => onSelectTrail(trail)
+                        }}
+                    />
+                );
+              })}
+            </MarkerClusterGroup>
+        ) : (
+            <>
+              {visibleTrails.map((trail) => {
+                const positions = trail.geometry.coordinates.map(
+                    ([lng, lat]) => [lat, lng] as [number, number]
+                );
+                return (
+                    <Polyline
+                        key={trail._id}
+                        positions={positions}
+                        pathOptions={{ color: '#22c55e', weight: 3 }}
+                        eventHandlers={{ click: () => onSelectTrail(trail) }}
+                    />
+                );
+              })}
+            </>
+        )}
       </>
   );
 }
@@ -112,15 +136,15 @@ const createIcon = (color: string) => L.divIcon({
 const createSmallIcon = (color: string) => L.divIcon({
   className: '',
   html: `<div style="
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: ${color};
-    border: 1px solid white;
+    border: 2px solid white;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   "></div>`,
-  iconSize: [14, 14],
-  iconAnchor: [7, 7],
+  iconSize: [8, 8],
+  iconAnchor: [4, 4],
 });
 
 const icons: Record<string, L.DivIcon> = {
