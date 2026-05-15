@@ -27,11 +27,17 @@ function StructureSignIn() {
             }
             localStorage.setItem('token', data.token);
             localStorage.setItem('role', 'structure_manager');
+            localStorage.setItem('structure', JSON.stringify(data.manager.structure));
+            localStorage.setItem('manager', JSON.stringify(data.manager));
             navigate('/structure/dashboard');
         } catch (err) {
             setError(true);
         }
     };
+    if (localStorage.getItem('token') && localStorage.getItem('role') === 'structure_manager') {
+        navigate('/structure/dashboard');
+        return null;
+    }
 
     return (
         <Layout>

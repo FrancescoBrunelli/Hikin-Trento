@@ -32,27 +32,38 @@ function Home() {
       .catch((err) => console.error(err));
   }, []);
 
-  useEffect(() => {
+useEffect(() => {
     const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");
 
     if (!token) {
-      setIsAuthenticated(false);
-      return;
+        setIsAuthenticated(false);
+        localStorage.removeItem("role"); // clean up role if no token
+        return;
+    }
+
+    if (role === 'structure_manager') {
+        setIsAuthenticated(true);
+        setUser({ name: 'Manager' });
+        return;
     }
 
     userBasicInfo(token)
-      .then((data) => {
-        setUser(data);
-        setIsAuthenticated(true);
-      })
-      .catch(() => {
-        setIsAuthenticated(false);
-        localStorage.removeItem("token");
-      });
-  }, []);
+        .then((data) => {
+            setUser(data);
+            setIsAuthenticated(true);
+        })
+        .catch(() => {
+            setIsAuthenticated(false);
+            localStorage.removeItem("token");
+            localStorage.removeItem("role"); // clean up role on token failure
+        });
+}, []);
 
   const handleLogout = () => {
+    console.log("Logging out...");
     localStorage.removeItem("token");
+    localStorage.removeItem("role");
     setIsAuthenticated(false);
     setUser(null);
   };
