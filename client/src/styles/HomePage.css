@@ -135,6 +135,8 @@
     justify-content: space-between;
     padding: 6px 0;
     border-bottom: 1px solid var(--input-border); /* ← variable */
+    flex-wrap: wrap;
+    gap: 4px;
 }
 
 .detail-label {
@@ -146,6 +148,9 @@
     font-size: 13px;
     font-weight: 600;
     color: var(--text); /* ← variable */
+    text-align: right;
+    word-break: break-word;
+    max-width: 60%;
 }
 
 .close-btn {
@@ -160,3 +165,22 @@
     cursor: pointer;
 }
 
+/* Icon for clustered trails */
+.trail-cluster-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.leaflet-top.leaflet-left {
+    top: 10px;
+}

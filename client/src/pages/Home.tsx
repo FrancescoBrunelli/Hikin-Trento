@@ -14,6 +14,7 @@ import { userBasicInfo } from "../services/userService";
 function Home() {
   const { query, setQuery, results, handleSearch } = useSearch();
   const [selected, setSelected] = useState(null);
+  const [selectedTrail, setSelectedTrail] = useState(null);
   const [structures, setStructures] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
@@ -89,9 +90,20 @@ function Home() {
           selected={selected}
         />
         <div className="home-map">
-          <MapView structures={structures} onSelect={setSelected} />
+          <MapView
+              structures = {structures}
+              onSelectStructure = {setSelected}
+              onSelectTrail = {(t) => {
+                setSelected(t);
+                setSelectedTrail(t);
+              }}
+              selectedTrail = {selectedTrail}
+          />
         </div>
-        <DetailPanel selected={selected} onClose={() => setSelected(null)} />
+        <DetailPanel selected={selected} onClose={() => {
+          setSelected(null)
+          setSelectedTrail(null)
+        }} />
       </div>
     </Layout>
   );
