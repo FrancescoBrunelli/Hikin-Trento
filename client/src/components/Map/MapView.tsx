@@ -31,9 +31,10 @@ type Trail = {
   };
 }
 
-function TrailsLayer({ onSelectTrail, selectedTrail } : {
+function TrailsLayer({ onSelectTrail, selectedTrail, selected } : {
   onSelectTrail: (t: Trail) => void;
   selectedTrail: Trail | null;
+  selected: any;
 }) {
   const [trails, setTrails] = useState<Trail[]>([]);
   const [zoom, setZoom] = useState(10);
@@ -82,7 +83,8 @@ function TrailsLayer({ onSelectTrail, selectedTrail } : {
     }
   });
 
-  const visibleTrails = selectedTrail ? [selectedTrail] : trails;
+  const selectedItem = selectedTrail || (selected?.geometry ? selected : null);
+  const visibleTrails = selectedItem ? [selectedItem] : trails;
 
   return (
       <>
@@ -176,12 +178,16 @@ const icons: Record<string, L.DivIcon> = {
   trail:     createSmallIcon('#22c55e'),
 };
 
-export default function MapView({ structures, onSelectStructure, onSelectTrail, selectedTrail }: {
+export default function MapView({ structures, onSelectStructure, onSelectTrail, selectedTrail, selected }: {
   structures: Structure[],
   onSelectStructure: (s: Structure) => void,
   onSelectTrail: (t: Trail) => void,
   selectedTrail: Trail | null
+  selected: any
 }) {
+  const visibleStructures = selected && !selected.geometry
+      ? structures.filter(s => s._id === selected._id)
+      : structures;
   return (
     <div>
       <MapContainer
@@ -193,7 +199,7 @@ export default function MapView({ structures, onSelectStructure, onSelectTrail, 
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="© OpenStreetMap contributors"
         />
-        {structures.map((s) => {
+        {visibleStructures.map((s) => {
           if (!s.coordinates?.latitude || !s.coordinates?.longitude) return null;
           return (
             <Marker
@@ -206,7 +212,11 @@ export default function MapView({ structures, onSelectStructure, onSelectTrail, 
             />
           );
         })}
-        <TrailsLayer onSelectTrail={onSelectTrail} selectedTrail={selectedTrail} />
+        <TrailsLayer
+            onSelectTrail={onSelectTrail}
+            selectedTrail={selectedTrail}
+            selected = {selected}
+        />
       </MapContainer>
     </div>
   );

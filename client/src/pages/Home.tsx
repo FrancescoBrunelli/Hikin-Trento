@@ -104,6 +104,7 @@ function Home() {
                 setSelectedTrail(t);
               }}
               selectedTrail = {selectedTrail}
+              selected={selected}
           />
         </div>
         <DetailPanel selected={selected} onClose={() => {
