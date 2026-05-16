@@ -51,4 +51,13 @@ const basic_info = async ({
   return result;
 };
 
-module.exports = { basic_info: basic_info };
+const search = async (query, filters = {}) => {
+  const mongoQuery = {};
+
+  if (query) mongoQuery.name = { $regex: query, $options: "i" };
+  if (filters.managed !== undefined) mongoQuery.managed = filters.managed;
+
+  return await Structure.find(mongoQuery).lean()
+};
+
+module.exports = { basic_info, search };

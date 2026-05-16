@@ -19,4 +19,17 @@ const basic_info = async (req, res) => {
   }
 };
 
-module.exports = { basic_info: basic_info };
+const search = async (req, res) => {
+  try {
+    const { q, managed } = req.query;
+    const filters = {}
+    if (managed !== undefined) filters.managed = managed === "true"
+
+    const structures = await structuresService.search(q ?? '', filters);
+    res.status(200).json({ structures });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+}
+
+module.exports = { basic_info, search };

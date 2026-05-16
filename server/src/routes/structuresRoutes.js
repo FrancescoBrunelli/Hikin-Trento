@@ -84,4 +84,5 @@ const structuresController = require("../controllers/structuresController");
  *                   example: Invalid coordinates
  */
 router.get("/basicInfo", structuresController.basic_info);
+router.get("/search", structuresController.search);
 module.exports = router;
