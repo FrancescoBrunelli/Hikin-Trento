@@ -37,9 +37,9 @@ export default function SearchPanel({ query, setQuery, results, onSearch, onSele
                 {showAdvanced && (
                     <>
                         <div className="mode-toggle">
-                            <button className={`mode-btn ${mode === 'all' ? 'mode-btn-active' : ''}`} onClick={() => setMode('all')}>All</button>
-                            <button className={`mode-btn ${mode === 'trails' ? 'mode-btn-active' : ''}`} onClick={() => setMode('trails')}>Trails</button>
-                            <button className={`mode-btn ${mode === 'structures' ? 'mode-btn-active' : ''}`} onClick={() => setMode('structures')}>Structures</button>
+                            <button className={`mode-btn ${mode === 'all' ? 'mode-btn--active' : ''}`} onClick={() => setMode('all')}>All</button>
+                            <button className={`mode-btn ${mode === 'trails' ? 'mode-btn--active' : ''}`} onClick={() => setMode('trails')}>Trails</button>
+                            <button className={`mode-btn ${mode === 'structures' ? 'mode-btn--active' : ''}`} onClick={() => setMode('structures')}>Structures</button>
                         </div>
                         {mode !== 'all' && (
                             <AdvancedSearchForm

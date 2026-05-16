@@ -20,7 +20,7 @@ export const getBasicInfo = async ({
 export const searchStructures = async (query: string, filters: {managed? : boolean} = {}) => {
   const params = new URLSearchParams({q : query})
   if (filters.managed !== undefined) params.append('managed', String(filters.managed))
-  const res = await fetch(`/api/structures/search?q=${params}`);
+  const res = await fetch(`/api/structures/search?${params}`);
   const data = await res.json();
   return data.structures ?? [];
 };
