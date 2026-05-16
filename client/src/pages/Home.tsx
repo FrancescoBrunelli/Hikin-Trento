@@ -12,12 +12,12 @@ import { getBasicInfo } from "../services/structureService";
 import { userBasicInfo } from "../services/userService";
 
 function Home() {
-  const { query, setQuery, results, handleSearch } = useSearch();
-  const [selected, setSelected] = useState(null);
-  const [selectedTrail, setSelectedTrail] = useState(null);
+  const { query, setQuery, results, handleSearch, mode, setMode, trailFilters, setTrailFilters, structureFilters, setStructureFilters } = useSearch();
+  const [selected, setSelected] = useState<any>(null);
+  const [selectedTrail, setSelectedTrail] = useState<any>(null);
   const [structures, setStructures] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<{ name : string } | null>(null);
 
   useEffect(() => {
     getBasicInfo({
@@ -88,6 +88,12 @@ function Home() {
           onSearch={handleSearch}
           onSelect={setSelected}
           selected={selected}
+          mode={mode}
+          setMode={setMode}
+          trailFilters={trailFilters}
+          setTrailFilters={setTrailFilters}
+          structureFilters={structureFilters}
+          setStructureFilters={setStructureFilters}
         />
         <div className="home-map">
           <MapView

@@ -17,13 +17,15 @@ export const getBasicInfo = async ({
   return data.structures ?? [];
 };
 
-export const searchStructures = async (query: string) => {
+export const searchStructures = async (query: string, filters: {managed? : boolean}) => {
+  const params = new URLSearchParams({q : query})
+  if (filters.managed !== undefined) params.append('managed', String(filters.managed))
   const res = await fetch(`/api/structures/search?q=${query}`);
   const data = await res.json();
   return data.structures ?? [];
 };
 
-export const signUpStructure = async (payload) => {
+export const signUpStructure = async (payload: Record<string, any>) => {
   const response = await fetch(
     "http://localhost:3000/api/auth/register_structure",
     {

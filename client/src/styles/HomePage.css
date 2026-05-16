@@ -184,3 +184,54 @@
 .leaflet-top.leaflet-left {
     top: 10px;
 }
+
+/* Advanced search */
+.advanced-toggle-btn {
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    background: transparent;
+    color: var(--hint);
+    font-size: 12px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.mode-toggle {
+    display: flex;
+    gap: 4px;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    background: transparent;
+    color: var(--hint);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.mode-btn--active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.advanced-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-label {
+    font-size: 12px;
+    color: var(--hint);
+}
