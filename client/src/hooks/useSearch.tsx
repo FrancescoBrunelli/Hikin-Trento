@@ -28,8 +28,6 @@ export function useSearch() {
   const [results, setResults] = useState<any[]>([]);
 
   const handleSearch = async () => {
-    if (!query.trim && mode === 'all') return;
-
     if (mode === 'all') {
       const [structures, trails] = await Promise.all([
         searchStructures(query, {}),
