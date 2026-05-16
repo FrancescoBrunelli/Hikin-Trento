@@ -10,14 +10,14 @@ import { useState, useEffect } from "react";
 import "../styles/HomePage.css";
 import { getBasicInfo } from "../services/structureService";
 import { userBasicInfo } from "../services/userService";
-
+import { useNavigate } from 'react-router-dom';
 function Home() {
   const { query, setQuery, results, handleSearch } = useSearch();
   const [selected, setSelected] = useState(null);
   const [structures, setStructures] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
     getBasicInfo({
       radius: 0, // 0 = all structures
@@ -58,6 +58,15 @@ useEffect(() => {
             localStorage.removeItem("token");
             localStorage.removeItem("role"); // clean up role on token failure
         });
+}, []);
+useEffect(() => {
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('role');
+    
+    if (token && role === 'structure_manager') {
+        navigate('/structure/dashboard');
+    }
+    
 }, []);
 
   const handleLogout = () => {
