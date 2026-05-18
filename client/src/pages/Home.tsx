@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import "../styles/HomePage.css";
 import { getBasicInfo } from "../services/structureService";
 import { userBasicInfo } from "../services/userService";
-
+import { useNavigate } from 'react-router-dom';
 function Home() {
   const { query, setQuery, results, handleSearch, mode, setMode, trailFilters, setTrailFilters, structureFilters, setStructureFilters } = useSearch();
   const [selected, setSelected] = useState<any>(null);
@@ -19,6 +19,8 @@ function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<{ name : string } | null>(null);
 
+  //const [user, setUser] = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {
     getBasicInfo({
       radius: 0, // 0 = all structures
@@ -33,27 +35,47 @@ function Home() {
       .catch((err) => console.error(err));
   }, []);
 
-  useEffect(() => {
+useEffect(() => {
     const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");
 
     if (!token) {
-      setIsAuthenticated(false);
-      return;
+        setIsAuthenticated(false);
+        localStorage.removeItem("role"); // clean up role if no token
+        return;
+    }
+
+    if (role === 'structure_manager') {
+        setIsAuthenticated(true);
+        setUser({ name: 'Manager' });
+        return;
     }
 
     userBasicInfo(token)
-      .then((data) => {
-        setUser(data);
-        setIsAuthenticated(true);
-      })
-      .catch(() => {
-        setIsAuthenticated(false);
-        localStorage.removeItem("token");
-      });
-  }, []);
+        .then((data) => {
+            setUser(data);
+            setIsAuthenticated(true);
+        })
+        .catch(() => {
+            setIsAuthenticated(false);
+            localStorage.removeItem("token");
+            localStorage.removeItem("role"); // clean up role on token failure
+        });
+}, []);
+useEffect(() => {
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('role');
+    
+    if (token && role === 'structure_manager') {
+        navigate('/structure/dashboard');
+    }
+    
+}, []);
 
   const handleLogout = () => {
+    console.log("Logging out...");
     localStorage.removeItem("token");
+    localStorage.removeItem("role");
     setIsAuthenticated(false);
     setUser(null);
   };
@@ -66,7 +88,7 @@ function Home() {
             <>
               <Button to="/signup">Sign Up</Button>
 
-              <Button to="/signin">Sign In</Button>
+              <Button to="/chooselogin">Sign In</Button>
             </>
           ) : (
             <>

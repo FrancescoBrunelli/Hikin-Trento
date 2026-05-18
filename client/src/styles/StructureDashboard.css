@@ -1,0 +1,223 @@
+/* ── LAYOUT ── */
+.dashboard-page {
+    min-height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s;
+}
+
+/* ── TOP INFO BAR ── */
+.dashboard-topbar {
+    background: var(--card-bg);
+    border-bottom: 1.5px solid var(--card-border);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s;
+}
+
+.dashboard-topbar-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dashboard-structure-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0;
+}
+
+.dashboard-structure-location {
+    font-size: 0.875rem;
+    color: var(--hint);
+    margin: 0;
+}
+
+.dashboard-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dashboard-manager-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.dashboard-manager-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.dashboard-manager-role {
+    font-size: 0.75rem;
+    color: var(--hint);
+}
+
+.dashboard-account-btn {
+    background: var(--input-bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text);
+    transition: all 0.2s;
+}
+
+.dashboard-account-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* ── TABS ── */
+.dashboard-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 16px 32px 0;
+    border-bottom: 1.5px solid var(--input-border);
+    background: var(--card-bg);
+}
+
+.dashboard-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: none;
+    background: transparent;
+    color: var(--hint);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1.5px;
+    transition: all 0.2s;
+    border-radius: 8px 8px 0 0;
+}
+
+.dashboard-tab:hover {
+    color: var(--primary);
+    background: var(--input-bg);
+}
+
+.dashboard-tab.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    background: var(--input-bg);
+}
+
+/* ── CONTENT AREA ── */
+.dashboard-content {
+    flex: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ── CARDS ── */
+.dashboard-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--card-border);
+    border-radius: 20px;
+    padding: 24px;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.dashboard-card h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dashboard-empty {
+    color: var(--hint);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 32px 0;
+}
+
+/* ── STRUCTURE INFO ── */
+.dashboard-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.dashboard-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dashboard-info-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--hint);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dashboard-info-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* ── ACCOUNT DROPDOWN ── */
+.dashboard-account-dropdown {
+    position: absolute;
+    top: 70px;
+    right: 32px;
+    background: var(--card-bg);
+    border: 1.5px solid var(--card-border);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 180px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    z-index: 100;
+}
+
+.dashboard-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: background 0.15s;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+}
+
+.dashboard-dropdown-item:hover {
+    background: var(--input-bg);
+}
+
+.dashboard-dropdown-item.danger {
+    color: var(--invalid);
+}
+
+.dashboard-dropdown-item.danger:hover {
+    background: rgba(198, 40, 40, 0.08);
+}
