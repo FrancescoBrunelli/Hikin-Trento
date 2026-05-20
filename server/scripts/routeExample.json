@@ -1,0 +1,24 @@
+[
+  {
+    "id": <unique_random_id>,
+    "name": "<user's inserted name> OR <from + to>",
+    "distance_km": <sum_of_points>,
+    "ascent_m": <ascent_m>,
+    "descent_m": <descent_m>,
+    "duration": <sum_of_forward_durations>,
+    "from": "<start>",
+    "to": "<end>",
+    "stops" : <List_of_Points>
+    "roundtrip": <boolean>,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          10.8114217,
+          45.9653623
+        ],
+        .....
+      ]
+    }
+  }
+]
