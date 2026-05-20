@@ -1,0 +1,1271 @@
+[
+  {
+    "osm_id": 402814608,
+    "name": "Baita della selva",
+    "coordinates": {
+      "latitude": 45.8306096,
+      "longitude": 10.8816715
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1368777511,
+    "name": "Sant' Antonio",
+    "coordinates": {
+      "latitude": 45.9113489,
+      "longitude": 11.0835163
+    },
+    "shelter_type": "picnic_shelter"
+  },
+  {
+    "osm_id": 2191481474,
+    "name": "Stol",
+    "coordinates": {
+      "latitude": 45.8877674,
+      "longitude": 11.1008629
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 4003093413,
+    "name": "Bivacco malgai Gui",
+    "coordinates": {
+      "latitude": 45.9605202,
+      "longitude": 10.7422906
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 4003093417,
+    "name": "Malga Palone",
+    "coordinates": {
+      "latitude": 45.9062437,
+      "longitude": 10.6426028
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 9663551922,
+    "name": "Malga Pavarì",
+    "coordinates": {
+      "latitude": 45.7544813,
+      "longitude": 10.6273973
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 10902077995,
+    "name": "Bait del Corazza",
+    "coordinates": {
+      "latitude": 45.9884705,
+      "longitude": 11.0416418
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 870238556,
+    "name": "ex Baito Pastori",
+    "coordinates": {
+      "latitude": 45.9758705,
+      "longitude": 11.4287981
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1864731683,
+    "name": "Baita Spelonca",
+    "coordinates": {
+      "latitude": 45.9184527,
+      "longitude": 11.413268
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1911302607,
+    "name": "Gazebo- tettoia",
+    "coordinates": {
+      "latitude": 45.7370902,
+      "longitude": 11.3927153
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1966582783,
+    "name": "Alta Kugela",
+    "coordinates": {
+      "latitude": 45.8759439,
+      "longitude": 11.3924343
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 2597599726,
+    "name": "Cason Brusà",
+    "coordinates": {
+      "latitude": 45.8218506,
+      "longitude": 11.3415195
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 3138876993,
+    "name": "Ex Malga Seronetta",
+    "coordinates": {
+      "latitude": 45.7856524,
+      "longitude": 11.4959296
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 3249483896,
+    "name": "Ex Malga Lovarezze",
+    "coordinates": {
+      "latitude": 45.8120293,
+      "longitude": 11.475442
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 3483007352,
+    "name": "Malga Zola",
+    "coordinates": {
+      "latitude": 45.7763608,
+      "longitude": 11.2927761
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 4713507690,
+    "name": "Baito Torle",
+    "coordinates": {
+      "latitude": 45.8293005,
+      "longitude": 11.5063342
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 4713507691,
+    "name": "Baito Pria dell'Acqua",
+    "coordinates": {
+      "latitude": 45.8357361,
+      "longitude": 11.5207157
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 9082308684,
+    "name": "Ca' Trenta Villaggio Peep - ER1018",
+    "coordinates": {
+      "latitude": 45.6969748,
+      "longitude": 11.3667984
+    },
+    "shelter_type": "public_transport"
+  },
+  {
+    "osm_id": 11025974586,
+    "name": "Tettoia",
+    "coordinates": {
+      "latitude": 45.9828632,
+      "longitude": 11.2018307
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 11401445693,
+    "name": "Schaff Kugela",
+    "coordinates": {
+      "latitude": 45.8522875,
+      "longitude": 11.4503137
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 4552452363,
+    "name": "Casot de Tecia",
+    "coordinates": {
+      "latitude": 45.8263379,
+      "longitude": 11.7869689
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 6286484073,
+    "name": "Bivacco Malga Ardosetta",
+    "coordinates": {
+      "latitude": 45.8662622,
+      "longitude": 11.8096231
+    },
+    "shelter_type": "basic"
+  },
+  {
+    "osm_id": 10540353003,
+    "name": "Via Cettolini - Doppio Litro",
+    "coordinates": {
+      "latitude": 45.8760704,
+      "longitude": 12.2810088
+    },
+    "shelter_type": "public_transport"
+  },
+  {
+    "osm_id": 334388932,
+    "name": "Rifugio Forestale Acqua de Canal",
+    "coordinates": {
+      "latitude": 46.0988231,
+      "longitude": 10.9913865
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 5129934767,
+    "name": "Baito del Gusto",
+    "coordinates": {
+      "latitude": 46.0255962,
+      "longitude": 11.1989012
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 5302481518,
+    "name": "Malga Gelo Bivacco Invernale",
+    "coordinates": {
+      "latitude": 46.0000071,
+      "longitude": 10.4966788
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 9707890526,
+    "name": "Coel del Caciador",
+    "coordinates": {
+      "latitude": 46.0710954,
+      "longitude": 10.8713036
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 10678655791,
+    "name": "Malga Senaso di Sopra",
+    "coordinates": {
+      "latitude": 46.1172914,
+      "longitude": 10.8695815
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 11132224043,
+    "name": "Malga Campostril",
+    "coordinates": {
+      "latitude": 46.1370082,
+      "longitude": 10.7271972
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 496427659,
+    "name": "Bivacco Spera (Zani Sperandio)",
+    "coordinates": {
+      "latitude": 46.2123056,
+      "longitude": 10.4916951
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 496502038,
+    "name": "Bivacco Francesco Regosa",
+    "coordinates": {
+      "latitude": 46.2010912,
+      "longitude": 10.5137118
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 1992861127,
+    "name": "Bivacco Fratelli Bonvecchio",
+    "coordinates": {
+      "latitude": 46.2538169,
+      "longitude": 10.8921961
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 2306378696,
+    "name": "Rifugio Genzianella",
+    "coordinates": {
+      "latitude": 46.2963136,
+      "longitude": 10.9974371
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 7015155900,
+    "name": "Bivacco Castiglioni",
+    "coordinates": {
+      "latitude": 46.1612321,
+      "longitude": 10.8696384
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 11164927634,
+    "name": "Bivacco Begey",
+    "coordinates": {
+      "latitude": 46.1642022,
+      "longitude": 10.5927936
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 597642270,
+    "name": "Baito Ortigara",
+    "coordinates": {
+      "latitude": 46.0046672,
+      "longitude": 11.514801
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 649272448,
+    "name": "Bait del Carmelo",
+    "coordinates": {
+      "latitude": 46.141191,
+      "longitude": 11.2889343
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 796331149,
+    "name": "Malga Primalunetta",
+    "coordinates": {
+      "latitude": 46.1168852,
+      "longitude": 11.5265264
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 796334574,
+    "name": "Malga Primaluna di sopra",
+    "coordinates": {
+      "latitude": 46.1120581,
+      "longitude": 11.5312892
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 796388877,
+    "name": "Malga Ravetta di sotto",
+    "coordinates": {
+      "latitude": 46.1088605,
+      "longitude": 11.5539919
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 2302248771,
+    "name": "Baito Ilba",
+    "coordinates": {
+      "latitude": 46.0847178,
+      "longitude": 11.3826446
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 3107987931,
+    "name": "La Casara",
+    "coordinates": {
+      "latitude": 46.1319933,
+      "longitude": 11.2825787
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 3141954927,
+    "name": "Baito Campigoletti",
+    "coordinates": {
+      "latitude": 46.0003547,
+      "longitude": 11.4974598
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 5723045927,
+    "name": "Covol dell'Acqua",
+    "coordinates": {
+      "latitude": 46.0834331,
+      "longitude": 11.8617661
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 5984876676,
+    "name": "Baracca ricostruita Grande Guerra",
+    "coordinates": {
+      "latitude": 46.1387926,
+      "longitude": 11.387887
+    },
+    "shelter_type": "lean_to"
+  },
+  {
+    "osm_id": 9939271794,
+    "name": "Baito Agnelezza",
+    "coordinates": {
+      "latitude": 46.1408572,
+      "longitude": 11.430687
+    },
+    "shelter_type": "basic"
+  },
+  {
+    "osm_id": 12847138113,
+    "name": "Tollo",
+    "coordinates": {
+      "latitude": 46.0283599,
+      "longitude": 11.5878627
+    },
+    "shelter_type": "public_transport"
+  },
+  {
+    "osm_id": 13018685444,
+    "name": "Grotta 2269m",
+    "coordinates": {
+      "latitude": 46.143579,
+      "longitude": 11.5715517
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 13095976003,
+    "name": "Riparo Polpen",
+    "coordinates": {
+      "latitude": 46.147224,
+      "longitude": 11.3423431
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 503581401,
+    "name": "Ricovero Busa del Carl",
+    "coordinates": {
+      "latitude": 46.1521422,
+      "longitude": 11.37224
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 765948541,
+    "name": "Bivacco Malga Fregasoga",
+    "coordinates": {
+      "latitude": 46.1808333,
+      "longitude": 11.3652947
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 765951395,
+    "name": "Bivacco Baracca di Val Mattio",
+    "coordinates": {
+      "latitude": 46.1747438,
+      "longitude": 11.3625621
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 821887175,
+    "name": "Malga Brendol",
+    "coordinates": {
+      "latitude": 46.1611624,
+      "longitude": 11.9787594
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 3091205817,
+    "name": "Malga Erera",
+    "coordinates": {
+      "latitude": 46.1623122,
+      "longitude": 11.9823277
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 4708769620,
+    "name": "Baracchetta militare 1918",
+    "coordinates": {
+      "latitude": 46.1604784,
+      "longitude": 11.4077225
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 5827401860,
+    "name": "Bivacco Malga Spruggio Bassa",
+    "coordinates": {
+      "latitude": 46.1684203,
+      "longitude": 11.3416801
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 7951233133,
+    "name": "Ricovero Col. Bozzano",
+    "coordinates": {
+      "latitude": 46.1716861,
+      "longitude": 11.5547928
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 13018685445,
+    "name": "Grotta 2336m",
+    "coordinates": {
+      "latitude": 46.1579805,
+      "longitude": 11.5690536
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 13018685446,
+    "name": "Grotta 2340m",
+    "coordinates": {
+      "latitude": 46.1628004,
+      "longitude": 11.5707445
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 13018745355,
+    "name": "Grotta 2142m",
+    "coordinates": {
+      "latitude": 46.1646204,
+      "longitude": 11.5803229
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 281483473,
+    "name": "Baito Caterinello",
+    "coordinates": {
+      "latitude": 46.2270645,
+      "longitude": 11.3969507
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 766683466,
+    "name": "Baito del Marino",
+    "coordinates": {
+      "latitude": 46.2468448,
+      "longitude": 11.5922839
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1865673014,
+    "name": "Bivacco Nada Teatin",
+    "coordinates": {
+      "latitude": 46.2319623,
+      "longitude": 11.5648768
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 2535780572,
+    "name": "Bivacco invernale Treviso",
+    "coordinates": {
+      "latitude": 46.2367515,
+      "longitude": 11.902979
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 7728329078,
+    "name": "Casetta del Paluat",
+    "coordinates": {
+      "latitude": 46.2931525,
+      "longitude": 11.63926
+    },
+    "shelter_type": "cabana"
+  },
+  {
+    "osm_id": 7927361435,
+    "name": "Bivacco Stecho",
+    "coordinates": {
+      "latitude": 46.2992117,
+      "longitude": 11.8667065
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 461888445,
+    "name": "Bivacco Scalon",
+    "coordinates": {
+      "latitude": 46.1889396,
+      "longitude": 12.3244668
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 658192211,
+    "name": "Tana del Lupo",
+    "coordinates": {
+      "latitude": 46.038381,
+      "longitude": 12.3358002
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1260593740,
+    "name": "Casera Dei Ronchi",
+    "coordinates": {
+      "latitude": 46.2584126,
+      "longitude": 12.1780887
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1260593741,
+    "name": "Casera Della Cengia",
+    "coordinates": {
+      "latitude": 46.2612634,
+      "longitude": 12.1885317
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1542565750,
+    "name": "Casera Laronch",
+    "coordinates": {
+      "latitude": 46.187313,
+      "longitude": 12.1816136
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 2674891298,
+    "name": "Ricovero Col Nudo",
+    "coordinates": {
+      "latitude": 46.2224117,
+      "longitude": 12.4021996
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 4519614758,
+    "name": "Casera Gravuzza",
+    "coordinates": {
+      "latitude": 46.2210514,
+      "longitude": 12.4255974
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 4622542421,
+    "name": "Ricovero \"Gech\" De Biasi",
+    "coordinates": {
+      "latitude": 46.178821,
+      "longitude": 12.161335
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 10688278371,
+    "name": "Bivacco Val Zea",
+    "coordinates": {
+      "latitude": 46.1995431,
+      "longitude": 12.4545083
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 11360702787,
+    "name": "Cogoi di Costa Longa",
+    "coordinates": {
+      "latitude": 46.1701048,
+      "longitude": 12.0879616
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 11646911787,
+    "name": "Al signor",
+    "coordinates": {
+      "latitude": 46.2029131,
+      "longitude": 12.3200067
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 11883654357,
+    "name": "Baracca del Cacciatore",
+    "coordinates": {
+      "latitude": 46.1859457,
+      "longitude": 12.3313352
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 12402818084,
+    "name": "Ristoro Matteo Da Rold",
+    "coordinates": {
+      "latitude": 46.1811536,
+      "longitude": 12.1601041
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 12561108149,
+    "name": "Casot Bela Val",
+    "coordinates": {
+      "latitude": 46.0591361,
+      "longitude": 12.3485709
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 12902329379,
+    "name": "Grotta Caza Granda",
+    "coordinates": {
+      "latitude": 46.2058433,
+      "longitude": 12.0804024
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 394924262,
+    "name": "Bivacco Seveso",
+    "coordinates": {
+      "latitude": 46.38658,
+      "longitude": 10.54025
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 394924263,
+    "name": "Tschierfeck Biwak am Ortler",
+    "coordinates": {
+      "latitude": 46.5184737,
+      "longitude": 10.5412086
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 1328656742,
+    "name": "Malga Pontevecchio",
+    "coordinates": {
+      "latitude": 46.4052277,
+      "longitude": 10.6980284
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1432090842,
+    "name": "überfahrene Lärche",
+    "coordinates": {
+      "latitude": 46.5020934,
+      "longitude": 10.5950846
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1777819985,
+    "name": "Hochjochbiwak - Bivacco Città di Cantù",
+    "coordinates": {
+      "latitude": 46.4960144,
+      "longitude": 10.5481201
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 1805154550,
+    "name": "malghetta",
+    "coordinates": {
+      "latitude": 46.3894771,
+      "longitude": 10.8324647
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 4512873199,
+    "name": "Malga Cercen Alta",
+    "coordinates": {
+      "latitude": 46.3844475,
+      "longitude": 10.7460066
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 4512874470,
+    "name": "Malga Monte Sole Bassa",
+    "coordinates": {
+      "latitude": 46.4005209,
+      "longitude": 10.7810587
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 7605880942,
+    "name": "Rifugio Campo",
+    "coordinates": {
+      "latitude": 46.4734341,
+      "longitude": 10.4994574
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 11149553830,
+    "name": "Rifugio Quinto Alpini",
+    "coordinates": {
+      "latitude": 46.481641,
+      "longitude": 10.5383313
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 11872141991,
+    "name": "Bivacco Battaglione Ortles",
+    "coordinates": {
+      "latitude": 46.3586128,
+      "longitude": 10.5435376
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 600596910,
+    "name": "Tozzaga",
+    "coordinates": {
+      "latitude": 46.3761525,
+      "longitude": 10.9692644
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 765940436,
+    "name": "La Ciaseta",
+    "coordinates": {
+      "latitude": 46.3866571,
+      "longitude": 11.1778315
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1421210767,
+    "name": "Kuhleger Hütt - Baita Kuhleger",
+    "coordinates": {
+      "latitude": 46.3305795,
+      "longitude": 11.1954194
+    },
+    "shelter_type": "picnic_shelter"
+  },
+  {
+    "osm_id": 2035288263,
+    "name": "Malga Culmei",
+    "coordinates": {
+      "latitude": 46.3199066,
+      "longitude": 10.9731482
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 4279767037,
+    "name": "Malga Larese di Sotto",
+    "coordinates": {
+      "latitude": 46.4030105,
+      "longitude": 10.9260953
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 6794598578,
+    "name": "Bivacco Gianni Stanchina",
+    "coordinates": {
+      "latitude": 46.3785575,
+      "longitude": 10.9238148
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 9995425865,
+    "name": "Bivacco Malga Val",
+    "coordinates": {
+      "latitude": 46.4761875,
+      "longitude": 10.9856804
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 279299732,
+    "name": "Baito de le Pisancae",
+    "coordinates": {
+      "latitude": 46.3046492,
+      "longitude": 11.5555135
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 450560619,
+    "name": "Pfaunboden",
+    "coordinates": {
+      "latitude": 46.4786634,
+      "longitude": 11.2208735
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 639117414,
+    "name": "Hundskoflhütte",
+    "coordinates": {
+      "latitude": 46.4179604,
+      "longitude": 11.2184449
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1259738821,
+    "name": "Bivacco Mario Rigatti",
+    "coordinates": {
+      "latitude": 46.381586,
+      "longitude": 11.5806382
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 1261910671,
+    "name": "Tabiai Forca",
+    "coordinates": {
+      "latitude": 46.4066661,
+      "longitude": 11.9919584
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1261910674,
+    "name": "Tabiai Lariz",
+    "coordinates": {
+      "latitude": 46.4049645,
+      "longitude": 11.9853047
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1261910676,
+    "name": "Tabiai Giardogn",
+    "coordinates": {
+      "latitude": 46.4136835,
+      "longitude": 11.9766109
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1791351385,
+    "name": "Kreuzweg - Crocevia",
+    "coordinates": {
+      "latitude": 46.4445539,
+      "longitude": 11.2607347
+    },
+    "shelter_type": "public_transport"
+  },
+  {
+    "osm_id": 2291327465,
+    "name": "Cason del Tamer",
+    "coordinates": {
+      "latitude": 46.3322745,
+      "longitude": 11.8821748
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 2291422314,
+    "name": "Area Picnic Mandra ai Lach (con tettoia)",
+    "coordinates": {
+      "latitude": 46.3082008,
+      "longitude": 11.8832024
+    },
+    "shelter_type": "picnic_shelter"
+  },
+  {
+    "osm_id": 2291448870,
+    "name": "Casera Nova",
+    "coordinates": {
+      "latitude": 46.3472188,
+      "longitude": 11.8863512
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 2456817371,
+    "name": "Missian, Zentrum - Missiano, Centro",
+    "coordinates": {
+      "latitude": 46.485036,
+      "longitude": 11.254072
+    },
+    "shelter_type": "public_transport"
+  },
+  {
+    "osm_id": 2501237478,
+    "name": "Firmian",
+    "coordinates": {
+      "latitude": 46.4892859,
+      "longitude": 11.3164434
+    },
+    "shelter_type": "public_transport"
+  },
+  {
+    "osm_id": 4308975128,
+    "name": "Bivacco Latemar Attilio Sieff",
+    "coordinates": {
+      "latitude": 46.3745936,
+      "longitude": 11.5706957
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 4813182717,
+    "name": "Bait dei Agnéi",
+    "coordinates": {
+      "latitude": 46.3327274,
+      "longitude": 11.6584279
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 4813184835,
+    "name": "Bait de le Vache",
+    "coordinates": {
+      "latitude": 46.3345164,
+      "longitude": 11.6452261
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 5030354849,
+    "name": "Ricovero Austriaco",
+    "coordinates": {
+      "latitude": 46.4016136,
+      "longitude": 11.7688309
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 5030354857,
+    "name": "Ricoveri austriaci",
+    "coordinates": {
+      "latitude": 46.4014775,
+      "longitude": 11.773554
+    },
+    "shelter_type": "weather_shelter"
+  },
+  {
+    "osm_id": 9914481085,
+    "name": "Rudere",
+    "coordinates": {
+      "latitude": 46.3285906,
+      "longitude": 11.8430487
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 12738954989,
+    "name": "Bait dele Fontane",
+    "coordinates": {
+      "latitude": 46.3025516,
+      "longitude": 11.635433
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 13273719902,
+    "name": "La botte du legno",
+    "coordinates": {
+      "latitude": 46.3269185,
+      "longitude": 11.3034481
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 286323326,
+    "name": "Casera Girolda",
+    "coordinates": {
+      "latitude": 46.3478642,
+      "longitude": 12.3021164
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 437171196,
+    "name": "Casera Fagarè",
+    "coordinates": {
+      "latitude": 46.3462449,
+      "longitude": 12.2193714
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1261916488,
+    "name": "Casera Copada Alta",
+    "coordinates": {
+      "latitude": 46.3650479,
+      "longitude": 12.2586699
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1261916489,
+    "name": "Casera di Copada Bassa",
+    "coordinates": {
+      "latitude": 46.3650989,
+      "longitude": 12.2478767
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1261925334,
+    "name": "Baita Darè Copada",
+    "coordinates": {
+      "latitude": 46.3507062,
+      "longitude": 12.2380234
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 1261950869,
+    "name": "Casera Vegia",
+    "coordinates": {
+      "latitude": 46.3356657,
+      "longitude": 12.1554373
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1397033576,
+    "name": "Casera del Mugòn",
+    "coordinates": {
+      "latitude": 46.3423477,
+      "longitude": 12.2317363
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 1397042497,
+    "name": "Casera dei Zot",
+    "coordinates": {
+      "latitude": 46.3404777,
+      "longitude": 12.2420727
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 2121154806,
+    "name": "Pra de Val",
+    "coordinates": {
+      "latitude": 46.3495916,
+      "longitude": 12.1978786
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 2189090310,
+    "name": "Mas de Sabe",
+    "coordinates": {
+      "latitude": 46.3760741,
+      "longitude": 12.149105
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 2340346641,
+    "name": "Casera Busnich",
+    "coordinates": {
+      "latitude": 46.3000349,
+      "longitude": 12.2889938
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 3078954065,
+    "name": "Ricovero del Piano degli Ontani",
+    "coordinates": {
+      "latitude": 46.3149721,
+      "longitude": 12.1624356
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 3286404720,
+    "name": "Bivacco Voltolina",
+    "coordinates": {
+      "latitude": 46.4919624,
+      "longitude": 12.2560403
+    },
+    "shelter_type": "basic_hut"
+  },
+  {
+    "osm_id": 3784411300,
+    "name": "Casera Prà di Bosco",
+    "coordinates": {
+      "latitude": 46.3527922,
+      "longitude": 12.318631
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 3843842306,
+    "name": "Casera Pian de Fontana",
+    "coordinates": {
+      "latitude": 46.3540027,
+      "longitude": 12.300605
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 3843842307,
+    "name": "Casera Valbona",
+    "coordinates": {
+      "latitude": 46.3396969,
+      "longitude": 12.2887217
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 5002032923,
+    "name": "Le Palanche sul Maè",
+    "coordinates": {
+      "latitude": 46.3926346,
+      "longitude": 12.0846337
+    },
+    "shelter_type": "picnic_shelter"
+  },
+  {
+    "osm_id": 8008866804,
+    "name": "Landro del Pastore",
+    "coordinates": {
+      "latitude": 46.4491985,
+      "longitude": 12.2926538
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 8869478269,
+    "name": "Taulà Cioupa de Duoe",
+    "coordinates": {
+      "latitude": 46.4656981,
+      "longitude": 12.1733022
+    },
+    "shelter_type": null
+  },
+  {
+    "osm_id": 9149260752,
+    "name": "Grotta, riparo naturale",
+    "coordinates": {
+      "latitude": 46.3754025,
+      "longitude": 12.058198
+    },
+    "shelter_type": "rock_shelter"
+  },
+  {
+    "osm_id": 12192880691,
+    "name": "Bivacco Bonafede Giustina",
+    "coordinates": {
+      "latitude": 46.4180649,
+      "longitude": 12.1407792
+    },
+    "shelter_type": "basic_hut"
+  }
+]
