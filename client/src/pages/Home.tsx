@@ -10,14 +10,25 @@ import { useState, useEffect } from "react";
 import "../styles/HomePage.css";
 import { getBasicInfo } from "../services/structureService";
 import { userBasicInfo } from "../services/userService";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 function Home() {
-  const { query, setQuery, results, handleSearch, mode, setMode, trailFilters, setTrailFilters, structureFilters, setStructureFilters } = useSearch();
+  const {
+    query,
+    setQuery,
+    results,
+    handleSearch,
+    mode,
+    setMode,
+    trailFilters,
+    setTrailFilters,
+    structureFilters,
+    setStructureFilters,
+  } = useSearch();
   const [selected, setSelected] = useState<any>(null);
   const [selectedTrail, setSelectedTrail] = useState<any>(null);
   const [structures, setStructures] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<{ name : string } | null>(null);
+  const [user, setUser] = useState<{ name: string } | null>(null);
 
   //const [user, setUser] = useState(null);
   const navigate = useNavigate();
@@ -35,42 +46,41 @@ function Home() {
       .catch((err) => console.error(err));
   }, []);
 
-useEffect(() => {
+  useEffect(() => {
     const token = localStorage.getItem("token");
     const role = localStorage.getItem("role");
 
     if (!token) {
-        setIsAuthenticated(false);
-        localStorage.removeItem("role"); // clean up role if no token
-        return;
+      setIsAuthenticated(false);
+      localStorage.removeItem("role"); // clean up role if no token
+      return;
     }
 
-    if (role === 'structure_manager') {
-        setIsAuthenticated(true);
-        setUser({ name: 'Manager' });
-        return;
+    if (role === "structure_manager") {
+      setIsAuthenticated(true);
+      setUser({ name: "Manager" });
+      return;
     }
 
     userBasicInfo(token)
-        .then((data) => {
-            setUser(data);
-            setIsAuthenticated(true);
-        })
-        .catch(() => {
-            setIsAuthenticated(false);
-            localStorage.removeItem("token");
-            localStorage.removeItem("role"); // clean up role on token failure
-        });
-}, []);
-useEffect(() => {
-    const token = localStorage.getItem('token');
-    const role = localStorage.getItem('role');
-    
-    if (token && role === 'structure_manager') {
-        navigate('/structure/dashboard');
+      .then((data) => {
+        setUser(data);
+        setIsAuthenticated(true);
+      })
+      .catch(() => {
+        setIsAuthenticated(false);
+        localStorage.removeItem("token");
+        localStorage.removeItem("role"); // clean up role on token failure
+      });
+  }, []);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");
+
+    if (token && role === "structure_manager") {
+      navigate("/structure/dashboard");
     }
-    
-}, []);
+  }, []);
 
   const handleLogout = () => {
     console.log("Logging out...");
@@ -82,6 +92,22 @@ useEffect(() => {
 
   return (
     <Layout
+      navCenter={
+        <>
+          {!isAuthenticated ? (
+            <>
+               
+            </>
+          ) : (
+              <>
+                <Button className="button-welcome" to="/routes">Routes</Button>
+                <Button className="button-welcome">Report</Button>
+                <Button className="button-welcome">Bookings</Button>
+                <Button className="button-welcome">Favorites</Button> 
+              </>
+          )}
+        </>
+      }
       navChildren={
         <>
           {!isAuthenticated ? (
@@ -119,20 +145,23 @@ useEffect(() => {
         />
         <div className="home-map">
           <MapView
-              structures = {structures}
-              onSelectStructure = {setSelected}
-              onSelectTrail = {(t) => {
-                setSelected(t);
-                setSelectedTrail(t);
-              }}
-              selectedTrail = {selectedTrail}
-              selected={selected}
+            structures={structures}
+            onSelectStructure={setSelected}
+            onSelectTrail={(t) => {
+              setSelected(t);
+              setSelectedTrail(t);
+            }}
+            selectedTrail={selectedTrail}
+            selected={selected}
           />
         </div>
-        <DetailPanel selected={selected} onClose={() => {
-          setSelected(null)
-          setSelectedTrail(null)
-        }} />
+        <DetailPanel
+          selected={selected}
+          onClose={() => {
+            setSelected(null);
+            setSelectedTrail(null);
+          }}
+        />
       </div>
     </Layout>
   );

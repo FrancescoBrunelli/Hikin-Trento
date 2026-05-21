@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle.tsx";
 import logo from "../assets/HikinTrentoLogo_noBackground.png"
 import "../styles/NavBar.css"
 
-export default function NavBar({ children }: { children?: React.ReactNode }) {
+export default function NavBar({ children, navCenter}: { children?: React.ReactNode, navCenter?: React.ReactNode }) {
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -16,6 +16,9 @@ export default function NavBar({ children }: { children?: React.ReactNode }) {
           </h1>
           <p>Your one-stop destination for hiking adventures.</p>
         </div>
+      </div>
+      <div className="navbar-center">
+        {navCenter}
       </div>
       <div className="navbar-right">
         
