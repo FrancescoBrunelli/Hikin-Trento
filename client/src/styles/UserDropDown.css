@@ -1,0 +1,22 @@
+.dashboard-user-wrapper {
+  position: relative;  /* ← dropdown positions relative to this */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard-account-dropdown {
+  position: absolute;
+  top: 100%;           /* ← appears below the button */
+  right: 0;            /* ← aligns to the right */
+  z-index: 100;
+  background: var(--card-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 140px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
