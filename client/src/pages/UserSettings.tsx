@@ -68,7 +68,11 @@ function UserSettings() {
         setUser(data);
         setIsAuthenticated(true);
         // populate form with real user data
-        const date = new Date(data.date_of_birth).toLocaleDateString([], { year: 'numeric', month: 'long', day: 'numeric' });
+        const date = new Date(data.date_of_birth).toLocaleDateString([], {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
         console.log(date);
         const userData = {
           name: data.name ?? "",
@@ -150,7 +154,6 @@ function UserSettings() {
         </div>
 
         <div className="settings-body">
-          {/* ── Personal Info ────────────────────── */}
           <section className="settings-section">
             <h2 className="settings-section-title">Personal Info</h2>
             <p className="settings-section-subtitle">
@@ -204,7 +207,6 @@ function UserSettings() {
             </div>
           </section>
 
-          {/* ── Password ─────────────────────────── */}
           <section className="settings-section">
             <h2 className="settings-section-title">Change Password</h2>
             <p className="settings-section-subtitle">
@@ -277,7 +279,6 @@ function UserSettings() {
             </div>
           </section>
 
-          {/* ── Footer ───────────────────────────── */}
           <div className="settings-footer">
             {saveStatus === "saved" && (
               <span className="settings-saved-msg">
