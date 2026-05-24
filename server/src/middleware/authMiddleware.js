@@ -41,7 +41,7 @@ const authMiddleware = async (req, res, next) => {
       throw new Error("User doesn't exist");
     }
     req.user = user;
-    next(req, res);
+    next();
   } catch (err) {
     res.status(401).json({ error: err.message });
   }

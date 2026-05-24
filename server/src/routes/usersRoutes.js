@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const usersController = require("../controllers/usersController");
+const authMiddleware = require("../middleware/authMiddleware");
 
 /**
  *  @swagger
@@ -55,6 +56,8 @@ const usersController = require("../controllers/usersController");
  *                    type: string
  *                    example: user doesn't exist
  */
-router.get("/basicInfo", usersController.user_basic_info);
+router.get("/basicInfo", authMiddleware, usersController.user_basic_info);
+
+router.put("/basicInfo", authMiddleware, usersController.user_update_info);
 
 module.exports = router;
