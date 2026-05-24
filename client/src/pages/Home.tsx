@@ -7,6 +7,7 @@ import SearchPanel from "../components/SearchPanel";
 import DetailPanel from "../components/DetailPanel";
 import { useSearch } from "../hooks/useSearch";
 import { useState, useEffect } from "react";
+import { FaCalendarAlt, FaStar, FaChartBar, FaMapMarkerAlt, FaUserCircle, FaSignOutAlt, FaCog, FaPhone } from 'react-icons/fa';
 import "../styles/HomePage.css";
 import { getBasicInfo } from "../services/structureService";
 import { userBasicInfo } from "../services/userService";
@@ -17,8 +18,8 @@ function Home() {
   const [selectedTrail, setSelectedTrail] = useState<any>(null);
   const [structures, setStructures] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<{ name : string } | null>(null);
-
+  const [user, setUser] = useState<{ name : string, surname: string} | null>(null);
+  const [showDropdown, setShowDropdown] = useState(false);
   //const [user, setUser] = useState(null);
   const navigate = useNavigate();
   useEffect(() => {
@@ -92,11 +93,25 @@ useEffect(() => {
             </>
           ) : (
             <>
-              <div>
-                <Button className="button-welcome">Welcome {user?.name}</Button>
+              <div className="dashboard-manager-info">
+                  <span className="dashboard-manager-name">{user?.name} {user?.surname}</span>
               </div>
-
-              <Button onClick={handleLogout}>Logout</Button>
+              <button 
+                  className="dashboard-account-btn"
+                  onClick={() => setShowDropdown(!showDropdown)}
+              >
+                  <FaUserCircle size={22} />
+              </button>
+              {showDropdown && (
+                  <div className="dashboard-account-dropdown">
+                      <button className="dashboard-dropdown-item">
+                          <FaCog size={16} /> Settings
+                      </button>
+                      <button className="dashboard-dropdown-item danger" onClick={handleLogout}>
+                          <FaSignOutAlt size={16} /> Logout
+                      </button>
+                  </div>
+              )}
             </>
           )}
         </>
