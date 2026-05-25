@@ -41,3 +41,28 @@ export const updateUserInfo = async (
   
     return data;
 };
+
+
+export const updateUserPassword = async(
+  token: string, 
+  userData: {
+    curr_password: string;
+    new_password: string;
+    confirm_password: string;
+  },
+) => {
+  const response = await fetch("http://localhost:3000/api/user/password", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(userData),
+  });
+
+  const data = (await response).json();
+  if (!response.ok) {
+    throw new Error(data.error || "Failed to update new password");
+  }
+  return data;
+}

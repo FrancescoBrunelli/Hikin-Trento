@@ -7,6 +7,7 @@ import UserDropdown from "../components/UserDropDown.tsx";
 import { FaArrowLeft, FaSignOutAlt } from "react-icons/fa";
 import "../styles/UserSettings.css";
 import { updateUserInfo } from "../services/userService";
+import { updateUserPassword } from "../services/userService";
 interface User {
   name: string;
   surname: string;
@@ -137,7 +138,24 @@ function UserSettings() {
   };
 
   const handlePassSave = async () => {
-    
+    setSaveStatus("saving");
+
+    try {
+      const token = localStorage.getItem("token");
+      await updateUserPassword(token!, {
+        curr_password: currentPassword,
+        new_password: newPassword,
+        confirm_password: confirmPassword,
+      });
+      setOriginal({ ...form });
+  
+      setSaveStatus("saved");
+  
+      setTimeout(() => setSaveStatus("idle"), 2500);
+    } catch (err) {
+      setSaveStatus("error");
+      setTimeout(() => setSaveStatus("idle"), 2500);
+    }
   };
 
   return (
