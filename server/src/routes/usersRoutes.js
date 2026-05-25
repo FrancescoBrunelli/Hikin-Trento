@@ -58,17 +58,14 @@ const authMiddleware = require("../middleware/authMiddleware");
  */
 router.get("/basicInfo", authMiddleware, usersController.user_basic_info);
 
-
 /**
  * @swagger
  * /api/users/basicInfo:
  *   put:
- *     summary: Update the authenticated user's basic info
- *     description: >
- *       Updates name, surname and username of the currently authenticated user.
- *       Requires a valid JWT token in the Authorization header.
- *       The token is verified by the auth middleware before reaching this endpoint.
- *     tags: [Users]
+ *     summary: Update authenticated user's information
+ *     description: Allows an authenticated user to update their personal information.
+ *     tags:
+ *       - Users
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -84,16 +81,16 @@ router.get("/basicInfo", authMiddleware, usersController.user_basic_info);
  *             properties:
  *               name:
  *                 type: string
- *                 example: Giulia
+ *                 example: Mario
  *               surname:
  *                 type: string
  *                 example: Rossi
  *               username:
  *                 type: string
- *                 example: giulzzzzz
+ *                 example: mario.rossi
  *     responses:
  *       200:
- *         description: User info updated successfully
+ *         description: User information updated successfully
  *         content:
  *           application/json:
  *             schema:
@@ -102,8 +99,24 @@ router.get("/basicInfo", authMiddleware, usersController.user_basic_info);
  *                 status:
  *                   type: string
  *                   example: success
+ *                 user:
+ *                   type: object
+ *                   properties:
+ *                     name:
+ *                       type: string
+ *                       example: Mario
+ *                     surname:
+ *                       type: string
+ *                       example: Rossi
+ *                     username:
+ *                       type: string
+ *                       example: mario.rossi
+ *                     date_of_birth:
+ *                       type: string
+ *                       format: date-time
+ *                       example: 2000-05-15T00:00:00.000Z
  *       400:
- *         description: Failed to update user info (e.g. duplicate username)
+ *         description: Validation or update error
  *         content:
  *           application/json:
  *             schema:
@@ -111,20 +124,9 @@ router.get("/basicInfo", authMiddleware, usersController.user_basic_info);
  *               properties:
  *                 error:
  *                   type: string
- *                   example: "username già in uso"
- *       401:
- *         description: Missing or invalid token
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 error:
- *                   type: string
- *                   example: "Not authorized"
+ *                   example: Username already exists
  */
 router.put("/basicInfo", authMiddleware, usersController.user_update_info);
-
 
 /**
  * @swagger

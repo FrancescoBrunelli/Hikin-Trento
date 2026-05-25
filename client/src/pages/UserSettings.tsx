@@ -6,7 +6,7 @@ import { userBasicInfo } from "../services/userService";
 import UserDropdown from "../components/UserDropDown.tsx";
 import { FaArrowLeft, FaSignOutAlt } from "react-icons/fa";
 import "../styles/UserSettings.css";
-
+import { updateUserInfo } from "../services/userService";
 interface User {
   name: string;
   surname: string;
@@ -40,6 +40,9 @@ function UserSettings() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [saveStatus, setSaveStatus] = useState<
     "idle" | "saving" | "saved" | "error"
+    >("idle");
+  const [saveInfoStatus, setSaveInfoStatus] = useState<
+    "idle" | "saving" | "saved" | "error"
   >("idle");
 
   // ── password validation ──────────────────────────────────────────
@@ -58,7 +61,8 @@ function UserSettings() {
     form.surname !== original.surname ||
     form.username !== original.username;
 
-  const canSave = infoChanged || (passwordFilled && passwordValid);
+  const canSave = infoChanged;
+  const canPassSave = passwordFilled && passwordValid;
 
   // ── fetch user on mount ──────────────────────────────────────────
   useEffect(() => {
@@ -105,22 +109,35 @@ function UserSettings() {
   };
 
   const handleSave = async () => {
-    setSaveStatus("saving");
+    setSaveInfoStatus("saving");
+  
     try {
-      // TODO: replace with real API call
-      // await updateUser({ ...form, currentPassword, newPassword });
-      await new Promise((r) => setTimeout(r, 800));
+      const token = localStorage.getItem("token");
+  
+      const response = await updateUserInfo(token!, {
+        name: form.name,
+        surname: form.surname,
+        username: form.username,
+      });
 
+      setUser(response.user);
+      
       setOriginal({ ...form });
-      setCurrentPassword("");
-      setNewPassword("");
-      setConfirmPassword("");
-      setSaveStatus("saved");
-      setTimeout(() => setSaveStatus("idle"), 2500);
-    } catch {
-      setSaveStatus("error");
-      setTimeout(() => setSaveStatus("idle"), 2500);
+  
+      setSaveInfoStatus("saved");
+  
+      setTimeout(() => setSaveInfoStatus("idle"), 2500);
+  
+    } catch (err) {
+      console.log(err);
+      setSaveInfoStatus("error");
+  
+      setTimeout(() => setSaveInfoStatus("idle"), 2500);
     }
+  };
+
+  const handlePassSave = async () => {
+    
   };
 
   return (
@@ -147,13 +164,13 @@ function UserSettings() {
         />
       }
     >
-      <div className="settings-page">
+      <div className="settings-body">
         {/* ── Header ───────────────────────────── */}
         <div className="settings-header">
           <h1 className="settings-title">Settings</h1>
         </div>
 
-        <div className="settings-body">
+        <div className="settings-sections-grid">
           <section className="settings-section">
             <h2 className="settings-section-title">Personal Info</h2>
             <p className="settings-section-subtitle">
@@ -204,6 +221,24 @@ function UserSettings() {
                   Date of birth cannot be modified
                 </span>
               </div>
+            </div>
+            <Button
+              disabled={!canSave || saveInfoStatus === "saving"}
+              onClick={handleSave}
+            >
+              {saveInfoStatus === "saving" ? "Saving..." : "Save changes"}
+            </Button>
+            <div className="settings-footer">
+              {saveInfoStatus === "saved" && (
+                <span className="settings-saved-msg">
+                  ✓ Changes saved successfully
+                </span>
+              )}
+              {saveInfoStatus === "error" && (
+                <span className="settings-error-msg">
+                  ✗ Something went wrong. Try again.
+                </span>
+              )}
             </div>
           </section>
 
@@ -277,26 +312,27 @@ function UserSettings() {
                 )}
               </div>
             </div>
-          </section>
-
-          <div className="settings-footer">
-            {saveStatus === "saved" && (
-              <span className="settings-saved-msg">
-                ✓ Changes saved successfully
-              </span>
-            )}
-            {saveStatus === "error" && (
-              <span className="settings-error-msg">
-                ✗ Something went wrong. Try again.
-              </span>
-            )}
             <Button
-              disabled={!canSave || saveStatus === "saving"}
-              onClick={handleSave}
+              disabled={!canPassSave || saveStatus === "saving"}
+              onClick={handlePassSave}
             >
               {saveStatus === "saving" ? "Saving..." : "Save changes"}
             </Button>
-          </div>
+            <div className="settings-footer">
+              {saveStatus === "saved" && (
+                <span className="settings-saved-msg">
+                  ✓ Changes saved successfully
+                </span>
+              )}
+              {saveStatus === "error" && (
+                <span className="settings-error-msg">
+                  ✗ Something went wrong. Try again.
+                </span>
+              )}
+            </div>
+          </section>
+
+          
         </div>
       </div>
     </Layout>

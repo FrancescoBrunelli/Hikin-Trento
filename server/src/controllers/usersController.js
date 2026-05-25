@@ -19,7 +19,6 @@ const user_basic_info = async (req, res) => {
   }
 };
 
-
 /**
  * Updates the basic information of the authenticated user.
  * Modifies name, surname and username of the user attached to the request by the auth middleware.
@@ -39,11 +38,15 @@ const user_update_info = async (req, res) => {
     req.user.name = req.body.name;
     req.user.surname = req.body.surname;
     req.user.username = req.body.username;
-    console.log("pre");
     await req.user.save();
-    console.log("post");
     res.status(200).json({
       status: "success",
+      user: {
+        name: req.user.name,
+        surname: req.user.surname,
+        username: req.user.username,
+        date_of_birth: req.user.date_of_birth,
+      },
     });
   } catch (err) {
     res.status(400).json({
@@ -51,7 +54,6 @@ const user_update_info = async (req, res) => {
     });
   }
 };
-
 
 /**
  * Update authenticated user's password.
@@ -72,24 +74,30 @@ const user_update_info = async (req, res) => {
  */
 const user_update_password = async (req, res) => {
   try {
-    const isMatch = await bcrypt.compare(req.body.curr_password, req.user.password);
+    const isMatch = await bcrypt.compare(
+      req.body.curr_password,
+      req.user.password,
+    );
     if (!isMatch) {
-      return res.status(401).json({ error: "Current password is not correct. Try again" });
+      return res
+        .status(401)
+        .json({ error: "Current password is not correct. Try again" });
     }
     if (req.body.new_password !== req.body.confirm_password) {
-      return res.status(401).json({ error: "New password is different from confirm new password" });
+      return res
+        .status(401)
+        .json({ error: "New password is different from confirm new password" });
     }
     req.user.password = req.body.new_password;
     await req.user.save();
     res.status(200).json({
       status: "success",
-    })
+    });
   } catch (err) {
     res.status(400).json({
       error: err.message,
     });
   }
-}
-
+};
 
 module.exports = { user_basic_info, user_update_info, user_update_password };

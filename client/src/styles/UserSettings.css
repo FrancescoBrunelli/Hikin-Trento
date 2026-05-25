@@ -29,10 +29,14 @@
   color: var(--text);
 }
 
-.settings-body {
+.settings-sections-grid {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.settings-section {
+  flex: 1;
 }
 
 .settings-section {
