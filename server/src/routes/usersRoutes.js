@@ -60,4 +60,6 @@ router.get("/basicInfo", authMiddleware, usersController.user_basic_info);
 
 router.put("/basicInfo", authMiddleware, usersController.user_update_info);
 
+router.put("/password", authMiddleware, usersController.user_update_password);
+
 module.exports = router;
