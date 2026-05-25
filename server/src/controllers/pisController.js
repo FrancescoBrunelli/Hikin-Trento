@@ -1,4 +1,4 @@
-const PIsService = require('../services/PIsService');
+const PIsService = require('../services/pisService');
 
 const getPIs = async (req, res) => {
     try {

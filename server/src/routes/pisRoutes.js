@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const PIsController = require('../controllers/PIsController');
+const PIsController = require('../controllers/pisController');
 
 /**
  * @swagger
