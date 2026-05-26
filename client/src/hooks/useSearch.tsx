@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { searchStructures } from '../services/structureService.tsx';
 import { searchTrails } from '../services/trailService'
+import { searchPIs } from '../services/piService.tsx'
 
-type SearchMode = 'all' | 'structures' | 'trails';
+type SearchMode = 'all' | 'structures' | 'trails' | 'pis';
 
 export type StructureFilters = {
   managed?: boolean;
@@ -20,22 +21,32 @@ export type TrailFilters = {
   operator?: string;
 }
 
+export type PIFilters = {
+  shelter_type?: string;
+  lat?: number;
+  lng?: number;
+  radius?: number;
+}
+
 export function useSearch() {
   const [query, setQuery] = useState('');
   const [mode, setMode] = useState<SearchMode>('all');
   const [structureFilters, setStructureFilters] = useState<StructureFilters>({});
   const [trailFilters, setTrailFilters] = useState<TrailFilters>({});
+  const [piFilters, setPIFilters] = useState<PIFilters>({});
   const [results, setResults] = useState<any[]>([]);
 
   const handleSearch = async () => {
     if (mode === 'all') {
-      const [structures, trails] = await Promise.all([
+      const [structures, trails, pis] = await Promise.all([
         searchStructures(query, {}),
         searchTrails({name : query}),
+        searchPIs({name : query}),
       ]);
       setResults([
         ...structures.map((s: any) => ({ ...s, type: 'structure' })),
         ...trails.map((t: any) => ({ ...t, type: 'trail' })),
+        ...pis.map((t: any) => ({ ...t, type: 'pi' })),
       ]);
     } else if (mode === 'structures') {
       const structures = await searchStructures(query, structureFilters);
@@ -43,6 +54,10 @@ export function useSearch() {
     } else if (mode === 'trails') {
       const trails = await searchTrails({name : query, ...trailFilters});
       setResults(trails.map((t: any) => ({ ...t, type: 'trail' })));
+    } else if (mode === 'pis') {
+      const PIs = await searchPIs({name : query, ...piFilters});
+      console.log(PIs);
+      setResults(PIs.map((t: any) => ({ ...t, type: 'pi' })));
     }
   };
   return {
@@ -50,6 +65,7 @@ export function useSearch() {
     mode, setMode,
     structureFilters, setStructureFilters,
     trailFilters, setTrailFilters,
+    piFilters, setPIFilters,
     handleSearch, results
   };
 }

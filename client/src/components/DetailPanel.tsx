@@ -85,6 +85,13 @@ export default function DetailPanel({ selected, onClose }) {
                 <span className="detail-value">{selected.roundtrip ? 'Yes' : 'No'}</span>
             </div>
         )}
+        {/* PIs fields */}
+        {selected.shelter_type &&(
+            <div className="detail-row">
+                <span className="detail-label">Shelter Type</span>
+                <span className="detail-value">{selected.shelter_type}</span>
+            </div>
+        )}
       <button onClick={onClose} className="close-btn">✕ Close</button>
     </div>
   );

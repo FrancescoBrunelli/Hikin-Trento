@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ResultCard from './ResultCard';
 import AdvancedSearchForm from './AdvancedSearchForm';
-import type {StructureFilters, TrailFilters} from "../hooks/useSearch.tsx";
+import type {StructureFilters, TrailFilters, PIFilters} from "../hooks/useSearch.tsx";
 
 type Props = {
     query: string;
@@ -10,15 +10,17 @@ type Props = {
     onSearch: () => void;
     onSelect: (r: any) => void;
     selected: any;
-    mode: 'all' | 'trails' | 'structures';
-    setMode: (m: 'all' | 'trails' | 'structures') => void;
+    mode: 'all' | 'trails' | 'structures' | 'pis';
+    setMode: (m: 'all' | 'trails' | 'structures' | 'pis') => void;
     trailFilters: TrailFilters;
     setTrailFilters: (f: TrailFilters) => void;
+    piFilters: PIFilters;
+    setPIFilters: (f: PIFilters) => void;
     structureFilters: StructureFilters;
     setStructureFilters: (f: StructureFilters) => void;
 }
 
-export default function SearchPanel({ query, setQuery, results, onSearch, onSelect, selected, mode, setMode, trailFilters, setTrailFilters, structureFilters, setStructureFilters }: Props) {
+export default function SearchPanel({ query, setQuery, results, onSearch, onSelect, selected, mode, setMode, trailFilters, piFilters, setPIFilters, setTrailFilters, structureFilters, setStructureFilters }: Props) {
     const [showAdvanced, setShowAdvanced] = useState(false);
     return (
         <div className="search-panel">
@@ -40,12 +42,15 @@ export default function SearchPanel({ query, setQuery, results, onSearch, onSele
                             <button className={`mode-btn ${mode === 'all' ? 'mode-btn--active' : ''}`} onClick={() => setMode('all')}>All</button>
                             <button className={`mode-btn ${mode === 'trails' ? 'mode-btn--active' : ''}`} onClick={() => setMode('trails')}>Trails</button>
                             <button className={`mode-btn ${mode === 'structures' ? 'mode-btn--active' : ''}`} onClick={() => setMode('structures')}>Structures</button>
+                            <button className={`mode-btn ${mode === 'pis' ? 'mode-btn--active' : ''}`} onClick={() => setMode('pis')}>POIs</button>
                         </div>
                         {mode !== 'all' && (
                             <AdvancedSearchForm
                                 mode = {mode}
                                 trailFilters = {trailFilters}
                                 setTrailFilters = {setTrailFilters}
+                                piFilters = {piFilters}
+                                setPIFilters = {setPIFilters}
                                 structureFilters = {structureFilters}
                                 setStructureFilters = {setStructureFilters}
                             />
