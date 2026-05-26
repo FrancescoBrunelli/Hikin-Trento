@@ -122,7 +122,14 @@ useEffect(() => {
           setQuery={setQuery}
           results={results}
           onSearch={handleSearch}
-          onSelect={setSelected}
+          onSelect={(r) => {
+              setSelected(r);
+              if (r.type === "pi") {
+                  setSelectedPI(r);
+              } else {
+                  setSelectedTrail(null);
+              }
+          }}
           selected={selected}
           mode={mode}
           setMode={setMode}
@@ -130,6 +137,8 @@ useEffect(() => {
           setTrailFilters={setTrailFilters}
           structureFilters={structureFilters}
           setStructureFilters={setStructureFilters}
+          piFilters={piFilters}
+          setPIFilters={setPIFilters}
         />
         <div className="home-map">
           <MapView
