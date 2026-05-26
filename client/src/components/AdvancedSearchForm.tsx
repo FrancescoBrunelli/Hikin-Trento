@@ -1,9 +1,11 @@
-import type {StructureFilters, TrailFilters} from "../hooks/useSearch.tsx";
+import type {StructureFilters, TrailFilters, PIFilters} from "../hooks/useSearch.tsx";
 
 type Props = {
-    mode: "trails" | "structures",
+    mode: "trails" | "structures" | "pis",
     trailFilters: TrailFilters,
     setTrailFilters: (filters: TrailFilters) => void,
+    piFilters: PIFilters,
+    setPIFilters: (filters: PIFilters) => void,
     structureFilters: StructureFilters,
     setStructureFilters: (filters: StructureFilters) => void
 }
@@ -12,6 +14,8 @@ export default function AdvancedSearchForm ({
     mode,
     trailFilters,
     setTrailFilters,
+    piFilters,
+    setPIFilters,
     structureFilters,
     setStructureFilters
 }: Props) {
@@ -28,6 +32,22 @@ export default function AdvancedSearchForm ({
                 </label>
             </div>
         );
+    } else if (mode === "pis") {
+        return (
+            <div className="advanced-search-form">
+                <div className="filter-row">
+                    <div className="advanced-search-form">
+                        <label className="filter-label">Shelter Type</label>
+                        <input
+                            type="text"
+                            className="search-input"
+                            value={piFilters.shelter_type ?? ''}
+                            onChange={(e) => setPIFilters({...piFilters, shelter_type: e.target.value})}
+                        />
+                    </div>
+                </div>
+            </div>
+        )
     }
 
     return (

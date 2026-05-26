@@ -8,5 +8,5 @@ export const searchPIs = async (filters: Record<string, any> = {}) => {
     })
     const res = await fetch(`/api/pis?${params.toString()}`);
     const data = await res.json();
-    return data.pis ?? [];
+    return data.PIs ?? [];
 }

@@ -12,9 +12,10 @@ import { getBasicInfo } from "../services/structureService";
 import { userBasicInfo } from "../services/userService";
 import { useNavigate } from 'react-router-dom';
 function Home() {
-  const { query, setQuery, results, handleSearch, mode, setMode, trailFilters, setTrailFilters, structureFilters, setStructureFilters } = useSearch();
+  const { query, setQuery, results, handleSearch, mode, setMode, trailFilters, setTrailFilters, piFilters, setPIFilters, structureFilters, setStructureFilters } = useSearch();
   const [selected, setSelected] = useState<any>(null);
   const [selectedTrail, setSelectedTrail] = useState<any>(null);
+  const [selectedPI, setSelectedPI] = useState<any>(null);
   const [structures, setStructures] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<{ name : string } | null>(null);
@@ -108,30 +109,51 @@ useEffect(() => {
           setQuery={setQuery}
           results={results}
           onSearch={handleSearch}
-          onSelect={setSelected}
+          onSelect={(r) => {
+              setSelected(r);
+              if (r.type === 'pi') {
+                  setSelectedPI(r);
+                  setSelectedTrail(null);
+              } else if (r.type === 'trail') {
+                  setSelectedTrail(r);
+                  setSelectedPI(null);
+              } else {
+                  setSelectedPI(null);
+                  setSelectedTrail(null);
+              }
+          }}
           selected={selected}
           mode={mode}
           setMode={setMode}
           trailFilters={trailFilters}
           setTrailFilters={setTrailFilters}
+          piFilters={piFilters}
+          setPIFilters={setPIFilters}
           structureFilters={structureFilters}
           setStructureFilters={setStructureFilters}
         />
         <div className="home-map">
           <MapView
               structures = {structures}
-              onSelectStructure = {setSelected}
+              onSelectStructure = {(s) => {
+                  setSelected(s);
+                  setSelectedTrail(null);
+                  setSelectedPI(null);
+              }}
               onSelectTrail = {(t) => {
                 setSelected(t);
                 setSelectedTrail(t);
+                setSelectedPI(null);
               }}
               selectedTrail = {selectedTrail}
+              selectedPI = {selectedPI}
               selected={selected}
           />
         </div>
         <DetailPanel selected={selected} onClose={() => {
-          setSelected(null)
-          setSelectedTrail(null)
+            setSelected(null)
+            setSelectedTrail(null)
+            setSelectedPI(null)
         }} />
       </div>
     </Layout>
