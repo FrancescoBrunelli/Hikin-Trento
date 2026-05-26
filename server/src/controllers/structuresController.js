@@ -1,4 +1,6 @@
 const structuresService = require("../services/structuresService");
+const bcrypt = require("bcrypt");
+
 
 const basic_info = async (req, res) => {
   try {
@@ -54,4 +56,35 @@ const structure_update_info = async (req, res) => {
   }
 };
 
-module.exports = { basic_info, search, structure_update_info };
+
+const structure_update_password = async (req, res) => {
+  try {
+    const isMatch = await bcrypt.compare(
+      req.body.curr_password,
+      req.managedStructure.password,
+    );
+
+    if (!isMatch) {
+      return res.status(401).json({
+        error: "Current password is not correct. Try again"
+      });
+    }
+    
+    if (req.body.new_password !== req.body.confirm_password) {
+      return res.status(401).json({ error: "New password is different from confirm new password" });
+    }
+
+    req.managedStructure.password = req.body.new_password;
+    await req.managedStructure.save();
+    res.status(200).json({
+      status: "success",
+    });
+  } catch (err) {
+    res.status(400).json({
+      error: err.message,
+    });
+  }
+};
+
+
+module.exports = { basic_info, search, structure_update_info, structure_update_password };

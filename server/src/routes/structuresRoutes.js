@@ -86,7 +86,7 @@ const authStructureMiddleware = require("../middleware/authStructureMiddleware")
  */
 router.get("/basicInfo", structuresController.basic_info);
 router.get("/search", structuresController.search);
-router.put("/basicInfo", authStructureMiddleware, structuresController.structure_update_info)
-
+router.put("/basicInfo", authStructureMiddleware, structuresController.structure_update_info);
+router.put("/password", authStructureMiddleware, structuresController.structure_update_password);
 
 module.exports = router;
