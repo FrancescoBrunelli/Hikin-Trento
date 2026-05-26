@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const structuresController = require("../controllers/structuresController");
+const authStructureMiddleware = require("../middleware/authStructureMiddleware");
 
 /**
  * @swagger
@@ -85,4 +86,7 @@ const structuresController = require("../controllers/structuresController");
  */
 router.get("/basicInfo", structuresController.basic_info);
 router.get("/search", structuresController.search);
+router.put("/basicInfo", authStructureMiddleware, structuresController.structure_update_info)
+
+
 module.exports = router;

@@ -32,4 +32,26 @@ const search = async (req, res) => {
   }
 }
 
-module.exports = { basic_info, search };
+
+const structure_update_info = async (req, res) => {
+  try {
+    req.managedStructure.name_owner = req.body.name_owner;
+    req.managedStructure.surname_owner = req.body.surname_owner;
+    req.managedStructure.telephone = req.body.telephone;
+    await req.managedStructure.save();
+    res.status(200).json({
+      status: "success",
+      managedstructure: {
+        name_owner: req.managedStructure.name_owner,
+        surname_owner: req.managedStructure.surname_owner,
+        telephone: req.managedStructure.telephone,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      error: err.message,
+    });
+  }
+};
+
+module.exports = { basic_info, search, structure_update_info };
