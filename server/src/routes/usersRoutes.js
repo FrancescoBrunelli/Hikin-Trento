@@ -60,7 +60,7 @@ router.get("/basicInfo", authMiddleware, usersController.user_basic_info);
 
 /**
  * @swagger
- * /api/users/basicInfo:
+ * /api/user/basicInfo:
  *   put:
  *     summary: Update authenticated user's information
  *     description: Allows an authenticated user to update their personal information.
@@ -130,7 +130,7 @@ router.put("/basicInfo", authMiddleware, usersController.user_update_info);
 
 /**
  * @swagger
- * /api/users/password:
+ * /api/user/password:
  *   put:
  *     summary: Update user password
  *     description: Allows an authenticated user to change their password.
