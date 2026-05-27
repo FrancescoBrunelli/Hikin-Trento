@@ -52,3 +52,5 @@ export const signUpStructure = async (payload: Record<string, any>) => {
   return await response.json();
 };
 
+
+

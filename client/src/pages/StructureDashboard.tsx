@@ -5,6 +5,7 @@ import Layout from '../components/Layout.tsx';
 import Button from '../components/Button.tsx';
 import '../styles/StructureDashboard.css';
 
+
 function StructureDashboard() {
     const navigate = useNavigate();
     const [manager, setManager] = useState<any>(null);
@@ -35,6 +36,10 @@ function StructureDashboard() {
         localStorage.removeItem('structure');
         navigate('/');
     };
+
+  const handleSettings = () => {
+    navigate('/structure/settings');
+  }
 
     // Tab content renderer
     const renderContent = () => {
@@ -124,8 +129,8 @@ function StructureDashboard() {
                     {/* ACCOUNT DROPDOWN */}
                     {showDropdown && (
                         <div className="dashboard-account-dropdown">
-                            <button className="dashboard-dropdown-item">
-                                <FaCog size={16} /> Settings
+                            <button className="dashboard-dropdown-item" onClick={handleSettings}>
+                                <FaCog size={16} /> Settings 
                             </button>
                             <button className="dashboard-dropdown-item danger" onClick={handleLogout}>
                                 <FaSignOutAlt size={16} /> Logout
