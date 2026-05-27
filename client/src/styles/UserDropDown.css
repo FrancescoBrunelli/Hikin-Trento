@@ -5,10 +5,11 @@
   gap: 8px;
 }
 
+
 .dashboard-account-dropdown {
   position: absolute;
-  top: 100%;           /* ← appears below the button */
-  right: 0;            /* ← aligns to the right */
+  top: 100%;            
+  right: 0;             
   z-index: 100;
   background: var(--card-bg);
   border: 1px solid var(--input-border);
