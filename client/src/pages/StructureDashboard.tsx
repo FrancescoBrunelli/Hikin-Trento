@@ -14,9 +14,8 @@ import {
   FaRegBell,
   FaExclamationTriangle
 } from "react-icons/fa";
-import Layout from "../components/Layout.tsx";
 import Button from "../components/Button.tsx";
-import "../styles/StructureDashboard.css";
+import Tabs from "../components/Tabs.tsx";
 import ThemeToggle from "../components/ThemeToggle.tsx";
 import AnnouncementsPanel from "./Announcements.tsx";
 import { reportService } from "../services/reportService";
@@ -25,7 +24,6 @@ function StructureDashboard() {
   const navigate = useNavigate();
   const [manager, setManager] = useState<any>(null);
   const [structure, setStructure] = useState<any>(null);
-  const [activeTab, setActiveTab] = useState("bookings");
   const [showDropdown, setShowDropdown] = useState(false);
   const [reports, setReports] = useState<Report[]>([]);
 
@@ -48,7 +46,6 @@ function StructureDashboard() {
     }
   };
 
-  // Auth check + load data
   useEffect(() => {
     const token = localStorage.getItem("token");
     const role = localStorage.getItem("role");
@@ -234,8 +231,7 @@ function StructureDashboard() {
             </span>
             <span className="dashboard-manager-role">Structure Manager</span>
           </div>
-        
-          <div className="dashboard-dropdown-wrapper">  {/* ← left of ThemeToggle */}
+          <div className="dashboard-dropdown-wrapper">
             <button
               className="dashboard-account-btn"
               onClick={(e) => {
@@ -259,8 +255,7 @@ function StructureDashboard() {
               </div>
             )}
           </div>
-        
-          <ThemeToggle />  {/* ← right of wrapper */}
+          <ThemeToggle />
         </div>
       </div>
 
