@@ -96,15 +96,7 @@ function UserSettings() {
       });
   }, []); // ← add empty array so it only runs once on mount
 
-  // ── handlers ────────────────────────────────────────────────────
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
-    setIsAuthenticated(false);
-    setUser(null);
-    navigate("/");
-  };
-
+  
   const handleChange = (field: keyof User, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
@@ -172,12 +164,7 @@ function UserSettings() {
               icon: <FaArrowLeft size={16} />,
               onClick: () => navigate(-1),
             },
-            {
-              label: "Logout",
-              icon: <FaSignOutAlt size={16} />,
-              onClick: handleLogout,
-              danger: true,
-            },
+            
           ]}
         />
       }

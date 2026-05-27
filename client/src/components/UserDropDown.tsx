@@ -1,5 +1,7 @@
-import { FaUserCircle } from 'react-icons/fa';
-import '../styles/UserDropDown.css';
+import { FaUserCircle, FaSignOutAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
+import "../styles/UserDropDown.css";
 
 interface DropdownItem {
   label: string;
@@ -13,36 +15,66 @@ interface UserDropdownProps {
   surname?: string;
   showDropdown: boolean;
   onToggle: () => void;
-  items: DropdownItem[];   // ← configurable items
+  items: DropdownItem[];
 }
 
-
-export default function UserDropdown({ 
-  name, 
-  surname, 
-  showDropdown, 
+export default function UserDropdown({
+  name,
+  surname,
+  showDropdown,
   onToggle,
-  items
+  items,
 }: UserDropdownProps) {
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+
+    navigate("/");
+    window.location.reload();
+  };
+
   return (
     <div className="dashboard-user-wrapper">
+
       <div className="dashboard-manager-info">
-        <span className="dashboard-manager-name">{name} {surname}</span>
+        <span className="dashboard-manager-name">
+          {name} {surname}
+        </span>
       </div>
-      <button className="dashboard-account-btn" onClick={onToggle}>
+
+      <button
+        className="dashboard-account-btn"
+        onClick={onToggle}
+      >
         <FaUserCircle size={22} />
       </button>
+
       {showDropdown && (
         <div className="dashboard-account-dropdown">
+
           {items.map((item, index) => (
             <button
               key={index}
-              className={`dashboard-dropdown-item ${item.danger ? 'danger' : ''}`}
+              className={`dashboard-dropdown-item ${
+                item.danger ? "danger" : ""
+              }`}
               onClick={item.onClick}
             >
               {item.icon} {item.label}
             </button>
           ))}
+
+          {/* fixed logout button */}
+          <button
+            className="dashboard-dropdown-item danger"
+            onClick={handleLogout}
+          >
+            <FaSignOutAlt size={16} /> Logout
+          </button>
+
         </div>
       )}
     </div>

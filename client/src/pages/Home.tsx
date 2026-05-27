@@ -99,13 +99,6 @@ function Home() {
     }
   }, []);
 
-  const handleLogout = () => {
-    console.log("Logging out...");
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
-    setIsAuthenticated(false);
-    setUser(null);
-  };
 
   const handleSettings = () => {
       navigate("/user/settings");
@@ -133,12 +126,6 @@ function Home() {
                     label: "Settings",
                     icon: <FaCog size={16} />,
                     onClick: handleSettings,
-                  },
-                  {
-                    label: "Logout",
-                    icon: <FaSignOutAlt size={16} />,
-                    onClick: handleLogout,
-                    danger: true,
                   },
                 ]}
               />

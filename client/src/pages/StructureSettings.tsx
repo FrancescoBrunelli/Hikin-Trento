@@ -6,7 +6,10 @@ import { managedStructureBasicInfo } from "../services/managedStructureService";
 import UserDropdown from "../components/UserDropDown.tsx";
 import { FaArrowLeft, FaSignOutAlt } from "react-icons/fa";
 import "../styles/UserSettings.css";
-import { updateStructureInfo, updateStructurePassword } from "../services/managedStructureService";
+import {
+  updateStructureInfo,
+  updateStructurePassword,
+} from "../services/managedStructureService";
 
 interface ManagedStructure {
   name_owner: string;
@@ -89,13 +92,6 @@ function StructureSettings() {
   }, []);
 
   // ── handlers ────────────────────────────────────────────────────
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
-    setIsAuthenticated(false);
-    setmanagedStructure(null);
-    navigate("/");
-  };
 
   const handleChange = (field: keyof ManagedStructure, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -113,7 +109,7 @@ function StructureSettings() {
         telephone: form.telephone,
       });
 
-      console.log("result:" , response.managedstructure);
+      console.log("result:", response.managedstructure);
       setmanagedStructure(response.managedstructure);
 
       setOriginal({ ...form });
@@ -163,12 +159,6 @@ function StructureSettings() {
               label: "Back",
               icon: <FaArrowLeft size={16} />,
               onClick: () => navigate(-1),
-            },
-            {
-              label: "Logout",
-              icon: <FaSignOutAlt size={16} />,
-              onClick: handleLogout,
-              danger: true,
             },
           ]}
         />
