@@ -42,7 +42,7 @@ app.use('/api/user', require('./routes/usersRoutes'));
 app.use('/api/trails', require('./routes/trailsRoutes'));
 app.use('/api/auth', require('./routes/structureLoginRoutes'));
 app.use('/api/planning', require('./routes/planningRoutes'));
-
+app.use('/api/managedStructure', require('./routes/managedStructureRoutes'));
 module.exports = connectoToDatabase;
 
 

@@ -113,7 +113,8 @@ function StructureSettings() {
         telephone: form.telephone,
       });
 
-      setmanagedStructure(response.managedStructure);
+      console.log("result:" , response.managedstructure);
+      setmanagedStructure(response.managedstructure);
 
       setOriginal({ ...form });
 
