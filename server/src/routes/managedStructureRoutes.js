@@ -3,16 +3,15 @@ const router = express.Router();
 const managedStructureController = require("../controllers/managedStructureController");
 const authStructureMiddleware = require("../middleware/authStructureMiddleware");
 
-
 /**
  * @swagger
- * /api/structures/basicInfo:
+ * /api/managedStructure/basicInfo:
  *   get:
  *     summary: Get basic info of the authenticated managed structure
  *     description: >
  *       Returns the basic info of the managed structure identified by the JWT token.
  *       Requires a valid JWT token in the Authorization header issued to a managed structure.
- *     tags: [Structures]
+ *     tags: [Managed Structures]
  *     security:
  *       - bearerAuth: []
  *     responses:
@@ -56,9 +55,11 @@ const authStructureMiddleware = require("../middleware/authStructureMiddleware")
  *                   type: string
  *                   example: "Something went wrong"
  */
-router.get("/basicInfo", authStructureMiddleware, managedStructureController.managed_structure_basic_info);
-
-
+router.get(
+  "/basicInfo",
+  authStructureMiddleware,
+  managedStructureController.managed_structure_basic_info,
+);
 
 /**
  * @swagger
@@ -68,7 +69,7 @@ router.get("/basicInfo", authStructureMiddleware, managedStructureController.man
  *     description: >
  *       Updates name_owner, surname_owner and telephone of the authenticated managed structure.
  *       Requires a valid JWT token in the Authorization header issued to a managed structure.
- *     tags: [Structures]
+ *     tags: [Managed Structures]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -135,20 +136,22 @@ router.get("/basicInfo", authStructureMiddleware, managedStructureController.man
  *                   type: string
  *                   example: "Something went wrong"
  */
-router.put("/basicInfo", authStructureMiddleware, managedStructureController.structure_update_info);
-
-
+router.put(
+  "/basicInfo",
+  authStructureMiddleware,
+  managedStructureController.structure_update_info,
+);
 
 /**
  * @swagger
- * /api/structures/password:
+ * /api/managedStructure/password:
  *   put:
  *     summary: Update the authenticated managed structure's password
  *     description: >
  *       Updates the password of the authenticated managed structure.
  *       Requires the current password for verification before allowing the update.
  *       The new password is hashed automatically by the pre-save hook.
- *     tags: [Structures]
+ *     tags: [Managed Structures]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -206,7 +209,10 @@ router.put("/basicInfo", authStructureMiddleware, managedStructureController.str
  *                   type: string
  *                   example: "Something went wrong"
  */
-router.put("/password", authStructureMiddleware, managedStructureController.structure_update_password);
-
+router.put(
+  "/password",
+  authStructureMiddleware,
+  managedStructureController.structure_update_password,
+);
 
 module.exports = router;
