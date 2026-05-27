@@ -8,9 +8,20 @@ import DetailPanel from "../components/DetailPanel";
 import { useSearch } from "../hooks/useSearch";
 import { useState, useEffect } from "react";
 import "../styles/HomePage.css";
+import {
+  FaCalendarAlt,
+  FaStar,
+  FaChartBar,
+  FaMapMarkerAlt,
+  FaUserCircle,
+  FaSignOutAlt,
+  FaCog,
+  FaPhone,
+} from "react-icons/fa";
 import { getBasicInfo } from "../services/structureService";
 import { userBasicInfo } from "../services/userService";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import UserDropdown from "../components/UserDropDown.tsx";
 function Home() {
   const {
     query,
@@ -31,10 +42,13 @@ function Home() {
   const [selectedPI, setSelectedPI] = useState<any>(null);
   const [structures, setStructures] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<{ name : string } | null>(null);
+  const [user, setUser] = useState<{ name: string } | null>(null);
 
   //const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  
   useEffect(() => {
     getBasicInfo({
       radius: 0, // 0 = all structures
@@ -49,42 +63,41 @@ function Home() {
       .catch((err) => console.error(err));
   }, []);
 
-useEffect(() => {
+  useEffect(() => {
     const token = localStorage.getItem("token");
     const role = localStorage.getItem("role");
 
     if (!token) {
-        setIsAuthenticated(false);
-        localStorage.removeItem("role"); // clean up role if no token
-        return;
+      setIsAuthenticated(false);
+      localStorage.removeItem("role"); // clean up role if no token
+      return;
     }
 
-    if (role === 'structure_manager') {
-        setIsAuthenticated(true);
-        setUser({ name: 'Manager' });
-        return;
+    if (role === "structure_manager") {
+      setIsAuthenticated(true);
+      setUser({ name: "Manager" });
+      return;
     }
 
     userBasicInfo(token)
-        .then((data) => {
-            setUser(data);
-            setIsAuthenticated(true);
-        })
-        .catch(() => {
-            setIsAuthenticated(false);
-            localStorage.removeItem("token");
-            localStorage.removeItem("role"); // clean up role on token failure
-        });
-}, []);
-useEffect(() => {
-    const token = localStorage.getItem('token');
-    const role = localStorage.getItem('role');
-    
-    if (token && role === 'structure_manager') {
-        navigate('/structure/dashboard');
+      .then((data) => {
+        setUser(data);
+        setIsAuthenticated(true);
+      })
+      .catch(() => {
+        setIsAuthenticated(false);
+        localStorage.removeItem("token");
+        localStorage.removeItem("role"); // clean up role on token failure
+      });
+  }, []);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");
+
+    if (token && role === "structure_manager") {
+      navigate("/structure/dashboard");
     }
-    
-}, []);
+  }, []);
 
   const handleLogout = () => {
     console.log("Logging out...");
@@ -93,6 +106,10 @@ useEffect(() => {
     setIsAuthenticated(false);
     setUser(null);
   };
+
+  const handleSettings = () => {
+      navigate("/user/settings");
+    };
 
   return (
     <Layout
@@ -106,11 +123,25 @@ useEffect(() => {
             </>
           ) : (
             <>
-              <div>
-                <Button className="button-welcome">Welcome {user?.name}</Button>
-              </div>
-
-              <Button onClick={handleLogout}>Logout</Button>
+              <UserDropdown
+                name={user?.name}
+                surname={user?.surname}
+                showDropdown={showDropdown}
+                onToggle={() => setShowDropdown(!showDropdown)}
+                items={[
+                  {
+                    label: "Settings",
+                    icon: <FaCog size={16} />,
+                    onClick: handleSettings,
+                  },
+                  {
+                    label: "Logout",
+                    icon: <FaSignOutAlt size={16} />,
+                    onClick: handleLogout,
+                    danger: true,
+                  },
+                ]}
+              />
             </>
           )}
         </>
@@ -123,12 +154,12 @@ useEffect(() => {
           results={results}
           onSearch={handleSearch}
           onSelect={(r) => {
-              setSelected(r);
-              if (r.type === "pi") {
-                  setSelectedPI(r);
-              } else {
-                  setSelectedTrail(null);
-              }
+            setSelected(r);
+            if (r.type === "pi") {
+              setSelectedPI(r);
+            } else {
+              setSelectedTrail(null);
+            }
           }}
           selected={selected}
           mode={mode}
@@ -142,27 +173,30 @@ useEffect(() => {
         />
         <div className="home-map">
           <MapView
-              structures = {structures}
-              onSelectStructure = {(s) => {
-                  setSelected(s);
-                  setSelectedTrail(null);
-                  setSelectedPI(null);
-              }}
-              onSelectTrail = {(t) => {
-                setSelected(t);
-                setSelectedTrail(t);
-                setSelectedPI(null);
-              }}
-              selectedTrail = {selectedTrail}
-              selectedPI = {selectedPI}
-              selected={selected}
+            structures={structures}
+            onSelectStructure={(s) => {
+              setSelected(s);
+              setSelectedTrail(null);
+              setSelectedPI(null);
+            }}
+            onSelectTrail={(t) => {
+              setSelected(t);
+              setSelectedTrail(t);
+              setSelectedPI(null);
+            }}
+            selectedTrail={selectedTrail}
+            selectedPI={selectedPI}
+            selected={selected}
           />
         </div>
-        <DetailPanel selected={selected} onClose={() => {
-            setSelected(null)
-            setSelectedTrail(null)
-            setSelectedPI(null)
-        }} />
+        <DetailPanel
+          selected={selected}
+          onClose={() => {
+            setSelected(null);
+            setSelectedTrail(null);
+            setSelectedPI(null);
+          }}
+        />
       </div>
     </Layout>
   );
