@@ -45,6 +45,7 @@ app.use('/api/planning', require('./routes/planningRoutes'));
 app.use('/api/pis', require('./routes/pisRoutes'));
 
 
+app.use('/api/managedStructure', require('./routes/managedStructureRoutes'));
 module.exports = connectoToDatabase;
 
 

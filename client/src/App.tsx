@@ -9,6 +9,7 @@ import StructureSignIn from './pages/StructureSignIn.tsx'
 import ChooseLogin from './pages/ChooseLogin.tsx'
 import StructureDashboard from './pages/StructureDashboard.tsx'
 import UserSettings from './pages/UserSettings.tsx'
+import StructureSettings from './pages/StructureSettings.tsx'
 function App() {
   return (
       <ThemeProvider>
@@ -21,7 +22,8 @@ function App() {
                   <Route path="/structuresignin" element={<StructureSignIn />} />
                   <Route path="/chooselogin" element={<ChooseLogin />} />
                   <Route path="/structure/dashboard" element={<StructureDashboard />} />
-                  <Route path="user/settings" element={<UserSettings />} />
+                  <Route path="/user/settings" element={<UserSettings />} />
+                  <Route path="/structure/settings" element={<StructureSettings />} />
               </Routes>
           </BrowserRouter>
       </ThemeProvider>

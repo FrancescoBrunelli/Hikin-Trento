@@ -16,6 +16,7 @@ interface UserDropdownProps {
   items: DropdownItem[];   // ← configurable items
 }
 
+
 export default function UserDropdown({ 
   name, 
   surname, 
