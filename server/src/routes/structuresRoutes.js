@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const structuresController = require("../controllers/structuresController");
 const authStructureMiddleware = require("../middleware/authStructureMiddleware");
+const deleteController = require("../controllers/deleteController");
+
 
 /**
  * @swagger
@@ -160,6 +162,9 @@ router.get("/basicInfo", structuresController.basic_info);
  *                   example: "Something went wrong"
  */
 router.get("/search", structuresController.search);
+
+
+router.delete("/account", authStructureMiddleware, deleteController.delete_managed_structure);
 
 
 module.exports = router;

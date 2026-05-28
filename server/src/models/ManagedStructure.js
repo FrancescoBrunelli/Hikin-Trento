@@ -17,15 +17,6 @@ const managedStructureSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-managedStructureSchema.index(
-  {
-    name: 1,
-    "coordinates.latitude": 1,
-    "coordinates.longitude": 1,
-    "coordinates.altitude": 1,
-  },
-  { unique: true },
-);
 
 managedStructureSchema.pre("save", async function () {
   if (!this.isModified("password")) return;

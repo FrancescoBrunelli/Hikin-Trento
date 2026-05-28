@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const usersController = require("../controllers/usersController");
 const authMiddleware = require("../middleware/authMiddleware");
+const deleteController = require("../controllers/deleteController");
 
 /**
  *  @swagger
@@ -190,5 +191,9 @@ router.put("/basicInfo", authMiddleware, usersController.user_update_info);
  *                   type: string
  */
 router.put("/password", authMiddleware, usersController.user_update_password);
+
+
+router.delete("/account", authMiddleware, deleteController.delete_user);
+
 
 module.exports = router;

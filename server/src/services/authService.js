@@ -59,18 +59,24 @@ const register_structure = async ({
   structure.managed = true;
   console.log(structure);
   await structure.save();
-  const managed_structure = new ManagedStructure({
-    name,
-    name_owner,
-    surname_owner,
-    telephone,
-    password,
-    structure,
-  });
-  console.log(managed_structure);
-
-  await managed_structure.save();
-  return managed_structure;
+  
+  try {
+      const managed_structure = new ManagedStructure({
+        name,
+        name_owner,
+        surname_owner,
+        telephone,
+        password,
+        structure,
+      });
+      await managed_structure.save();
+      return managed_structure;
+    } catch (err) {
+      // 4. rollback — if account creation fails, unmark the structure
+      structure.managed = false;
+      await structure.save();
+      throw new Error('Account creation failed: ' + err.message);  // ← throw, not res.json
+    }
 };
 
 module.exports = { register, register_structure };
