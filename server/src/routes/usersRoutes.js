@@ -192,7 +192,59 @@ router.put("/basicInfo", authMiddleware, usersController.user_update_info);
  */
 router.put("/password", authMiddleware, usersController.user_update_password);
 
-
+/**
+ * @swagger
+ * /api/user/account:
+ *   delete:
+ *     summary: Delete authenticated user account
+ *     description: Deletes the authenticated user's account after password confirmation.
+ *     tags:
+ *       - Users
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - password
+ *             properties:
+ *               password:
+ *                 type: string
+ *                 example: myPassword123
+ *     responses:
+ *       200:
+ *         description: Account deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Account deleted successfully
+ *       401:
+ *         description: Incorrect password
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: The password is not correct
+ *       400:
+ *         description: Generic server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ */
 router.delete("/account", authMiddleware, deleteController.delete_user);
 
 

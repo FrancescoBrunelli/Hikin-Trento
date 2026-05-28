@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const structuresController = require("../controllers/structuresController");
-const authStructureMiddleware = require("../middleware/authStructureMiddleware");
-const deleteController = require("../controllers/deleteController");
+
 
 
 /**
@@ -164,7 +163,6 @@ router.get("/basicInfo", structuresController.basic_info);
 router.get("/search", structuresController.search);
 
 
-router.delete("/account", authStructureMiddleware, deleteController.delete_managed_structure);
 
 
 module.exports = router;

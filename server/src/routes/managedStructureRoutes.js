@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const managedStructureController = require("../controllers/managedStructureController");
 const authStructureMiddleware = require("../middleware/authStructureMiddleware");
-
+const deleteController = require("../controllers/deleteController");
 /**
  * @swagger
  * /api/managedStructure/basicInfo:
@@ -214,5 +214,62 @@ router.put(
   authStructureMiddleware,
   managedStructureController.structure_update_password,
 );
+
+/**
+ * @swagger
+ * /api/managedStructure/account:
+ *   delete:
+ *     summary: Delete authenticated managed structure account
+ *     description: Deletes the authenticated managed structure account after password confirmation and marks the related structure as unmanaged.
+ *     tags:
+ *       - Managed Structures
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - password
+ *             properties:
+ *               password:
+ *                 type: string
+ *                 example: myPassword123
+ *     responses:
+ *       200:
+ *         description: Account deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Account deleted successfully
+ *       401:
+ *         description: Incorrect password
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: The password is not correct
+ *       400:
+ *         description: Generic server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ */
+router.delete("/account", authStructureMiddleware, deleteController.delete_managed_structure);
+
+
 
 module.exports = router;
