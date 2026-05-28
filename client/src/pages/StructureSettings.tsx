@@ -66,6 +66,12 @@ function StructureSettings() {
   const canSave = infoChanged;
   const canPassSave = passwordFilled && passwordValid;
 
+  // Delete account
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [deletePassword, setDeletePassword] = useState('');
+  const [deleteError, setDeleteError] = useState('');
+
+  
   // ── fetch user on mount ──────────────────────────────────────────
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -143,6 +149,28 @@ function StructureSettings() {
     } catch (err) {
       setSaveStatus("error");
       setTimeout(() => setSaveStatus("idle"), 2500);
+    }
+  };
+
+  const handleDeleteAccount = async () => {
+    setDeleteError('');
+    const res = await fetch('/api/managedStructure/account', {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ password: deletePassword })
+    });
+  
+    const data = await res.json();
+  
+    if (res.ok) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('role');
+      navigate('/');
+    } else {
+      setDeleteError(data.error);  // show "Password is incorrect"
     }
   };
 
@@ -322,6 +350,50 @@ function StructureSettings() {
           </section>
         </div>
       </div>
+      {!confirmDelete ? (
+        <button
+          className="settings-delete-btn"
+          onClick={() => setConfirmDelete(true)}
+        >
+          Delete Account
+        </button>
+      ) : (
+        <div className="settings-delete-confirm">
+          <p className="settings-delete-warning">
+            ⚠️ This action is permanent and cannot be undone.
+          </p>
+          <div className="settings-field">
+            <label className="settings-label">Enter your password to confirm</label>
+            <input
+              className={`settings-input ${deleteError ? 'settings-input--invalid' : ''}`}
+              type="password"
+              placeholder="Your password"
+              value={deletePassword}
+              onChange={e => setDeletePassword(e.target.value)}
+            />
+            {deleteError && <span className="hint-invalid">{deleteError}</span>}
+          </div>
+          <div className="settings-delete-actions">
+            <button
+              className="settings-delete-btn"
+              disabled={deletePassword.length === 0}
+              onClick={handleDeleteAccount}
+            >
+              Yes, delete my account
+            </button>
+            <button
+              className="settings-cancel-btn"
+              onClick={() => {
+                setConfirmDelete(false);
+                setDeletePassword('');
+                setDeleteError('');
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 }
