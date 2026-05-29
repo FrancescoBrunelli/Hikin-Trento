@@ -2,8 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
-console.log("bcrypt loaded:", bcrypt);
-
+//console.log("bcrypt loaded:", bcrypt);
 
 /**
  * Authenticates a user using username and password credentials.
@@ -46,7 +45,7 @@ const login = async (req, res) => {
     const token = jwt.sign(
       { userId: user._id, username: user.username },
       process.env.JWT_SECRET,
-      { expiresIn: "10m" },
+      { expiresIn: "24h" },
     );
     res.status(200).json({
       message: "Login successful",

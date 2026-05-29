@@ -14,7 +14,7 @@ const bcrypt = require("bcrypt");
 const managed_structure_basic_info = async (req, res) => {
   try {
     const managedStructure = req.managedStructure;
-    console.log(req.managedStructure);
+    //console.log(req.managedStructure);
     res.status(200).json({
       managed_structure_id: managedStructure._id,
       name_owner: managedStructure.name_owner,

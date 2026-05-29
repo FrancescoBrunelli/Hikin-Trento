@@ -57,7 +57,7 @@ const register_structure = async ({
   if (structure == null) throw new Error("Structure not found");
   if (structure.managed) throw new Error("Structure already managed");
   structure.managed = true;
-  console.log(structure);
+  //console.log(structure);
   await structure.save();
   
   try {
