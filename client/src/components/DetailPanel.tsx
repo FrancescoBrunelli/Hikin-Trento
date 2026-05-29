@@ -1,4 +1,11 @@
-export default function DetailPanel({ selected, onClose }) {
+type Props = {
+    selected: any,
+    onClose: () => void
+    onAddToTrip?: (point: any) => void
+    isInTrip?: (id: string) => boolean
+};
+
+export default function DetailPanel({ selected, onClose, onAddToTrip, isInTrip }: Props) {
   if (!selected) return (
     <div className="detail-panel">
       <p className="no-results">Click on a result or map marker to see details.</p>
@@ -79,7 +86,7 @@ export default function DetailPanel({ selected, onClose }) {
                 <span className="detail-value">{selected.to}</span>
             </div>
         )}
-        {selected.roundtrip && (
+        {selected.roundtrip !== undefined && (
             <div className="detail-row">
                 <span className="detail-label">Roundtrip</span>
                 <span className="detail-value">{selected.roundtrip ? 'Yes' : 'No'}</span>
@@ -91,6 +98,14 @@ export default function DetailPanel({ selected, onClose }) {
                 <span className="detail-label">Shelter Type</span>
                 <span className="detail-value">{selected.shelter_type}</span>
             </div>
+        )}
+        {onAddToTrip && (
+            <button
+                onClick={() => isInTrip?.(selected._id) ? null : onAddToTrip(selected)}
+                className={isInTrip?.(selected._id) ? 'trip-btn trip-btn--added' : 'trip-btn'}
+            >
+                {isInTrip?.(selected._id) ? '✓ Added to trip' : '+ Add to trip'}
+            </button>
         )}
       <button onClick={onClose} className="close-btn">✕ Close</button>
     </div>

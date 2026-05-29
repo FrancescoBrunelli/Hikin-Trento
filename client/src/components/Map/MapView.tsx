@@ -190,7 +190,7 @@ export default function MapView({ structures, onSelectStructure, onSelectTrail, 
   onSelectStructure: (s: Structure) => void,
   onSelectTrail: (t: Trail) => void,
   selectedTrail: Trail | null
-  selectedPI?: any,
+  selectedPI: any | null
   onSelectPI: (pi: any) => void
   selected: any
 }) {
@@ -230,6 +230,8 @@ export default function MapView({ structures, onSelectStructure, onSelectTrail, 
                 key = {selectedPI.osm_id}
                 position = {[selectedPI.coordinates.latitude, selectedPI.coordinates.longitude] as [number, number]}
                 icon = {icons['poi']}
+                pane="makerPane"
+                interactive={false}
             />
         )}
         <TrailsLayer

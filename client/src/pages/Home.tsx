@@ -98,19 +98,23 @@ useEffect(() => {
     <Layout
       navChildren={
         <>
-          {!isAuthenticated ? (
-            <>
-              <Button to="/signup">Sign Up</Button>
+            {!isAuthenticated ? (
+                <>
+                    <Button to="/signup">Sign Up</Button>
 
-              <Button to="/chooselogin">Sign In</Button>
-            </>
-          ) : (
-            <>
-              <div>
-                <Button className="button-welcome">Welcome {user?.name}</Button>
-              </div>
+                    <Button to="/chooselogin">Sign In</Button>
+                </>
+            ) : (
+                <>
+                    <div>
+                        <Button className="button-welcome">Welcome {user?.name}</Button>
+                    </div>
 
-              <Button onClick={handleLogout}>Logout</Button>
+                    <div>
+                        <Button to="/tripplanning">Trip Planning</Button>
+                    </div>
+
+                    <Button onClick={handleLogout}>Logout</Button>
             </>
           )}
         </>
@@ -126,8 +130,13 @@ useEffect(() => {
               setSelected(r);
               if (r.type === "pi") {
                   setSelectedPI(r);
+                  setSelectedTrail(null);
+              } else if (r.type === "trail") {
+                  setSelectedTrail(r);
+                  setSelectedPI(null);
               } else {
                   setSelectedTrail(null);
+                  setSelectedPI(null);
               }
           }}
           selected={selected}
@@ -141,22 +150,27 @@ useEffect(() => {
           setPIFilters={setPIFilters}
         />
         <div className="home-map">
-          <MapView
-              structures = {structures}
-              onSelectStructure = {(s) => {
-                  setSelected(s);
-                  setSelectedTrail(null);
-                  setSelectedPI(null);
-              }}
-              onSelectTrail = {(t) => {
-                setSelected(t);
-                setSelectedTrail(t);
-                setSelectedPI(null);
-              }}
-              selectedTrail = {selectedTrail}
-              selectedPI = {selectedPI}
-              selected={selected}
-          />
+            <MapView
+                structures={structures}
+                onSelectStructure={(s) => {
+                    setSelected(s);
+                    setSelectedTrail(null);
+                    setSelectedPI(null);
+                }}
+                onSelectTrail={(t) => {
+                    setSelected(t);
+                    setSelectedTrail(t);
+                    setSelectedPI(null);
+                }}
+                onSelectPI={(pi) => {
+                    setSelected(pi);
+                    setSelectedPI(pi);
+                    setSelectedTrail(null);
+                }}
+                selectedTrail={selectedTrail}
+                selectedPI={selectedPI}
+                selected={selected}
+            />
         </div>
         <DetailPanel selected={selected} onClose={() => {
             setSelected(null)

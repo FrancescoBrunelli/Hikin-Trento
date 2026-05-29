@@ -28,9 +28,11 @@ export type PIFilters = {
   radius?: number;
 }
 
-export function useSearch() {
+export function useSearch(allowedModes?: SearchMode[]) {
   const [query, setQuery] = useState('');
-  const [mode, setMode] = useState<SearchMode>('all');
+  const [mode, setMode] = useState<SearchMode>(
+      allowedModes ? allowedModes[0] : 'all'
+  );
   const [structureFilters, setStructureFilters] = useState<StructureFilters>({});
   const [trailFilters, setTrailFilters] = useState<TrailFilters>({});
   const [piFilters, setPIFilters] = useState<PIFilters>({});
@@ -38,25 +40,23 @@ export function useSearch() {
 
   const handleSearch = async () => {
     if (mode === 'all') {
-      const [structures, trails, pis] = await Promise.all([
-        searchStructures(query, {}),
-        searchTrails({name : query}),
-        searchPIs({name : query}),
-      ]);
-      setResults([
-        ...structures.map((s: any) => ({ ...s, type: 'structure' })),
-        ...trails.map((t: any) => ({ ...t, type: 'trail' })),
-        ...pis.map((t: any) => ({ ...t, type: 'pi' })),
-      ]);
+      const fetches = [];
+      if (!allowedModes || allowedModes.includes('structures'))
+        fetches.push(searchStructures(query, {}).then((r: any[]) => r.map(s => ({ ...s, type: 'structure' }))));
+      if (!allowedModes || allowedModes.includes('trails'))
+        fetches.push(searchTrails({ name: query }).then((r: any[]) => r.map(t => ({ ...t, type: 'trail' }))));
+      if (!allowedModes || allowedModes.includes('pis'))
+        fetches.push(searchPIs({ name: query }).then((r: any[]) => r.map(t => ({ ...t, type: 'pi' }))));
+      const settled = await Promise.all(fetches);
+      setResults(settled.flat());
     } else if (mode === 'structures') {
       const structures = await searchStructures(query, structureFilters);
       setResults(structures.map((s: any) => ({ ...s, type: 'structure' })));
     } else if (mode === 'trails') {
-      const trails = await searchTrails({name : query, ...trailFilters});
+      const trails = await searchTrails({ name: query, ...trailFilters });
       setResults(trails.map((t: any) => ({ ...t, type: 'trail' })));
     } else if (mode === 'pis') {
-      const PIs = await searchPIs({name : query, ...piFilters});
-      console.log(PIs);
+      const PIs = await searchPIs({ name: query, ...piFilters });
       setResults(PIs.map((t: any) => ({ ...t, type: 'pi' })));
     }
   };
