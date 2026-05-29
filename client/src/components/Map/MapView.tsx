@@ -31,11 +31,10 @@ type Trail = {
   };
 }
 
-function TrailsLayer({ onSelectTrail, selectedTrail, selected, onSelectPI } : {
+function TrailsLayer({ onSelectTrail, selectedTrail, selected } : {
   onSelectTrail: (t: Trail) => void;
   selectedTrail: Trail | null;
   selected: any;
-  onSelectPI: (pi: any) => void;
 }) {
   const [trails, setTrails] = useState<Trail[]>([]);
   const [zoom, setZoom] = useState(10);
@@ -112,7 +111,6 @@ function TrailsLayer({ onSelectTrail, selectedTrail, selected, onSelectPI } : {
                         eventHandlers={{
                           click: () => {
                             onSelectTrail(trail)
-                            onSelectPI(null)
                             }
                         }}
                     />
@@ -137,7 +135,6 @@ function TrailsLayer({ onSelectTrail, selectedTrail, selected, onSelectPI } : {
                         eventHandlers={{
                           click: () => {
                             onSelectTrail(trail)
-                            onSelectPI(null)
                           },
                           mouseover: () => setHoveredTrailId(trail._id),
                           mouseout: () => setHoveredTrailId(null),
@@ -185,13 +182,12 @@ const icons: Record<string, L.DivIcon> = {
   trail:     createSmallIcon('#22c55e'),
 };
 
-export default function MapView({ structures, onSelectStructure, onSelectTrail, selectedTrail, selectedPI, onSelectPI, selected }: {
+export default function MapView({ structures, onSelectStructure, onSelectTrail, selectedTrail, selectedPI, selected }: {
   structures: Structure[],
   onSelectStructure: (s: Structure) => void,
   onSelectTrail: (t: Trail) => void,
   selectedTrail: Trail | null
   selectedPI: any | null
-  onSelectPI: (pi: any) => void
   selected: any
 }) {
   const isStructureSelected = selected && selected.type === 'structure';
@@ -219,7 +215,6 @@ export default function MapView({ structures, onSelectStructure, onSelectTrail, 
               eventHandlers={{
                 click: () => {
                   onSelectStructure(s)
-                  onSelectPI(null)
                 }
               }}
             />
@@ -230,15 +225,12 @@ export default function MapView({ structures, onSelectStructure, onSelectTrail, 
                 key = {selectedPI.osm_id}
                 position = {[selectedPI.coordinates.latitude, selectedPI.coordinates.longitude] as [number, number]}
                 icon = {icons['poi']}
-                pane="makerPane"
-                interactive={false}
             />
         )}
         <TrailsLayer
             onSelectTrail = {onSelectTrail}
             selectedTrail = {selectedTrail}
             selected = {selected}
-            onSelectPI = {onSelectPI}
         />
       </MapContainer>
     </div>
