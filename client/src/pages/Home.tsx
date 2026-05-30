@@ -47,8 +47,8 @@ function Home() {
   //const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [favourites, setFavourites] = useState([]);
 
-  
   useEffect(() => {
     getBasicInfo({
       radius: 0, // 0 = all structures
@@ -99,10 +99,41 @@ function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetch("/api/favourites/structures", {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+        .then((res) => res.json())
+        .then((data) => setFavourites(data.fav_structures ?? []))
+        .catch((err) => console.error(err));
+    }
+  }, [isAuthenticated]);
 
   const handleSettings = () => {
-      navigate("/user/settings");
-    };
+    navigate("/user/settings");
+  };
+
+  const handleToggleFavourite = async (item) => {
+    const isFav = favourites.some(f => f._id === item._id);
+    const method = isFav ? 'DELETE' : 'PUT';
+  
+    await fetch('/api/favourites/structures', {
+      method,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify({ _id: item._id })
+    });
+  
+    // update local state immediately without refetching
+    if (isFav) {
+      setFavourites(prev => prev.filter(f => f._id !== item._id));
+    } else {
+      setFavourites(prev => [...prev, item]);
+    }
+  };
 
   return (
     <Layout
@@ -178,11 +209,10 @@ function Home() {
         </div>
         <DetailPanel
           selected={selected}
-          onClose={() => {
-            setSelected(null);
-            setSelectedTrail(null);
-            setSelectedPI(null);
-          }}
+          onClose={() => setSelected(null)}
+          isAuthenticated={isAuthenticated}
+          favourites={favourites}
+          onToggleFavourite={handleToggleFavourite}
         />
       </div>
     </Layout>
