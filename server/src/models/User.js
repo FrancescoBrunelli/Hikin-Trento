@@ -1,4 +1,5 @@
 const structureSchema = require("./schemas/structureSchema");
+const trailSchema = require("./schemas/trailSchema");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
@@ -9,7 +10,8 @@ const userSchema = new mongoose.Schema(
     username: { type: String, required: true, unique: true },
     date_of_birth: { type: Date, required: true },
     password: { type: String, required: true },
-    fav_structures: {type: [structureSchema], required: false}
+    fav_structures: { type: [structureSchema], required: false },
+    fav_trails: {type: [trailSchema], required: false}
   },
   { timestamps: true },
 );

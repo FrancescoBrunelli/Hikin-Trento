@@ -1,4 +1,5 @@
 const Structure = require("../models/Structure");
+const Trail = require("../models/Trail");
 
 /**
  * Adds a structure to the authenticated user's favourites list.
@@ -98,4 +99,103 @@ const get_fav_structures = async (req, res) => {
   }
 };
 
-module.exports = { fav_structure, delete_fav_structure, get_fav_structures };
+/**
+ * Adds a trail to the authenticated user's favourites list.
+ * If the trail is already in the favourites list, it is not added again.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} req.user - The authenticated user document (attached by authMiddleware)
+ * @param {Array} req.user.fav_trails - The user's current list of favourite trails
+ * @param {Object} req.body - The request body
+ * @param {string} req.body._id - The MongoDB ObjectId of the trail to add to favourites
+ * @param {Object} res - Express response object
+ * @returns {Promise<void>} 200 with status and updated favourites list, 400 if an error occurs
+ * @returns {string} returns.status - "added item in the list" if added, "item was already in the list" if already present
+ * @returns {Array} returns.fav_trails - The updated list of favourite trails
+ * @throws {Error} If the trail is not found or saving fails
+ */
+const fav_trails = async (req, res) => {
+  try {
+    const trail = await Trail.findById(req.body._id);
+    let status = "item was already in the list";
+    if (!req.user.fav_trails.some((s) => s._id.equals(trail._id))) {
+      req.user.fav_trails.push(trail);
+      await req.user.save();
+      status = "added item in the list";
+    }
+    res.status(200).json({
+      status: status,
+      fav_trails: req.user.fav_trails,
+    });
+  } catch (err) {
+    res.status(400).json({
+      error: err.message,
+    });
+  }
+};
+
+
+
+/**
+ * Removes a trail from the authenticated user's favourites list.
+ * If the trail is not in the favourites list, no changes are made.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} req.user - The authenticated user document (attached by authMiddleware)
+ * @param {Array} req.user.fav_trails - The user's current list of favourite trails
+ * @param {Object} req.body - The request body
+ * @param {string} req.body._id - The MongoDB ObjectId of the trail to remove from favourites
+ * @param {Object} res - Express response object
+ * @returns {Promise<void>} 200 with status and updated favourites list, 400 if an error occurs
+ * @returns {string} returns.status - "Removed item from the list" if removed, "Item not in the list" if not found
+ * @returns {Array} returns.fav_trails - The updated list of favourite trails
+ * @throws {Error} If saving the user document fails
+ */
+const delete_fav_trail = async (req, res) => {
+  try {
+    let status = "Item not in the list";
+    const index = req.user.fav_trails.findIndex(
+      (s) => s._id.equals(req.body._id)
+    );
+    if (index != -1) {
+      req.user.fav_trails.splice(index, 1);
+      await req.user.save();
+      status = "Removed item from the list";
+    }
+    res.status(200).json({
+      status: status,
+      fav_trails: req.user.fav_trails,
+    });
+  } catch (err) {
+    res.status(400).json({
+      error: err.message,
+    });
+  }
+};
+
+
+/**
+ * Retrieves the authenticated user's list of favourite trails.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} req.user - The authenticated user document (attached by authMiddleware)
+ * @param {Array} req.user.fav_trails - The user's list of favourite trails
+ * @param {Object} res - Express response object
+ * @returns {Promise<void>} 200 with the list of favourite trails, 400 if an error occurs
+ * @returns {Array} returns.fav_trails - The list of favourite trails
+ */
+const get_fav_trails = async (req, res) => {
+  try {
+    res.status(200).json({
+      fav_trails: req.user.fav_trails,
+    });
+  } catch (err) {
+    res.status(400).json({
+      error: err.message,
+    });
+  }
+};
+
+
+
+module.exports = { fav_structure, delete_fav_structure, get_fav_structures, fav_trails, delete_fav_trail, get_fav_trails };
