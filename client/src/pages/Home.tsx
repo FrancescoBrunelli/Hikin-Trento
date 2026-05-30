@@ -101,12 +101,22 @@ function Home() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      fetch("/api/favourites/structures", {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      Promise.all([
+        fetch('/api/favourites/structures', {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        }).then(res => res.json()),
+        fetch('/api/favourites/trails', {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        }).then(res => res.json())
+      ])
+      .then(([structuresData, trailsData]) => {
+        const allFavourites = [
+          (structuresData.fav_structures ?? []),
+          (trailsData.fav_trails ?? [])
+        ];
+        setFavourites(allFavourites);
       })
-        .then((res) => res.json())
-        .then((data) => setFavourites(data.fav_structures ?? []))
-        .catch((err) => console.error(err));
+      .catch(err => console.error(err));
     }
   }, [isAuthenticated]);
 
@@ -115,10 +125,16 @@ function Home() {
   };
 
   const handleToggleFavourite = async (item) => {
-    const isFav = favourites.some((f) => f._id === item._id);
-    const method = isFav ? "DELETE" : "PUT";
-
-    await fetch("/api/favourites/structures", {
+    const isFav = favourites.some(f => f._id === item._id);
+    const method = isFav ? 'DELETE' : 'PUT';
+    console.log(item);
+    console.log("type: ", item.type);
+    // choose endpoint based on type
+    const endpoint = item.type === 'trail' 
+      ? '/api/favourites/trails' 
+      : '/api/favourites/structures';
+  
+    await fetch(endpoint, {
       method,
       headers: {
         "Content-Type": "application/json",
@@ -128,6 +144,7 @@ function Home() {
     });
 
     // update local state immediately without refetching
+  
     if (isFav) {
       setFavourites((prev) => prev.filter((f) => f._id !== item._id));
     } else {

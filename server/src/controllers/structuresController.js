@@ -15,7 +15,9 @@ const basic_info = async (req, res) => {
       show_managed: show_managed === "true",
       show_unmanaged: show_unmanaged === "true",
     });
-    res.status(200).json({ structures });
+    res.status(200).json({
+      structures
+    });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }

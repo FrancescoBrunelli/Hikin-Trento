@@ -7,6 +7,7 @@ const structureSchema = new mongoose.Schema(
     name: { type: String, required: true },
     coordinates: { type: coordinatesSchema, required: true },
     managed: { type: Boolean, required: true },
+    type: {type: String, required: true},
   },
   { timestamps: true },
 );

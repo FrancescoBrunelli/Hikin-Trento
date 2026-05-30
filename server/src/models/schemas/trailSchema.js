@@ -27,7 +27,8 @@ const trailSchema = new mongoose.Schema(
             type: {type: String, required: true},
             enum: ["LineString"],
             coordinates: {type: [[Number]], required: true}
-        }
+        },
+        type: {type: String, required: true},
     },
 )
 
