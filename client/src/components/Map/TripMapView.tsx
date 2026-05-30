@@ -9,25 +9,50 @@ type TripPoint = {
     type: 'structure' | 'pi'
 };
 
-const createIcon = (color: string) => L.divIcon({
+const createNumberedIcon = (color: string, number: number) => L.divIcon({
     className: '',
     html: `<div style="
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: ${color};
-    border: 2px solid white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  "></div>`,
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: ${color};
+        border: 2px solid white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 13px;
+        font-family: sans-serif;
+    ">${number}</div>`,
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
+});
+
+const createPreviewIcon = (color: string) => L.divIcon({
+    className: '',
+    html: `<div style="
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: ${color};
+        border: 2px solid white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        opacity: 0.6;
+    "></div>`,
     iconSize: [14, 14],
     iconAnchor: [7, 7],
 });
 
-const icons: Record<string, L.DivIcon> = {
-    preview_structure:  createIcon('#f97316'),
-    structure:          createIcon('#3b82f6'),
-    preview_poi:        createIcon('#b45309'),
-    poi:                createIcon('#1d4ed8'),
+const previewIcons: Record<string, L.DivIcon> = {
+    structure: createPreviewIcon('#f97316'),
+    pi:        createPreviewIcon('#3b82f6'),
+};
+
+const tripColors: Record<string, string> = {
+    structure: '#ea580c',
+    pi:        '#ea580c',
 };
 
 export default function TripMapView({ selected, tripPoints }: {
@@ -48,20 +73,20 @@ export default function TripMapView({ selected, tripPoints }: {
                     attribution="© OpenStreetMap contributors"
                 />
 
-                {/* Selected but not yet added — preview color */}
+                {/* Selected but not yet added — small faded preview */}
                 {selected && selected.coordinates && !tripIds.has(selected._id) && (
                     <Marker
                         position={[selected.coordinates.latitude, selected.coordinates.longitude]}
-                        icon={icons[`preview_${selected.type}` as keyof typeof icons]}
+                        icon={previewIcons[selected.type]}
                     />
                 )}
 
-                {/* Added trip points — darker color */}
-                {tripPoints.map(p => (
+                {/* Trip points — numbered */}
+                {tripPoints.map((p, i) => (
                     <Marker
                         key={p._id}
                         position={[p.coordinates.latitude, p.coordinates.longitude]}
-                        icon={icons[p.type as keyof typeof icons]}
+                        icon={createNumberedIcon(tripColors[p.type], i + 1)}
                     />
                 ))}
             </MapContainer>

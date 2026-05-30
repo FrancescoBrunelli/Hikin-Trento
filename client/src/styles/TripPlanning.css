@@ -1,0 +1,98 @@
+/* ── Trip Panel ───────────────────────────────── */
+.trip-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.trip-summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+}
+
+.trip-summary-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+}
+
+.trip-summary-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.trip-summary-actions {
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.trip-order-btn {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--input-border);
+    background: transparent;
+    color: var(--hint);
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.trip-order-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.trip-order-btn:not(:disabled):hover {
+    background: var(--input-border);
+}
+
+.trip-remove-btn {
+    margin-left: auto;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--input-border);
+    background: transparent;
+    color: #ef4444;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.trip-remove-btn:hover {
+    background: #ef444420;
+}
+
+.trip-btn {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.trip-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.trip-btn--added {
+    border-color: var(--input-border);
+    color: var(--hint);
+    cursor: default;
+}
+
+.trip-btn--added:hover {
+    background: transparent;
+    color: var(--hint);
+}
