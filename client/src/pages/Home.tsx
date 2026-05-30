@@ -115,23 +115,23 @@ function Home() {
   };
 
   const handleToggleFavourite = async (item) => {
-    const isFav = favourites.some(f => f._id === item._id);
-    const method = isFav ? 'DELETE' : 'PUT';
-  
-    await fetch('/api/favourites/structures', {
+    const isFav = favourites.some((f) => f._id === item._id);
+    const method = isFav ? "DELETE" : "PUT";
+
+    await fetch("/api/favourites/structures", {
       method,
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify({ _id: item._id })
+      body: JSON.stringify({ _id: item._id }),
     });
-  
+
     // update local state immediately without refetching
     if (isFav) {
-      setFavourites(prev => prev.filter(f => f._id !== item._id));
+      setFavourites((prev) => prev.filter((f) => f._id !== item._id));
     } else {
-      setFavourites(prev => [...prev, item]);
+      setFavourites((prev) => [...prev, item]);
     }
   };
 
@@ -209,7 +209,11 @@ function Home() {
         </div>
         <DetailPanel
           selected={selected}
-          onClose={() => setSelected(null)}
+          onClose={() => {
+            setSelected(null);
+            setSelectedTrail(null);
+            setSelectedPI(null);
+          }}
           isAuthenticated={isAuthenticated}
           favourites={favourites}
           onToggleFavourite={handleToggleFavourite}
