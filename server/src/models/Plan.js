@@ -3,31 +3,34 @@ const User = require("./User");
 const coordinatesSchema = require("./schemas/coordinatesSchema");
 const waypointSchema = new mongoose.Schema({
     coordinates: {
-        type: coordinatesSchema, // [longitude, latitude]
+        type: coordinatesSchema,
         required: true
     },
+
     type: {
         type: String,
         enum: ['structure', 'POI', 'custom'],
         default: 'custom'
     },
+
     ReferenceID: {
         type: mongoose.Schema.Types.ObjectId,
         default: null
     },
+
     name: {
         type: String,
         default: ''
     },
+
     category: {
         type: String,
         default: ''
-        // e.g. 'rifugio', 'cascata', 'caverna', 'bivacco', 'belvedere', 'area picnic', 'parcheggio', etc.
-    } 
+    }
 });
 
 const planSchema = new mongoose.Schema({
-    User: {
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
@@ -50,22 +53,33 @@ const planSchema = new mongoose.Schema({
 //        type: Boolean,
 //        default: false
 //    },
-    Start: {
-        coordinates: { type: waypointSchema, required: true },  // [lng, lat]
-        name: { type: String, default: '' }, // [longitude, latitude]
-        
+    start: {
+        type: waypointSchema,
+        required: true
     },
-    End: {
-        coordinates: { type:waypointSchema, required: true },  // [lng, lat]
-        name: { type: String, default: '' }, // [longitude, latitude]
+
+    end: {
+        type: waypointSchema,
+        required: true
     },
-    Waypoints: [waypointSchema],
+    waypoints: [waypointSchema],
     route: {
         distance: Number,      // meters
         duration: Number,      // seconds
         ascent: Number,       // meters elevation gain
         descent: Number,      // meters elevation loss
-        geometry: String,     // encoded polyline for map
+        geometry: {
+            type: {
+                type: String,
+                enum: ['LineString'],
+                default: 'LineString'
+            },
+
+            coordinates: {
+                type: [[Number]], // [[lng, lat], [lng, lat]]
+                required: true
+            }
+        },     // encoded polyline for map
         segments: Array       // turn by turn instructions
     },
     multiDay: {

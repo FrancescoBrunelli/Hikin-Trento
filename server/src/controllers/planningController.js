@@ -82,18 +82,32 @@ const Plan = require('../models/Plan');
 const savePlan = async (req, res) => {
     try {
         const { name, description, start, end, waypoints, route, multiDay, days } = req.body;
-
+        console.log('DEBUG savePlan body:', JSON.stringify(req.body, null, 2));
         if (!name || !start || !end || !route) {
             return res.status(400).json({ error: "Name, start, end and route are required" });
         }
+
+        // Converts [lng, lat, alt] array → waypoint object matching the schema
+        const toWaypoint = (val) => {
+            if (Array.isArray(val)) {
+                return {
+                    coordinates: {
+                        longitude: val[0],
+                        latitude:  val[1],
+                        altitude:  val[2] ?? 0
+                    }
+                };
+            }
+            return val; // already a properly shaped object
+        };
 
         const plan = new Plan({
             user: req.user._id,
             name,
             description,
-            start,
-            end,
-            waypoints: waypoints || [],
+            start: toWaypoint(start),
+            end:   toWaypoint(end),
+            waypoints: (waypoints || []).map(toWaypoint),
             route,
             multiDay: multiDay || false,
             days: days || 1
