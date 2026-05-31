@@ -42,7 +42,7 @@ function Home() {
   const [selectedPI, setSelectedPI] = useState<any>(null);
   const [structures, setStructures] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<{ name: string } | null>(null);
+  const [user, setUser] = useState<{ name: string; surname?: string } | null>(null);
 
   //const [user, setUser] = useState(null);
   const navigate = useNavigate();
@@ -99,13 +99,9 @@ function Home() {
     }
   }, []);
 
-  const handleLogout = () => {
-    console.log("Logging out...");
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
-    setIsAuthenticated(false);
-    setUser(null);
-  };
+  const handleSettings = () => {
+      navigate("/user/settings");
+  }
 
   return (
     <Layout
@@ -113,12 +109,13 @@ function Home() {
         <>
             {!isAuthenticated ? (
                 <>
-                    <Button to="/signup">Sign Up</Button>
+                    <Button to="/signup" variant="outline">Sign Up</Button>
 
-              <Button to="/chooselogin">Sign In</Button>
+              <Button to="/chooselogin" variant="outline">Sign In</Button>
             </>
           ) : (
             <>
+                <Button to="/tripplanning" variant="outline">Trip Planning</Button>
               <UserDropdown
                 name={user?.name}
                 surname={user?.surname}
