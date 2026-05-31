@@ -18,7 +18,9 @@ import Button from "../components/Button.tsx";
 import Tabs from "../components/Tabs.tsx";
 import ThemeToggle from "../components/ThemeToggle.tsx";
 import AnnouncementsPanel from "./Announcements.tsx";
-import { reportService } from "../services/reportService";
+import { reportService, type Report } from "../services/reportService";
+import "../styles/StructureDashboard.css";
+import "../styles/Tabs.css";
 
 function StructureDashboard() {
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ function StructureDashboard() {
   const [structure, setStructure] = useState<any>(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const [reports, setReports] = useState<Report[]>([]);
-
+  const [activeTab, setActiveTab] = useState('bookings');
   useEffect(() => {
     if (activeTab === "reports") {
       reportService.getReports().then(setReports).catch(console.error);
@@ -45,6 +47,7 @@ function StructureDashboard() {
       alert(err.message);
     }
   };
+
 
   useEffect(() => {
     const token = localStorage.getItem("token");

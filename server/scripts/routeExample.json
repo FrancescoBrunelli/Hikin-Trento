@@ -8,7 +8,7 @@
     "duration": <sum_of_forward_durations>,
     "from": "<start>",
     "to": "<end>",
-    "stops" : <List_of_Points>
+    "stops" : <List_of_Points>,
     "roundtrip": <boolean>,
     "geometry": {
       "type": "LineString",
