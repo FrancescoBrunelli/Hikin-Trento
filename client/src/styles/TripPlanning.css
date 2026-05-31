@@ -96,3 +96,37 @@
     background: transparent;
     color: var(--hint);
 }
+
+.trip-roundtrip-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text);
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.trip-roundtrip-checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.confirm-trip-btn {
+    margin-top: 4px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.confirm-trip-btn:hover {
+    background: var(--primary-hover);
+}

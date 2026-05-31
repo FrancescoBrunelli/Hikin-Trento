@@ -13,6 +13,8 @@ type Props = {
     onRemove: (id: string) => void;
     onMoveUp: (index: number) => void;
     onMoveDown: (index: number) => void;
+    roundtrip: boolean;
+    setRoundtrip: (roundTrip: boolean) => void;
     onConfirm: () => void;
 }
 
@@ -23,7 +25,7 @@ const getLabel = (index: number, total: number) => {
     return `Stop ${index + 1}`;
 }
 
-export default function TripPanel({ tripPoints, onRemove, onMoveUp, onMoveDown, onConfirm }: Props) {
+export default function TripPanel({ tripPoints, onRemove, onMoveUp, onMoveDown, roundtrip, setRoundtrip, onConfirm }: Props) {
     return (
         <div className="detail-panel">
             <p className="panel-title">Trip Plan</p>
@@ -56,9 +58,20 @@ export default function TripPanel({ tripPoints, onRemove, onMoveUp, onMoveDown, 
                 </div>
             )}
             {tripPoints.length >= 2 && (
-                <button onClick={onConfirm} className="confirm-trip-btn">
-                    ✓ Confirm Trip
-                </button>
+                <>
+                    <label className="trip-roundtrip-label">
+                        <input
+                            type="checkbox"
+                            checked={roundtrip}
+                            onChange={(e) => setRoundtrip(e.target.checked)}
+                            className="trip-roundtrip-checkbox"
+                        />
+                        Roundtrip
+                    </label>
+                    <button onClick={onConfirm} className="confirm-trip-btn">
+                        ✓ Confirm Trip
+                    </button>
+                </>
             )}
         </div>
     );

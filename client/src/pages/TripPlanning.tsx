@@ -55,10 +55,12 @@ function TripPlanning() {
 
     const isInTrip = (id: string) => tripPoints.some(p => p._id === id);
 
+    const [roundtrip, setRoundtrip] = useState(false);
+
     const handleConfirm = async () => {
         // 1. save to DB
         // 2. navigate to trip detail page
-        navigate('/trip/:id');
+        //navigate('/trip/:id');
     };
 
     return (
@@ -101,6 +103,8 @@ function TripPlanning() {
                         onRemove={removeFromTrip}
                         onMoveUp={moveUp}
                         onMoveDown={moveDown}
+                        roundtrip={roundtrip}
+                        setRoundtrip={setRoundtrip}
                         onConfirm={handleConfirm}
                     />
                 )}
