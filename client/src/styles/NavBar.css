@@ -50,8 +50,9 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-right: 60px;  
+  gap: 12px;
+  margin-right: 0px;
+    padding-right: 8px;
 }
 
 .navbar-right .btn {
@@ -76,4 +77,54 @@
     margin-top: 8px;
 
     transition: all 0.2s ease;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    padding: 4px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    transition: background 0.15s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--input-border);
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
 }

@@ -42,12 +42,13 @@ function Home() {
   const [selectedPI, setSelectedPI] = useState<any>(null);
   const [structures, setStructures] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<{ name: string } | null>(null);
+  const [user, setUser] = useState<{ name: string; surname?: string } | null>(null);
 
   //const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
   const [favourites, setFavourites] = useState([]);
+
 
   useEffect(() => {
     getBasicInfo({
@@ -156,14 +157,15 @@ function Home() {
     <Layout
       navChildren={
         <>
-          {!isAuthenticated ? (
-            <>
-              <Button to="/signup">Sign Up</Button>
+            {!isAuthenticated ? (
+                <>
+                    <Button to="/signup" variant="outline">Sign Up</Button>
 
-              <Button to="/chooselogin">Sign In</Button>
+              <Button to="/chooselogin" variant="outline">Sign In</Button>
             </>
           ) : (
             <>
+                <Button to="/tripplanning" variant="outline">Trip Planning</Button>
               <UserDropdown
                 name={user?.name}
                 surname={user?.surname}
@@ -189,12 +191,17 @@ function Home() {
           results={results}
           onSearch={handleSearch}
           onSelect={(r) => {
-            setSelected(r);
-            if (r.type === "pi") {
-              setSelectedPI(r);
-            } else {
-              setSelectedTrail(null);
-            }
+              setSelected(r);
+              if (r.type === "pi") {
+                  setSelectedPI(r);
+                  setSelectedTrail(null);
+              } else if (r.type === "trail") {
+                  setSelectedTrail(r);
+                  setSelectedPI(null);
+              } else {
+                  setSelectedTrail(null);
+                  setSelectedPI(null);
+              }
           }}
           selected={selected}
           mode={mode}
@@ -207,22 +214,27 @@ function Home() {
           setPIFilters={setPIFilters}
         />
         <div className="home-map">
-          <MapView
-            structures={structures}
-            onSelectStructure={(s) => {
-              setSelected(s);
-              setSelectedTrail(null);
-              setSelectedPI(null);
-            }}
-            onSelectTrail={(t) => {
-              setSelected(t);
-              setSelectedTrail(t);
-              setSelectedPI(null);
-            }}
-            selectedTrail={selectedTrail}
-            selectedPI={selectedPI}
-            selected={selected}
-          />
+            <MapView
+                structures={structures}
+                onSelectStructure={(s) => {
+                    setSelected(s);
+                    setSelectedTrail(null);
+                    setSelectedPI(null);
+                }}
+                onSelectTrail={(t) => {
+                    setSelected(t);
+                    setSelectedTrail(t);
+                    setSelectedPI(null);
+                }}
+                onSelectPI={(pi) => {
+                    setSelected(pi);
+                    setSelectedPI(pi);
+                    setSelectedTrail(null);
+                }}
+                selectedTrail={selectedTrail}
+                selectedPI={selectedPI}
+                selected={selected}
+            />
         </div>
         <DetailPanel
           selected={selected}
