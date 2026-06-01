@@ -5,6 +5,7 @@ const mongoose = require ('mongoose');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger');
 const cors = require('cors');
+const eventsRoutes = require('./routes/eventsRoutes');
 const app = express();
 
 app.use(express.json());
@@ -46,6 +47,7 @@ app.use('/api/pis', require('./routes/pisRoutes'));
 
 
 app.use('/api/managedStructure', require('./routes/managedStructureRoutes'));
+app.use('/api/structures', require('./routes/eventsRoutes'));
 module.exports = connectoToDatabase;
 
 
