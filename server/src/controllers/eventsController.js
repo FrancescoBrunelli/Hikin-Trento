@@ -38,10 +38,16 @@ const updateEvent = async (req, res) => {
     try {
         const event = await Event.findById(req.params.id);
         if (!event) {
-            return res.status(404).json({ error: 'Event not found' });
+            return res.status(404).json({
+                success: false,
+                error: 'Event not found'
+            });
         }
         if (event.structure_id.toString() != req.managedStructure._id.toString()) {
-            return res.status(403).json({ error: 'Forbidden' });
+            return res.status(403).json({
+                success: false,
+                error: 'Forbidden'
+            });
         }
         const updated = await eventsService.updateEvent(req.params.id, req.body);
         res.status(200).json({

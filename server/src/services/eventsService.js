@@ -1,6 +1,6 @@
 const Event = require('../models/Event');
 
-const getEvents = async(structure_id) => {
+const getEvents = async (structure_id) => {
     return await Event.find({ structure_id })
         .sort({ start_date: 1 })
         .lean()
