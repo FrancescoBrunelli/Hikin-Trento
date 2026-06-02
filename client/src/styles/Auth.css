@@ -13,9 +13,6 @@
 
 /* Theme Toggle */
 .theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 24px;
     background: var(--toggle-bg);
     color: var(--toggle-color);
     border: none;

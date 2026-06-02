@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const ManagedStructure = require("../models/ManagedStructure");
 
 /**
  * Returns the basic info of the authenticated managed structure.
@@ -27,7 +28,6 @@ const managed_structure_basic_info = async (req, res) => {
     });
   }
 };
-
 
 /**
  * Updates the basic info of the authenticated managed structure.
@@ -65,9 +65,6 @@ const structure_update_info = async (req, res) => {
   }
 };
 
-
-
-
 /**
  * Updates the password of the authenticated managed structure.
  * Verifies the current password before allowing the update.
@@ -92,12 +89,14 @@ const structure_update_password = async (req, res) => {
 
     if (!isMatch) {
       return res.status(401).json({
-        error: "Current password is not correct. Try again"
+        error: "Current password is not correct. Try again",
       });
     }
-    
+
     if (req.body.new_password !== req.body.confirm_password) {
-      return res.status(401).json({ error: "New password is different from confirm new password" });
+      return res
+        .status(401)
+        .json({ error: "New password is different from confirm new password" });
     }
 
     req.managedStructure.password = req.body.new_password;
@@ -112,5 +111,29 @@ const structure_update_password = async (req, res) => {
   }
 };
 
+const managed_structure_basic_info_from_id = async (req, res) => {
+  try {
+    const result = await ManagedStructure.findOne({
+      "structure._id": req.params.structure_id,
+    });
+    res.status(200).json({
+      _id: result._id,
+      name_owner: result.name_owner,
+      surname_owner: result.surname_owner, 
+      telephone: result.telephone,
+      structure: result.structure,
+      
+    });
+  } catch (err) {
+    res.status(400).json({
+      error: err.message,
+    });
+  }
+};
 
-module.exports = { structure_update_info, structure_update_password, managed_structure_basic_info };
+module.exports = {
+  structure_update_info,
+  structure_update_password,
+  managed_structure_basic_info,
+  managed_structure_basic_info_from_id,
+};

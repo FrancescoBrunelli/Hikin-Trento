@@ -270,6 +270,6 @@ router.put(
  */
 router.delete("/account", authStructureMiddleware, deleteController.delete_managed_structure);
 
-
+router.get("/:structure_id", managedStructureController.managed_structure_basic_info_from_id);
 
 module.exports = router;

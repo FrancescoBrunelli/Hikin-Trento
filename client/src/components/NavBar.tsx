@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle.tsx";
-import logo from "../assets/HikinTrentoLogo_noBackground.png"
-import "../styles/NavBar.css"
+import logo from "../assets/HikinTrentoLogo_noBackground.png";
+import "../styles/NavBar.css";
 
 export default function NavBar({ children }: { children?: React.ReactNode }) {
   return (
@@ -18,9 +18,8 @@ export default function NavBar({ children }: { children?: React.ReactNode }) {
         </div>
       </div>
       <div className="navbar-right">
-        
-        {children}  {/* ← buttons go here */}
-        <ThemeToggle/>
+        {children} {/* ← buttons go here */}
+        <ThemeToggle />
       </div>
     </nav>
   );

@@ -1,4 +1,5 @@
 import { FaStar, FaRegStar } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
 
 type Props = {
   selected: any;
@@ -19,6 +20,23 @@ export default function DetailPanel({
   favourites = [],
   onToggleFavourite,
 }: Props) {
+  const [telephone, setTelephone] = useState<string | null>(null);
+  useEffect(() => {
+    if (!selected?.managed) {
+      setTelephone(null);
+      return;
+    }
+
+    fetch(`http://localhost:3000/api/managedStructure/${selected._id}`)
+      .then((res) => res.json())
+      .then((managedStructure) => {
+        setTelephone(managedStructure.telephone);
+      })
+      .catch(() => {
+        setTelephone(null);
+      });
+  }, [selected]);
+
   if (!selected)
     return (
       <div className="detail-panel">
@@ -28,6 +46,7 @@ export default function DetailPanel({
       </div>
     );
   const isFavourite = favourites.some((f) => f._id === selected._id);
+
   return (
     <div className="detail-panel">
       <div className="detail-panel-header">
@@ -67,10 +86,10 @@ export default function DetailPanel({
           </div>
         </>
       )}
-      {selected.telephone && (
+      {telephone && (
         <div className="detail-row">
           <span className="detail-label">Phone</span>
-          <span className="detail-value">{selected.telephone}</span>
+          <span className="detail-value">{telephone}</span>
         </div>
       )}
 

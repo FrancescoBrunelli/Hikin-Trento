@@ -5,6 +5,7 @@ import Layout from "../components/Layout.tsx";
 import MapView from "../components/Map/MapView.tsx";
 import SearchPanel from "../components/SearchPanel";
 import DetailPanel from "../components/DetailPanel";
+import ThemeToggle from "../components/ThemeToggle.tsx";
 import { useSearch } from "../hooks/useSearch";
 import { useState, useEffect } from "react";
 import "../styles/HomePage.css";
@@ -42,13 +43,14 @@ function Home() {
   const [selectedPI, setSelectedPI] = useState<any>(null);
   const [structures, setStructures] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<{ name: string; surname?: string } | null>(null);
+  const [user, setUser] = useState<{ name: string; surname?: string } | null>(
+    null,
+  );
 
   //const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
   const [favourites, setFavourites] = useState([]);
-
 
   useEffect(() => {
     getBasicInfo({
@@ -103,21 +105,21 @@ function Home() {
   useEffect(() => {
     if (isAuthenticated) {
       Promise.all([
-        fetch('/api/favourites/structures', {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-        }).then(res => res.json()),
-        fetch('/api/favourites/trails', {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-        }).then(res => res.json())
+        fetch("/api/favourites/structures", {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }).then((res) => res.json()),
+        fetch("/api/favourites/trails", {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }).then((res) => res.json()),
       ])
-      .then(([structuresData, trailsData]) => {
-        const allFavourites = [
-          (structuresData.fav_structures ?? []),
-          (trailsData.fav_trails ?? [])
-        ];
-        setFavourites(allFavourites);
-      })
-      .catch(err => console.error(err));
+        .then(([structuresData, trailsData]) => {
+          const allFavourites = [
+            structuresData.fav_structures ?? [],
+            trailsData.fav_trails ?? [],
+          ];
+          setFavourites(allFavourites);
+        })
+        .catch((err) => console.error(err));
     }
   }, [isAuthenticated]);
 
@@ -126,15 +128,16 @@ function Home() {
   };
 
   const handleToggleFavourite = async (item) => {
-    const isFav = favourites.some(f => f._id === item._id);
-    const method = isFav ? 'DELETE' : 'PUT';
+    const isFav = favourites.some((f) => f._id === item._id);
+    const method = isFav ? "DELETE" : "PUT";
     console.log(item);
     console.log("type: ", item.type);
     // choose endpoint based on type
-    const endpoint = item.type === 'trail' 
-      ? '/api/favourites/trails' 
-      : '/api/favourites/structures';
-  
+    const endpoint =
+      item.type === "trail"
+        ? "/api/favourites/trails"
+        : "/api/favourites/structures";
+
     await fetch(endpoint, {
       method,
       headers: {
@@ -145,7 +148,7 @@ function Home() {
     });
 
     // update local state immediately without refetching
-  
+
     if (isFav) {
       setFavourites((prev) => prev.filter((f) => f._id !== item._id));
     } else {
@@ -157,15 +160,21 @@ function Home() {
     <Layout
       navChildren={
         <>
-            {!isAuthenticated ? (
-                <>
-                    <Button to="/signup" variant="outline">Sign Up</Button>
+          {!isAuthenticated ? (
+            <>
+              <Button to="/signup" variant="outline">
+                Sign Up
+              </Button>
 
-              <Button to="/chooselogin" variant="outline">Sign In</Button>
+              <Button to="/chooselogin" variant="outline">
+                Sign In
+              </Button>
             </>
           ) : (
             <>
-                <Button to="/tripplanning" variant="outline">Trip Planning</Button>
+              <Button to="/tripplanning" variant="outline">
+                Trip Planning
+              </Button>
               <UserDropdown
                 name={user?.name}
                 surname={user?.surname}
@@ -191,17 +200,17 @@ function Home() {
           results={results}
           onSearch={handleSearch}
           onSelect={(r) => {
-              setSelected(r);
-              if (r.type === "pi") {
-                  setSelectedPI(r);
-                  setSelectedTrail(null);
-              } else if (r.type === "trail") {
-                  setSelectedTrail(r);
-                  setSelectedPI(null);
-              } else {
-                  setSelectedTrail(null);
-                  setSelectedPI(null);
-              }
+            setSelected(r);
+            if (r.type === "pi") {
+              setSelectedPI(r);
+              setSelectedTrail(null);
+            } else if (r.type === "trail") {
+              setSelectedTrail(r);
+              setSelectedPI(null);
+            } else {
+              setSelectedTrail(null);
+              setSelectedPI(null);
+            }
           }}
           selected={selected}
           mode={mode}
@@ -214,27 +223,27 @@ function Home() {
           setPIFilters={setPIFilters}
         />
         <div className="home-map">
-            <MapView
-                structures={structures}
-                onSelectStructure={(s) => {
-                    setSelected(s);
-                    setSelectedTrail(null);
-                    setSelectedPI(null);
-                }}
-                onSelectTrail={(t) => {
-                    setSelected(t);
-                    setSelectedTrail(t);
-                    setSelectedPI(null);
-                }}
-                onSelectPI={(pi) => {
-                    setSelected(pi);
-                    setSelectedPI(pi);
-                    setSelectedTrail(null);
-                }}
-                selectedTrail={selectedTrail}
-                selectedPI={selectedPI}
-                selected={selected}
-            />
+          <MapView
+            structures={structures}
+            onSelectStructure={(s) => {
+              setSelected(s);
+              setSelectedTrail(null);
+              setSelectedPI(null);
+            }}
+            onSelectTrail={(t) => {
+              setSelected(t);
+              setSelectedTrail(t);
+              setSelectedPI(null);
+            }}
+            onSelectPI={(pi) => {
+              setSelected(pi);
+              setSelectedPI(pi);
+              setSelectedTrail(null);
+            }}
+            selectedTrail={selectedTrail}
+            selectedPI={selectedPI}
+            selected={selected}
+          />
         </div>
         <DetailPanel
           selected={selected}
