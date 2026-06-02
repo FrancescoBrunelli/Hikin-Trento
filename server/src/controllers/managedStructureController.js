@@ -111,25 +111,46 @@ const structure_update_password = async (req, res) => {
   }
 };
 
-const managed_structure_basic_info_from_id = async (req, res) => {
-  try {
-    const result = await ManagedStructure.findOne({
-      "structure._id": req.params.structure_id,
-    });
-    res.status(200).json({
-      _id: result._id,
-      name_owner: result.name_owner,
-      surname_owner: result.surname_owner, 
-      telephone: result.telephone,
-      structure: result.structure,
-      
-    });
-  } catch (err) {
-    res.status(400).json({
-      error: err.message,
-    });
-  }
-};
+
+/**
+ * Retrieves the basic info of a managed structure by its associated structure ID.
+ * This is a public endpoint — no authentication required.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} req.params - The route parameters
+ * @param {string} req.params.structure_id - The MongoDB ObjectId of the structure
+ * @param {Object} res - Express response object
+ * @returns {Promise<void>} 200 with the managed structure's basic info, 400 if an error occurs
+ * @returns {string} returns._id - The MongoDB ObjectId of the managed structure
+ * @returns {string} returns.name_owner - The first name of the owner
+ * @returns {string} returns.surname_owner - The last name of the owner
+ * @returns {string} returns.telephone - The contact phone number
+ * @returns {Object} returns.structure - The associated structure document
+ * @throws {Error} If no managed structure is found for the given structure ID
+ */
+ const managed_structure_basic_info_from_id = async (req, res) => {
+   try {
+     const result = await ManagedStructure.findOne({
+       "structure._id": req.params.structure_id,
+     });
+ 
+     if (!result) {                           // ← add this
+       return res.status(404).json({
+         error: "Managed structure not found"
+       });
+     }
+ 
+     res.status(200).json({
+       _id: result._id,
+       name_owner: result.name_owner,
+       surname_owner: result.surname_owner,
+       telephone: result.telephone,
+       structure: result.structure,
+     });
+   } catch (err) {
+     res.status(400).json({ error: err.message });
+   }
+ };
 
 module.exports = {
   structure_update_info,

@@ -270,6 +270,81 @@ router.put(
  */
 router.delete("/account", authStructureMiddleware, deleteController.delete_managed_structure);
 
+
+/**
+ * @swagger
+ * /api/managedStructure/{structure_id}:
+ *   get:
+ *     summary: Get basic info of a managed structure by structure ID
+ *     description: >
+ *       Returns the basic info of a managed structure identified by its
+ *       associated structure ID. This is a public endpoint and does not
+ *       require authentication.
+ *     tags: [Managed Structures]
+ *     parameters:
+ *       - in: path
+ *         name: structure_id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The MongoDB ObjectId of the structure
+ *         example: "64f1a2b3c4d5e6f7a8b9c0d1"
+ *     responses:
+ *       200:
+ *         description: Managed structure info retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 _id:
+ *                   type: string
+ *                   description: The MongoDB ObjectId of the managed structure
+ *                   example: "64f1a2b3c4d5e6f7a8b9c0d1"
+ *                 name_owner:
+ *                   type: string
+ *                   example: "Marco"
+ *                 surname_owner:
+ *                   type: string
+ *                   example: "Bianchi"
+ *                 telephone:
+ *                   type: string
+ *                   example: "+39 0461 123456"
+ *                 structure:
+ *                   type: object
+ *                   properties:
+ *                     _id:
+ *                       type: string
+ *                       example: "64f1a2b3c4d5e6f7a8b9c0d1"
+ *                     name:
+ *                       type: string
+ *                       example: "Rifugio Dolomiti"
+ *                     coordinates:
+ *                       type: object
+ *                       properties:
+ *                         latitude:
+ *                           type: number
+ *                           example: 46.4102
+ *                         longitude:
+ *                           type: number
+ *                           example: 11.3428
+ *                         altitude:
+ *                           type: number
+ *                           example: 2150
+ *                     managed:
+ *                       type: boolean
+ *                       example: true
+ *       404:
+  *         description: No managed structure found for the given structure ID
+  *         content:
+  *           application/json:
+  *             schema:
+  *               type: object
+  *               properties:
+  *                 error:
+  *                   type: string
+  *                   example: "Managed structure not found"
+ */
 router.get("/:structure_id", managedStructureController.managed_structure_basic_info_from_id);
 
 module.exports = router;
