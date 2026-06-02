@@ -4,6 +4,8 @@ const managedStructureController = require("../controllers/managedStructureContr
 const authStructureMiddleware = require("../middleware/authStructureMiddleware");
 const deleteController = require("../controllers/deleteController");
 const eventsController = require ("../controllers/eventsController");
+const announcementsController = require ("../controllers/announcementsController");
+
 /**
  * @swagger
  * /api/managedStructure/basicInfo:
@@ -276,5 +278,11 @@ router.post('/events', authStructureMiddleware, eventsController.createEvent);
 router.put('/events/:id', authStructureMiddleware, eventsController.updateEvent);
 
 router.delete('/events/:id', authStructureMiddleware, eventsController.deleteEvent);
+
+router.post('/announcements', authStructureMiddleware, announcementsController.createAnnouncement);
+
+router.put('announcements/:id', authStructureMiddleware, announcementsController.updateAnnouncement);
+
+router.delete('announcements/:id', authStructureMiddleware, announcementsController.deleteAnnouncement);
 
 module.exports = router;
