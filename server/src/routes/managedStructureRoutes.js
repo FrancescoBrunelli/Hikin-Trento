@@ -281,8 +281,8 @@ router.delete('/events/:id', authStructureMiddleware, eventsController.deleteEve
 
 router.post('/announcements', authStructureMiddleware, announcementsController.createAnnouncement);
 
-router.put('announcements/:id', authStructureMiddleware, announcementsController.updateAnnouncement);
+router.put('/announcements/:id', authStructureMiddleware, announcementsController.updateAnnouncement);
 
-router.delete('announcements/:id', authStructureMiddleware, announcementsController.deleteAnnouncement);
+router.delete('/announcements/:id', authStructureMiddleware, announcementsController.deleteAnnouncement);
 
 module.exports = router;
