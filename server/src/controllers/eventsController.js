@@ -1,4 +1,5 @@
 const eventsService = require('../services/eventsService');
+const Event = require('../models/Event');
 
 const getEvents = async (req, res) => {
     try {
@@ -17,4 +18,71 @@ const getEvents = async (req, res) => {
     }
 };
 
-module.exports = { getEvents };
+const createEvent = async (req, res) => {
+    try {
+        const event = await eventsService.createEvent(req.managedStructure._id, req.body);
+        res.status(201).json({
+            success: true,
+            message: 'Event created successfully',
+            event: event
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            error: err.message
+        })
+    }
+}
+
+const updateEvent = async (req, res) => {
+    try {
+        const event = await Event.findById(req.params.id);
+        if (!event) {
+            return res.status(404).json({ error: 'Event not found' });
+        }
+        if (event.structure_id.toString() != req.managedStructure._id.toString()) {
+            return res.status(403).json({ error: 'Forbidden' });
+        }
+        const updated = await eventsService.updateEvent(req.params.id, req.body);
+        res.status(200).json({
+            success: true,
+            message: 'Event updated successfully',
+            event: updated
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            error: err.message
+        })
+    }
+}
+
+const deleteEvent = async (req, res) => {
+    try {
+        const event = await Event.findById(req.params.id);
+        if (!event) {
+            return res.status(404).json({
+                success: false,
+                error: 'Event not found'
+            });
+        }
+        if (event.structure_id.toString() != req.managedStructure._id.toString()) {
+            return res.status(403).json({
+                success: false,
+                error: 'Forbidden'
+            });
+        }
+        await eventsService.deleteEvent(req.params.id);
+        res.status(200).json({
+            success: true,
+            message: 'Event deleted successfully'
+        })
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            error: err.message
+        })
+    }
+}
+
+module.exports = { getEvents, createEvent, updateEvent, deleteEvent };

@@ -3,6 +3,7 @@ const router = express.Router();
 const managedStructureController = require("../controllers/managedStructureController");
 const authStructureMiddleware = require("../middleware/authStructureMiddleware");
 const deleteController = require("../controllers/deleteController");
+const eventsController = require ("../controllers/eventsController");
 /**
  * @swagger
  * /api/managedStructure/basicInfo:
@@ -270,6 +271,10 @@ router.put(
  */
 router.delete("/account", authStructureMiddleware, deleteController.delete_managed_structure);
 
+router.post('/events', authStructureMiddleware, eventsController.createEvent);
 
+router.put('/events/:id', authStructureMiddleware, eventsController.updateEvent);
+
+router.delete('/events/:id', authStructureMiddleware, eventsController.deleteEvent);
 
 module.exports = router;
