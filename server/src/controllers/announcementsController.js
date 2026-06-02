@@ -1,5 +1,5 @@
 const announcementsService = require('../services/announcementsService');
-const Announcement = require('../models/announcement');
+const Announcement = require('../models/Announcement');
 
 const getAnnouncements = async (req, res) => {
     try {
@@ -29,6 +29,7 @@ const createAnnouncement = async (req, res) => {
     } catch (err) {
         res.status(500).json({
             success: false,
+            error: err.message
         })
     }
 };
@@ -54,6 +55,11 @@ const updateAnnouncement = async (req, res) => {
             message: 'Announcement updated successfully',
             announcement: updated
         })
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            error: err.message
+        })
     }
 };
 
@@ -61,10 +67,16 @@ const deleteAnnouncement = async (req, res) => {
     try {
         const announcement = await Announcement.findById(req.params.id);
         if (!announcement) {
-            return res.status(404).json({ error: 'Announcement not found' });
+            return res.status(404).json({
+                success: false,
+                error: 'Announcement not found'
+            });
         }
         if (announcement.structure_id.toString() != req.managedStructure._id.toString()) {
-            return res.status(403).json({ error: 'Forbidden' });
+            return res.status(403).json({
+                success: false,
+                error: 'Forbidden'
+            });
         }
         await announcementsService.deleteAnnouncement(req.params.id);
         res.status(200).json({

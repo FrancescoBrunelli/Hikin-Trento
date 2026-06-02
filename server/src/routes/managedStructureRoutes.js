@@ -273,16 +273,236 @@ router.put(
  */
 router.delete("/account", authStructureMiddleware, deleteController.delete_managed_structure);
 
+/**
+ * @swagger
+ * /api/managedStructure/events:
+ *   post:
+ *     summary: Create a new event
+ *     description: >
+ *       Creates a new event associated with the authenticated managed structure.
+ *       Requires a valid JWT token issued to a managed structure.
+ *     tags: [Events]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - title
+ *               - description
+ *               - start_date
+ *               - end_date
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 example: Summer Hiking Festival
+ *               description:
+ *                 type: string
+ *                 example: Guided hikes and local food stands.
+ *               start_date:
+ *                 type: string
+ *                 format: date-time
+ *                 example: "2026-07-10T08:00:00.000Z"
+ *               end_date:
+ *                 type: string
+ *                 format: date-time
+ *                 example: "2026-07-12T18:00:00.000Z"
+ *     responses:
+ *       201:
+ *         description: Event created successfully
+ *       500:
+ *         description: Server error
+ */
 router.post('/events', authStructureMiddleware, eventsController.createEvent);
 
+/**
+ * @swagger
+ * /api/managedStructure/events/{id}:
+ *   put:
+ *     summary: Update an existing event
+ *     description: >
+ *       Updates an event owned by the authenticated managed structure.
+ *       The event must belong to the authenticated structure.
+ *     tags: [Events]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Event ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 example: Updated Hiking Festival
+ *               description:
+ *                 type: string
+ *                 example: Updated event description
+ *               start_date:
+ *                 type: string
+ *                 format: date-time
+ *               end_date:
+ *                 type: string
+ *                 format: date-time
+ *     responses:
+ *       200:
+ *         description: Event updated successfully
+ *       403:
+ *         description: Event does not belong to authenticated structure
+ *       404:
+ *         description: Event not found
+ *       500:
+ *         description: Server error
+ */
 router.put('/events/:id', authStructureMiddleware, eventsController.updateEvent);
 
+/**
+ * @swagger
+ * /api/managedStructure/events/{id}:
+ *   delete:
+ *     summary: Delete an event
+ *     description: >
+ *       Deletes an event owned by the authenticated managed structure.
+ *       The event must belong to the authenticated structure.
+ *     tags: [Events]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Event ID
+ *     responses:
+ *       200:
+ *         description: Event deleted successfully
+ *       403:
+ *         description: Event does not belong to authenticated structure
+ *       404:
+ *         description: Event not found
+ *       500:
+ *         description: Server error
+ */
 router.delete('/events/:id', authStructureMiddleware, eventsController.deleteEvent);
 
+/**
+ * @swagger
+ * /api/managedStructure/announcements:
+ *   post:
+ *     summary: Create a new announcement
+ *     description: >
+ *       Creates a new announcement associated with the authenticated managed structure.
+ *       Requires a valid JWT token issued to a managed structure.
+ *     tags: [Announcements]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - title
+ *               - description
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 example: Temporary Closure
+ *               description:
+ *                 type: string
+ *                 example: The structure will be closed for maintenance next week.
+ *     responses:
+ *       201:
+ *         description: Announcement created successfully
+ *       500:
+ *         description: Server error
+ */
 router.post('/announcements', authStructureMiddleware, announcementsController.createAnnouncement);
 
+/**
+ * @swagger
+ * /api/managedStructure/announcements/{id}:
+ *   put:
+ *     summary: Update an announcement
+ *     description: >
+ *       Updates an announcement owned by the authenticated managed structure.
+ *       The announcement must belong to the authenticated structure.
+ *     tags: [Announcements]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Announcement ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 example: Updated Closure Notice
+ *               description:
+ *                 type: string
+ *                 example: Maintenance period has been extended.
+ *     responses:
+ *       200:
+ *         description: Announcement updated successfully
+ *       403:
+ *         description: Announcement does not belong to authenticated structure
+ *       404:
+ *         description: Announcement not found
+ *       500:
+ *         description: Server error
+ */
 router.put('/announcements/:id', authStructureMiddleware, announcementsController.updateAnnouncement);
 
+/**
+ * @swagger
+ * /api/managedStructure/announcements/{id}:
+ *   delete:
+ *     summary: Delete an announcement
+ *     description: >
+ *       Deletes an announcement owned by the authenticated managed structure.
+ *       The announcement must belong to the authenticated structure.
+ *     tags: [Announcements]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Announcement ID
+ *     responses:
+ *       200:
+ *         description: Announcement deleted successfully
+ *       403:
+ *         description: Announcement does not belong to authenticated structure
+ *       404:
+ *         description: Announcement not found
+ *       500:
+ *         description: Server error
+ */
 router.delete('/announcements/:id', authStructureMiddleware, announcementsController.deleteAnnouncement);
 
 module.exports = router;

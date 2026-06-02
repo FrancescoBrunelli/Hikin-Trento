@@ -11,7 +11,7 @@ const createEvent = async (structure_id, data) => {
     return await event.save()
 }
 
-const updateEvent = async (id, ...data) => {
+const updateEvent = async (id, data) => {
     return await Event.findByIdAndUpdate(id, data, { new: true, runValidators: true })
 }
 

@@ -1,7 +1,7 @@
-const Announcements = require('../models/Announcement');
+const Announcement = require('../models/Announcement');
 
 const getAnnouncements = async (structure_id) => {
-    return await Announcements.find({ structure_id })
+    return await Announcement.find({ structure_id })
         .sort({ createdAt: 1 })
         .lean()
 }
@@ -11,7 +11,7 @@ const createAnnouncement = async (structure_id, data) => {
     return await announcement.save()
 }
 
-const updateAnnouncement = async (id, ...data) => {
+const updateAnnouncement = async (id, data) => {
     return await Announcement.findByIdAndUpdate(id, data, { new: true, runValidators: true })
 }
 
