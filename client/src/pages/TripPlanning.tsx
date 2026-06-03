@@ -20,6 +20,7 @@ function TripPlanning() {
     const [selected, setSelected] = useState<any>(null);
     const [tripPoints, setTripPoints] = useState<TripPoint[]>([]);
     const navigate = useNavigate();
+    const [tripName, setTripName] = useState('');
     const addToTrip = (point: any) => {
         if (tripPoints.find(p => p._id === point._id)) return;
         setTripPoints(prev => [...prev, {
@@ -106,6 +107,8 @@ function TripPlanning() {
                         roundtrip={roundtrip}
                         setRoundtrip={setRoundtrip}
                         onConfirm={handleConfirm}
+                        tripName={tripName}
+                        setTripName={setTripName}
                     />
                 )}
             </div>

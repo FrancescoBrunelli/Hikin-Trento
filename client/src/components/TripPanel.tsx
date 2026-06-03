@@ -9,6 +9,8 @@ type TripPoint = {
 }
 
 type Props = {
+    tripName: string;
+    setTripName: (name: string) => void;
     tripPoints: TripPoint[];
     onRemove: (id: string) => void;
     onMoveUp: (index: number) => void;
@@ -25,10 +27,17 @@ const getLabel = (index: number, total: number) => {
     return `Stop ${index + 1}`;
 }
 
-export default function TripPanel({ tripPoints, onRemove, onMoveUp, onMoveDown, roundtrip, setRoundtrip, onConfirm }: Props) {
+export default function TripPanel({ tripPoints, onRemove, onMoveUp, onMoveDown, roundtrip, setRoundtrip, onConfirm, tripName, setTripName }: Props) {
     return (
         <div className="detail-panel">
             <p className="panel-title">Trip Plan</p>
+            <input
+                type="text"
+                placeholder="Add here the name of your trip..."
+                value={tripName}
+                onChange={(e) => setTripName(e.target.value)}
+                className="search-input"
+            />
             {tripPoints.length === 0 ? (
                 <p className="no-results">Search and add points to start planning your trip.</p>
             ) : (
@@ -68,7 +77,7 @@ export default function TripPanel({ tripPoints, onRemove, onMoveUp, onMoveDown, 
                         />
                         Roundtrip
                     </label>
-                    <button onClick={onConfirm} className="confirm-trip-btn">
+                    <button onClick={onConfirm} className="confirm-trip-btn" disabled={!tripName?.trim()}>
                         ✓ Confirm Trip
                     </button>
                 </>
