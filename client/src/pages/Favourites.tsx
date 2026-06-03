@@ -208,6 +208,8 @@ export default function FavouritesPage() {
                 {/* name */}
                 <h3 className="fav-card-name">{item.name}</h3>
 
+                
+
                 {/* info rows */}
                 <div className="fav-card-info">
                   {item.coordinates && (

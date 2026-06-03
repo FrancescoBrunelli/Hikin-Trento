@@ -149,7 +149,11 @@ function Home() {
   };
 
   const handleToggleFavourite = async (item) => {
-    const isFav = favourites.some((f) => f._id === item._id);
+    console.log("0", favourites[0]);
+    console.log("1", favourites[1]);
+    const isFav = favourites[0].some((f) => f._id === item._id) || favourites[1].some((f) => f._id === item._id);
+    console.log("isFav", isFav);
+
     const method = isFav ? "DELETE" : "PUT";
     console.log(item);
     console.log("type: ", item.type);
@@ -171,9 +175,20 @@ function Home() {
     // update local state immediately without refetching
 
     if (isFav) {
-      setFavourites((prev) => prev.filter((f) => f._id !== item._id));
+      setFavourites([favourites[0].filter((f) => f._id !== item._id), [favourites[1].filter((f) => f._id !== item._id)]]);
     } else {
-      setFavourites((prev) => [...prev, item]);
+      if (item.type === "structure") {
+        setFavourites([
+          [...favourites[0], item],
+          [favourites[1]]
+        ]);
+      } else {
+        setFavourites([
+          [favourites[0]],
+          [...favourites[1], item]
+        ]);
+      }
+      
     }
   };
 
