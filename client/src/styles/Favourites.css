@@ -198,3 +198,28 @@
   font-size: 15px;
   padding: 48px 0;
 }
+
+.hamburger-btn {
+    position: fixed;   /* 👈 FONDAMENTALE */
+    top: 80px;         /* sotto navbar (regola se navbar cambia) */
+    left: 12px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--card-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    transition: all 0.15s ease;
+}
