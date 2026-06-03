@@ -19,10 +19,13 @@ import {
   FaCog,
   FaPhone,
 } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
 import { getBasicInfo } from "../services/structureService";
 import { userBasicInfo } from "../services/userService";
 import { useNavigate } from "react-router-dom";
 import UserDropdown from "../components/UserDropDown.tsx";
+import { useLocation } from "react-router-dom";
+
 function Home() {
   const {
     query,
@@ -51,6 +54,9 @@ function Home() {
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
   const [favourites, setFavourites] = useState([]);
+
+  const location = useLocation();
+
 
   useEffect(() => {
     getBasicInfo({
@@ -123,12 +129,30 @@ function Home() {
     }
   }, [isAuthenticated]);
 
+  useEffect(() => {
+    if (!location.state?.selectedItem) return;
+
+    if (!favourites?.length) return;
+
+    const favouriteItem =
+      favourites[0]?.find((f) => f._id === location.state.selectedItem._id) ||
+      favourites[1]?.find((f) => f._id === location.state.selectedItem._id);
+
+    if (favouriteItem) {
+      setSelected(favouriteItem);
+    }
+  }, [location.state, favourites]);
+
   const handleSettings = () => {
     navigate("/user/settings");
   };
 
   const handleToggleFavourite = async (item) => {
-    const isFav = favourites.some((f) => f._id === item._id);
+    console.log("0", favourites[0]);
+    console.log("1", favourites[1]);
+    const isFav = favourites[0].some((f) => f._id === item._id) || favourites[1].some((f) => f._id === item._id);
+    console.log("isFav", isFav);
+
     const method = isFav ? "DELETE" : "PUT";
     console.log(item);
     console.log("type: ", item.type);
@@ -150,9 +174,20 @@ function Home() {
     // update local state immediately without refetching
 
     if (isFav) {
-      setFavourites((prev) => prev.filter((f) => f._id !== item._id));
+      setFavourites([favourites[0].filter((f) => f._id !== item._id), [favourites[1].filter((f) => f._id !== item._id)]]);
     } else {
-      setFavourites((prev) => [...prev, item]);
+      if (item.type === "structure") {
+        setFavourites([
+          [...favourites[0], item],
+          [favourites[1]]
+        ]);
+      } else {
+        setFavourites([
+          [favourites[0]],
+          [...favourites[1], item]
+        ]);
+      }
+      
     }
   };
 
@@ -172,9 +207,6 @@ function Home() {
             </>
           ) : (
             <>
-              <Button to="/tripplanning" variant="outline">
-                Trip Planning
-              </Button>
               <UserDropdown
                 name={user?.name}
                 surname={user?.surname}
@@ -193,69 +225,71 @@ function Home() {
         </>
       }
     >
-      <div className="home-container">
-        <SearchPanel
-          query={query}
-          setQuery={setQuery}
-          results={results}
-          onSearch={handleSearch}
-          onSelect={(r) => {
-            setSelected(r);
-            if (r.type === "pi") {
-              setSelectedPI(r);
-              setSelectedTrail(null);
-            } else if (r.type === "trail") {
-              setSelectedTrail(r);
-              setSelectedPI(null);
-            } else {
-              setSelectedTrail(null);
-              setSelectedPI(null);
-            }
-          }}
-          selected={selected}
-          mode={mode}
-          setMode={setMode}
-          trailFilters={trailFilters}
-          setTrailFilters={setTrailFilters}
-          structureFilters={structureFilters}
-          setStructureFilters={setStructureFilters}
-          piFilters={piFilters}
-          setPIFilters={setPIFilters}
-        />
-        <div className="home-map">
-          <MapView
-            structures={structures}
-            onSelectStructure={(s) => {
-              setSelected(s);
-              setSelectedTrail(null);
-              setSelectedPI(null);
+      <div className="home-page">
+        <div className="home-container">
+          <SearchPanel
+            query={query}
+            setQuery={setQuery}
+            results={results}
+            onSearch={handleSearch}
+            onSelect={(r) => {
+              setSelected(r);
+              if (r.type === "pi") {
+                setSelectedPI(r);
+                setSelectedTrail(null);
+              } else if (r.type === "trail") {
+                setSelectedTrail(r);
+                setSelectedPI(null);
+              } else {
+                setSelectedTrail(null);
+                setSelectedPI(null);
+              }
             }}
-            onSelectTrail={(t) => {
-              setSelected(t);
-              setSelectedTrail(t);
-              setSelectedPI(null);
-            }}
-            onSelectPI={(pi) => {
-              setSelected(pi);
-              setSelectedPI(pi);
-              setSelectedTrail(null);
-            }}
-            selectedTrail={selectedTrail}
-            selectedPI={selectedPI}
             selected={selected}
+            mode={mode}
+            setMode={setMode}
+            trailFilters={trailFilters}
+            setTrailFilters={setTrailFilters}
+            structureFilters={structureFilters}
+            setStructureFilters={setStructureFilters}
+            piFilters={piFilters}
+            setPIFilters={setPIFilters}
+          />
+          <div className="home-map">
+            <MapView
+              structures={structures}
+              onSelectStructure={(s) => {
+                setSelected(s);
+                setSelectedTrail(null);
+                setSelectedPI(null);
+              }}
+              onSelectTrail={(t) => {
+                setSelected(t);
+                setSelectedTrail(t);
+                setSelectedPI(null);
+              }}
+              onSelectPI={(pi) => {
+                setSelected(pi);
+                setSelectedPI(pi);
+                setSelectedTrail(null);
+              }}
+              selectedTrail={selectedTrail}
+              selectedPI={selectedPI}
+              selected={selected}
+            />
+          </div>
+          <DetailPanel
+            selected={selected}
+            onClose={() => {
+              setSelected(null);
+              setSelectedTrail(null);
+              setSelectedPI(null);
+            }}
+            isAuthenticated={isAuthenticated}
+            favourites={favourites}
+            onToggleFavourite={handleToggleFavourite}
           />
         </div>
-        <DetailPanel
-          selected={selected}
-          onClose={() => {
-            setSelected(null);
-            setSelectedTrail(null);
-            setSelectedPI(null);
-          }}
-          isAuthenticated={isAuthenticated}
-          favourites={favourites}
-          onToggleFavourite={handleToggleFavourite}
-        />
       </div>
     </Layout>
   );

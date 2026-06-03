@@ -29,6 +29,7 @@ const trailSchema = new mongoose.Schema(
             coordinates: {type: [[Number]], required: true}
         },
         type: {type: String, required: true},
+        image: {type: String, default: "/default_trail.jpg"},
     },
     {timestamps: true}
 )

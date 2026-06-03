@@ -1,55 +1,55 @@
-
-require('dotenv').config();
-const express = require('express');
-const mongoose = require ('mongoose');
-const swaggerUi = require('swagger-ui-express');
-const swaggerSpec = require('./config/swagger');
-const cors = require('cors');
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("./config/swagger");
+const cors = require("cors");
 const app = express();
 
 app.use(express.json());
-app.use(cors({
-    origin: 'http://localhost:5173'
-}));
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  }),
+);
 
 async function connectoToDatabase() {
   const uri = process.env.MONGODB_URI;
 
-  if(!uri) {
-    throw new Error("MongoDB URI not defined")
+  if (!uri) {
+    throw new Error("MongoDB URI not defined");
   }
 
   await mongoose.connect(uri);
-  console.log("MongoDB connection established")
+  console.log("MongoDB connection established");
 
   // START THE SERVER
-  const PORT = 3000;    // port 5000 creates some problems with macOS's Control Center
+  const PORT = 3000; // port 5000 creates some problems with macOS's Control Center
   app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
     console.log(`View swagger interface at http://localhost:${PORT}/api-docs`);
   });
-
-  
 }
 
 connectoToDatabase();
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+// put images here
+app.use("/assets", express.static("assets"));
 
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/structures', require('./routes/structuresRoutes'));
-app.use('/api/user', require('./routes/usersRoutes'));
-app.use('/api/trails', require('./routes/trailsRoutes'));
-app.use('/api/auth', require('./routes/structureLoginRoutes'));
-app.use('/api/planning', require('./routes/planningRoutes'));
-app.use('/api/pis', require('./routes/pisRoutes'));
-app.use('/api/managedStructure', require('./routes/managedStructureRoutes'));
-app.use('/api/favourites', require('./routes/favouritesRoutes'));
-app.use('/api/structures', require('./routes/eventsRoutes'));
-app.use('/api/structures', require('./routes/announcementsRoutes'));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/structures", require("./routes/structuresRoutes"));
+app.use("/api/user", require("./routes/usersRoutes"));
+app.use("/api/trails", require("./routes/trailsRoutes"));
+app.use("/api/auth", require("./routes/structureLoginRoutes"));
+app.use("/api/planning", require("./routes/planningRoutes"));
+app.use("/api/pis", require("./routes/pisRoutes"));
+app.use("/api/managedStructure", require("./routes/managedStructureRoutes"));
+app.use("/api/favourites", require("./routes/favouritesRoutes"));
+app.use("/api/structures", require("./routes/eventsRoutes"));
+app.use("/api/structures", require("./routes/announcementsRoutes"));
 module.exports = connectoToDatabase;
-
-
 
 //const { MongoClient } = require('mongodb');
 //const uri = process.env.MONGODB_URI;
