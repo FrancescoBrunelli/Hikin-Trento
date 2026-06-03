@@ -1,0 +1,397 @@
+.planning-page {
+    display: flex;
+    height: calc(100vh - 69px);
+    overflow: hidden;
+    position: relative;
+    background: var(--bg);
+}
+
+/* ── LEFT PANEL ─────────────────────────────── */
+.planning-panel {
+    width: 300px;
+    flex-shrink: 0;
+    background: var(--card-bg);
+    border-right: 1px solid var(--input-border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.planning-panel-header {
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid var(--input-border);
+}
+
+.planning-panel-header h2 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.planning-panel-header p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--hint);
+}
+
+.planning-panel-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ── INPUT FIELDS ─────────────────────────────── */
+.planning-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.planning-input-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--hint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.planning-input-label-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.planning-input-label-dot.start { background: var(--primary); }
+.planning-input-label-dot.end   { background: #10b981; }
+
+.planning-coord-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    font-size: 13px;
+    color: var(--text);
+    min-height: 42px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+}
+
+.planning-coord-display:hover {
+    border-color: var(--primary);
+}
+
+.planning-coord-display.has-value {
+    border-color: var(--input-border);
+}
+
+.planning-coord-placeholder {
+    color: var(--hint);
+    font-size: 13px;
+}
+
+.planning-coord-value {
+    font-size: 12px;
+    font-family: monospace;
+    color: var(--text);
+}
+
+.planning-coord-clear {
+    background: none;
+    border: none;
+    color: var(--hint);
+    cursor: pointer;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s;
+}
+
+.planning-coord-clear:hover { color: var(--invalid); }
+
+.planning-hint {
+    font-size: 12px;
+    color: var(--hint);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    background: var(--input-bg);
+    border-radius: 8px;
+    border: 1px dashed var(--input-border);
+}
+
+/* ── CALCULATE BUTTON ─────────────────────────────── */
+.planning-calculate-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.planning-calculate-btn:hover:not(:disabled) {
+    background: var(--primary-hover);
+}
+
+.planning-calculate-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.planning-calculate-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.planning-calculate-btn.loading {
+    background: var(--primary-hover);
+}
+
+/* ── SPINNER ─────────────────────────────── */
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── ERROR ─────────────────────────────── */
+.planning-error {
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: rgba(198, 40, 40, 0.08);
+    border: 1px solid rgba(198, 40, 40, 0.2);
+    color: var(--invalid);
+    font-size: 13px;
+}
+
+/* ── MAP AREA ─────────────────────────────── */
+.planning-map-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.planning-map-wrapper .leaflet-container {
+    height: 100%;
+    width: 100%;
+}
+
+.planning-map-tip {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: var(--hint);
+    pointer-events: none;
+    z-index: 500;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ── ROUTE PREVIEW BOTTOM SHEET ─────────────────────────────── */
+.route-preview {
+    position: absolute;
+    bottom: 0;
+    left: 300px;
+    right: 0;
+    background: var(--card-bg);
+    border-top: 1px solid var(--input-border);
+    border-radius: 16px 16px 0 0;
+    z-index: 600;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.08);
+}
+
+.route-preview.visible {
+    transform: translateY(0);
+}
+
+.route-preview-handle {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0 4px;
+    cursor: pointer;
+}
+
+.route-preview-handle-bar {
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--input-border);
+    transition: background 0.15s;
+}
+
+.route-preview-handle:hover .route-preview-handle-bar {
+    background: var(--hint);
+}
+
+.route-preview-inner {
+    padding: 0 24px 24px;
+}
+
+.route-preview-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--hint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 14px;
+}
+
+/* ── STATS ROW ─────────────────────────────── */
+.route-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.route-stat-card {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.route-stat-icon {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.route-stat-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.1;
+}
+
+.route-stat-label {
+    font-size: 11px;
+    color: var(--hint);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ── SAVE FORM ─────────────────────────────── */
+.route-save-form {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.route-save-input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.route-save-input:focus {
+    border-color: var(--primary);
+}
+
+.route-save-input::placeholder {
+    color: var(--hint);
+}
+
+.route-save-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.route-save-btn:hover:not(:disabled) {
+    background: var(--primary-hover);
+}
+
+.route-save-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.route-save-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.route-save-success {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: rgba(46, 125, 50, 0.08);
+    border: 1px solid rgba(46, 125, 50, 0.2);
+    color: var(--valid);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ── NAVBAR BACK BUTTON ─────────────────────────────── */
+.planning-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 0;
+    transition: opacity 0.15s;
+}
+
+.planning-back-btn:hover { opacity: 0.7; }
