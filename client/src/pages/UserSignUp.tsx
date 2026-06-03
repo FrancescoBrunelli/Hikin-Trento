@@ -127,7 +127,7 @@ function UserSignUp() {
                         </div>
                     )}
                     <Button type="submit" disabled={!(isValid(password))}>Sign Up</Button>
-                    <p>Already have an account? <Link to="/signin">Sign In</Link></p>
+                    <p>Already have an account? <Link to="/chooselogin">Sign In</Link></p>
                     <p>Are you a structure owner? <Link to="/structuresignup">Structure Sign Up</Link></p>
                     {/*
                     <p>By signing up, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>

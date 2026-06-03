@@ -1,6 +1,6 @@
-.page {
+.home-page {
     height: calc(100vh - 69px);
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 .home-container {

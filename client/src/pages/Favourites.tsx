@@ -15,8 +15,7 @@ import {
   FaArrowDown,
 } from "react-icons/fa";
 import "../styles/Favourites.css";
-import { FiMenu } from "react-icons/fi";
-import SideBar from "../components/SideBar.tsx";
+
 
 type FavItem = {
   _id: string;
@@ -31,6 +30,7 @@ type FavItem = {
   descent_m?: number;
   from?: string;
   to?: string;
+  image: string;
 };
 
 type Filter = "all" | "structure" | "trail";
@@ -44,7 +44,7 @@ export default function FavouritesPage() {
   const [favourites, setFavourites] = useState<FavItem[]>([]);
   const [filter, setFilter] = useState<Filter>("all");
   const [loading, setLoading] = useState(true);
-  const [open, setOpen] = useState(false);
+
 
   // ── fetch user + favourites ──────────────────────────────────────
   useEffect(() => {
@@ -53,6 +53,7 @@ export default function FavouritesPage() {
       navigate("/");
       return;
     }
+
 
     const headers = { Authorization: `Bearer ${token}` };
 
@@ -118,6 +119,14 @@ export default function FavouritesPage() {
     return "#f97316";
   };
 
+  const API_URL = "http://localhost:3000";
+  const imageSrc = (item: FavItem) =>
+   item.type === "structure"
+      ? `${API_URL}/assets/structures${item.image}`
+      : `${API_URL}/assets/trails${item.image}`;
+
+
+
   return (
     <Layout
       navChildren={
@@ -136,11 +145,6 @@ export default function FavouritesPage() {
         />
       }
     >
-      <button className="hamburger-btn" onClick={() => setOpen(true)}>
-        <FiMenu size={22} />
-      </button>
-
-      <SideBar open={open} setOpen={setOpen} />
 
       <div className="fav-page">
         {/* ── Header ───────────────────────────────────────── */}
@@ -208,7 +212,11 @@ export default function FavouritesPage() {
                 {/* name */}
                 <h3 className="fav-card-name">{item.name}</h3>
 
-                
+                <img
+                  src={imageSrc(item)}
+                  alt={item.name}
+                  className="fav-card-image"
+                />
 
                 {/* info rows */}
                 <div className="fav-card-info">

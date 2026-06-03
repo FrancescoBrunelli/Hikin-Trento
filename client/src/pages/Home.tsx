@@ -25,7 +25,6 @@ import { userBasicInfo } from "../services/userService";
 import { useNavigate } from "react-router-dom";
 import UserDropdown from "../components/UserDropDown.tsx";
 import { useLocation } from "react-router-dom";
-import SideBar from "../components/SideBar.tsx";
 
 function Home() {
   const {
@@ -57,7 +56,7 @@ function Home() {
   const [favourites, setFavourites] = useState([]);
 
   const location = useLocation();
-  const [open, setOpen] = useState(false);
+
 
   useEffect(() => {
     getBasicInfo({
@@ -228,16 +227,6 @@ function Home() {
     >
       <div className="home-page">
         <div className="home-container">
-          {isAuthenticated ? (
-            <>
-              <button className="hamburger-btn" onClick={() => setOpen(true)}>
-                <FiMenu size={22} />
-              </button>
-              <SideBar open={open} setOpen={setOpen} />
-            </>
-          ) : (
-            <></>
-          )}
           <SearchPanel
             query={query}
             setQuery={setQuery}
