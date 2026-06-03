@@ -45,7 +45,10 @@ export default function DetailPanel({
         </p>
       </div>
     );
-  const isFavourite = favourites.some((f) => f._id === selected._id);
+  const isFavourite =
+    favourites[0].some((f) => f._id === selected._id) ||
+    favourites[1].some((f) => f._id === selected._id);
+  
 
   return (
     <div className="detail-panel">

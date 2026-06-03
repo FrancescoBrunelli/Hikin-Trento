@@ -23,6 +23,8 @@ import { getBasicInfo } from "../services/structureService";
 import { userBasicInfo } from "../services/userService";
 import { useNavigate } from "react-router-dom";
 import UserDropdown from "../components/UserDropDown.tsx";
+import { useLocation } from "react-router-dom";
+
 function Home() {
   const {
     query,
@@ -52,6 +54,9 @@ function Home() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [favourites, setFavourites] = useState([]);
 
+  const location = useLocation();
+
+  
   useEffect(() => {
     getBasicInfo({
       radius: 0, // 0 = all structures
@@ -123,6 +128,25 @@ function Home() {
     }
   }, [isAuthenticated]);
 
+  useEffect(() => {
+    if (!location.state?.selectedItem) return;
+  
+    if (!favourites?.length) return;
+  
+    const favouriteItem =
+      favourites[0]?.find(
+        (f) => f._id === location.state.selectedItem._id
+      ) ||
+      favourites[1]?.find(
+        (f) => f._id === location.state.selectedItem._id
+      );
+  
+    if (favouriteItem) {
+      setSelected(favouriteItem);
+    }
+  }, [location.state, favourites]);
+  
+
   const handleSettings = () => {
     navigate("/user/settings");
   };
@@ -172,7 +196,8 @@ function Home() {
             </>
           ) : (
             <>
-              <Button to="/tripplanning" variant="outline">
+              <Button to="/user/favourites" variant="outline">Favourites</Button>
+              <Button to="/user/tripplanning" variant="outline">
                 Trip Planning
               </Button>
               <UserDropdown
