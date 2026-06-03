@@ -28,7 +28,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
         <div className="sidebar-header">
           <h2>Menu</h2>
 
-          <button className="close-btn" onClick={() => setOpen(false)}>
+          <button className="sidebar-close-btn" onClick={() => setOpen(false)}>
             ✕
           </button>
         </div>

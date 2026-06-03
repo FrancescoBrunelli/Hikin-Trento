@@ -41,7 +41,11 @@
     max-width: 480px;
     box-sizing: border-box;
     transition: background 0.3s, border-color 0.3s;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
+
 
 .signup-card h1 {
     text-align: center;
@@ -59,6 +63,19 @@
     margin: -20px 0 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.signin-card{
+    background: var(--card-bg);
+    border: 1.5px solid var(--card-border);
+    border-radius: 20px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+    transition: background 0.3s, border-color 0.3s;
+    margin: auto;
+    margin-top: 10%;
 }
 
 /* Form */
