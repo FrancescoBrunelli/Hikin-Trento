@@ -31,7 +31,7 @@ export const updateStructureInfo = async (
     body: JSON.stringify(structureData),
   });
 
-  const data = (await response).json();
+  const data = await response.json();
   if (!response.ok) {
       throw new Error("Failed to update user info");
     }
@@ -49,7 +49,7 @@ export const updateStructurePassword = async(
     confirm_password: string;
   },
 ) => {
-  const response = await fetch("http://localhost:3000/api/managedstructure/password", {
+  const response = await fetch("http://localhost:3000/api/managedStructure/password", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export const updateStructurePassword = async(
     body: JSON.stringify(structureData),
   });
 
-  const data = (await response).json();
+  const data = await response.json();
   if (!response.ok) {
     throw new Error("Failed to update new password");
   }

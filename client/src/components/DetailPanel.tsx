@@ -1,5 +1,6 @@
 import { FaStar, FaRegStar } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import "../styles/DetailPanel.css"
 
 type Props = {
   selected: any;
@@ -21,12 +22,19 @@ export default function DetailPanel({
   onToggleFavourite,
 }: Props) {
   const [telephone, setTelephone] = useState<string | null>(null);
+  const [events, setEvents] = useState<any[]>([])
+  const [announcements, setAnnouncements] = useState<any[]>([])
+  const [showEvents, setShowEvents] = useState(false);
+  const [showAnnouncements, setShowAnnouncements] = useState(false);
   useEffect(() => {
+    setEvents([]);
+    setAnnouncements([]);
+    setShowEvents(false);
+    setShowAnnouncements(false);
     if (!selected?.managed) {
       setTelephone(null);
       return;
     }
-
     fetch(`http://localhost:3000/api/managedStructure/${selected._id}`)
       .then((res) => res.json())
       .then((managedStructure) => {
@@ -35,7 +43,17 @@ export default function DetailPanel({
       .catch(() => {
         setTelephone(null);
       });
+    fetch(`http://localhost:3000/api/structures/${selected._id}/events`)
+        .then(res => res.json())
+        .then(data => setEvents(data.events ?? []));
+
+    fetch(`http://localhost:3000/api/structures/${selected._id}/announcements`)
+        .then(res => res.json())
+        .then(data => setAnnouncements(data.announcements ?? []));
   }, [selected]);
+
+  const handleToggleEvents = () => setShowEvents(!showEvents);
+  const handleToggleAnnouncements = () => setShowAnnouncements(!showAnnouncements);
 
   if (!selected)
     return (
@@ -160,6 +178,58 @@ export default function DetailPanel({
           <span className="detail-label">Shelter Type</span>
           <span className="detail-value">{selected.shelter_type}</span>
         </div>
+      )}
+      {selected.managed && (
+          <>
+            <div className="detail-collapsible" onClick={handleToggleEvents}>
+            <span className="detail-label">
+                {showEvents ? '▼' : '▶'} Events
+            </span>
+              {events.length > 0 && (
+                  <span className="detail-badge">{events.length}</span>
+              )}
+            </div>
+            {showEvents && (
+                <div className="detail-collapsible-content">
+                  {events.length === 0 ? (
+                      <p className="detail-hint">No events</p>
+                  ) : (
+                      events.map(e => (
+                          <div key={e._id} className="detail-sub-card">
+                            <p className="detail-sub-title">{e.title}</p>
+                            <p className="detail-sub-text">{e.description}</p>
+                            <p className="detail-sub-dates">
+                              {new Date(e.start_date).toLocaleDateString()} → {new Date(e.end_date).toLocaleDateString()}
+                            </p>
+                          </div>
+                      ))
+                  )}
+                </div>
+            )}
+
+            <div className="detail-collapsible" onClick={handleToggleAnnouncements}>
+            <span className="detail-label">
+                {showAnnouncements ? '▼' : '▶'} Announcements
+            </span>
+              {announcements.length > 0 && (
+                  <span className="detail-badge">{announcements.length}</span>
+              )}
+            </div>
+            {showAnnouncements && (
+                <div className="detail-collapsible-content">
+                  {announcements.length === 0 ? (
+                      <p className="detail-hint">No announcements</p>
+                  ) : (
+                      announcements.map(a => (
+                          <div key={a._id} className="detail-sub-card">
+                            <p className="detail-sub-title">{a.title}</p>
+                            <p className="detail-sub-text">{a.description}</p>
+                          </div>
+                      ))
+                  )}
+                </div>
+            )}
+          </>
       )}
       {onAddToTrip && (
         <button

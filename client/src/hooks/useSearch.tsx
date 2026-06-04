@@ -42,7 +42,7 @@ export function useSearch(allowedModes?: SearchMode[]) {
     if (mode === 'all') {
       const fetches = [];
       if (!allowedModes || allowedModes.includes('structures'))
-        fetches.push(searchStructures(query, {}).then((r: any[]) => r.map(s => ({ ...s, type: 'structure' }))));
+        fetches.push(searchStructures(query, structureFilters).then((r: any[]) => r.map(s => ({ ...s, type: 'structure' }))));
       if (!allowedModes || allowedModes.includes('trails'))
         fetches.push(searchTrails({ name: query }).then((r: any[]) => r.map(t => ({ ...t, type: 'trail' }))));
       if (!allowedModes || allowedModes.includes('pis'))
