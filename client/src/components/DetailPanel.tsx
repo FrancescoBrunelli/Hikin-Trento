@@ -45,10 +45,11 @@ export default function DetailPanel({
         </p>
       </div>
     );
+
   const isFavourite =
-    favourites[0].some((f) => f._id === selected._id) ||
-    favourites[1].some((f) => f._id === selected._id);
-  
+    favourites[0]?.some((f) => f._id === selected._id) ||
+    favourites[1]?.some((f) => f._id === selected._id);
+  console.log("fav:", isFavourite);
 
   return (
     <div className="detail-panel">
