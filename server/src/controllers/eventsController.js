@@ -1,6 +1,7 @@
 const eventsService = require('../services/eventsService');
 const Event = require('../models/Event');
 
+// For users
 const getEvents = async (req, res) => {
     try {
         const events = await eventsService.getEvents(req.params.structure_id);
@@ -14,6 +15,25 @@ const getEvents = async (req, res) => {
         res.status(500).json({
             success: false,
             error: 'Server Error: ' + err.message
+        });
+    }
+};
+
+// For logged structure managers
+const getEventsForManagedStructure = async (req, res) => {
+    try {
+        const events = await eventsService.getEvents(
+            req.managedStructure._id
+        );
+        res.status(200).json({
+            success: true,
+            count: events.length,
+            events
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            error: err.message
         });
     }
 };
@@ -91,4 +111,4 @@ const deleteEvent = async (req, res) => {
     }
 }
 
-module.exports = { getEvents, createEvent, updateEvent, deleteEvent };
+module.exports = { getEvents, getEventsForManagedStructure, createEvent, updateEvent, deleteEvent };
