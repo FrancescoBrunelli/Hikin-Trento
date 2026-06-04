@@ -486,7 +486,49 @@ router.delete('/events/:id', authStructureMiddleware, eventsController.deleteEve
  */
 router.post('/announcements', authStructureMiddleware, announcementsController.createAnnouncement);
 
-
+/**
+ * @swagger
+ * /api/managedStructure/{structure_id}:
+ *   get:
+ *     summary: Get public info of a managed structure by structure ID
+ *     description: >
+ *       Returns the public basic info of a managed structure identified by
+ *       its associated structure ID. No authentication required.
+ *     tags: [Managed Structures]
+ *     parameters:
+ *       - in: path
+ *         name: structure_id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The MongoDB ObjectId of the associated structure
+ *     responses:
+ *       200:
+ *         description: Managed structure info retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 _id:
+ *                   type: string
+ *                   example: "64f1a2b3c4d5e6f7a8b9c0d1"
+ *                 name_owner:
+ *                   type: string
+ *                   example: "Marco"
+ *                 surname_owner:
+ *                   type: string
+ *                   example: "Bianchi"
+ *                 telephone:
+ *                   type: string
+ *                   example: "+39 0461 123456"
+ *                 structure:
+ *                   type: object
+ *       404:
+ *         description: Managed structure not found
+ *       400:
+ *         description: Server error
+ */
 router.get('/announcements', authStructureMiddleware, announcementsController.getAnnouncementsForManagedStructure);
 
 /**

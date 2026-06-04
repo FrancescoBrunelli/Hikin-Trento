@@ -39,17 +39,19 @@ export default function DetailPanel({
       .then((res) => res.json())
       .then((managedStructure) => {
         setTelephone(managedStructure.telephone);
+        const managedId = managedStructure._id;
+
+        fetch(`http://localhost:3000/api/structures/${managedId}/events`)
+            .then(res => res.json())
+            .then(data => setEvents(data.events ?? []));
+
+        fetch(`http://localhost:3000/api/structures/${managedId}/announcements`)
+            .then(res => res.json())
+            .then(data => setAnnouncements(data.announcements ?? []));
       })
       .catch(() => {
         setTelephone(null);
       });
-    fetch(`http://localhost:3000/api/structures/${selected._id}/events`)
-        .then(res => res.json())
-        .then(data => setEvents(data.events ?? []));
-
-    fetch(`http://localhost:3000/api/structures/${selected._id}/announcements`)
-        .then(res => res.json())
-        .then(data => setAnnouncements(data.announcements ?? []));
   }, [selected]);
 
   const handleToggleEvents = () => setShowEvents(!showEvents);
