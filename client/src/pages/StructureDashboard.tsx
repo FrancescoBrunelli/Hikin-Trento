@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import EventsPanel from "./Events.tsx";
 import {
   FaCalendarAlt,
   FaStar,
@@ -9,6 +10,8 @@ import {
   FaSignOutAlt,
   FaCog,
   FaPhone,
+  FaRegCalendarPlus,
+  FaRegBell
 } from "react-icons/fa";
 import Layout from "../components/Layout.tsx";
 import Button from "../components/Button.tsx";
@@ -129,6 +132,25 @@ function StructureDashboard() {
             </div>
           </div>
         );
+      case "events":
+        return (
+            <div className="dashboard-card">
+              <h2>
+                <FaRegCalendarPlus /> Events
+              </h2>
+              <EventsPanel />
+            </div>
+        );
+      case "announcements":
+        return (
+            <div className="dashboard-card">
+              <h2>
+                <FaRegBell /> Announcements
+              </h2>
+              <p className="dashboard-empty">No announcements yet</p>
+            </div>
+        );
+
       default:
         return null;
     }
@@ -208,6 +230,18 @@ function StructureDashboard() {
           onClick={() => setActiveTab("info")}
         >
           <FaMapMarkerAlt /> Structure Info
+        </button>
+        <button
+            className={`dashboard-tab ${activeTab === "events" ? "active" : ""}`}
+            onClick={() => setActiveTab("events")}
+        >
+          <FaRegCalendarPlus /> Events
+        </button>
+        <button
+            className={`dashboard-tab ${activeTab === "announcements" ? "active" : ""}`}
+            onClick={() => setActiveTab("announcements")}
+        >
+          <FaRegBell /> Announcements
         </button>
       </div>
 

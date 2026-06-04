@@ -1,72 +1,18 @@
-.events-page {
-    min-height: 100vh;
-    background: var(--bg);
+.events-panel {
     display: flex;
     flex-direction: column;
+    gap: 16px;
 }
 
-.events-container {
-    flex: 1;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.events-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.events-title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text);
-    margin: 0;
-}
-
-.add-event-btn {
-    padding: 10px 16px;
-    border-radius: 10px;
-    border: 1.5px solid var(--input-border);
-    background: var(--primary);
-    color: white;
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.add-event-btn:hover {
-    background: var(--primary-hover);
-}
-
-.add-event-btn.secondary {
-    background: transparent;
-    color: var(--text);
-    border: 1.5px solid var(--input-border);
-}
-
-.add-event-btn.secondary:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
+/* ── Form ── */
 .event-form {
-    background: var(--card-bg);
-    border: 1.5px solid var(--card-border);
-    border-radius: 20px;
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    max-width: 520px;
-}
-
-.event-form-row {
-    display: flex;
-    gap: 12px;
+    gap: 10px;
+    padding: 16px;
+    background: var(--input-bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: 14px;
 }
 
 .event-form input {
@@ -74,31 +20,83 @@
     padding: 10px 12px;
     border-radius: 10px;
     border: 1px solid var(--input-border);
-    background: var(--input-bg);
+    background: var(--card-bg);
     color: var(--text);
     font-size: 13px;
     outline: none;
+    box-sizing: border-box;
 }
 
 .event-form input:focus {
     border-color: var(--input-focus);
 }
 
-.events-list {
+.event-form-row {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
-.event-card {
-    background: var(--card-bg);
-    border: 1.5px solid var(--card-border);
-    border-radius: 16px;
-    padding: 16px 18px;
+.event-form-row input {
+    flex: 1;
+}
+
+/* ── Buttons ── */
+.add-event-btn {
+    align-self: flex-start;
+    padding: 9px 16px;
+    border-radius: 10px;
+    border: 1.5px solid var(--primary);
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.add-event-btn:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.add-event-btn.secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--input-border);
+}
+
+.add-event-btn.secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+/* ── List ── */
+.event-list {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    transition: all 0.2s ease;
+    gap: 10px;
+}
+
+.events-empty {
+    color: var(--hint);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 32px;
+    border: 1px dashed var(--input-border);
+    border-radius: 14px;
+}
+
+/* ── Card ── */
+.event-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--card-border, var(--input-border));
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: border-color 0.2s ease, transform 0.15s ease;
 }
 
 .event-card:hover {
@@ -106,29 +104,58 @@
     transform: translateY(-1px);
 }
 
-.event-title {
-    font-size: 1rem;
+.event-card-title {
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--text);
     margin: 0;
 }
 
-.event-description {
-    font-size: 0.9rem;
+.event-card-description {
+    font-size: 0.85rem;
     color: var(--hint);
     margin: 0;
 }
 
-.event-dates {
-    font-size: 0.85rem;
-    color: var(--hint);
+.event-card-dates {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 4px;
 }
 
-.events-empty {
-    color: var(--hint);
-    font-size: 0.95rem;
-    text-align: center;
-    padding: 40px;
-    border: 1px dashed var(--input-border);
-    border-radius: 16px;
+.event-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.event-action-btn {
+    padding: 5px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    background: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.event-action-btn.edit {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.event-action-btn.edit:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.event-action-btn.delete {
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+.event-action-btn.delete:hover {
+    background: #ef444420;
 }

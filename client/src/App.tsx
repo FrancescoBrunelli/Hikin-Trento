@@ -11,6 +11,7 @@ import StructureDashboard from './pages/StructureDashboard.tsx'
 import UserSettings from './pages/UserSettings.tsx'
 import StructureSettings from './pages/StructureSettings.tsx'
 import TripPlanning from './pages/TripPlanning.tsx'
+import Events from './pages/Events.tsx'
 function App() {
   return (
       <ThemeProvider>
@@ -26,11 +27,11 @@ function App() {
                   <Route path="/user/settings" element={<UserSettings />} />
                   <Route path="/structure/settings" element={<StructureSettings />} />
                   <Route path="/tripplanning" element={<TripPlanning />} />
+                  <Route path="/structure/events" element={<Events/>} />
               </Routes>
           </BrowserRouter>
       </ThemeProvider>
   )
 }
-
 
 export default App
