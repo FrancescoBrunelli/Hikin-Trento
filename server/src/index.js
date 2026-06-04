@@ -24,11 +24,15 @@ async function connectoToDatabase() {
   console.log("MongoDB connection established");
 
   // START THE SERVER
-  const PORT = 3000; // port 5000 creates some problems with macOS's Control Center
-  app.listen(PORT, () => {
-    console.log(`Server listening on http://localhost:${PORT}`);
-    console.log(`View swagger interface at http://localhost:${PORT}/api-docs`);
-  });
+  if (process.env.NODE_ENV !== "test") {
+    const PORT = 3000; // port 5000 creates some problems with macOS's Control Center
+    app.listen(PORT, () => {
+      console.log(`Server listening on http://localhost:${PORT}`);
+      console.log(
+        `View swagger interface at http://localhost:${PORT}/api-docs`,
+      );
+    });
+  }
 }
 
 connectoToDatabase();
@@ -49,52 +53,5 @@ app.use("/api/managedStructure", require("./routes/managedStructureRoutes"));
 app.use("/api/favourites", require("./routes/favouritesRoutes"));
 app.use("/api/structures", require("./routes/eventsRoutes"));
 app.use("/api/structures", require("./routes/announcementsRoutes"));
-module.exports = connectoToDatabase;
 
-//const { MongoClient } = require('mongodb');
-//const uri = process.env.MONGODB_URI;
-//const client = new MongoClient(uri);
-
-/*
-let db;
-async function runServer() {
-  try {
-    await client.connect();
-    db = client.db(); // Uses the DB name from .env string
-    console.log("Connected to HikinTrento Cluster!");
-
-    // START THE SERVER
-    const PORT = 3000;
-    app.listen(PORT, () => {
-      console.log(`Server listening on http://localhost:${PORT}`);
-    });
-
-  } catch (err) {
-    console.error("Failed to connect:", err);
-  }
-}
-
-runServer();
-
-*/
-
-// ROUTE: Get all trails
-/*
-app.get('/api/trails', async (req, res) => {
-  const trails = await db.collection('trails').find().toArray();
-  res.json(trails);
-});
-*/
-
-// ROUTE: Add a new trail (This replaces the need for your "first" script)
-/*
-app.post('/api/trails', async (req, res) => {
-  try {
-    const result = await db.collection('trails').insertOne(req.body);
-    res.status(201).json(result);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to add trail" });
-  }
-});
-*/
 module.exports = app;
