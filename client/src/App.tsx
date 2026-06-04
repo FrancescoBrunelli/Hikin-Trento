@@ -28,11 +28,14 @@ function App() {
                   <Route path="/structure/settings" element={<StructureSettings />} />
                   <Route path="/user/tripplanning" element={<TripPlanning />} />
                   <Route path="/user/favourites" element={<Favourites />} />
+                  {/*
+                  <Route path="/structure/events" element={<Events/>} />
+                  <Route path="/structure/announcements" element={<Announcements/>} />
+                  */}
               </Routes>
           </BrowserRouter>
       </ThemeProvider>
   )
 }
-
 
 export default App
