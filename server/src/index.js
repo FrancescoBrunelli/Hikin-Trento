@@ -97,3 +97,4 @@ app.post('/api/trails', async (req, res) => {
   }
 });
 */
+module.exports = app;
