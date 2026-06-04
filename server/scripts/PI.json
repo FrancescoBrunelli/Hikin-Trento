@@ -1,0 +1,4506 @@
+[
+  {
+    "type": "node",
+    "id": 402814608,
+    "lat": 45.8306096,
+    "lon": 10.8816715,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Baita della selva"
+    }
+  },
+  {
+    "type": "node",
+    "id": 769164860,
+    "lat": 45.8567805,
+    "lon": 10.8212342,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 862994252,
+    "lat": 45.9325729,
+    "lon": 10.8932497,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 918182939,
+    "lat": 45.7999628,
+    "lon": 10.7463938,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1368777511,
+    "lat": 45.9113489,
+    "lon": 11.0835163,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Sant' Antonio",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1690225544,
+    "lat": 45.8252574,
+    "lon": 10.9015448,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2191481474,
+    "lat": 45.8877674,
+    "lon": 11.1008629,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Stol",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3063802111,
+    "lat": 45.8658756,
+    "lon": 10.8272657,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4003093413,
+    "lat": 45.9605202,
+    "lon": 10.7422906,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Bivacco malgai Gui",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4003093417,
+    "lat": 45.9062437,
+    "lon": 10.6426028,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Malga Palone",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4199168349,
+    "lat": 45.9779266,
+    "lon": 11.0354908,
+    "tags": {
+      "amenity": "shelter",
+      "bin": "no",
+      "ele": "1552",
+      "operator": "Sezione cacciatori Villalagarina",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4594804876,
+    "lat": 45.7296095,
+    "lon": 11.095602,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1430"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5189450063,
+    "lat": 45.7275201,
+    "lon": 10.6661016,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5745179747,
+    "lat": 45.6834443,
+    "lon": 10.7519407,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5942512520,
+    "lat": 45.7254903,
+    "lon": 11.1286127,
+    "tags": {
+      "amenity": "shelter",
+      "military": "yes",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5943399470,
+    "lat": 45.7264404,
+    "lon": 11.1729587,
+    "tags": {
+      "amenity": "shelter",
+      "military": "yes",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6579531132,
+    "lat": 45.9654095,
+    "lon": 10.9642183,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7112994525,
+    "lat": 45.8712862,
+    "lon": 11.0433356,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7126622913,
+    "lat": 45.8711063,
+    "lon": 11.0414004,
+    "tags": {
+      "amenity": "shelter",
+      "lockable": "yes",
+      "shelter_type": "hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7253394677,
+    "lat": 45.8838808,
+    "lon": 11.1721517,
+    "tags": {
+      "access": "yes",
+      "amenity": "shelter",
+      "natural": "cave_entrance",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7253394678,
+    "lat": 45.8801809,
+    "lon": 11.1768582,
+    "tags": {
+      "access": "yes",
+      "amenity": "shelter",
+      "natural": "cave_entrance",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7640599451,
+    "lat": 45.925722,
+    "lon": 10.6395239,
+    "tags": {
+      "amenity": "shelter",
+      "fireplace": "yes",
+      "shelter_type": "lean_to"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7644628735,
+    "lat": 45.8669587,
+    "lon": 11.0741715,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7644727534,
+    "lat": 45.8685752,
+    "lon": 11.0732928,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8897750466,
+    "lat": 45.9232927,
+    "lon": 10.7218122,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8957120317,
+    "lat": 45.7466465,
+    "lon": 10.7045993,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9663551922,
+    "lat": 45.7544813,
+    "lon": 10.6273973,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "870",
+      "fireplace": "yes",
+      "name": "Malga Pavarì",
+      "operator": "CAI Salò",
+      "source": "Regione Lombardia - La banca dati territoriali CTR10000 e' prodotta da Regione Lombardia - Infrastruttura per l'Informazione Territoriale",
+      "source_ref": "921607602",
+      "survey_date": "2022-04/13",
+      "tourism": "wilderness_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9759190194,
+    "lat": 45.8827561,
+    "lon": 10.8219925,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "bomb_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9871074948,
+    "lat": 45.7565871,
+    "lon": 10.5252179,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9938169499,
+    "lat": 45.917121,
+    "lon": 11.1684667,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "bin": "no",
+      "shelter_type": "gazebo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10011493198,
+    "lat": 45.7114232,
+    "lon": 10.671768,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "lean_to"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10819094882,
+    "lat": 45.9642829,
+    "lon": 10.9009592,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10902077995,
+    "lat": 45.9884705,
+    "lon": 11.0416418,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Bait del Corazza",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12134418851,
+    "lat": 45.9328271,
+    "lon": 11.1742442,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12202506405,
+    "lat": 45.8954296,
+    "lon": 11.029613,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12202506449,
+    "lat": 45.8956703,
+    "lon": 11.0288301,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12650626075,
+    "lat": 45.9295769,
+    "lon": 11.1013336,
+    "tags": {
+      "amenity": "shelter",
+      "bin": "no",
+      "lit": "no",
+      "operator": "Maneggio Cavalli Manzoni",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12871478838,
+    "lat": 45.8756999,
+    "lon": 11.0317139,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13715827275,
+    "lat": 45.8887055,
+    "lon": 10.776817,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13715827280,
+    "lat": 45.8876231,
+    "lon": 10.7813154,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13715919323,
+    "lat": 45.8888213,
+    "lon": 10.7762595,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13715922556,
+    "lat": 45.8877078,
+    "lon": 10.7805379,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13716276691,
+    "lat": 45.8888,
+    "lon": 10.775957,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13746393211,
+    "lat": 45.8699507,
+    "lon": 10.9783995,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 870238556,
+    "lat": 45.9758705,
+    "lon": 11.4287981,
+    "tags": {
+      "access": "unknown",
+      "amenity": "shelter",
+      "name": "ex Baito Pastori"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1279771169,
+    "lat": 45.7414849,
+    "lon": 11.5338317,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1774194393,
+    "lat": 45.8492616,
+    "lon": 11.2228041,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1864731683,
+    "lat": 45.9184527,
+    "lon": 11.413268,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Baita Spelonca"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1911302607,
+    "lat": 45.7370902,
+    "lon": 11.3927153,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Gazebo- tettoia"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1966582783,
+    "lat": 45.8759439,
+    "lon": 11.3924343,
+    "tags": {
+      "alt_name": "Alta Kuvala‎",
+      "amenity": "shelter",
+      "ele": "1355",
+      "name": "Alta Kugela",
+      "shelter_type": "rock_shelter",
+      "tourism": "attraction",
+      "wikidata": "Q130464955",
+      "wikimedia_commons": "Category:Alta Kuvala"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2408233669,
+    "lat": 45.806019,
+    "lon": 11.2529952,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2408233673,
+    "lat": 45.806644,
+    "lon": 11.2528656,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2408233674,
+    "lat": 45.8068959,
+    "lon": 11.2521317,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2408233678,
+    "lat": 45.80733,
+    "lon": 11.2513603,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2408233679,
+    "lat": 45.8088774,
+    "lon": 11.2506154,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2597599726,
+    "lat": 45.8218506,
+    "lon": 11.3415195,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "950",
+      "name": "Cason Brusà",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3138876993,
+    "lat": 45.7856524,
+    "lon": 11.4959296,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1099",
+      "name": "Ex Malga Seronetta",
+      "operator": "Comune di Caltrano",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3197238202,
+    "lat": 45.6769243,
+    "lon": 11.35752,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3249483896,
+    "lat": 45.8120293,
+    "lon": 11.475442,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1315",
+      "name": "Ex Malga Lovarezze",
+      "operator": "Comune di Caltrano"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3483007352,
+    "lat": 45.7763608,
+    "lon": 11.2927761,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1387",
+      "name": "Malga Zola"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3777485497,
+    "lat": 45.693667,
+    "lon": 11.3699077,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4713507690,
+    "lat": 45.8293005,
+    "lon": 11.5063342,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1178",
+      "name": "Baito Torle"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4713507691,
+    "lat": 45.8357361,
+    "lon": 11.5207157,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Baito Pria dell'Acqua"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4895337247,
+    "lat": 45.9415604,
+    "lon": 11.4610035,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6307062850,
+    "lat": 45.8404354,
+    "lon": 11.4205298,
+    "tags": {
+      "amenity": "shelter",
+      "direction": "w",
+      "tourism": "viewpoint"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6373860422,
+    "lat": 45.8489413,
+    "lon": 11.3891222,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "sun_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9082308684,
+    "lat": 45.6969748,
+    "lon": 11.3667984,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Ca' Trenta Villaggio Peep - ER1018",
+      "public_transport": "platform",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9231141960,
+    "lat": 45.839961,
+    "lon": 11.2195899,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9231141965,
+    "lat": 45.8252814,
+    "lon": 11.2272375,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9231141966,
+    "lat": 45.8253922,
+    "lon": 11.2277428,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9231141967,
+    "lat": 45.8237415,
+    "lon": 11.2298822,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9231141968,
+    "lat": 45.822311,
+    "lon": 11.2302695,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9231141969,
+    "lat": 45.8165952,
+    "lon": 11.2348114,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9231142004,
+    "lat": 45.8243852,
+    "lon": 11.2364493,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9483034459,
+    "lat": 45.7643356,
+    "lon": 11.2866765,
+    "tags": {
+      "amenity": "shelter",
+      "fireplace": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10161961249,
+    "lat": 45.9665195,
+    "lon": 11.2402831,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10857865125,
+    "lat": 45.7022737,
+    "lon": 11.2946577,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11025974586,
+    "lat": 45.9828632,
+    "lon": 11.2018307,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Tettoia"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11235876321,
+    "lat": 45.8088389,
+    "lon": 11.2198123,
+    "tags": {
+      "amenity": "shelter",
+      "military": "yes",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11235876323,
+    "lat": 45.8092848,
+    "lon": 11.218566,
+    "tags": {
+      "amenity": "shelter",
+      "military": "yes",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11235876324,
+    "lat": 45.8095031,
+    "lon": 11.2180642,
+    "tags": {
+      "amenity": "shelter",
+      "military": "yes",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11235876325,
+    "lat": 45.8095858,
+    "lon": 11.2139914,
+    "tags": {
+      "amenity": "shelter",
+      "military": "yes",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11235876331,
+    "lat": 45.8000777,
+    "lon": 11.2012977,
+    "tags": {
+      "amenity": "shelter",
+      "military": "yes",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11401445693,
+    "lat": 45.8522875,
+    "lon": 11.4503137,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Schaff Kugela",
+      "shelter_type": "rock_shelter",
+      "tourism": "attraction",
+      "wikimedia_commons": "File:Schaff Kugela - rock shelter abc1.jpg"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12218782799,
+    "lat": 45.6987464,
+    "lon": 11.2772472,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13074613626,
+    "lat": 45.9286639,
+    "lon": 11.2443971,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13119535069,
+    "lat": 45.6777076,
+    "lon": 11.5022391,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13246564210,
+    "lat": 45.871098,
+    "lon": 11.3621664,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13502573314,
+    "lat": 45.7357942,
+    "lon": 11.3589107,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4552452363,
+    "lat": 45.8263379,
+    "lon": 11.7869689,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Casot de Tecia"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4561797867,
+    "lat": 45.8492907,
+    "lon": 11.6731573,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9144976363,
+    "lat": 45.969771,
+    "lon": 11.7720692,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9830909386,
+    "lat": 45.8972714,
+    "lon": 11.7304496,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11819126084,
+    "lat": 45.99012,
+    "lon": 11.7057033,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13108591655,
+    "lat": 45.9932904,
+    "lon": 11.7818531,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 619877633,
+    "lat": 45.8240506,
+    "lon": 11.9794034,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11042250049,
+    "lat": 45.6980473,
+    "lon": 11.8843094,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6286484073,
+    "lat": 45.8662622,
+    "lon": 11.8096231,
+    "tags": {
+      "amenity": "shelter",
+      "building": "yes",
+      "ele": "1451",
+      "name": "Bivacco Malga Ardosetta",
+      "operator": "Club Alpino Italiano sez. Castelfranco V.to",
+      "shelter_type": "basic"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8184413681,
+    "lat": 45.9473863,
+    "lon": 11.9814867,
+    "tags": {
+      "amenity": "shelter",
+      "description": "ricovero su grande botte",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8184413704,
+    "lat": 45.9453497,
+    "lon": 11.9882539,
+    "tags": {
+      "amenity": "shelter",
+      "description": "ricovero su grande botte",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6536831155,
+    "lat": 45.8767577,
+    "lon": 12.2802689,
+    "tags": {
+      "amenity": "shelter",
+      "backrest": "yes",
+      "seats": "4",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8925859958,
+    "lat": 45.9619714,
+    "lon": 12.448521,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8925860014,
+    "lat": 45.9874236,
+    "lon": 12.4518708,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "lit": "no",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9512271311,
+    "lat": 45.9806782,
+    "lon": 12.2893924,
+    "tags": {
+      "amenity": "shelter",
+      "height": "2",
+      "width": "2"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10315769899,
+    "lat": 45.876089,
+    "lon": 12.2844039,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "bin": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10540353003,
+    "lat": 45.8760704,
+    "lon": 12.2810088,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "bin": "yes",
+      "bus": "yes",
+      "departures_board": "timetable",
+      "highway": "bus_stop",
+      "lit": "yes",
+      "name": "Via Cettolini - Doppio Litro",
+      "network": "Urbano Conegliano",
+      "operator": "MOM - Mobilità di Marca",
+      "operator:wikidata": "Q3859734",
+      "operator:wikipedia": "https://it.wikipedia.org/wiki/Mobilit%C3%A0_di_Marca",
+      "public_transport": "platform",
+      "shelter": "yes",
+      "shelter_type": "public_transport",
+      "tactile_paving": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10909755633,
+    "lat": 45.8772689,
+    "lon": 12.2861761,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "bin": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10909755634,
+    "lat": 45.877247,
+    "lon": 12.2859339,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "bin": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10940591335,
+    "lat": 45.8580941,
+    "lon": 12.4088658,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10985750266,
+    "lat": 45.8834248,
+    "lon": 12.2937712,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "bin": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10985750283,
+    "lat": 45.8829561,
+    "lon": 12.2946093,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "bin": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11517074199,
+    "lat": 45.8880203,
+    "lon": 12.3054889,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "gazebo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11882364618,
+    "lat": 45.6977818,
+    "lon": 12.2499299,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12134456230,
+    "lat": 45.8504076,
+    "lon": 12.2495364,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "gazebo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12138836359,
+    "lat": 45.9281738,
+    "lon": 12.4347994,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "bin": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13202192202,
+    "lat": 45.9730353,
+    "lon": 12.3151728,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "sun_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13202953250,
+    "lat": 45.7871367,
+    "lon": 12.1761612,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 334388932,
+    "lat": 46.0988231,
+    "lon": 10.9913865,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Rifugio Forestale Acqua de Canal"
+    }
+  },
+  {
+    "type": "node",
+    "id": 835951067,
+    "lat": 46.0777583,
+    "lon": 10.9151079,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1168368350,
+    "lat": 46.06556,
+    "lon": 10.7554354,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1689075628,
+    "lat": 46.1029628,
+    "lon": 11.0781544,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4028983823,
+    "lat": 46.109981,
+    "lon": 11.155275,
+    "tags": {
+      "amenity": "shelter",
+      "description": "Piccolo e basso anfratto naturale",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4398186291,
+    "lat": 46.0217006,
+    "lon": 10.4834715,
+    "tags": {
+      "amenity": "shelter",
+      "historic": "yes",
+      "shelter_type": "rock_shelter",
+      "start_date": "1915"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5129934767,
+    "lat": 46.0255962,
+    "lon": 11.1989012,
+    "tags": {
+      "amenity": "shelter",
+      "covered": "yes",
+      "name": "Baito del Gusto",
+      "tourism": "wilderness_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5302481518,
+    "lat": 46.0000071,
+    "lon": 10.4966788,
+    "tags": {
+      "access": "yes",
+      "amenity": "shelter",
+      "fireplace": "yes",
+      "name": "Malga Gelo Bivacco Invernale",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7091026450,
+    "lat": 46.0741369,
+    "lon": 11.0912728,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7561867184,
+    "lat": 46.1116794,
+    "lon": 11.1592873,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "lean_to"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7681382955,
+    "lat": 46.0760368,
+    "lon": 10.7175701,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7681382956,
+    "lat": 46.0758988,
+    "lon": 10.7176563,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7823657462,
+    "lat": 46.0784679,
+    "lon": 11.0016135,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "gazebo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8554017004,
+    "lat": 46.0710549,
+    "lon": 10.9917755,
+    "tags": {
+      "amenity": "shelter",
+      "historic": "yes",
+      "man_made": "yes",
+      "natural": "cave_entrance",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8583360081,
+    "lat": 46.0709336,
+    "lon": 10.9918242,
+    "tags": {
+      "amenity": "shelter",
+      "historic": "yes",
+      "man_made": "yes",
+      "natural": "cave_entrance",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8617587228,
+    "lat": 46.1199691,
+    "lon": 11.1646621,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "lean_to"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8670945785,
+    "lat": 46.1209436,
+    "lon": 11.1928684,
+    "tags": {
+      "amenity": "shelter",
+      "material": "wood",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8670945791,
+    "lat": 46.1214612,
+    "lon": 11.1948586,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8670945795,
+    "lat": 46.1213984,
+    "lon": 11.1940831,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8670945796,
+    "lat": 46.1211209,
+    "lon": 11.1940194,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8690511036,
+    "lat": 46.1181943,
+    "lon": 11.1914133,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9081704753,
+    "lat": 46.0548172,
+    "lon": 11.1385048,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9707890526,
+    "lat": 46.0710954,
+    "lon": 10.8713036,
+    "tags": {
+      "amenity": "shelter",
+      "description": "baita ricavata sotto grotta",
+      "name": "Coel del Caciador",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9891529418,
+    "lat": 46.1032338,
+    "lon": 10.9250368,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9965550104,
+    "lat": 46.0552,
+    "lon": 10.8612087,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10011895085,
+    "lat": 46.1462804,
+    "lon": 11.1941239,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10678655791,
+    "lat": 46.1172914,
+    "lon": 10.8695815,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Malga Senaso di Sopra"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10734724226,
+    "lat": 46.1185878,
+    "lon": 11.1051741,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10814752074,
+    "lat": 46.0629518,
+    "lon": 10.7136182,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10860139314,
+    "lat": 46.0882963,
+    "lon": 11.0094711,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11072578344,
+    "lat": 46.0719141,
+    "lon": 11.1195631,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11132224043,
+    "lat": 46.1370082,
+    "lon": 10.7271972,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Malga Campostril",
+      "note": "identify which building and adjust accordingly!",
+      "ref:refuges.info": "5816",
+      "shelter_type": "basic_hut",
+      "source": "refuges.info"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12533599534,
+    "lat": 46.0179652,
+    "lon": 10.778044,
+    "tags": {
+      "access": "yes",
+      "amenity": "shelter",
+      "capacity": "2",
+      "fee": "no",
+      "fireplace": "no",
+      "shelter_type": "basic_hut",
+      "tourism": "wilderness_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12823634357,
+    "lat": 46.0957931,
+    "lon": 11.0464192,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13142253357,
+    "lat": 46.1428635,
+    "lon": 11.1084649,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "gazebo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13159858459,
+    "lat": 46.0633543,
+    "lon": 11.1153569,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13159903124,
+    "lat": 46.0634054,
+    "lon": 11.1537971,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13159903665,
+    "lat": 46.058229,
+    "lon": 11.1174803,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13159925687,
+    "lat": 46.0582217,
+    "lon": 11.1174059,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13159930511,
+    "lat": 46.0582523,
+    "lon": 11.1174415,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13159930613,
+    "lat": 46.0581836,
+    "lon": 11.1174371,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13603934961,
+    "lat": 46.1000613,
+    "lon": 10.6872713,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 496427659,
+    "lat": 46.2123056,
+    "lon": 10.4916951,
+    "tags": {
+      "amenity": "shelter",
+      "beds": "2",
+      "description": "Dispone di due posti letto con materassi, cuscini e una sola coperta, tavolo in legno, due panche e due sedie. Manca l'acqua. Sul retro ci sono un tavolo in legno con relative panche",
+      "ele": "1953",
+      "name": "Bivacco Spera (Zani Sperandio)",
+      "source": "parcoadamello.it",
+      "tourism": "wilderness_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 496502038,
+    "lat": 46.2010912,
+    "lon": 10.5137118,
+    "tags": {
+      "amenity": "shelter",
+      "beds": "9",
+      "contact:website": "https://www.ugolini-bs.it/s2/index.php?p=rifbiv/descr",
+      "ele": "2958",
+      "name": "Bivacco Francesco Regosa",
+      "operator": "Soc. Escursionisti Bresciani U. Ugolini",
+      "shelter_type": "basic_hut",
+      "source": "parcoadamello.it",
+      "tourism": "wilderness_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1260009221,
+    "lat": 46.2303139,
+    "lon": 11.0251976,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1992861127,
+    "lat": 46.2538169,
+    "lon": 10.8921961,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "2780",
+      "name": "Bivacco Fratelli Bonvecchio",
+      "operator": "46,2538547, 10,8922097",
+      "ref:refuges.info": "2840",
+      "shelter_type": "basic_hut",
+      "wikidata": "Q105044081"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2306378696,
+    "lat": 46.2963136,
+    "lon": 10.9974371,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Rifugio Genzianella"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4319291030,
+    "lat": 46.2650031,
+    "lon": 10.9545694,
+    "tags": {
+      "amenity": "shelter",
+      "mapillary": "1632216260314652"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4944766111,
+    "lat": 46.163343,
+    "lon": 10.9387277,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6251044625,
+    "lat": 46.2545032,
+    "lon": 10.5105797,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7015155900,
+    "lat": 46.1612321,
+    "lon": 10.8696384,
+    "tags": {
+      "amenity": "shelter",
+      "capacity": "4",
+      "description": "46°09′40.3″N, 10°52′10.7″E",
+      "name": "Bivacco Castiglioni",
+      "shelter_type": "basic_hut",
+      "source": "https://www.alpenvereinaktiv.com/de/biwak/bivacco-castiglioni/62010493/#dmdtab=oax-tab3",
+      "wikidata": "Q106255805"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7981488254,
+    "lat": 46.2585637,
+    "lon": 10.494407,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "sun_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7981488255,
+    "lat": 46.2588577,
+    "lon": 10.4957957,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "sun_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7981488256,
+    "lat": 46.2592397,
+    "lon": 10.4984316,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "sun_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7981488257,
+    "lat": 46.258175,
+    "lon": 10.4937458,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "sun_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7981488258,
+    "lat": 46.2591293,
+    "lon": 10.4998854,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "sun_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8170199724,
+    "lat": 46.2472344,
+    "lon": 10.4725124,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8197237916,
+    "lat": 46.2899643,
+    "lon": 10.6819898,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11128731805,
+    "lat": 46.2570305,
+    "lon": 10.6005065,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11132333905,
+    "lat": 46.2491319,
+    "lon": 10.4771912,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11139734586,
+    "lat": 46.1556431,
+    "lon": 10.7565007,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11164927634,
+    "lat": 46.1642022,
+    "lon": 10.5927936,
+    "tags": {
+      "access": "yes",
+      "amenity": "shelter",
+      "building": "yes",
+      "capacity": "4",
+      "ele": "2909",
+      "name": "Bivacco Begey",
+      "operator": "SAT",
+      "reservation": "no",
+      "shelter_type": "basic_hut",
+      "tourism": "wilderness_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12090129096,
+    "lat": 46.2318758,
+    "lon": 10.8262671,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12103970439,
+    "lat": 46.2295209,
+    "lon": 10.8278257,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13195628571,
+    "lat": 46.2063716,
+    "lon": 11.0393336,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 597642270,
+    "lat": 46.0046672,
+    "lon": 11.514801,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1937",
+      "name": "Baito Ortigara",
+      "shelter_type": "weather_shelter",
+      "source": "Regione_del_Veneto_LR28_16.7.1976_Formazione_CTR_auth_39164-5700-1100_23.01.2009"
+    }
+  },
+  {
+    "type": "node",
+    "id": 600485982,
+    "lat": 46.0191027,
+    "lon": 11.8697405,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 649272448,
+    "lat": 46.141191,
+    "lon": 11.2889343,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1488",
+      "name": "Bait del Carmelo",
+      "owner": "ASUC di Sternigo",
+      "ownership": "municipal"
+    }
+  },
+  {
+    "type": "node",
+    "id": 796331149,
+    "lat": 46.1168852,
+    "lon": 11.5265264,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Malga Primalunetta"
+    }
+  },
+  {
+    "type": "node",
+    "id": 796334574,
+    "lat": 46.1120581,
+    "lon": 11.5312892,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Malga Primaluna di sopra"
+    }
+  },
+  {
+    "type": "node",
+    "id": 796388877,
+    "lat": 46.1088605,
+    "lon": 11.5539919,
+    "tags": {
+      "amenity": "shelter",
+      "bin": "no",
+      "name": "Malga Ravetta di sotto"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2302248771,
+    "lat": 46.0847178,
+    "lon": 11.3826446,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1902",
+      "name": "Baito Ilba"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3107987931,
+    "lat": 46.1319933,
+    "lon": 11.2825787,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1647",
+      "name": "La Casara",
+      "owner": "ASUC di Miola",
+      "ownership": "municipal"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3141954927,
+    "lat": 46.0003547,
+    "lon": 11.4974598,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Baito Campigoletti"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3327559926,
+    "lat": 46.0410676,
+    "lon": 11.4531932,
+    "tags": {
+      "access": "yes",
+      "amenity": "shelter",
+      "height": "1.5",
+      "historic:military": "bunker",
+      "man_made": "yes",
+      "natural": "cave_entrance",
+      "old:military": "bunker",
+      "shelter_type": "rock_shelter",
+      "start_date": "1914",
+      "width": "1.5"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3327559928,
+    "lat": 46.0410885,
+    "lon": 11.4529586,
+    "tags": {
+      "access": "yes",
+      "amenity": "shelter",
+      "height": "1.5",
+      "historic:military": "bunker",
+      "man_made": "yes",
+      "natural": "cave_entrance",
+      "old:military": "bunker",
+      "shelter_type": "rock_shelter",
+      "start_date": "1914",
+      "width": "1.5"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3327562014,
+    "lat": 46.0419868,
+    "lon": 11.4530532,
+    "tags": {
+      "access": "yes",
+      "amenity": "shelter",
+      "historic:military": "bunker",
+      "man_made": "yes",
+      "natural": "cave_entrance",
+      "old:military": "bunker",
+      "shelter_type": "rock_shelter",
+      "start_date": "1914"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3997187969,
+    "lat": 46.0657007,
+    "lon": 11.4619998,
+    "tags": {
+      "amenity": "shelter",
+      "historic": "yes",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4441355180,
+    "lat": 46.0941841,
+    "lon": 11.3658131,
+    "tags": {
+      "amenity": "shelter",
+      "description:en": "Dimension ca. 4x2x2 m",
+      "natural": "cave_entrance",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4876019154,
+    "lat": 46.0096084,
+    "lon": 11.6254449,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_table"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5723045927,
+    "lat": 46.0834331,
+    "lon": 11.8617661,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Covol dell'Acqua",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5984876676,
+    "lat": 46.1387926,
+    "lon": 11.387887,
+    "tags": {
+      "amenity": "shelter",
+      "fee": "no",
+      "fireplace": "no",
+      "name": "Baracca ricostruita Grande Guerra",
+      "shelter_type": "lean_to"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6321661760,
+    "lat": 46.0099269,
+    "lon": 11.2987979,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6489537952,
+    "lat": 46.015499,
+    "lon": 11.3677157,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6964557190,
+    "lat": 46.0462841,
+    "lon": 11.711238,
+    "tags": {
+      "amenity": "shelter",
+      "note:it": "non visibile dal sentiero poichè interrato, seguire il segnavia per qualche metro, scalini per l'ingresso",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7517696881,
+    "lat": 46.0388517,
+    "lon": 11.4512981,
+    "tags": {
+      "amenity": "shelter",
+      "barrier": "hampshire_gate"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7580612119,
+    "lat": 46.1069269,
+    "lon": 11.9922571,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8072030259,
+    "lat": 46.0131058,
+    "lon": 11.2872394,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8072030276,
+    "lat": 46.0139665,
+    "lon": 11.2873077,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9048112933,
+    "lat": 46.086273,
+    "lon": 11.400893,
+    "tags": {
+      "amenity": "shelter",
+      "fireplace": "yes",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9315877606,
+    "lat": 46.0461277,
+    "lon": 11.8408842,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9939271794,
+    "lat": 46.1408572,
+    "lon": 11.430687,
+    "tags": {
+      "alt_name": "Malga Agnelezza",
+      "amenity": "shelter",
+      "ele": "1852",
+      "fee": "no",
+      "fireplace": "yes",
+      "mattress": "no",
+      "name": "Baito Agnelezza",
+      "note": "solo uso diurno pernottamento non consentito",
+      "shelter_type": "basic"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11031875488,
+    "lat": 46.0102259,
+    "lon": 11.2989436,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11215251639,
+    "lat": 46.0064724,
+    "lon": 11.620197,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11217216237,
+    "lat": 46.0005818,
+    "lon": 11.6059363,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11244181401,
+    "lat": 46.0612373,
+    "lon": 11.2370783,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11244181402,
+    "lat": 46.0612875,
+    "lon": 11.2370754,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11287042501,
+    "lat": 46.0100476,
+    "lon": 11.2987883,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12847138113,
+    "lat": 46.0283599,
+    "lon": 11.5878627,
+    "tags": {
+      "amenity": "shelter",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Tollo",
+      "public_transport": "platform",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13018685444,
+    "lat": 46.143579,
+    "lon": 11.5715517,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "bin": "no",
+      "name": "Grotta 2269m",
+      "shelter_type": "rock_shelter",
+      "survey:date": "2025-07-23"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13042686240,
+    "lat": 46.0759997,
+    "lon": 11.3510021,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13095976003,
+    "lat": 46.147224,
+    "lon": 11.3423431,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Riparo Polpen"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13105667078,
+    "lat": 46.0332637,
+    "lon": 11.3930553,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13106291194,
+    "lat": 46.0304975,
+    "lon": 11.5666926,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13108613733,
+    "lat": 46.0102875,
+    "lon": 11.7910864,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 496126773,
+    "lat": 46.1507774,
+    "lon": 11.3241005,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 503581401,
+    "lat": 46.1521422,
+    "lon": 11.37224,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Ricovero Busa del Carl"
+    }
+  },
+  {
+    "type": "node",
+    "id": 571835719,
+    "lat": 46.1835153,
+    "lon": 11.2108125,
+    "tags": {
+      "access": "private",
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 765948541,
+    "lat": 46.1808333,
+    "lon": 11.3652947,
+    "tags": {
+      "amenity": "shelter",
+      "description": "Di proprietà dell' Ex Comune di Miola (ASUC Miola, Vigo, Montagnaga)",
+      "name": "Bivacco Malga Fregasoga",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 765951395,
+    "lat": 46.1747438,
+    "lon": 11.3625621,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1697",
+      "name": "Bivacco Baracca di Val Mattio",
+      "owner": "ASUC Ex Comune di Miola",
+      "ownership": "municipal"
+    }
+  },
+  {
+    "type": "node",
+    "id": 821887175,
+    "lat": 46.1611624,
+    "lon": 11.9787594,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Malga Brendol",
+      "tourism": "wilderness_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3091205817,
+    "lat": 46.1623122,
+    "lon": 11.9823277,
+    "tags": {
+      "amenity": "shelter",
+      "capacity": "8",
+      "description": "Shelter located under the roof, accessible from downstairs by a staircase; 8 matresses; not insulated; toilet available nearby",
+      "fireplace": "yes",
+      "level": "1",
+      "name": "Malga Erera",
+      "shelter_type": "basic_hut",
+      "toilets": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4428655338,
+    "lat": 46.2235147,
+    "lon": 11.6303145,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4708769620,
+    "lat": 46.1604784,
+    "lon": 11.4077225,
+    "tags": {
+      "amenity": "shelter",
+      "description": "Piccolo ricovero senza attrezzatura ricavato da una postazione della Grande Guerra. Posizione magnifica dominante la val Calamento.",
+      "ele": "2129",
+      "name": "Baracchetta militare 1918"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5057752639,
+    "lat": 46.1659687,
+    "lon": 11.4277393,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5736029123,
+    "lat": 46.1516388,
+    "lon": 11.9205744,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "bin": "no",
+      "natural": "cave_entrance",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5827401860,
+    "lat": 46.1684203,
+    "lon": 11.3416801,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Bivacco Malga Spruggio Bassa",
+      "owner": "ASUC Ex Comune di Baselga",
+      "ownership": "municipal"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7951233133,
+    "lat": 46.1716861,
+    "lon": 11.5547928,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "building": "yes",
+      "name": "Ricovero Col. Bozzano",
+      "table": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8070710575,
+    "lat": 46.1661146,
+    "lon": 11.3540325,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10121476469,
+    "lat": 46.1755839,
+    "lon": 11.2900721,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "lean_to"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10935261253,
+    "lat": 46.2232706,
+    "lon": 11.2658693,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11980785694,
+    "lat": 46.2045872,
+    "lon": 11.4833647,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13018685445,
+    "lat": 46.1579805,
+    "lon": 11.5690536,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "bin": "no",
+      "name": "Grotta 2336m",
+      "shelter_type": "rock_shelter",
+      "survey:date": "2025-07-23"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13018685446,
+    "lat": 46.1628004,
+    "lon": 11.5707445,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "bin": "no",
+      "name": "Grotta 2340m",
+      "shelter_type": "rock_shelter",
+      "survey:date": "2025-07-23"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13018745355,
+    "lat": 46.1646204,
+    "lon": 11.5803229,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "bin": "no",
+      "name": "Grotta 2142m",
+      "shelter_type": "rock_shelter",
+      "survey:date": "2025-07-23"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13084290049,
+    "lat": 46.156239,
+    "lon": 11.8057884,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 281483473,
+    "lat": 46.2270645,
+    "lon": 11.3969507,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1712",
+      "name": "Baito Caterinello"
+    }
+  },
+  {
+    "type": "node",
+    "id": 298462438,
+    "lat": 46.2577319,
+    "lon": 11.4021546,
+    "tags": {
+      "access": "no",
+      "amenity": "shelter",
+      "created_by": "JOSM"
+    }
+  },
+  {
+    "type": "node",
+    "id": 766683466,
+    "lat": 46.2468448,
+    "lon": 11.5922839,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Baito del Marino"
+    }
+  },
+  {
+    "type": "node",
+    "id": 766685959,
+    "lat": 46.2535218,
+    "lon": 11.5963869,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1865673014,
+    "lat": 46.2319623,
+    "lon": 11.5648768,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "bin": "no",
+      "description": "Riparo nella roccia sigillato, con finestra, tavolo e asse per stendere materassini. Storico: di origine militare (prima guerra mondiale).",
+      "name": "Bivacco Nada Teatin",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2535780572,
+    "lat": 46.2367515,
+    "lon": 11.902979,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Bivacco invernale Treviso",
+      "name:en": "Winter Bivouac Treviso"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7728329078,
+    "lat": 46.2931525,
+    "lon": 11.63926,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Casetta del Paluat",
+      "shelter_type": "cabana"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7927361435,
+    "lat": 46.2992117,
+    "lon": 11.8667065,
+    "tags": {
+      "amenity": "shelter",
+      "description": "bivacco in caverna",
+      "name": "Bivacco Stecho"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9082239607,
+    "lat": 46.2812414,
+    "lon": 11.4349575,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11023057972,
+    "lat": 46.2816902,
+    "lon": 11.5405992,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12113248957,
+    "lat": 46.2830872,
+    "lon": 11.3153274,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "gazebo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12831813995,
+    "lat": 46.2666899,
+    "lon": 11.4172643,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13273720102,
+    "lat": 46.2812108,
+    "lon": 11.5396318,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 461888445,
+    "lat": 46.1889396,
+    "lon": 12.3244668,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1150",
+      "name": "Bivacco Scalon",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 658192211,
+    "lat": 46.038381,
+    "lon": 12.3358002,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "bin": "no",
+      "name": "Tana del Lupo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 708878168,
+    "lat": 46.0949996,
+    "lon": 12.373506,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 806780578,
+    "lat": 46.1490676,
+    "lon": 12.3661321,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1260593740,
+    "lat": 46.2584126,
+    "lon": 12.1780887,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1390",
+      "name": "Casera Dei Ronchi"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1260593741,
+    "lat": 46.2612634,
+    "lon": 12.1885317,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1346",
+      "name": "Casera Della Cengia"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1542565750,
+    "lat": 46.187313,
+    "lon": 12.1816136,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Casera Laronch"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2163159208,
+    "lat": 46.2867642,
+    "lon": 12.4373797,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2674891298,
+    "lat": 46.2224117,
+    "lon": 12.4021996,
+    "tags": {
+      "amenity": "shelter",
+      "drinking_water": "yes",
+      "name": "Ricovero Col Nudo",
+      "shelter_type": "rock_shelter",
+      "source": "PCN ortofoto"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4519614758,
+    "lat": 46.2210514,
+    "lon": 12.4255974,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Casera Gravuzza",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4622542421,
+    "lat": 46.178821,
+    "lon": 12.161335,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Ricovero \"Gech\" De Biasi"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7229036585,
+    "lat": 46.0629362,
+    "lon": 12.4432466,
+    "tags": {
+      "amenity": "shelter",
+      "bin": "no",
+      "fixme": "Sembra non esserci più. Controllare",
+      "source": "survey"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9460642281,
+    "lat": 46.2909628,
+    "lon": 12.3020288,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9709262164,
+    "lat": 46.2350901,
+    "lon": 12.3711761,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter",
+      "table": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10688278371,
+    "lat": 46.1995431,
+    "lon": 12.4545083,
+    "tags": {
+      "amenity": "shelter",
+      "building": "yes",
+      "capacity": "9",
+      "description": "Bivacco rosso modello Berti,posto nel bosco della val di Zea",
+      "ele": "1245",
+      "name": "Bivacco Val Zea",
+      "operator": "Azienda foreste Regione Friuli Venezia Giulia",
+      "shelter_type": "basic_hut",
+      "source": "survey:CAI",
+      "website": "https://www.escursionismo.it/rifugi-bivacchi/val-zea-16192"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11360702787,
+    "lat": 46.1701048,
+    "lon": 12.0879616,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Cogoi di Costa Longa",
+      "natural": "cave_entrance",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11646911787,
+    "lat": 46.2029131,
+    "lon": 12.3200067,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Al signor"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11883654357,
+    "lat": 46.1859457,
+    "lon": 12.3313352,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Baracca del Cacciatore"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12049592799,
+    "lat": 46.2764632,
+    "lon": 12.3102003,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12104055202,
+    "lat": 46.289857,
+    "lon": 12.4396558,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12269046492,
+    "lat": 46.1232058,
+    "lon": 12.0187609,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12299796087,
+    "lat": 46.08425,
+    "lon": 12.0097258,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12299857502,
+    "lat": 46.0967657,
+    "lon": 12.0072924,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12356343010,
+    "lat": 46.1080606,
+    "lon": 12.0001148,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12402818084,
+    "lat": 46.1811536,
+    "lon": 12.1601041,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Ristoro Matteo Da Rold"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12536457913,
+    "lat": 46.1801644,
+    "lon": 12.2801052,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12536457914,
+    "lat": 46.1804731,
+    "lon": 12.2792287,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12561108149,
+    "lat": 46.0591361,
+    "lon": 12.3485709,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1200",
+      "name": "Casot Bela Val"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12902329379,
+    "lat": 46.2058433,
+    "lon": 12.0804024,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Grotta Caza Granda",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13110644132,
+    "lat": 46.2787875,
+    "lon": 12.3054404,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 394924262,
+    "lat": 46.38658,
+    "lon": 10.54025,
+    "tags": {
+      "amenity": "shelter",
+      "beds": "9",
+      "ele": "3420",
+      "name": "Bivacco Seveso",
+      "operator": "C.A.I. Seveso",
+      "ref:refuges.info": "7813",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 394924263,
+    "lat": 46.5184737,
+    "lon": 10.5412086,
+    "tags": {
+      "alt_name": "Bivacco Dr. Vittorio Lombardi",
+      "amenity": "shelter",
+      "ele": "3316",
+      "name": "Tschierfeck Biwak am Ortler",
+      "name:de": "Tschierfeck Biwak am Ortler",
+      "name:it": "Bivacco Lombardi",
+      "operator": "CAI Mailand",
+      "operator:de": "CAI Mailand",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1328656742,
+    "lat": 46.4052277,
+    "lon": 10.6980284,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Malga Pontevecchio"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1432090842,
+    "lat": 46.5020934,
+    "lon": 10.5950846,
+    "tags": {
+      "amenity": "shelter",
+      "description": "auch Wetterschutz",
+      "name": "überfahrene Lärche",
+      "tourism": "information"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1777819985,
+    "lat": 46.4960144,
+    "lon": 10.5481201,
+    "tags": {
+      "amenity": "shelter",
+      "capacity": "9",
+      "ele": "3535",
+      "name": "Hochjochbiwak - Bivacco Città di Cantù",
+      "name:de": "Hochjochbiwak",
+      "name:it": "Bivacco Città di Cantù",
+      "operator": "Club Alpino Italiano",
+      "shelter_type": "basic_hut",
+      "wikidata": "Q1621901",
+      "wikipedia": "de:Hochjochbiwak"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1805154550,
+    "lat": 46.3894771,
+    "lon": 10.8324647,
+    "tags": {
+      "amenity": "shelter",
+      "name": "malghetta"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4512873199,
+    "lat": 46.3844475,
+    "lon": 10.7460066,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Malga Cercen Alta"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4512874108,
+    "lat": 46.3797165,
+    "lon": 10.7716567,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4512874256,
+    "lat": 46.3257757,
+    "lon": 10.7526219,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4512874265,
+    "lat": 46.3968398,
+    "lon": 10.704625,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4512874401,
+    "lat": 46.3660567,
+    "lon": 10.7046332,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4512874407,
+    "lat": 46.3500917,
+    "lon": 10.7183165,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4512874470,
+    "lat": 46.4005209,
+    "lon": 10.7810587,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Malga Monte Sole Bassa"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4512874496,
+    "lat": 46.4203865,
+    "lon": 10.8024949,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4749889084,
+    "lat": 46.3110881,
+    "lon": 10.7317104,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4749889085,
+    "lat": 46.3111251,
+    "lon": 10.7316675,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7605880942,
+    "lat": 46.4734341,
+    "lon": 10.4994574,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Rifugio Campo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10264928701,
+    "lat": 46.3175128,
+    "lon": 10.8264383,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11149553830,
+    "lat": 46.481641,
+    "lon": 10.5383313,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Rifugio Quinto Alpini"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11229655637,
+    "lat": 46.3205338,
+    "lon": 10.8429525,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11872141991,
+    "lat": 46.3586128,
+    "lon": 10.5435376,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Bivacco Battaglione Ortles"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13076451537,
+    "lat": 46.4677031,
+    "lon": 10.5460924,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 600596910,
+    "lat": 46.3761525,
+    "lon": 10.9692644,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Tozzaga"
+    }
+  },
+  {
+    "type": "node",
+    "id": 765940436,
+    "lat": 46.3866571,
+    "lon": 11.1778315,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1443",
+      "name": "La Ciaseta"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1421210767,
+    "lat": 46.3305795,
+    "lon": 11.1954194,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Kuhleger Hütt - Baita Kuhleger",
+      "name:de": "Kuhleger Hütt",
+      "name:it": "Baita Kuhleger",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2035288263,
+    "lat": 46.3199066,
+    "lon": 10.9731482,
+    "tags": {
+      "amenity": "shelter",
+      "fireplace": "yes",
+      "name": "Malga Culmei"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2089015024,
+    "lat": 46.3730609,
+    "lon": 11.1963663,
+    "tags": {
+      "amenity": "shelter",
+      "fireplace": "yes",
+      "winter_room": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4279767037,
+    "lat": 46.4030105,
+    "lon": 10.9260953,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Malga Larese di Sotto"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4512874518,
+    "lat": 46.3846228,
+    "lon": 10.8921028,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4745914302,
+    "lat": 46.3477837,
+    "lon": 10.9144188,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4745916141,
+    "lat": 46.3542475,
+    "lon": 10.9273277,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6533510673,
+    "lat": 46.3793503,
+    "lon": 11.0296404,
+    "tags": {
+      "amenity": "shelter",
+      "tourism": "picnic_site"
+    }
+  },
+  {
+    "type": "node",
+    "id": 6794598578,
+    "lat": 46.3785575,
+    "lon": 10.9238148,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Bivacco Gianni Stanchina"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9751550188,
+    "lat": 46.3811276,
+    "lon": 11.1561475,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9995425865,
+    "lat": 46.4761875,
+    "lon": 10.9856804,
+    "tags": {
+      "access": "yes",
+      "amenity": "shelter",
+      "capacity": "7",
+      "fee": "no",
+      "fireplace": "no",
+      "level": "1",
+      "mattress": "yes",
+      "name": "Bivacco Malga Val",
+      "reservation": "no",
+      "shower": "no",
+      "toilets": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10784054516,
+    "lat": 46.4591135,
+    "lon": 11.131398,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10827430982,
+    "lat": 46.3263674,
+    "lon": 10.8764663,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 279299732,
+    "lat": 46.3046492,
+    "lon": 11.5555135,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "2125",
+      "name": "Baito de le Pisancae"
+    }
+  },
+  {
+    "type": "node",
+    "id": 376426477,
+    "lat": 46.4670349,
+    "lon": 11.2709446,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 419891270,
+    "lat": 46.3513442,
+    "lon": 11.7617452,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 450560619,
+    "lat": 46.4786634,
+    "lon": 11.2208735,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1230",
+      "name": "Pfaunboden"
+    }
+  },
+  {
+    "type": "node",
+    "id": 616324196,
+    "lat": 46.453594,
+    "lon": 11.2268663,
+    "tags": {
+      "amenity": "shelter",
+      "leisure": "picnic_table"
+    }
+  },
+  {
+    "type": "node",
+    "id": 633177706,
+    "lat": 46.4857615,
+    "lon": 11.2968652,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 633177707,
+    "lat": 46.4858158,
+    "lon": 11.2969839,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "shelter": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 639117414,
+    "lat": 46.4179604,
+    "lon": 11.2184449,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Hundskoflhütte"
+    }
+  },
+  {
+    "type": "node",
+    "id": 650278459,
+    "lat": 46.4651042,
+    "lon": 11.218931,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 661161951,
+    "lat": 46.443283,
+    "lon": 11.2425236,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 684046141,
+    "lat": 46.4862513,
+    "lon": 11.2367681,
+    "tags": {
+      "amenity": "shelter",
+      "note": "Stände des Perdoniger Festplatzes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 739321001,
+    "lat": 46.4305441,
+    "lon": 11.2999061,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 834535134,
+    "lat": 46.513734,
+    "lon": 11.2016026,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 866855247,
+    "lat": 46.4395682,
+    "lon": 11.2426969,
+    "tags": {
+      "amenity": "shelter",
+      "tourism": "viewpoint"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1259738821,
+    "lat": 46.381586,
+    "lon": 11.5806382,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "2620",
+      "name": "Bivacco Mario Rigatti",
+      "shelter_type": "basic_hut",
+      "wikidata": "Q21235056",
+      "wikipedia": "it:Bivacco Mario Rigatti"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1261910671,
+    "lat": 46.4066661,
+    "lon": 11.9919584,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1849",
+      "name": "Tabiai Forca"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1261910674,
+    "lat": 46.4049645,
+    "lon": 11.9853047,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1960",
+      "name": "Tabiai Lariz"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1261910676,
+    "lat": 46.4136835,
+    "lon": 11.9766109,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1911",
+      "name": "Tabiai Giardogn"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1791351385,
+    "lat": 46.4445539,
+    "lon": 11.2607347,
+    "tags": {
+      "alt_name": "Untere Gand",
+      "amenity": "shelter",
+      "bench": "yes",
+      "bin": "yes",
+      "highway": "bus_stop",
+      "name": "Kreuzweg - Crocevia",
+      "name:de": "Kreuzweg",
+      "name:it": "Crocevia",
+      "network": "TVS",
+      "operator": "SAD",
+      "public_transport": "platform",
+      "route_ref": "131;132;136",
+      "shelter": "yes",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2291327465,
+    "lat": 46.3322745,
+    "lon": 11.8821748,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1827",
+      "name": "Cason del Tamer",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2291422314,
+    "lat": 46.3082008,
+    "lon": 11.8832024,
+    "tags": {
+      "amenity": "shelter",
+      "bin": "yes",
+      "lit": "no",
+      "name": "Area Picnic Mandra ai Lach (con tettoia)",
+      "shelter_type": "picnic_shelter",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2291448870,
+    "lat": 46.3472188,
+    "lon": 11.8863512,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Casera Nova",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2456817371,
+    "lat": 46.485036,
+    "lon": 11.254072,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "yes",
+      "bin": "yes",
+      "highway": "bus_stop",
+      "name": "Missian, Zentrum - Missiano, Centro",
+      "name:de": "Missian, Zentrum",
+      "name:it": "Missiano, Centro",
+      "operator": "SAD",
+      "passenger_information_display": "no",
+      "public_transport": "platform",
+      "route_ref": "135.2",
+      "shelter": "yes",
+      "shelter_type": "public_transport",
+      "source": "EppanOGD",
+      "tactile_paving": "no"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2501237478,
+    "lat": 46.4892859,
+    "lon": 11.3164434,
+    "tags": {
+      "amenity": "shelter",
+      "bus": "yes",
+      "highway": "bus_stop",
+      "name": "Firmian",
+      "network": "TVS",
+      "operator": "SASA",
+      "public_transport": "platform",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3233340269,
+    "lat": 46.4430454,
+    "lon": 11.3407126,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3233340270,
+    "lat": 46.4431412,
+    "lon": 11.3408516,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4308975128,
+    "lat": 46.3745936,
+    "lon": 11.5706957,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "2306",
+      "name": "Bivacco Latemar Attilio Sieff",
+      "shelter_type": "basic_hut",
+      "wikidata": "Q3640570",
+      "wikipedia": "it:Bivacco Sieff"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4368195858,
+    "lat": 46.5253448,
+    "lon": 11.3842543,
+    "tags": {
+      "amenity": "shelter",
+      "bin": "no",
+      "shelter_type": "gazebo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4813182717,
+    "lat": 46.3327274,
+    "lon": 11.6584279,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Bait dei Agnéi",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4813184835,
+    "lat": 46.3345164,
+    "lon": 11.6452261,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Bait de le Vache",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5030354849,
+    "lat": 46.4016136,
+    "lon": 11.7688309,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Ricovero Austriaco",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5030354857,
+    "lat": 46.4014775,
+    "lon": 11.773554,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Ricoveri austriaci",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7236951966,
+    "lat": 46.509072,
+    "lon": 11.3657152,
+    "tags": {
+      "amenity": "shelter",
+      "fireplace": "yes",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7328900090,
+    "lat": 46.4128526,
+    "lon": 11.2285623,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7391641813,
+    "lat": 46.4177337,
+    "lon": 11.2566517,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7449375236,
+    "lat": 46.4140075,
+    "lon": 11.2594148,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7707862086,
+    "lat": 46.4893287,
+    "lon": 11.7234659,
+    "tags": {
+      "amenity": "shelter",
+      "covered": "yes",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7866507328,
+    "lat": 46.4683676,
+    "lon": 11.8803883,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 7866507329,
+    "lat": 46.4675274,
+    "lon": 11.8812174,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8829202428,
+    "lat": 46.3979423,
+    "lon": 11.9636553,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "weather_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8928579121,
+    "lat": 46.5165635,
+    "lon": 11.8412453,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "bin": "no",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9135999702,
+    "lat": 46.4719867,
+    "lon": 11.8772346,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "bin": "no",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9213997378,
+    "lat": 46.302686,
+    "lon": 11.6003561,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9230330858,
+    "lat": 46.3101744,
+    "lon": 11.661769,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "tourism"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9312752228,
+    "lat": 46.5086147,
+    "lon": 11.3351267,
+    "tags": {
+      "amenity": "shelter",
+      "building:material": "wood",
+      "shelter_type": "lean_to"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9445181758,
+    "lat": 46.4747055,
+    "lon": 11.3110383,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9504546239,
+    "lat": 46.3814296,
+    "lon": 11.8951879,
+    "tags": {
+      "amenity": "shelter",
+      "fireplace": "yes",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9914481085,
+    "lat": 46.3285906,
+    "lon": 11.8430487,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Rudere"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10570049200,
+    "lat": 46.4188912,
+    "lon": 11.2121658,
+    "tags": {
+      "amenity": "shelter",
+      "picnic_table": "yes",
+      "shelter_type": "lean_to"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11022946643,
+    "lat": 46.3027216,
+    "lon": 11.6003381,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11054780986,
+    "lat": 46.3727723,
+    "lon": 11.6562963,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "gazebo"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11196486726,
+    "lat": 46.351913,
+    "lon": 11.2285898,
+    "tags": {
+      "amenity": "shelter",
+      "bin": "no",
+      "lit": "no",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11869464357,
+    "lat": 46.3365411,
+    "lon": 11.7015691,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11869464358,
+    "lat": 46.3364133,
+    "lon": 11.7017009,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11869464359,
+    "lat": 46.3364587,
+    "lon": 11.7016937,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 11869464360,
+    "lat": 46.3365116,
+    "lon": 11.7016564,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12232821039,
+    "lat": 46.3455038,
+    "lon": 11.6509768,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12297260730,
+    "lat": 46.4416654,
+    "lon": 11.695189,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "public_transport"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12738954989,
+    "lat": 46.3025516,
+    "lon": 11.635433,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Bait dele Fontane",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12797559601,
+    "lat": 46.5053229,
+    "lon": 11.2320015,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13072004101,
+    "lat": 46.4829145,
+    "lon": 11.7788762,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13234507115,
+    "lat": 46.3269363,
+    "lon": 11.3033646,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13273719902,
+    "lat": 46.3269185,
+    "lon": 11.3034481,
+    "tags": {
+      "amenity": "shelter",
+      "name": "La botte du legno"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13290432794,
+    "lat": 46.5187663,
+    "lon": 11.5360055,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 286323326,
+    "lat": 46.3478642,
+    "lon": 12.3021164,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1305",
+      "name": "Casera Girolda"
+    }
+  },
+  {
+    "type": "node",
+    "id": 437171196,
+    "lat": 46.3462449,
+    "lon": 12.2193714,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1103",
+      "fireplace": "yes",
+      "name": "Casera Fagarè"
+    }
+  },
+  {
+    "type": "node",
+    "id": 454173881,
+    "lat": 46.4004415,
+    "lon": 12.1141201,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1261916488,
+    "lat": 46.3650479,
+    "lon": 12.2586699,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1692",
+      "fireplace": "no",
+      "name": "Casera Copada Alta",
+      "note": "tubo scarico fumi da stufa a camino presente il 17/2/2024 il 28/2/2026 risulta mancante: fireplace unusable"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1261916489,
+    "lat": 46.3650989,
+    "lon": 12.2478767,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1588",
+      "name": "Casera di Copada Bassa"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1261925334,
+    "lat": 46.3507062,
+    "lon": 12.2380234,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1856",
+      "mattress": "no",
+      "name": "Baita Darè Copada",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1261950869,
+    "lat": 46.3356657,
+    "lon": 12.1554373,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1107",
+      "name": "Casera Vegia"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1397033576,
+    "lat": 46.3423477,
+    "lon": 12.2317363,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1024",
+      "name": "Casera del Mugòn"
+    }
+  },
+  {
+    "type": "node",
+    "id": 1397042497,
+    "lat": 46.3404777,
+    "lon": 12.2420727,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Casera dei Zot"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2121154806,
+    "lat": 46.3495916,
+    "lon": 12.1978786,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "927",
+      "name": "Pra de Val"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2189090310,
+    "lat": 46.3760741,
+    "lon": 12.149105,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1464",
+      "name": "Mas de Sabe"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2340346641,
+    "lat": 46.3000349,
+    "lon": 12.2889938,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1563",
+      "fireplace": "yes",
+      "name": "Casera Busnich",
+      "shelter_type": "basic_hut",
+      "tourism": "wilderness_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3078954065,
+    "lat": 46.3149721,
+    "lon": 12.1624356,
+    "tags": {
+      "amenity": "shelter",
+      "capacity": "2",
+      "ele": "1322",
+      "name": "Ricovero del Piano degli Ontani",
+      "old_name": "Casel del Pian dei Auniz",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3286404720,
+    "lat": 46.4919624,
+    "lon": 12.2560403,
+    "tags": {
+      "amenity": "shelter",
+      "description:it": "la posizione riportata su Tabacco e la relativa quota di 2082 m (desunta da IGM) non sono corrette",
+      "ele": "2165",
+      "name": "Bivacco Voltolina",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3784411300,
+    "lat": 46.3527922,
+    "lon": 12.318631,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1307",
+      "name": "Casera Prà di Bosco"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3843842306,
+    "lat": 46.3540027,
+    "lon": 12.300605,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1547",
+      "name": "Casera Pian de Fontana"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3843842307,
+    "lat": 46.3396969,
+    "lon": 12.2887217,
+    "tags": {
+      "amenity": "shelter",
+      "ele": "1241",
+      "name": "Casera Valbona"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5002032923,
+    "lat": 46.3926346,
+    "lon": 12.0846337,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Le Palanche sul Maè",
+      "shelter_type": "picnic_shelter",
+      "source": "survey"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8008866804,
+    "lat": 46.4491985,
+    "lon": 12.2926538,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Landro del Pastore",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 8869478269,
+    "lat": 46.4656981,
+    "lon": 12.1733022,
+    "tags": {
+      "access": "private",
+      "amenity": "shelter",
+      "name": "Taulà Cioupa de Duoe"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9149260752,
+    "lat": 46.3754025,
+    "lon": 12.058198,
+    "tags": {
+      "amenity": "shelter",
+      "bench": "no",
+      "bin": "no",
+      "name": "Grotta, riparo naturale",
+      "name:en": "Cave, natural shelter",
+      "name:it": "Grotta, riparo naturale",
+      "shelter_type": "rock_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9671956150,
+    "lat": 46.4212112,
+    "lon": 12.0342189,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 9819999984,
+    "lat": 46.4758201,
+    "lon": 12.4484673,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 10064645001,
+    "lat": 46.3718758,
+    "lon": 12.0868553,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12016473881,
+    "lat": 46.4557919,
+    "lon": 12.207397,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "picnic_shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12155447262,
+    "lat": 46.3897226,
+    "lon": 12.1092978,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12192880691,
+    "lat": 46.4180649,
+    "lon": 12.1407792,
+    "tags": {
+      "amenity": "shelter",
+      "name": "Bivacco Bonafede Giustina",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 12279370367,
+    "lat": 46.3470554,
+    "lon": 12.1800184,
+    "tags": {
+      "amenity": "shelter",
+      "shelter_type": "basic_hut"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13111845871,
+    "lat": 46.3975315,
+    "lon": 12.3555249,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13111874203,
+    "lat": 46.3968679,
+    "lon": 12.3558188,
+    "tags": {
+      "amenity": "shelter"
+    }
+  },
+  {
+    "type": "node",
+    "id": 13149413573,
+    "lat": 46.4887439,
+    "lon": 12.0226263,
+    "tags": {
+      "amenity": "shelter"
+    }
+  }
+]
