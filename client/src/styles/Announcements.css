@@ -1,11 +1,11 @@
-.events-panel {
+.announcements-panel {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
 /* ── Form ── */
-.event-form {
+.announcement-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -15,7 +15,7 @@
     border-radius: 14px;
 }
 
-.event-form input {
+.announcement-form input {
     width: 100%;
     padding: 10px 12px;
     border-radius: 10px;
@@ -27,21 +27,12 @@
     box-sizing: border-box;
 }
 
-.event-form input:focus {
+.announcement-form input:focus {
     border-color: var(--input-focus);
 }
 
-.event-form-row {
-    display: flex;
-    gap: 10px;
-}
-
-.event-form-row input {
-    flex: 1;
-}
-
 /* ── Buttons ── */
-.add-event-btn {
+.add-announcement-btn {
     align-self: flex-start;
     padding: 9px 16px;
     border-radius: 10px;
@@ -54,31 +45,31 @@
     transition: background 0.2s ease;
 }
 
-.add-event-btn:hover {
+.add-announcement-btn:hover {
     background: var(--primary-hover);
     border-color: var(--primary-hover);
 }
 
-.add-event-btn.secondary {
+.add-announcement-btn.secondary {
     background: transparent;
     color: var(--text);
     border-color: var(--input-border);
 }
 
-.add-event-btn.secondary:hover {
+.add-announcement-btn.secondary:hover {
     border-color: var(--primary);
     color: var(--primary);
     background: transparent;
 }
 
 /* ── List ── */
-.event-list {
+.announcement-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.events-empty {
+.announcements-empty {
     color: var(--hint);
     font-size: 0.9rem;
     text-align: center;
@@ -88,7 +79,7 @@
 }
 
 /* ── Card ── */
-.event-card {
+.announcement-card {
     background: var(--card-bg);
     border: 1.5px solid var(--card-border, var(--input-border));
     border-radius: 14px;
@@ -99,38 +90,38 @@
     transition: border-color 0.2s ease, transform 0.15s ease;
 }
 
-.event-card:hover {
+.announcement-card:hover {
     border-color: var(--primary);
     transform: translateY(-1px);
 }
 
-.event-card-title {
+.announcement-card-title {
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--text);
     margin: 0;
 }
 
-.event-card-description {
+.announcement-card-description {
     font-size: 0.85rem;
     color: var(--hint);
     margin: 0;
 }
 
-.event-card-dates {
+.announcement-card-date {
     font-size: 0.8rem;
     color: var(--primary);
     font-weight: 600;
     margin-top: 4px;
 }
 
-.event-card-actions {
+.announcement-card-actions {
     display: flex;
     gap: 8px;
     margin-top: 8px;
 }
 
-.event-action-btn {
+.announcement-action-btn {
     padding: 5px 12px;
     border-radius: 8px;
     border: 1px solid var(--input-border);
@@ -141,21 +132,21 @@
     transition: all 0.15s ease;
 }
 
-.event-action-btn.edit {
+.announcement-action-btn.edit {
     color: var(--primary);
     border-color: var(--primary);
 }
 
-.event-action-btn.edit:hover {
+.announcement-action-btn.edit:hover {
     background: var(--primary);
     color: white;
 }
 
-.event-action-btn.delete {
+.announcement-action-btn.delete {
     color: #ef4444;
     border-color: #ef4444;
 }
 
-.event-action-btn.delete:hover {
+.announcement-action-btn.delete:hover {
     background: #ef444420;
 }
