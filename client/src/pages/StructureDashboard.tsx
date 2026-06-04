@@ -17,6 +17,7 @@ import Layout from "../components/Layout.tsx";
 import Button from "../components/Button.tsx";
 import "../styles/StructureDashboard.css";
 import ThemeToggle from "../components/ThemeToggle.tsx";
+import AnnouncementsPanel from "./Announcements.tsx";
 
 function StructureDashboard() {
   const navigate = useNavigate();
@@ -147,7 +148,7 @@ function StructureDashboard() {
               <h2>
                 <FaRegBell /> Announcements
               </h2>
-              <p className="dashboard-empty">No announcements yet</p>
+              <AnnouncementsPanel />
             </div>
         );
 

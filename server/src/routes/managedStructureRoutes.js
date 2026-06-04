@@ -486,6 +486,9 @@ router.delete('/events/:id', authStructureMiddleware, eventsController.deleteEve
  */
 router.post('/announcements', authStructureMiddleware, announcementsController.createAnnouncement);
 
+
+router.get('/announcements', authStructureMiddleware, announcementsController.getAnnouncementsForManagedStructure);
+
 /**
  * @swagger
  * /api/managedStructure/announcements/{id}:

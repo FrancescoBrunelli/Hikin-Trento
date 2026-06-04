@@ -1,6 +1,7 @@
 const announcementsService = require('../services/announcementsService');
 const Announcement = require('../models/Announcement');
 
+// For users
 const getAnnouncements = async (req, res) => {
     try {
         const announcements = await announcementsService.getAnnouncements(req.params.structure_id);
@@ -17,6 +18,25 @@ const getAnnouncements = async (req, res) => {
         })
     }
 }
+
+// For logged structure managers
+const getAnnouncementsForManagedStructure = async (req, res) => {
+    try {
+        const announcements = await announcementsService.getAnnouncements(
+            req.managedStructure._id
+        );
+        res.status(200).json({
+            success: true,
+            count: announcements.length,
+            announcements
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            error: err.message
+        });
+    }
+};
 
 const createAnnouncement = async (req, res) => {
     try {
@@ -91,4 +111,4 @@ const deleteAnnouncement = async (req, res) => {
     }
 };
 
-module.exports = { getAnnouncements, createAnnouncement, updateAnnouncement, deleteAnnouncement };
+module.exports = { getAnnouncements, getAnnouncementsForManagedStructure, createAnnouncement, updateAnnouncement, deleteAnnouncement };
