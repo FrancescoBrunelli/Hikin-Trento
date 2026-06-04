@@ -488,45 +488,19 @@ router.post('/announcements', authStructureMiddleware, announcementsController.c
 
 /**
  * @swagger
- * /api/managedStructure/{structure_id}:
+ * /api/managedStructure/announcements:
  *   get:
- *     summary: Get public info of a managed structure by structure ID
- *     description: >
- *       Returns the public basic info of a managed structure identified by
- *       its associated structure ID. No authentication required.
- *     tags: [Managed Structures]
- *     parameters:
- *       - in: path
- *         name: structure_id
- *         required: true
- *         schema:
- *           type: string
- *         description: The MongoDB ObjectId of the associated structure
+ *     summary: Get all announcements of the authenticated managed structure
+ *     description: Returns all announcements created by the logged-in managed structure.
+ *     tags: [Announcements]
+ *     security:
+ *       - bearerAuth: []
  *     responses:
  *       200:
- *         description: Managed structure info retrieved successfully
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 _id:
- *                   type: string
- *                   example: "64f1a2b3c4d5e6f7a8b9c0d1"
- *                 name_owner:
- *                   type: string
- *                   example: "Marco"
- *                 surname_owner:
- *                   type: string
- *                   example: "Bianchi"
- *                 telephone:
- *                   type: string
- *                   example: "+39 0461 123456"
- *                 structure:
- *                   type: object
- *       404:
- *         description: Managed structure not found
- *       400:
+ *         description: Announcements retrieved successfully
+ *       401:
+ *         description: Missing or invalid token
+ *       500:
  *         description: Server error
  */
 router.get('/announcements', authStructureMiddleware, announcementsController.getAnnouncementsForManagedStructure);
