@@ -276,6 +276,60 @@ router.delete("/account", authStructureMiddleware, deleteController.delete_manag
 /**
  * @swagger
  * /api/managedStructure/events:
+ *   get:
+ *     summary: Get all events of the authenticated managed structure
+ *     description: >
+ *       Returns all events published by the authenticated managed structure.
+ *       Sorted by start date ascending.
+ *     tags: [Events]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Events retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 count:
+ *                   type: number
+ *                   example: 2
+ *                 events:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       _id:
+ *                         type: string
+ *                         example: "64f1a2b3c4d5e6f7a8b9c0d1"
+ *                       title:
+ *                         type: string
+ *                         example: "Summer Hiking Festival"
+ *                       description:
+ *                         type: string
+ *                         example: "Guided hikes and food stands."
+ *                       start_date:
+ *                         type: string
+ *                         format: date-time
+ *                         example: "2026-07-10T08:00:00.000Z"
+ *                       end_date:
+ *                         type: string
+ *                         format: date-time
+ *                         example: "2026-07-12T18:00:00.000Z"
+ *       401:
+ *         description: Missing or invalid token
+ *       500:
+ *         description: Server error
+ */
+router.get('/events', authStructureMiddleware, eventsController.getEventsForManagedStructure);
+
+/**
+ * @swagger
+ * /api/managedStructure/events:
  *   post:
  *     summary: Create a new event
  *     description: >
@@ -504,6 +558,7 @@ router.put('/announcements/:id', authStructureMiddleware, announcementsControlle
  *         description: Server error
  */
 router.delete('/announcements/:id', authStructureMiddleware, announcementsController.deleteAnnouncement);
+
 /**
  * @swagger
  * /api/managedStructure/{structure_id}:
