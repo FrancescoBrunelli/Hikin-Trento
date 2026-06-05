@@ -128,6 +128,23 @@ describe("User Account Management", () => {
     testUser.password = "newPassword123!";
   });
 
+  test("DELETE /api/user/account - should fail with invalid token", async () => {
+    const response = await request(app)
+      .delete("/api/user/account")
+      .set("Authorization", "Bearer invalidtoken")
+      .send({ password: testUser.password });
+    expect(response.status).toBe(401);
+  });
+
+  test("DELETE /api/user/account - should fail with wrong password", async () => {
+    const response = await request(app)
+      .delete("/api/user/account")
+      .set("Authorization", `Bearer ${authToken}`)
+      .send({ password: "wrongpassword" });
+    expect(response.status).toBe(401);
+    expect(response.body.error).toBe("The password is not correct");
+  });
+
   test("DELETE /api/user/account - should delete account", async () => {
     const response = await request(app)
       .delete("/api/user/account")

@@ -9,6 +9,7 @@ const managedStructureSchema = new mongoose.Schema(
     telephone: {
       type: String,
       required: true,
+      unique: true,
       match: [/^\+?[\d\s\-]{7,15}$/, "Invalid phone number format"],
     },
     password: { type: String, required: true },
