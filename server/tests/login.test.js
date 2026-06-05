@@ -1,5 +1,6 @@
 const request = require("supertest");
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
 const app = require("../src/index");
 const User = require("../src/models/User");
 const Structure = require("../src/models/Structure");
@@ -90,6 +91,11 @@ describe("Auth and Login Endpoints", () => {
       expect(response.status).toBe(200);
       expect(response.body).toHaveProperty("token");
       expect(response.body.user.username).toBe(testUser.username);
+
+      // Verify JWT
+      const decoded = jwt.verify(response.body.token, process.env.JWT_SECRET);
+      expect(decoded).toHaveProperty("userId", response.body.user.id);
+      expect(decoded).toHaveProperty("username", testUser.username);
     });
 
     test("POST /api/auth/login - should fail with wrong password", async () => {
@@ -161,6 +167,12 @@ describe("Auth and Login Endpoints", () => {
       expect(response.body.manager.telephone).toBe(
         testManagedStructure.telephone,
       );
+
+      // Verify JWT
+      const decoded = jwt.verify(response.body.token, process.env.JWT_SECRET);
+      expect(decoded).toHaveProperty("managerId", response.body.manager.id);
+      expect(decoded).toHaveProperty("telephone", testManagedStructure.telephone);
+      expect(decoded).toHaveProperty("role", "structure_manager");
     });
 
     test("POST /api/auth/login_structure - should fail with wrong password", async () => {

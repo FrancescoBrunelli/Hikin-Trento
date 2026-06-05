@@ -21,7 +21,7 @@ const authStructureMiddleware = async (req, res, next) => {
   }
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log("decoded: ", decoded);
+    //console.log("decoded: ", decoded);
     const managedStructure = await ManagedStructure.findById(decoded.managerId);
     if (managedStructure == null) {
       throw new Error("This structure is not managed");
