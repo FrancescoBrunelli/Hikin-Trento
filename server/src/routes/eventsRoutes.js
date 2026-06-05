@@ -4,7 +4,7 @@ const eventsController = require('../controllers/eventsController');
 
 /**
  * @swagger
- * /api/structures/{structure_id}/events:
+ * /api/managedStructure/{structure_id}/events:
  *   get:
  *     summary: Get all events for a specific structure
  *     description: >

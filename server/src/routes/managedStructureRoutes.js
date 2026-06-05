@@ -322,8 +322,27 @@ router.delete("/account", authStructureMiddleware, deleteController.delete_manag
  *                         example: "2026-07-12T18:00:00.000Z"
  *       401:
  *         description: Missing or invalid token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Access denied. No token provided."
  *       500:
  *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "..."
  */
 router.get('/events', authStructureMiddleware, eventsController.getEventsForManagedStructure);
 
@@ -367,8 +386,73 @@ router.get('/events', authStructureMiddleware, eventsController.getEventsForMana
  *     responses:
  *       201:
  *         description: Event created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: Event created successfully
+ *                 event:
+ *                   type: object
+ *                   properties:
+ *                     _id:
+ *                       type: string
+ *                       example: "64f1a2b3c4d5e6f7a8b9c0d1"
+ *                     title:
+ *                       type: string
+ *                       example: Summer Hiking Festival
+ *                     description:
+ *                       type: string
+ *                       example: Guided hikes and local food stands.
+ *                     start_date:
+ *                       type: string
+ *                       format: date-time
+ *                       example: "2026-07-10T08:00:00.000Z"
+ *                     end_date:
+ *                       type: string
+ *                       format: date-time
+ *                       example: "2026-07-12T18:00:00.000Z"
+ *       400:
+ *         description: Missing required fields
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: All fields are required
+ *       401:
+ *         description: Missing or invalid token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Access denied. No token provided."
  *       500:
  *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "..."
  */
 router.post('/events', authStructureMiddleware, eventsController.createEvent);
 
@@ -412,12 +496,97 @@ router.post('/events', authStructureMiddleware, eventsController.createEvent);
  *     responses:
  *       200:
  *         description: Event updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: Event updated successfully
+ *                 event:
+ *                   type: object
+ *                   properties:
+ *                     _id:
+ *                       type: string
+ *                       example: "64f1a2b3c4d5e6f7a8b9c0d1"
+ *                     title:
+ *                       type: string
+ *                       example: Updated Hiking Festival
+ *                     description:
+ *                       type: string
+ *                       example: Updated event description
+ *                     start_date:
+ *                       type: string
+ *                       format: date-time
+ *                     end_date:
+ *                       type: string
+ *                       format: date-time
+ *       400:
+ *         description: No fields to update provided
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: No fields to update
+ *       401:
+ *         description: Missing or invalid token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Access denied. No token provided."
  *       403:
  *         description: Event does not belong to authenticated structure
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: Forbidden
  *       404:
  *         description: Event not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: Event not found
  *       500:
  *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "..."
  */
 router.put('/events/:id', authStructureMiddleware, eventsController.updateEvent);
 
@@ -442,12 +611,66 @@ router.put('/events/:id', authStructureMiddleware, eventsController.updateEvent)
  *     responses:
  *       200:
  *         description: Event deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: Event deleted successfully
+ *       401:
+ *         description: Missing or invalid token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Access denied. No token provided."
  *       403:
  *         description: Event does not belong to authenticated structure
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: Forbidden
  *       404:
  *         description: Event not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: Event not found
  *       500:
  *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "..."
  */
 router.delete('/events/:id', authStructureMiddleware, eventsController.deleteEvent);
 
@@ -481,8 +704,69 @@ router.delete('/events/:id', authStructureMiddleware, eventsController.deleteEve
  *     responses:
  *       201:
  *         description: Announcement created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: Announcement created successfully
+ *                 announcement:
+ *                   type: object
+ *                   properties:
+ *                     _id:
+ *                       type: string
+ *                       example: "64f1c2a9b1a2c3d4e5f6a7b8"
+ *                     title:
+ *                       type: string
+ *                       example: Temporary Closure
+ *                     description:
+ *                       type: string
+ *                       example: The structure will be closed for maintenance next week.
+ *                     createdAt:
+ *                       type: string
+ *                       format: date-time
+ *                       example: "2026-06-01T10:00:00.000Z"
+ *       400:
+ *         description: Missing required fields
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: All fields are required
+ *       401:
+ *         description: Missing or invalid token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Access denied. No token provided."
  *       500:
  *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "..."
  */
 router.post('/announcements', authStructureMiddleware, announcementsController.createAnnouncement);
 
@@ -491,17 +775,65 @@ router.post('/announcements', authStructureMiddleware, announcementsController.c
  * /api/managedStructure/announcements:
  *   get:
  *     summary: Get all announcements of the authenticated managed structure
- *     description: Returns all announcements created by the logged-in managed structure.
+ *     description: Returns all announcements created by the logged-in managed structure. Sorted by creation date ascending.
  *     tags: [Announcements]
  *     security:
  *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Announcements retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 count:
+ *                   type: number
+ *                   example: 2
+ *                 announcements:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       _id:
+ *                         type: string
+ *                         example: "64f1c2a9b1a2c3d4e5f6a7b8"
+ *                       title:
+ *                         type: string
+ *                         example: Temporary Closure
+ *                       description:
+ *                         type: string
+ *                         example: The structure will be closed for maintenance next week.
+ *                       createdAt:
+ *                         type: string
+ *                         format: date-time
+ *                         example: "2026-06-01T10:00:00.000Z"
  *       401:
  *         description: Missing or invalid token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Access denied. No token provided."
  *       500:
  *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "..."
  */
 router.get('/announcements', authStructureMiddleware, announcementsController.getAnnouncementsForManagedStructure);
 
@@ -539,12 +871,94 @@ router.get('/announcements', authStructureMiddleware, announcementsController.ge
  *     responses:
  *       200:
  *         description: Announcement updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: Announcement updated successfully
+ *                 announcement:
+ *                   type: object
+ *                   properties:
+ *                     _id:
+ *                       type: string
+ *                       example: "64f1c2a9b1a2c3d4e5f6a7b8"
+ *                     title:
+ *                       type: string
+ *                       example: Updated Closure Notice
+ *                     description:
+ *                       type: string
+ *                       example: Maintenance period has been extended.
+ *                     createdAt:
+ *                       type: string
+ *                       format: date-time
+ *       400:
+ *         description: No fields to update provided
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: No fields to update
+ *       401:
+ *         description: Missing or invalid token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Access denied. No token provided."
  *       403:
  *         description: Announcement does not belong to authenticated structure
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: Forbidden
  *       404:
  *         description: Announcement not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: Announcement not found
  *       500:
  *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "..."
  */
 router.put('/announcements/:id', authStructureMiddleware, announcementsController.updateAnnouncement);
 
@@ -569,12 +983,66 @@ router.put('/announcements/:id', authStructureMiddleware, announcementsControlle
  *     responses:
  *       200:
  *         description: Announcement deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: Announcement deleted successfully
+ *       401:
+ *         description: Missing or invalid token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Access denied. No token provided."
  *       403:
  *         description: Announcement does not belong to authenticated structure
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: Forbidden
  *       404:
  *         description: Announcement not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: Announcement not found
  *       500:
  *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "..."
  */
 router.delete('/announcements/:id', authStructureMiddleware, announcementsController.deleteAnnouncement);
 

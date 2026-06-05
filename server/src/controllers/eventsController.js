@@ -40,6 +40,13 @@ const getEventsForManagedStructure = async (req, res) => {
 
 const createEvent = async (req, res) => {
     try {
+        const { title, description, start_date, end_date } = req.body;
+        if (!title || !description || !start_date || !end_date) {
+            return res.status(400).json({
+                success: false,
+                error: 'All fields are required'
+            });
+        }
         const event = await eventsService.createEvent(req.managedStructure._id, req.body);
         res.status(201).json({
             success: true,
@@ -56,6 +63,12 @@ const createEvent = async (req, res) => {
 
 const updateEvent = async (req, res) => {
     try {
+        if (!req.body || Object.keys(req.body).length === 0) {
+            return res.status(400).json({
+                success: false,
+                error: 'No fields to update'
+            });
+        }
         const event = await Event.findById(req.params.id);
         if (!event) {
             return res.status(404).json({
@@ -63,7 +76,7 @@ const updateEvent = async (req, res) => {
                 error: 'Event not found'
             });
         }
-        if (event.structure_id.toString() != req.managedStructure._id.toString()) {
+        if (event.structure_id.toString() !== req.managedStructure._id.toString()) {
             return res.status(403).json({
                 success: false,
                 error: 'Forbidden'
@@ -92,7 +105,7 @@ const deleteEvent = async (req, res) => {
                 error: 'Event not found'
             });
         }
-        if (event.structure_id.toString() != req.managedStructure._id.toString()) {
+        if (event.structure_id.toString() !== req.managedStructure._id.toString()) {
             return res.status(403).json({
                 success: false,
                 error: 'Forbidden'

@@ -4,7 +4,7 @@ const announcementsController = require('../controllers/announcementsController'
 
 /**
  * @swagger
- * /api/structures/{structure_id}/announcements:
+ * /api/managedStructure/{structure_id}/announcements:
  *   get:
  *     summary: Get all announcements for a specific structure
  *     description: >
