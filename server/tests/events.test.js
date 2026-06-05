@@ -1,6 +1,6 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
-const app = require('../app');
+const app = require("../src/index");
 const Event = require('../src/models/Event');
 const Structure = require('../src/models/Structure');
 const ManagedStructure = require('../src/models/ManagedStructure');
@@ -29,6 +29,10 @@ describe("Events end points", () => {
             // Ignore if collection doesn't exist or other errors
         }
 
+        // Clean up any leftover data from previous failed runs
+        await ManagedStructure.deleteMany({ telephone: { $in: ["+39 888 8888888", "+39 777 7777777"] } });
+        await Structure.deleteMany({ odh_id: /^EVT_TEST_ODH_ID/ });
+
         testStructure1 = await Structure.create({
             odh_id: "EVT_TEST_ODH_ID_1_" + Date.now(),
             name: "Owner Event Structure",
@@ -50,12 +54,12 @@ describe("Events end points", () => {
             name: "Event Owner Structure",
             name_owner: "Owner",
             surname_owner: "One",
-            telephone: "+39 111 1111111",
+            telephone: "+39 888 8888888",
             password: "ownerpass",
             Structure_id: testStructure1._id.toString(),
         });
         ownerStructure = await ManagedStructure.findOne({
-            Structure_id: testStructure1._id
+            telephone: "+39 888 8888888",
         })
         if (!ownerStructure) throw new Error("Owner structure not created");
 
@@ -63,25 +67,30 @@ describe("Events end points", () => {
             name: "Other Structure",
             name_owner: "Other",
             surname_owner: "Two",
-            telephone: "+39 222 2222222",
+            telephone: "+39 777 7777777",
             password: "otherpass",
             Structure_id: testStructure2._id.toString(),
         });
         otherStructure = await ManagedStructure.findOne({
-            Structure_id: testStructure2._id
+            telephone: "+39 777 7777777",
         })
         if (!otherStructure) throw new Error("Other structure not created");
 
         // Login both structures to get tokens
-        const ownerLoginResponse = await request(app).post("/api/auth/login_structure").send({
-            telephone: "+39 111 1111111",
-            password: "ownerpass",
-        });
+        const ownerLoginResponse = await request(app)
+            .post("/api/auth/login_structure")
+            .send({
+                telephone: "+39 888 8888888",
+                password: "ownerpass",
+            });
         ownerToken = ownerLoginResponse.body.token;
-        const otherLoginResponse = await request(app).post("/api/auth/login_structure").send({
-            telephone: "+39 222 2222222",
-            password: "otherpass",
-        });
+        //if (!ownerToken) throw new Error("Owner token not set");
+        const otherLoginResponse = await request(app)
+            .post("/api/auth/login_structure")
+            .send({
+                telephone: "+39 777 7777777",
+                password: "otherpass",
+            });
         otherToken = otherLoginResponse.body.token;
 
         // Create test Event for edit and delete tests
@@ -94,7 +103,7 @@ describe("Events end points", () => {
         });
         testEvent2 = await Event.create({
             structure_id: ownerStructure._id,
-            title: "Seed Event",
+            title: "Another Test Event",
             description: "A pre-existing event",
             start_date: new Date("2026-05-01"),
             end_date: new Date("2026-05-02"),
@@ -333,8 +342,9 @@ describe("Events end points", () => {
         })
 
         test("DELETE /api/managedStructure/events/:id - Should fail if event not found", async () => {
+            const fakeId = new mongoose.Types.ObjectId();
             const response = await request(app)
-                .delete(`/api/managedStructure/events/${otherStructure._id}`)
+                .delete(`/api/managedStructure/events/${fakeId}`)
             expect(response.status).toBe(404)
             expect(response.body.error).toBe("Event not found");
         })
