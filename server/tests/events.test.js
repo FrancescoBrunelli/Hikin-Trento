@@ -345,6 +345,7 @@ describe("Events end points", () => {
             const fakeId = new mongoose.Types.ObjectId();
             const response = await request(app)
                 .delete(`/api/managedStructure/events/${fakeId}`)
+                .set("Authorization", `Bearer ${ownerToken}`)
             expect(response.status).toBe(404)
             expect(response.body.error).toBe("Event not found");
         })
