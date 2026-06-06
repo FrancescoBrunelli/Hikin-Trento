@@ -54,6 +54,19 @@ const announcementsController = require('../controllers/announcementsController'
  *                         type: string
  *                         format: date-time
  *                         example: "2026-06-01T10:00:00.000Z"
+ *       404:
+ *         description: No announcements found for the structure
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: Structure not found
  *       500:
  *         description: Server error
  *         content:
@@ -68,7 +81,6 @@ const announcementsController = require('../controllers/announcementsController'
  *                   type: string
  *                   example: "Server Error: ..."
  */
-
 router.get('/:structure_id/announcements', announcementsController.getAnnouncements);
 
 module.exports = router;

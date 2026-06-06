@@ -5,6 +5,12 @@ const Event = require('../models/Event');
 const getEvents = async (req, res) => {
     try {
         const events = await eventsService.getEvents(req.params.structure_id);
+        if (!events || events.length === 0) {
+            return res.status(404).json({
+                success: false,
+                error: 'Structure not found'
+            });
+        }
         res.status(200).json({
             success: true,
             count: events.length,

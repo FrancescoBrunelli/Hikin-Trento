@@ -58,6 +58,19 @@ const eventsController = require('../controllers/eventsController');
  *                         type: string
  *                         format: date-time
  *                         example: "2026-07-12T18:00:00.000Z"
+ *       404:
+ *         description: No events found for the structure
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: Structure not found
  *       500:
  *         description: Server error
  *         content:
@@ -72,7 +85,6 @@ const eventsController = require('../controllers/eventsController');
  *                   type: string
  *                   example: "Server Error: ..."
  */
-
 router.get('/:structure_id/events', eventsController.getEvents);
 
 module.exports = router;

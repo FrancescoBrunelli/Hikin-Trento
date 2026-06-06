@@ -15,6 +15,7 @@ describe("Events end points", () => {
     let otherStructure;
     let testEvent1;
     let testEvent2;
+    const fakeId = new mongoose.Types.ObjectId();
 
     beforeAll(async () => {
         // Ensure DB is connected
@@ -147,7 +148,7 @@ describe("Events end points", () => {
             expect(response.body.event.start_date).toBe(new Date("2025-06-01").toISOString());
             expect(response.body.event.end_date).toBe(new Date("2025-06-02").toISOString());
 
-            testEvent1 = response.body.event;    // Save the created event for later use
+            //testEvent1 = response.body.event;    // Save the created event for later use
         })
 
         test("POST /api/managedStructure/events - Should fail if not logged in", async () => {
@@ -207,6 +208,14 @@ describe("Events end points", () => {
             expect(response.body.events[0].start_date).toBe(new Date("2025-05-01").toISOString());
             expect(response.body.events[0].end_date).toBe(new Date("2025-05-02").toISOString());
         })
+
+        test("GET /api/managedStructure/events - Should fail if not logged in", async () => {
+            const response = await request(app)
+                .get("/api/managedStructure/events")
+            expect(response.status).toBe(401);
+            expect(response.body.error).toBe("Access denied. No token provided.");
+        })
+
         // For Error 500:
         test("GET /api/managedStructure/events - Should return 500 on service failure", async () => {
             jest
@@ -219,6 +228,7 @@ describe("Events end points", () => {
             expect(response.body.success).toBe(false);
         })
     })
+
     describe("Get Events for User", () => {
         test("GET /api/structures/:id/events - Should get all events of a structure for the user", async () => {
             const response = await request(app)
@@ -231,6 +241,14 @@ describe("Events end points", () => {
             expect(response.body.events[0].start_date).toBe(new Date("2025-05-01").toISOString());
             expect(response.body.events[0].end_date).toBe(new Date("2025-05-02").toISOString());
         })
+
+        test("GET /api/structures/:id/events - Should fail if structure not found", async () => {
+            const response = await request(app)
+                .get(`/api/structures/${fakeId}/events`)
+            expect(response.status).toBe(404);
+            expect(response.body.error).toBe("Structure not found");
+        })
+
         // For Error 500:
         test("GET /api/structures/:id/events - Should return 500 on service failure", async () => {
             jest
@@ -264,7 +282,7 @@ describe("Events end points", () => {
 
         test("PUT /api/managedStructure/events/:id - Should fail if event not found", async () => {
             const response = await request(app)
-                .put(`/api/managedStructure/events/${otherStructure._id}`)
+                .put(`/api/managedStructure/events/${fakeId}`)
                 .set("Authorization", `Bearer ${ownerToken}`)
                 .send({
                     title: "Updated Test Event",
@@ -342,7 +360,6 @@ describe("Events end points", () => {
         })
 
         test("DELETE /api/managedStructure/events/:id - Should fail if event not found", async () => {
-            const fakeId = new mongoose.Types.ObjectId();
             const response = await request(app)
                 .delete(`/api/managedStructure/events/${fakeId}`)
                 .set("Authorization", `Bearer ${ownerToken}`)
@@ -369,7 +386,5 @@ describe("Events end points", () => {
             expect(response.status).toBe(500);
             expect(response.body.success).toBe(false);
         })
-
     })
 })
-

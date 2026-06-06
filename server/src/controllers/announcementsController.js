@@ -5,6 +5,12 @@ const Announcement = require('../models/Announcement');
 const getAnnouncements = async (req, res) => {
     try {
         const announcements = await announcementsService.getAnnouncements(req.params.structure_id);
+        if (!announcements || announcements.length === 0) {
+            return res.status(404).json({
+                success: false,
+                error: 'Structure not found'
+            });
+        }
         res.status(200).json({
             success: true,
             count: announcements.length,
