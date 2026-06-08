@@ -53,5 +53,6 @@ app.use("/api/managedStructure", require("./routes/managedStructureRoutes"));
 app.use("/api/favourites", require("./routes/favouritesRoutes"));
 app.use("/api/structures", require("./routes/eventsRoutes"));
 app.use("/api/structures", require("./routes/announcementsRoutes"));
+app.use("/api/reports", require("./routes/reportsRoutes"));
 
 module.exports = app;
