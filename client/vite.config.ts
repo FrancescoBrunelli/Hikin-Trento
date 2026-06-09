@@ -16,5 +16,8 @@ export default defineConfig(({ mode }) => {
       port: env.PORT,
       allowedHosts: true,
     },
+    preview: {
+      port: env.PORT,
+    },
   };
 });

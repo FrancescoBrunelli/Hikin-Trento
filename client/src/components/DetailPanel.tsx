@@ -9,7 +9,7 @@ type Props = {
   isInTrip?: (id: string) => boolean;
   isAuthenticated: boolean;
   favourites: any;
-  onToggleFavourite: (any) => void;
+  onToggleFavourite: (item: any) => void;
 };
 
 export default function DetailPanel({
@@ -67,8 +67,8 @@ export default function DetailPanel({
     );
 
   const isFavourite =
-    favourites[0]?.some((f) => f._id === selected._id) ||
-    favourites[1]?.some((f) => f._id === selected._id);
+    favourites[0]?.some((f: any) => f._id === selected._id) ||
+    favourites[1]?.some((f: any) => f._id === selected._id);
   console.log("fav:", isFavourite);
 
   return (
