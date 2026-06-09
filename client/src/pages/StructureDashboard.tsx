@@ -11,13 +11,15 @@ import {
   FaCog,
   FaPhone,
   FaRegCalendarPlus,
-  FaRegBell
+  FaRegBell,
+  FaExclamationTriangle
 } from "react-icons/fa";
 import Layout from "../components/Layout.tsx";
 import Button from "../components/Button.tsx";
 import "../styles/StructureDashboard.css";
 import ThemeToggle from "../components/ThemeToggle.tsx";
 import AnnouncementsPanel from "./Announcements.tsx";
+import { reportService } from "../services/reportService";
 
 function StructureDashboard() {
   const navigate = useNavigate();
@@ -25,6 +27,26 @@ function StructureDashboard() {
   const [structure, setStructure] = useState<any>(null);
   const [activeTab, setActiveTab] = useState("bookings");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [reports, setReports] = useState<Report[]>([]);
+
+  useEffect(() => {
+    if (activeTab === "reports") {
+      reportService.getReports().then(setReports).catch(console.error);
+    }
+  }, [activeTab]);
+
+  const handleStatusUpdate = async (reportId: string, newStatus: string) => {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+    try {
+      await reportService.updateReportStatus(token, reportId, newStatus);
+      // Refresh reports
+      const updatedReports = await reportService.getReports();
+      setReports(updatedReports);
+    } catch (err: any) {
+      alert(err.message);
+    }
+  };
 
   // Auth check + load data
   useEffect(() => {
@@ -151,6 +173,42 @@ function StructureDashboard() {
               <AnnouncementsPanel />
             </div>
         );
+      case "reports":
+        return (
+          <div className="dashboard-card">
+            <h2>
+              <FaExclamationTriangle /> User Reports
+            </h2>
+            <div className="dashboard-reports-list">
+              {reports.length > 0 ? (
+                reports.map((report) => (
+                  <div key={report._id} className="dashboard-report-item">
+                    <div className="report-info">
+                      <h3>{report.title}</h3>
+                      <p>{report.description}</p>
+                      <small>
+                        Coords: {report.coordinates.latitude}, {report.coordinates.longitude}
+                      </small>
+                    </div>
+                    <div className="report-actions">
+                      <select
+                        value={report.status}
+                        onChange={(e) => handleStatusUpdate(report._id, e.target.value)}
+                        className={`status-select status-${report.status}`}
+                      >
+                        <option value="pending">Pending</option>
+                        <option value="accepted">Accepted</option>
+                        <option value="resolved">Resolved</option>
+                      </select>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p className="dashboard-empty">No reports found</p>
+              )}
+            </div>
+          </div>
+        );
 
       default:
         return null;
@@ -243,6 +301,12 @@ function StructureDashboard() {
             onClick={() => setActiveTab("announcements")}
         >
           <FaRegBell /> Announcements
+        </button>
+        <button
+            className={`dashboard-tab ${activeTab === "reports" ? "active" : ""}`}
+            onClick={() => setActiveTab("reports")}
+        >
+          <FaExclamationTriangle /> Reports
         </button>
       </div>
 

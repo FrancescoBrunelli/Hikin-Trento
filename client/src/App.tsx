@@ -12,6 +12,7 @@ import UserSettings from './pages/UserSettings.tsx'
 import StructureSettings from './pages/StructureSettings.tsx'
 import TripPlanning from './pages/TripPlanning.tsx'
 import Favourites from './pages/Favourites.tsx';
+import Reports from './pages/Reports.tsx';
 function App() {
   return (
       <ThemeProvider>
@@ -28,6 +29,7 @@ function App() {
                   <Route path="/structure/settings" element={<StructureSettings />} />
                   <Route path="/user/tripplanning" element={<TripPlanning />} />
                   <Route path="/user/favourites" element={<Favourites />} />
+                  <Route path="/user/reports" element={<Reports />} />
                   {/*
                   <Route path="/structure/events" element={<Events/>} />
                   <Route path="/structure/announcements" element={<Announcements/>} />

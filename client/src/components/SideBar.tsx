@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../styles/SideBar.css";
-import { FaHeart, FaRoute, FaHome } from "react-icons/fa";
+import { FaHeart, FaRoute, FaHome, FaExclamationTriangle } from "react-icons/fa";
 
 type SidebarProps = {
   open: boolean;
@@ -12,6 +12,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
     { label: "Home", path: "/", icon: <FaHome />  },
     { label: "Favourites", path: "/user/favourites", icon: <FaHeart /> },
     { label: "Trip Planning", path: "/user/tripplanning", icon: <FaRoute /> },
+    { label: "Reports", path: "/user/reports", icon: <FaExclamationTriangle /> },
   ];
 
   return (
