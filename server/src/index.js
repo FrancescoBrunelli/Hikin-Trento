@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_URL,
   }),
 );
 
@@ -25,7 +25,7 @@ async function connectoToDatabase() {
 
   // START THE SERVER
   if (process.env.NODE_ENV !== "test") {
-    const PORT = 3000; // port 5000 creates some problems with macOS's Control Center
+    const PORT = process.env.PORT; // port 5000 creates some problems with macOS's Control Center
     app.listen(PORT, () => {
       console.log(`Server listening on http://localhost:${PORT}`);
       console.log(
