@@ -35,17 +35,17 @@ export default function DetailPanel({
       setTelephone(null);
       return;
     }
-    fetch(`http://localhost:3000/api/managedStructure/${selected._id}`)
+    fetch(`/api/managedStructure/${selected._id}`)
       .then((res) => res.json())
       .then((managedStructure) => {
         setTelephone(managedStructure.telephone);
         const managedId = managedStructure._id;
 
-        fetch(`http://localhost:3000/api/structures/${managedId}/events`)
+        fetch(`/api/structures/${managedId}/events`)
             .then(res => res.json())
             .then(data => setEvents(data.events ?? []));
 
-        fetch(`http://localhost:3000/api/structures/${managedId}/announcements`)
+        fetch(`/api/structures/${managedId}/announcements`)
             .then(res => res.json())
             .then(data => setAnnouncements(data.announcements ?? []));
       })

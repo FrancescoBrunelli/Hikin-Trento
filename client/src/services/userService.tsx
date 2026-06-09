@@ -1,5 +1,5 @@
 export const userBasicInfo = async (token) => {
-  const response = await fetch("http://localhost:3000/api/user/basicInfo", {
+  const response = await fetch("/api/user/basicInfo", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -25,7 +25,7 @@ export const updateUserInfo = async (
     username: string;
   },
 ) => {
-  const response = await fetch("http://localhost:3000/api/user/basicInfo", {
+  const response = await fetch("/api/user/basicInfo", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export const updateUserPassword = async(
     confirm_password: string;
   },
 ) => {
-  const response = await fetch("http://localhost:3000/api/user/password", {
+  const response = await fetch("/api/user/password", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

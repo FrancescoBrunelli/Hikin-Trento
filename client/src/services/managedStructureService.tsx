@@ -1,5 +1,5 @@
 export const managedStructureBasicInfo = async (token) => {
-  const response = await fetch("http://localhost:3000/api/managedStructure/basicInfo", {
+  const response = await fetch("/api/managedStructure/basicInfo", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -22,7 +22,7 @@ export const updateStructureInfo = async (
     telephone: string;
   },
 ) => {
-  const response = await fetch("http://localhost:3000/api/managedStructure/basicInfo", {
+  const response = await fetch("/api/managedStructure/basicInfo", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const updateStructurePassword = async(
     confirm_password: string;
   },
 ) => {
-  const response = await fetch("http://localhost:3000/api/managedStructure/password", {
+  const response = await fetch("/api/managedStructure/password", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

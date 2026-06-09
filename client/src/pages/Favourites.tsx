@@ -119,7 +119,7 @@ export default function FavouritesPage() {
     return "#f97316";
   };
 
-  const API_URL = "http://localhost:3000";
+  const API_URL = "";
   const imageSrc = (item: FavItem) =>
    item.type === "structure"
       ? `${API_URL}/assets/structures${item.image}`

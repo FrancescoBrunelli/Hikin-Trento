@@ -27,7 +27,7 @@ export const searchStructures = async (query: string, filters: {managed? : boole
 
 export const signUpStructure = async (payload: Record<string, any>) => {
   const response = await fetch(
-    "http://localhost:3000/api/auth/register_structure",
+    "/api/auth/register_structure",
     {
       method: "POST",
 
