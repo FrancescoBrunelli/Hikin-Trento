@@ -16,7 +16,6 @@ import {
 } from "react-icons/fa";
 import "../styles/Favourites.css";
 
-
 type FavItem = {
   _id: string;
   name: string;
@@ -45,7 +44,6 @@ export default function FavouritesPage() {
   const [filter, setFilter] = useState<Filter>("all");
   const [loading, setLoading] = useState(true);
 
-
   // ── fetch user + favourites ──────────────────────────────────────
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -53,7 +51,6 @@ export default function FavouritesPage() {
       navigate("/");
       return;
     }
-
 
     const headers = { Authorization: `Bearer ${token}` };
 
@@ -119,13 +116,10 @@ export default function FavouritesPage() {
     return "#f97316";
   };
 
-  const API_URL = "";
   const imageSrc = (item: FavItem) =>
-   item.type === "structure"
-      ? `${API_URL}/assets/structures${item.image}`
-      : `${API_URL}/assets/trails${item.image}`;
-
-
+    item.type === "structure"
+      ? `/assets/structures${item.image}`
+      : `/assets/trails${item.image}`;
 
   return (
     <Layout
@@ -145,7 +139,6 @@ export default function FavouritesPage() {
         />
       }
     >
-
       <div className="fav-page">
         {/* ── Header ───────────────────────────────────────── */}
         <div className="fav-header">
