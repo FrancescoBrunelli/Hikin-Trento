@@ -119,6 +119,45 @@
     margin: 0;
 }
 
+/* ── ACTION BUTTONS (Edit/Delete) ── */
+.report-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    font-size: 1rem;
+    background: var(--input-bg);
+    color: var(--hint);
+}
+
+.action-btn:hover {
+    filter: brightness(0.9);
+}
+
+.edit-btn:hover {
+    color: var(--primary);
+    background: rgba(255, 140, 0, 0.1);
+}
+
+.delete-btn:hover {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
 /* ── STATUS BADGES ── */
 .report-status {
     padding: 4px 10px;
