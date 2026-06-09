@@ -224,3 +224,48 @@
 .dashboard-dropdown-item.danger:hover {
     background: rgba(198, 40, 40, 0.08);
 }
+
+/* ── REPORTS ── */
+.dashboard-reports-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dashboard-report-item {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.report-info h3 {
+    font-size: 1rem;
+    margin: 0 0 4px;
+    color: var(--text);
+}
+
+.report-info p {
+    font-size: 0.9rem;
+    margin: 0 0 8px;
+    color: var(--hint);
+}
+
+.status-select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1.5px solid var(--input-border);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.status-select.status-pending { border-color: #ffd700; }
+.status-select.status-accepted { border-color: #1e90ff; }
+.status-select.status-resolved { border-color: #32cd32; }
+
