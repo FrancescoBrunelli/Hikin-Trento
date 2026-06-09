@@ -12,10 +12,6 @@ export default defineConfig(({ mode }) => {
           target: env.VITE_BACKEND_URL,
           changeOrigin: true,
         },
-        "/assets": {
-          target: env.VITE_BACKEND_URL,
-          changeOrigin: true,
-        },
       },
       port: env.PORT,
       allowedHosts: true,

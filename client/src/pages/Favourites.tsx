@@ -116,10 +116,11 @@ export default function FavouritesPage() {
     return "#f97316";
   };
 
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
   const imageSrc = (item: FavItem) =>
     item.type === "structure"
-      ? `/assets/structures${item.image}`
-      : `/assets/trails${item.image}`;
+      ? `${API_URL}/assets/structures${item.image}`
+      : `${API_URL}/assets/trails${item.image}`;
 
   return (
     <Layout
