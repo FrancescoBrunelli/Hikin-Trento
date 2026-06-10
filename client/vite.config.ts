@@ -12,6 +12,11 @@ export default defineConfig(({ mode }) => {
           target: env.VITE_BACKEND_URL,
           changeOrigin: true,
         },
+        "/serv_assets": {
+          target: env.VITE_BACKEND_URL,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/serv_assets/, "/assets"),
+        },
       },
       port: env.PORT,
       allowedHosts: true,
