@@ -19,11 +19,18 @@ const calculateRoute = async (req, res) => {
         // 2. Build coordinates array
         // ORS format: [[lng, lat], [lng, lat], ...]
         const coordinates = [
-            start,
-            ...waypoints,
-            end
+            [start[0], start[1]],
+            ...waypoints.map(w => [w[0], w[1]]),
+            [end[0], end[1]]
         ];
-
+        console.log('ORS coordinates:', JSON.stringify(coordinates));
+//        console.log('Final ORS request body:', JSON.stringify({
+//            coordinates,
+//            elevation: false,
+//            instructions: true,
+//            language: 'it',
+            
+//        }, null, 2));
         // 3. Call ORS API
         const response = await axios.post(
             'https://api.openrouteservice.org/v2/directions/foot-hiking',
@@ -31,7 +38,8 @@ const calculateRoute = async (req, res) => {
                 coordinates,
                 elevation: true,        // include elevation data
                 instructions: true,     // include turn by turn instructions
-                language: 'it'         // italian instructions
+                language: 'it',        // italian instructions
+                
             },
             {
                 headers: {
@@ -188,7 +196,109 @@ const deletePlan = async (req, res) => {
         res.status(500).json({ error: "Failed to delete plan: " + err.message });
     }
 };
+// Update a plan (must be owner)
+const updatePlan = async (req, res) => {
+    try {
+        const { name, description, waypoints, multiDay, days } = req.body;
 
+        const plan = await Plan.findOne({
+            _id: req.params.id,
+            user: req.user._id
+        });
+
+        if (!plan) {
+            return res.status(404).json({ error: "Plan not found" });
+        }
+
+        if (name !== undefined)        plan.name = name;
+        if (description !== undefined) plan.description = description;
+        if (multiDay !== undefined)    plan.multiDay = multiDay;
+        if (days !== undefined)        plan.days = days;
+
+        await plan.save();
+
+        res.status(200).json({
+            message: "Plan updated successfully",
+            plan: {
+                id: plan._id,
+                name: plan.name,
+                description: plan.description,
+                multiDay: plan.multiDay,
+                days: plan.days,
+                updatedAt: plan.updatedAt
+            }
+        });
+
+    } catch (err) {
+        res.status(500).json({ error: "Failed to update plan: " + err.message });
+    }
+};
+
+// Save any plan to favorites
+const saveFavorite = async (req, res) => {
+    try {
+        const plan = await Plan.findById(req.params.id);
+
+        if (!plan) {
+            return res.status(404).json({ error: "Plan not found" });
+        }
+
+        if (plan.savedBy.includes(req.user._id)) {
+            return res.status(400).json({ error: "Plan already in favorites" });
+        }
+
+        plan.savedBy.push(req.user._id);
+        await plan.save();
+
+        res.status(200).json({ message: "Plan added to favorites" });
+
+    } catch (err) {
+        res.status(500).json({ error: "Failed to save favorite: " + err.message });
+    }
+};
+
+// Remove a plan from favorites
+const removeFavorite = async (req, res) => {
+    try {
+        const plan = await Plan.findById(req.params.id);
+
+        if (!plan) {
+            return res.status(404).json({ error: "Plan not found" });
+        }
+
+        if (!plan.savedBy.includes(req.user._id)) {
+            return res.status(400).json({ error: "Plan not in favorites" });
+        }
+
+        plan.savedBy = plan.savedBy.filter(
+            (userId) => userId.toString() !== req.user._id.toString()
+        );
+        await plan.save();
+
+        res.status(200).json({ message: "Plan removed from favorites" });
+
+    } catch (err) {
+        res.status(500).json({ error: "Failed to remove favorite: " + err.message });
+    }
+};
+
+// Get all favorited plans for the logged in user
+const getFavorites = async (req, res) => {
+    try {
+        const plans = await Plan.find({ savedBy: req.user._id })
+            .select('name description route.distance route.duration multiDay days user createdAt')
+            .populate('user', 'name username')
+            .sort({ createdAt: -1 });
+
+        res.status(200).json({
+            message: "Favorites retrieved successfully",
+            plans
+        });
+
+    } catch (err) {
+        res.status(500).json({ error: "Failed to get favorites: " + err.message });
+    }
+};
 // Generate share token
 /*const sharePlan = async (req, res) => {
     try {
@@ -242,7 +352,11 @@ module.exports = {
     savePlan,
     getUserPlans,
     getPlan,
+    updatePlan,
     deletePlan,
+    saveFavorite,
+    removeFavorite,
+    getFavorites
     // sharePlan,      // TODO: implement sharing later
     // getSharedPlan   // TODO: implement sharing later
 };
