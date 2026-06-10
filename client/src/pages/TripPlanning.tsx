@@ -196,108 +196,110 @@ const decodePolyline = (encoded: string, has3d: boolean = true): [number, number
 
     return (
         <Layout>
-            <div className="home-container">
-                <SearchPanel
-                    query={query}
-                    setQuery={setQuery}
-                    results={results}
-                    onSearch={handleSearch}
-                    onSelect={(r) => setSelected(r)}
-                    selected={selected}
-                    mode={mode}
-                    setMode={setMode}
-                    trailFilters={trailFilters}
-                    setTrailFilters={setTrailFilters}
-                    piFilters={piFilters}
-                    setPIFilters={setPIFilters}
-                    structureFilters={structureFilters}
-                    setStructureFilters={setStructureFilters}
-                    hideModes={['trails']}
-                />
-                <div className="home-map" style={{ position: 'relative' }}>
-                    <TripMapView
+            <div className="home-page">
+                <div className="home-container">
+                    <SearchPanel
+                        query={query}
+                        setQuery={setQuery}
+                        results={results}
+                        onSearch={handleSearch}
+                        onSelect={(r) => setSelected(r)}
                         selected={selected}
-                        tripPoints={tripPoints}
-                        routeCoords={routeCoords}
+                        mode={mode}
+                        setMode={setMode}
+                        trailFilters={trailFilters}
+                        setTrailFilters={setTrailFilters}
+                        piFilters={piFilters}
+                        setPIFilters={setPIFilters}
+                        structureFilters={structureFilters}
+                        setStructureFilters={setStructureFilters}
+                        hideModes={['trails']}
                     />
+                    <div className="home-map" style={{ position: 'relative' }}>
+                        <TripMapView
+                            selected={selected}
+                            tripPoints={tripPoints}
+                            routeCoords={routeCoords}
+                        />
 
-                    {/* ROUTE PREVIEW BOTTOM SHEET */}
-                    <div className={`trip-route-preview ${previewOpen ? 'visible' : ''}`}>
-                        <div className="trip-route-preview-handle" onClick={() => setPreviewOpen(o => !o)}>
-                            <div className="trip-route-preview-handle-bar" />
-                        </div>
-                        {route && (
-                            <div className="trip-route-preview-inner">
-                                <p className="trip-route-preview-title">Route Preview</p>
-                                <div className="trip-route-stats">
-                                    <div className="trip-route-stat-card">
-                                        <span className="trip-route-stat-icon">📏</span>
-                                        <span className="trip-route-stat-value">{formatDistance(route.distance)}</span>
-                                        <span className="trip-route-stat-label">Distance</span>
-                                    </div>
-                                    <div className="trip-route-stat-card">
-                                        <span className="trip-route-stat-icon">⏱</span>
-                                        <span className="trip-route-stat-value">{formatDuration(route.duration)}</span>
-                                        <span className="trip-route-stat-label">Duration</span>
-                                    </div>
-                                    <div className="trip-route-stat-card">
-                                        <span className="trip-route-stat-icon">⬆️</span>
-                                        <span className="trip-route-stat-value">+{Math.round(route.ascent ?? 0)}m</span>
-                                        <span className="trip-route-stat-label">Ascent</span>
-                                    </div>
-                                    <div className="trip-route-stat-card">
-                                        <span className="trip-route-stat-icon">⬇️</span>
-                                        <span className="trip-route-stat-value">-{Math.round(route.descent ?? 0)}m</span>
-                                        <span className="trip-route-stat-label">Descent</span>
-                                    </div>
-                                </div>
-                                {isAuthenticated && !saved && (
-                                    <button
-                                        className="trip-save-btn"
-                                        onClick={handleSave}
-                                        disabled={saving || !tripName.trim()}
-                                    >
-                                        {saving ? '...' : 'Save Trip'}
-                                    </button>
-                                )}
-                                {saved && (
-                                    <div className="trip-save-success">✓ Trip saved! Redirecting…</div>
-                                )}
-                                {!isAuthenticated && (
-                                    <p style={{ margin: 0, fontSize: 13, color: 'var(--hint)' }}>
-                                        <a href="/signin" style={{ color: 'var(--primary)' }}>Sign in</a> to save this trip.
-                                    </p>
-                                )}
+                        {/* ROUTE PREVIEW BOTTOM SHEET */}
+                        <div className={`trip-route-preview ${previewOpen ? 'visible' : ''}`}>
+                            <div className="trip-route-preview-handle" onClick={() => setPreviewOpen(o => !o)}>
+                                <div className="trip-route-preview-handle-bar" />
                             </div>
-                        )}
+                            {route && (
+                                <div className="trip-route-preview-inner">
+                                    <p className="trip-route-preview-title">Route Preview</p>
+                                    <div className="trip-route-stats">
+                                        <div className="trip-route-stat-card">
+                                            <span className="trip-route-stat-icon">📏</span>
+                                            <span className="trip-route-stat-value">{formatDistance(route.distance)}</span>
+                                            <span className="trip-route-stat-label">Distance</span>
+                                        </div>
+                                        <div className="trip-route-stat-card">
+                                            <span className="trip-route-stat-icon">⏱</span>
+                                            <span className="trip-route-stat-value">{formatDuration(route.duration)}</span>
+                                            <span className="trip-route-stat-label">Duration</span>
+                                        </div>
+                                        <div className="trip-route-stat-card">
+                                            <span className="trip-route-stat-icon">⬆️</span>
+                                            <span className="trip-route-stat-value">+{Math.round(route.ascent ?? 0)}m</span>
+                                            <span className="trip-route-stat-label">Ascent</span>
+                                        </div>
+                                        <div className="trip-route-stat-card">
+                                            <span className="trip-route-stat-icon">⬇️</span>
+                                            <span className="trip-route-stat-value">-{Math.round(route.descent ?? 0)}m</span>
+                                            <span className="trip-route-stat-label">Descent</span>
+                                        </div>
+                                    </div>
+                                    {isAuthenticated && !saved && (
+                                        <button
+                                            className="trip-save-btn"
+                                            onClick={handleSave}
+                                            disabled={saving || !tripName.trim()}
+                                        >
+                                            {saving ? '...' : 'Save Trip'}
+                                        </button>
+                                    )}
+                                    {saved && (
+                                        <div className="trip-save-success">✓ Trip saved! Redirecting…</div>
+                                    )}
+                                    {!isAuthenticated && (
+                                        <p style={{ margin: 0, fontSize: 13, color: 'var(--hint)' }}>
+                                            <a href="/signin" style={{ color: 'var(--primary)' }}>Sign in</a> to save this trip.
+                                        </p>
+                                    )}
+                                </div>
+                            )}
+                        </div>
                     </div>
-                </div>
 
-                {selected ? (
-                    <DetailPanel
-                        selected={selected}
-                        onClose={() => setSelected(null)}
-                        onAddToTrip={addToTrip}
-                        isInTrip={isInTrip}
-                        isAuthenticated={isAuthenticated}
-                        favourites={[]}
-                        onToggleFavourite={() => {}}
-                    />
-                ) : (
-                    <TripPanel
-                        tripPoints={tripPoints}
-                        onRemove={removeFromTrip}
-                        onMoveUp={moveUp}
-                        onMoveDown={moveDown}
-                        roundtrip={roundtrip}
-                        setRoundtrip={setRoundtrip}
-                        onConfirm={handleConfirm}
-                        tripName={tripName}
-                        setTripName={setTripName}
-                        calculating={calculating}
-                        calcError={calcError}
-                    />
-                )}
+                    {selected ? (
+                        <DetailPanel
+                            selected={selected}
+                            onClose={() => setSelected(null)}
+                            onAddToTrip={addToTrip}
+                            isInTrip={isInTrip}
+                            isAuthenticated={isAuthenticated}
+                            favourites={[]}
+                            onToggleFavourite={() => {}}
+                        />
+                    ) : (
+                        <TripPanel
+                            tripPoints={tripPoints}
+                            onRemove={removeFromTrip}
+                            onMoveUp={moveUp}
+                            onMoveDown={moveDown}
+                            roundtrip={roundtrip}
+                            setRoundtrip={setRoundtrip}
+                            onConfirm={handleConfirm}
+                            tripName={tripName}
+                            setTripName={setTripName}
+                            calculating={calculating}
+                            calcError={calcError}
+                        />
+                    )}
+                </div>
             </div>
         </Layout>
     );
