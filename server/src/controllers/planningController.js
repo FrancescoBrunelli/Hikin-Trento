@@ -146,7 +146,7 @@ const savePlan = async (req, res) => {
 const getUserPlans = async (req, res) => {
     try {
         const plans = await Plan.find({ user: req.user._id })
-            .select('name description route.distance route.duration multiDay days isPublic shareToken createdAt')
+            .select('name description route.distance route.duration route.ascent route.descent multiDay days isPublic shareToken createdAt')
             .sort({ createdAt: -1 });
 
         res.status(200).json({
@@ -286,7 +286,7 @@ const removeFavorite = async (req, res) => {
 const getFavorites = async (req, res) => {
     try {
         const plans = await Plan.find({ savedBy: req.user._id })
-            .select('name description route.distance route.duration multiDay days user createdAt')
+            .select('name description route.distance route.duration route.ascent route.descent multiDay days user createdAt')
             .populate('user', 'name username')
             .sort({ createdAt: -1 });
 
