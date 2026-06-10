@@ -64,23 +64,12 @@ const planSchema = new mongoose.Schema({
     },
     waypoints: [waypointSchema],
     route: {
-        distance: Number,      // meters
-        duration: Number,      // seconds
-        ascent: Number,       // meters elevation gain
-        descent: Number,      // meters elevation loss
-        geometry: {
-            type: {
-                type: String,
-                enum: ['LineString'],
-                default: 'LineString'
-            },
-
-            coordinates: {
-                type: [[Number]], // [[lng, lat], [lng, lat]]
-                required: true
-            }
-        },     // encoded polyline for map
-        segments: Array       // turn by turn instructions
+        distance: Number,
+        duration: Number,
+        ascent: Number,
+        descent: Number,
+        geometry: mongoose.Schema.Types.Mixed,
+        segments: Array
     },
     multiDay: {
         type: Boolean,

@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Polyline } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -12,19 +12,11 @@ type TripPoint = {
 const createNumberedIcon = (color: string, number: number) => L.divIcon({
     className: '',
     html: `<div style="
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        background: ${color};
-        border: 2px solid white;
+        width: 28px; height: 28px; border-radius: 50%;
+        background: ${color}; border: 2px solid white;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 700;
-        font-size: 13px;
-        font-family: sans-serif;
+        display: flex; align-items: center; justify-content: center;
+        color: white; font-weight: 700; font-size: 13px; font-family: sans-serif;
     ">${number}</div>`,
     iconSize: [28, 28],
     iconAnchor: [14, 14],
@@ -33,13 +25,9 @@ const createNumberedIcon = (color: string, number: number) => L.divIcon({
 const createPreviewIcon = (color: string) => L.divIcon({
     className: '',
     html: `<div style="
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background: ${color};
-        border: 2px solid white;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        opacity: 0.6;
+        width: 14px; height: 14px; border-radius: 50%;
+        background: ${color}; border: 2px solid white;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3); opacity: 0.6;
     "></div>`,
     iconSize: [14, 14],
     iconAnchor: [7, 7],
@@ -55,9 +43,10 @@ const tripColors: Record<string, string> = {
     pi:        '#ea580c',
 };
 
-export default function TripMapView({ selected, tripPoints }: {
+export default function TripMapView({ selected, tripPoints, routeCoords }: {
     selected: any;
     tripPoints: TripPoint[];
+    routeCoords: [number, number][];
 }) {
     const tripIds = new Set(tripPoints.map(p => p._id));
 
@@ -73,7 +62,17 @@ export default function TripMapView({ selected, tripPoints }: {
                     attribution="© OpenStreetMap contributors"
                 />
 
-                {/* Selected but not yet added — small faded preview */}
+                {/* Route polyline */}
+                {routeCoords.length > 0 && (
+                    <Polyline
+                        positions={routeCoords}
+                        color="rgb(254, 116, 25)"
+                        weight={4}
+                        opacity={0.85}
+                    />
+                )}
+
+                {/* Selected but not yet added */}
                 {selected && selected.coordinates && !tripIds.has(selected._id) && (
                     <Marker
                         position={[selected.coordinates.latitude, selected.coordinates.longitude]}
@@ -93,8 +92,3 @@ export default function TripMapView({ selected, tripPoints }: {
         </div>
     );
 }
-
-
-
-
-

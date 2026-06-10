@@ -1,10 +1,7 @@
 type TripPoint = {
     _id: string;
     name: string;
-    coordinates: {
-        lat: number;
-        lng: number;
-    }
+    coordinates: { latitude: number; longitude: number; }
     type: 'structure' | 'pi';
 }
 
@@ -18,6 +15,8 @@ type Props = {
     roundtrip: boolean;
     setRoundtrip: (roundTrip: boolean) => void;
     onConfirm: () => void;
+    calculating?: boolean;
+    calcError?: string | null;
 }
 
 const getLabel = (index: number, total: number) => {
@@ -27,7 +26,7 @@ const getLabel = (index: number, total: number) => {
     return `Stop ${index + 1}`;
 }
 
-export default function TripPanel({ tripPoints, onRemove, onMoveUp, onMoveDown, roundtrip, setRoundtrip, onConfirm, tripName, setTripName }: Props) {
+export default function TripPanel({ tripPoints, onRemove, onMoveUp, onMoveDown, roundtrip, setRoundtrip, onConfirm, tripName, setTripName, calculating, calcError }: Props) {
     return (
         <div className="detail-panel">
             <p className="panel-title">Trip Plan</p>
@@ -47,20 +46,9 @@ export default function TripPanel({ tripPoints, onRemove, onMoveUp, onMoveDown, 
                             <div className="trip-summary-label">{getLabel(i, tripPoints.length)}</div>
                             <div className="trip-summary-name">{p.name}</div>
                             <div className="trip-summary-actions">
-                                <button
-                                    onClick={() => onMoveUp(i)}
-                                    disabled={i === 0}
-                                    className="trip-order-btn"
-                                >▲</button>
-                                <button
-                                    onClick={() => onMoveDown(i)}
-                                    disabled={i === tripPoints.length - 1}
-                                    className="trip-order-btn"
-                                >▼</button>
-                                <button
-                                    onClick={() => onRemove(p._id)}
-                                    className="trip-remove-btn"
-                                >✕</button>
+                                <button onClick={() => onMoveUp(i)} disabled={i === 0} className="trip-order-btn">▲</button>
+                                <button onClick={() => onMoveDown(i)} disabled={i === tripPoints.length - 1} className="trip-order-btn">▼</button>
+                                <button onClick={() => onRemove(p._id)} className="trip-remove-btn">✕</button>
                             </div>
                         </div>
                     ))}
@@ -77,8 +65,15 @@ export default function TripPanel({ tripPoints, onRemove, onMoveUp, onMoveDown, 
                         />
                         Roundtrip
                     </label>
-                    <button onClick={onConfirm} className="confirm-trip-btn" disabled={!tripName?.trim()}>
-                        ✓ Confirm Trip
+                    {calcError && (
+                        <p style={{ fontSize: 12, color: 'var(--invalid)', margin: '4px 0' }}>{calcError}</p>
+                    )}
+                    <button
+                        onClick={onConfirm}
+                        className="confirm-trip-btn"
+                        disabled={!tripName?.trim() || calculating}
+                    >
+                        {calculating ? '⏳ Calculating…' : '⛰ Calculate Route'}
                     </button>
                 </>
             )}

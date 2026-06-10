@@ -13,6 +13,10 @@ import StructureSettings from './pages/StructureSettings.tsx'
 import TripPlanning from './pages/TripPlanning.tsx'
 import Favourites from './pages/Favourites.tsx';
 import Reports from './pages/Reports.tsx';
+import TripDetail from './pages/TripDetail.tsx'
+import MyTrips from './pages/MyTrips.tsx'
+import TripEdit from './pages/TripEdit.tsx'
+
 function App() {
   return (
       <ThemeProvider>
@@ -30,6 +34,11 @@ function App() {
                   <Route path="/user/tripplanning" element={<TripPlanning />} />
                   <Route path="/user/favourites" element={<Favourites />} />
                   <Route path="/user/reports" element={<Reports />} />
+                  <Route path="/user/trip/:id" element={<TripDetail />} />
+                  <Route path="/user/mytrips" element={<MyTrips />} />
+                  <Route path="/user/trip/:id/edit" element={<TripEdit />} />
+
+
                   {/*
                   <Route path="/structure/events" element={<Events/>} />
                   <Route path="/structure/announcements" element={<Announcements/>} />

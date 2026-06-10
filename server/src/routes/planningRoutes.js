@@ -5,21 +5,27 @@ const {
     savePlan,
     getUserPlans,
     getPlan,
+    updatePlan,
     deletePlan,
-    // sharePlan,      // TODO: implement sharing later
-    // getSharedPlan   // TODO: implement sharing later
+    saveFavorite,
+    removeFavorite,
+    getFavorites
 } = require('../controllers/planningController');
 const authMiddleware = require('../middleware/authMiddleware');
 
-// Protected routes
+// Route calculation
 router.post('/route', authMiddleware, calculateRoute);
+
+// Favorites — must be before /:id routes
+router.get('/favorites/me', authMiddleware, getFavorites);
+router.post('/:id/favorite', authMiddleware, saveFavorite);
+router.delete('/:id/favorite', authMiddleware, removeFavorite);
+
+// Own plans
 router.post('/save', authMiddleware, savePlan);
 router.get('/', authMiddleware, getUserPlans);
 router.get('/:id', authMiddleware, getPlan);
+router.put('/:id', authMiddleware, updatePlan);
 router.delete('/:id', authMiddleware, deletePlan);
-
-// TODO: sharing routes - implement later
-// router.post('/:id/share', authMiddleware, sharePlan);
-// router.get('/shared/:token', getSharedPlan);
 
 module.exports = router;
