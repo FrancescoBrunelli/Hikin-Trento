@@ -101,6 +101,7 @@ describe("User Reports Endpoints", () => {
     try {
       await Report.deleteMany({ userId: userId });
       await Report.deleteMany({ userId: secondUserId });
+      await Report.deleteOne({ _id: testReportId });
       await User.deleteOne({ _id: userId });
       await User.deleteOne({ _id: secondUserId });
       const ms = await ManagedStructure.findOne({
@@ -184,6 +185,7 @@ describe("User Reports Endpoints", () => {
       .get("/api/reports")
       .query({ latitude: 46.0, longitude: 11.0, radius: 500 }); // 500 meters
 
+    console.log(response.body);
     expect(response.status).toBe(200);
     expect(Array.isArray(response.body)).toBe(true);
     expect(response.body.length).toBeGreaterThan(0);
@@ -338,7 +340,6 @@ describe("User Reports Endpoints", () => {
     expect(response.status).toBe(404);
   });
 
-
   test("PUT /api/reports/:report_id/status - should fail without authentication", async () => {
     const response = await request(app)
       .put(`/api/reports/${testReportId}/status`)
@@ -347,8 +348,6 @@ describe("User Reports Endpoints", () => {
     expect(response.status).toBe(401);
   });
 
-
-  
   test("PUT /api/reports/:report_id/status - should fail with invalid status value", async () => {
     const response = await request(app)
       .put(`/api/reports/${testReportId}/status`)
@@ -358,43 +357,39 @@ describe("User Reports Endpoints", () => {
     expect(response.status).toBe(400);
   });
 
-
   test("PUT /api/reports/:report_id/status - should fail if user token used instead of structure token", async () => {
-      const response = await request(app)
-        .put(`/api/reports/${testReportId}/status`)
-        .set("Authorization", `Bearer ${userToken}`)
-        .send({ status: "accepted" });
-  
-      expect(response.status).toBe(401);
-    });
+    const response = await request(app)
+      .put(`/api/reports/${testReportId}/status`)
+      .set("Authorization", `Bearer ${userToken}`)
+      .send({ status: "accepted" });
 
+    expect(response.status).toBe(401);
+  });
 
   test("PUT /api/reports/:report_id/status - should update to resolved", async () => {
-     const response = await request(app)
-       .put(`/api/reports/${testReportId}/status`)
-       .set("Authorization", `Bearer ${structureToken}`)
-       .send({ status: "resolved" });
- 
-     expect(response.status).toBe(200);
-     expect(response.body.status).toBe("resolved");
-   });
-
-  
-  test("DELETE /api/reports/:report_id - should fail without authentication", async () => {
     const response = await request(app)
-      .delete(`/api/reports/${testReportId}`);
+      .put(`/api/reports/${testReportId}/status`)
+      .set("Authorization", `Bearer ${structureToken}`)
+      .send({ status: "resolved" });
+
+    expect(response.status).toBe(200);
+    expect(response.body.status).toBe("resolved");
+  });
+
+  test("DELETE /api/reports/:report_id - should fail without authentication", async () => {
+    const response = await request(app).delete(`/api/reports/${testReportId}`);
 
     expect(response.status).toBe(401);
   });
 
   test("DELETE /api/reports/:report_id - should fail if user is not the owner", async () => {
-      const response = await request(app)
-        .delete(`/api/reports/${testReportId}`)
-        .set("Authorization", `Bearer ${secondUserToken}`);
-  
-      expect(response.status).toBe(404);
-      expect(response.body.error).toMatch(/not found or not authorized/i);
-    });
+    const response = await request(app)
+      .delete(`/api/reports/${testReportId}`)
+      .set("Authorization", `Bearer ${secondUserToken}`);
+
+    expect(response.status).toBe(404);
+    expect(response.body.error).toMatch(/not found or not authorized/i);
+  });
 
   test("DELETE /api/reports/:report_id - should return 404 for non-existent report", async () => {
     const fakeId = new mongoose.Types.ObjectId();
@@ -405,7 +400,6 @@ describe("User Reports Endpoints", () => {
     expect(response.status).toBe(404);
   });
 
-  
   test("DELETE /api/reports/:report_id - should delete own report", async () => {
     const response = await request(app)
       .delete(`/api/reports/${testReportId}`)
@@ -418,7 +412,6 @@ describe("User Reports Endpoints", () => {
     expect(deleted).toBeNull();
   });
 
-  
   test("POST /api/reports - new report should have pending status by default", async () => {
     const response = await request(app)
       .post("/api/reports")
@@ -437,8 +430,7 @@ describe("User Reports Endpoints", () => {
   });
 
   test("GET /api/reports - should return all reports when no filters provided", async () => {
-    const response = await request(app)
-      .get("/api/reports");
+    const response = await request(app).get("/api/reports");
 
     expect(response.status).toBe(200);
     expect(Array.isArray(response.body)).toBe(true);
@@ -452,5 +444,4 @@ describe("User Reports Endpoints", () => {
     expect(response.status).toBe(200);
     expect(response.body.length).toBe(0);
   });
-  
 });
