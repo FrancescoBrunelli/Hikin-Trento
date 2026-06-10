@@ -74,7 +74,7 @@ const structuresController = require("../controllers/structuresController");
  *                       longitude: 11.1217
  *                       managed: true
  *
- *       400:
+ *       500:
  *         description: Bad request
  *         content:
  *           application/json:
@@ -149,7 +149,7 @@ router.get("/basicInfo", structuresController.basic_info);
  *                           altitude:
  *                             type: number
  *                             example: 2150
- *       400:
+ *       500:
  *         description: Error searching structures
  *         content:
  *           application/json:

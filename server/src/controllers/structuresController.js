@@ -19,7 +19,10 @@ const basic_info = async (req, res) => {
       structures
     });
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(500).json({
+      success: false,
+      error: 'Server Error: ' + err.message
+    });
   }
 };
 
@@ -34,7 +37,7 @@ const basic_info = async (req, res) => {
  * @param {string} [req.query.q] - The search query string (defaults to empty string if not provided)
  * @param {string} [req.query.managed] - Filter by managed status ('true' or 'false')
  * @param {Object} res - Express response object
- * @returns {Promise<void>} 200 with matching structures, 400 if an error occurs
+ * @returns {Promise<void>} 200 with matching structures, 500 if an error occurs
  */
 const search = async (req, res) => {
   try {
@@ -45,7 +48,10 @@ const search = async (req, res) => {
     const structures = await structuresService.search(q ?? '', filters);
     res.status(200).json({ structures });
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(500).json({
+      success: false,
+      error: 'Server Error: ' + err.message
+    });
   }
 }
 
