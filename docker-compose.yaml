@@ -1,0 +1,21 @@
+services:
+  client:
+    build: client
+    ports:
+      - "${CLIENT_PORT}:${CLIENT_PORT}"
+    environment:
+      - PORT=${CLIENT_PORT}
+      - VITE_BACKEND_URL=${VITE_BACKEND_URL}
+    hostname: hik-client
+
+  server:
+    build: server
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    environment:
+      - PORT=${SERVER_PORT}
+      - MONGODB_URI=${MONGODB_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - ORS_API_KEY=${ORS_API_KEY}
+      - CLIENT_URL=${CLIENT_URL}
+    hostname: hik-server
