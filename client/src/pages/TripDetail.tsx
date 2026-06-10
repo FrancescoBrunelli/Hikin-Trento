@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout.tsx';
 
-const API = 'http://localhost:3000';
+
 const authHeaders = () => ({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -20,7 +20,7 @@ export default function TripDetail() {
     const [deleting, setDeleting] = useState(false);
 
     useEffect(() => {
-        fetch(`${API}/api/planning/${id}`, { headers: authHeaders() })
+        fetch(`/api/planning/${id}`, { headers: authHeaders() })
             .then(res => res.json())
             .then(data => {
                 if (data.error) throw new Error(data.error);
@@ -34,7 +34,7 @@ export default function TripDetail() {
         if (!confirm('Are you sure you want to delete this trip?')) return;
         setDeleting(true);
         try {
-            const res = await fetch(`${API}/api/planning/${id}`, {
+            const res = await fetch(`/api/planning/${id}`, {
                 method: 'DELETE',
                 headers: authHeaders()
             });

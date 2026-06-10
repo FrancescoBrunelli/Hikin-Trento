@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout.tsx';
 import '../styles/MyTrips.css';
 
-const API = 'http://localhost:3000';
+
+
+
 const authHeaders = () => ({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -28,8 +30,8 @@ export default function MyTrips() {
         }
 
         Promise.all([
-            fetch(`${API}/api/planning/`, { headers: authHeaders() }).then(r => r.json()),
-            fetch(`${API}/api/planning/favorites/me`, { headers: authHeaders() }).then(r => r.json())
+            fetch(`/api/planning/`, { headers: authHeaders() }).then(r => r.json()),
+            fetch(`/api/planning/favorites/me`, { headers: authHeaders() }).then(r => r.json())
         ])
             .then(([myData, favData]) => {
                 setMyPlans(myData.plans ?? []);
@@ -56,7 +58,7 @@ export default function MyTrips() {
     const handleRemoveFavorite = async (id: string) => {
         if (!confirm('Remove from saved trips?')) return;
         try {
-            const res = await fetch(`${API}/api/planning/${id}/favorite`, {
+            const res = await fetch(`/api/planning/${id}/favorite`, {
                 method: 'DELETE',
                 headers: authHeaders()
             });

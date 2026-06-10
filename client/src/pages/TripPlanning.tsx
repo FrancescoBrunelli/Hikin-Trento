@@ -24,7 +24,6 @@ type RouteResult = {
     segments: any[];
 }
 
-const API = 'http://localhost:3000';
 const authHeaders = () => ({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -141,7 +140,7 @@ const decodePolyline = (encoded: string, has3d: boolean = true): [number, number
             console.log('sending end:', end);
             const waypoints = points.slice(1, -1).map(p => [p.coordinates.longitude, p.coordinates.latitude]);
 
-            const res = await fetch(`${API}/api/planning/route`, {
+            const res = await fetch(`/api/planning/route`, {
                 method: 'POST',
                 headers: authHeaders(),
                 body: JSON.stringify({ start, end, waypoints })
@@ -175,7 +174,7 @@ const decodePolyline = (encoded: string, has3d: boolean = true): [number, number
 
             const waypoints = points.slice(1, -1).map(p => [p.coordinates.longitude, p.coordinates.latitude]);
 
-            const res = await fetch(`${API}/api/planning/save`, {
+            const res = await fetch(`/api/planning/save`, {
                 method: 'POST',
                 headers: authHeaders(),
                 body: JSON.stringify({ name: tripName.trim(), start, end, waypoints, route, multiDay: false, days: 1 })

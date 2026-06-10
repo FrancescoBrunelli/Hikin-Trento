@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout.tsx';
 
-const API = 'http://localhost:3000';
+
 const authHeaders = () => ({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -20,7 +20,7 @@ export default function TripEdit() {
     const [days, setDays] = useState(1);
 
     useEffect(() => {
-        fetch(`${API}/api/planning/${id}`, { headers: authHeaders() })
+        fetch(`/api/planning/${id}`, { headers: authHeaders() })
             .then(res => res.json())
             .then(data => {
                 if (data.error) throw new Error(data.error);
@@ -38,7 +38,7 @@ export default function TripEdit() {
         setSaving(true);
         setError(null);
         try {
-            const res = await fetch(`${API}/api/planning/${id}`, {
+            const res = await fetch(`/api/planning/${id}`, {
                 method: 'PUT',
                 headers: authHeaders(),
                 body: JSON.stringify({ name, description, multiDay, days })
